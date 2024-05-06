@@ -1,0 +1,137 @@
+.divb {
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #25a7da54;
+    background-color: #c3eeff;
+    padding-top: 15px;
+}
+.progress {
+    margin-top: 13px;
+}
+#inactive_sem_id {
+    margin-right: 10.5%;
+    margin-left: 3px;
+    font-weight: normal;
+}
+.block_student_program_info p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+.block_student_program_info span {
+    margin-left: 3%;
+}
+.block_student_program_info .progress-bar.static {
+  position: relative;
+  margin: 4px;
+  float: left;
+  text-align: center;
+  background-color: transparent;
+  margin-bottom: 15px;
+}
+.block_student_program_info .barOverflow {
+  position: relative;
+  overflow: hidden;
+  width: 100px; height: 90px;
+  margin-bottom: -60px;
+}
+.block_student_program_info .bar {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100px; height: 100px; 
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 15px solid gray;
+  border-bottom-color: white;
+  border-right-color: white;
+  transform: rotate(45deg);
+}
+.block_student_program_info .bar-percent {
+    margin-left: 0px;
+}
+.block_student_program_info .blankdiv {
+    height: 5px;
+    background-color: red;
+    width: 8rem;
+    border-radius: 10px;
+    display: flex;
+}
+/*student dashboard programinfo block*/
+.block_student_program_info .divb{
+    background-color: #fff ;
+    border: none;
+    border-radius: 5px;
+    padding-top: 0;
+}
+.block_student_program_info .student_info_block .rowdata .row.student_info:nth-child(odd){
+    background-color:#eaf0fe;
+    border:1px solid #ddd;
+}
+.block_student_program_info .student_info_block p{
+    margin-bottom: 0;
+}
+.block_student_program_info .student_info_block .rowdata .row.student_info{
+    padding: 10px;
+}
+.block_student_program_info .student_info_block span{
+    margin-left: 0;
+}
+
+.block_student_program_info .student_info_block .current_semtab .header{
+    border-left: 2px solid #ff0008;
+    padding-left: 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.block_student_program_info .student_info_block .current_semtab .sem_name{
+    font-size: 16px;
+}
+.block_student_program_info .panel-title a{
+    color: #000;
+}
+.block_student_program_info .card-text{
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 5px 6px #ddd;
+}
+.block_student_program_info .student_info_block .user_info {
+    display: inline-block;
+}
+.block_student_program_info .inactive_semtab .panel-group .card-header{
+    background-color: #eaf0fe;
+    border-radius: 0;
+    border: 1px solid rgba(0,0,0,.125);
+}
+.block_student_program_info .inactive_semtab .panel-group .panel-collapse{
+    border: 1px solid rgba(0,0,0,.125);
+    border-top:none;
+}
+.block_student_program_info .inactive_semtab .cfullname,
+.block_student_program_info .current_semtab .cfullname{
+    font-size: 13px;
+    text-align: center;
+    word-break: break-all;
+}
+.block_student_program_info lable.bar-percent.criteria {
+    visibility: hidden;
+    font-size: .1rem;
+}
+.block_student_program_info span.text-dark.copmletion {
+    margin-left: -2px;
+    font-size: .79rem;
+}
+.block_student_program_info .inactive_semtab .panel-group .panel-title a:before{
+    content: "\f0da";
+    font-family: fontAwesome;
+    position: absolute;
+    font-size: 20px;
+    background-color: transparent;
+    top: 10px;
+    left: auto;
+    right: 22px;
+    color: #000;
+}
+.block_student_program_info .inactive_semtab .panel-group .panel-title a[aria-expanded="true"]:before{
+    content: "\f0d7";
+}

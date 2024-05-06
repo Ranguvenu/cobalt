@@ -1,0 +1,212 @@
+.block_todays_timetable .ui-tabs .ui-tabs-panel{padding:0;}
+.block_todays_timetable .dataTable>tbody>tr{border-bottom:0;border-top:0;}
+.block_todays_timetable .dataTable tbody tr td{padding:8px;}
+.block_todays_timetable .pagination{text-align:right;margin:0;}
+.block_todays_timetable .dataTables_length{padding:0 10px;display:inline-block;}
+
+#middle-blocks .block_todays_timetable button{background-color: #FFF !important;color: #FFF;border: 0 !important;}
+/*css added by Raghuvaran from media.css*/
+@media (max-width: 683px){
+#page-blocks-todays_timetable-stuview #filter-box .filterarea .selfilterpos{width: 100% !important;}
+#page-blocks-todays_timetable-stuview #filter-box .filterarea .selfilterpos select{width: 82% !important;}
+#page-blocks-todays_timetable-stuview .datefilterpos{width: 100% !important;}
+#page-blocks-todays_timetable-stuview .uneditable-input, input, textarea{width: 62%;}
+}
+@media (max-width: 568px){
+#page-blocks-todays_timetable-stuview #filter-box .filterarea .selfilterpos{width: 100% !important;}
+#page-blocks-todays_timetable-stuview #filter-box .filterarea .selfilterpos select{width: 82% !important;}
+#page-blocks-todays_timetable-stuview .datefilterpos{width: 100% !important;}
+#page-blocks-todays_timetable-stuview .uneditable-input,#page-blocks-todays_timetable-stuview input,#page-blocks-todays_timetable-stuview textarea{width: 62%;}
+}
+@media (max-width: 480px){
+#page-blocks-todays_timetable-stuview #filter-box .filterarea .selfilterpos{width: 100% !important;}
+#page-blocks-todays_timetable-stuview #filter-box .filterarea .selfilterpos select{width: 82% !important;}
+#page-blocks-todays_timetable-stuview .datefilterpos{width: 100% !important;}
+#page-blocks-todays_timetable-stuview .uneditable-input,#page-blocks-todays_timetable-stuview input,#page-blocks-todays_timetable-stuview textarea{width: 62%;}
+/* .block_todays_timetable .ui-tabs .ui-tabs-nav li{width: 60%;font-size: 18px;} */
+}
+@media (max-width: 320px){
+#page-blocks-todays_timetable-stuview #filter-box .filterarea .selfilterpos{width: 100% !important;}
+#page-blocks-todays_timetable-stuview #filter-box .filterarea .selfilterpos select{width: 82% !important;}
+#page-blocks-todays_timetable-stuview .datefilterpos{width: 100% !important;}
+#page-blocks-todays_timetable-stuview .uneditable-input,#page-blocks-todays_timetable-stuview input,#page-blocks-todays_timetable-stuview textarea{width: 62%;}
+/* .block_todays_timetable .ui-tabs .ui-tabs-nav li{width: 60%;font-size: 18px;} */
+}
+span.timetable_viewall {float: right;}
+div#block_todays_timetable_addnewsessions_filter {float: right;}
+.block_todays_timetable .todaystimetable_tabs ul {
+    background-color: #f7f7f7;
+    padding: 8px 0px;
+}
+.block_todays_timetable .todaystimetable_tabs li a {
+    padding: 10px;
+}
+.block_todays_timetable .ui-tabs-nav {
+    border: 1px solid #f3f3f3;
+    margin: 0px;
+}
+.block_todays_timetable .ui-state-default {
+    padding: 5px 10px;
+}
+.block_todays_timetable .ui-state-default.ui-tabs-active {
+    background-color: #313131;
+    position: relative;
+}
+.block_todays_timetable .ui-state-default.ui-tabs-active a {
+    color: #ff4b25;
+    border-bottom: 2px solid #ff4b25;
+    font-size:12px;
+/*    background-color: #fff;*/
+    /*border-top-right-radius: 10px;
+    border-top-left-radius: 10px;*/
+}
+.pagination {
+  display: inline-block;
+}
+.block_todays_timetable .ui-tabs .ui-tabs-nav{
+    border: none;
+    background: #e8f0fd!important;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.block_todays_timetable .ui-corner-all, .ui-corner-top,.block_todays_timetable .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 10px;
+}
+.block_todays_timetable .ui-corner-all, .ui-corner-top,.block_todays_timetable .ui-corner-left, .ui-corner-tl {
+    border-top-left-radius: 10px;
+}
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default, 
+.ui-button, 
+html .ui-button.ui-state-disabled:hover, 
+html .ui-button.ui-state-disabled:active{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.block_todays_timetable{
+    height:auto;
+}
+.block_todays_timetable #block_todays_timetable_tabs {
+    border-radius: 8px;
+    border:none;
+}
+.ui-tabs .ui-tabs-nav li{
+    border-radius: 0px;
+    border: none;
+    margin: 0px;
+}
+.ui-tabs .ui-tabs-nav{
+    padding: 0px;
+}
+/*.block_todays_timetable .ui-state-default.ui-tabs-active a::after {
+    content: "";
+    display: inline-block;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid #313131;
+    position: absolute;
+    bottom: -8px;
+    right: 56px;
+    z-index: 2;
+    left: auto;
+}*/
+.block_todays_timetable table.generaltable thead {
+    background-color: #e6e6e6;
+    color: #000;
+}
+
+
+/*hema added new css*/
+.block_todays_timetable  #block_todays_timetable_tabs{
+    box-shadow: 0 0 4px 1px #d6dae0;
+    padding:0;
+}
+.block_todays_timetable .ui-state-default,
+.block_todays_timetable .ui-widget-content .ui-state-default{
+   color:#000;
+   background:transparent;
+   font-size:12px;
+}
+.block_todays_timetable .previous_session,
+.block_todays_timetable .todays_session,
+.block_todays_timetable .add_session{
+    border:none;
+}
+.block_todays_timetable .todaytimetable_content .card-text{
+    color: #0057d2 !important;
+    font-size: 12px;
+    text-decoration: underline;
+}
+.block_todays_timetable .todays_date{
+    text-decoration: none !important;
+    font-size: 12px;
+    border: 1px solid #d4e0fa;
+    padding: 4px 12px;
+    background: #d4e0fa;
+    border-radius: 4px;
+}
+.block_todays_timetable .todaytimetable_context .attendance_content,
+.block_todays_timetable .todaytimetable_context .reshedule_content,
+.block_todays_timetable  .takeattd{
+    font-size:12px;
+    color:#ff404f !important;
+    text-decoration: underline;
+}
+.block_todays_timetable .todaytimetable_context{
+    margin-top: -5px;
+}
+.block_todays_timetable  .alert-info{
+    color: #000;
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+}
+.block_todays_timetable .card-text{
+    color: #0057d2 !important;
+    font-size: 12px;
+    min-width: 150px;
+}
+.block_todays_timetable .course_details{
+    padding-bottom:16px !important;
+    flex-wrap: wrap;
+}
+.block_todays_timetable .previous_session:nth-child(even) .course_details,
+.block_todays_timetable .todays_session:nth-child(even) .course_details,
+.block_todays_timetable .add_session:nth-child(even) .add_session_course{
+    background:#f2f3f6;
+}
+.block_todays_timetable span.timetable_viewall {
+    float: none;
+    display: flex;
+    justify-content: end;
+    padding: 7px;
+}
+.block_todays_timetable span.timetable_viewall a{
+    color: #ff6a4e!important;
+    text-decoration: underline;
+    font-size: 13px;
+}
+.block_todays_timetable #viewmore a{
+    font-weight: 400;
+    text-decoration: underline;
+    color: #0048d3;
+    padding-top: 0 !important;
+}
+.block_todays_timetable #viewmore{
+    float: none;
+    text-align: right;
+    margin-top: 0;
+
+}
+.block_todays_timetable .todays_session .today_course,
+.block_todays_timetable .add_session .add_session_course{
+    flex-wrap: wrap;
+}
+.block_todays_timetable .todays_session .todays_context{
+    font-size: 12px;
+    color: #ff404f !important;
+    text-decoration: underline;
+}

@@ -1,0 +1,179 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}    
+
+<div class="col-md-12 col-sm-12 col-12 pull-left dept_content" style="{{^deptstatus}} {{style}} {{/deptstatus}}">
+        <span class="sideline"></span>
+            <div class="col-md-12 col-sm-12 col-12 pull-left deptimg_container">
+                <div class="dept_topcontent row">
+                    <span class="connent_line"></span>
+                    <div class="col-md-11 col-sm-9 col-9 dept_topleft p-0">
+                        <div class=""><h5>{{ departmentfullname }}</h5></div>
+                        {{# enablesubdepartment_link}}
+                        <div class="subdepartment_link">
+                            <label class="mb-0">{{subdepartment}} : </label>
+                            <a href="{{subdept_count_link}}" class="sub_dept_count">{{subdept}}</a>
+                        </div>
+                        {{/ enablesubdepartment_link}}
+                    </div>
+                    <div class="col-md-1 col-sm-3 col-3 dept_topright p-0">
+                          <div class="showoptions{{{ deptid }}} actionicons ">
+                            <span  class="showoptions" data-action="showoptions{{{ deptid }}}" onmouseenter="(function(e){ require('theme_bloom/quickactions').quickactionsCall({ selector:'showoptions{{deptid}}' }) })(event)" onmouseleave="(function(e){require('theme_bloom/quickactions').quickactionsCall({ selector:'showoptions{{deptid}}' }) })(event)"><i class="fa fa-ellipsis-h options"></i>
+                            </span>
+                            <ul class="col-md-12 col-sm-12 col-12 p-0 options_container" id = "showoptions{{{ deptid }}}">
+                            {{# deptdelete}}
+                            <li>
+                                <a href="javascript:void(0)" title ="{{# str}} delete {{/str}}"  onclick = "(function(e){ require('local_costcenter/costcenterdatatables').costcenterDelete({action:'deletecostcenter', id: {{{ deptid }}} ,confirm: {{{deptstatus}}} ,actionstatus:'Confirm', actionstatusmsg:'{{{ deptdel_confirmationmsg }}}' }) })(event)"><i class="fa fa-trash fa-fw" aria-hidden="true" aria-label="Delete"></i></a>
+                            </li>
+                            {{/ deptdelete}}
+                            {{^ deptdelete}}
+                            <li>
+                                <a href="javascript:void(0)" title ="{{# str}} delete {{/str}}"  onclick = "(function(e){ require('local_costcenter/costcenterdatatables').costcenternotDelete({action:'deletecostcenter', id: {{{ deptid }}} ,confirm: {{{deptstatus}}} ,actionstatus:'Confirm', actionstatusmsg:'{{{ deptdel_confirmationmsg }}}' }) })(event)"><i class="fa fa-trash fa-fw" aria-hidden="true" aria-label="Delete"></i></a>
+                            </li>
+                            {{/ deptdelete}}
+                            {{#deptstatus}}
+                                {{# depthide}}
+                                <li>
+                                    <a href="javascript:void(0)" title ="{{# str}} inactive {{/str}}" onclick = "(function(e){ require('local_costcenter/newcostcenter').costcenterStatus({action:'updatecostcenter', id: {{{deptid}}} ,confirm: {{{status}}} ,actionstatus:'Confirm', actionstatusmsg:'{{{dept_actionmessage}}}' }) })(event)"><i class="fa fa-eye"></i></a>
+                                </li>
+                                {{/ depthide}}
+                            {{/deptstatus}}
+                            {{# cannothidedept}}
+                            <li>
+                                <a href="javascript:void(0)" title ="{{# str}} inactive {{/str}}" onclick = "(function(e){ require('local_costcenter/newcostcenter').costcenternothide({action:'updatecostcenter', id: {{{deptid}}} ,confirm: {{{status}}} ,actionstatus:'Confirm', actionstatusmsg:'{{{dept_actionmessage}}}' }) })(event)"><i class="fa fa-eye"></i></a>
+                            </li>
+                            {{/ cannothidedept}}
+                            {{^deptstatus}}
+                                {{# deptshow}}
+                                <li>
+                                    <a href="javascript:void(0)" title ="{{# str}} active {{/str}}" onclick = "(function(e){ require('local_costcenter/newcostcenter').costcenterStatus({action:'updatecostcenter', id: {{{deptid}}} ,confirm: {{{status}}} ,actionstatus:'Confirm', actionstatusmsg:'{{{dept_actionmessage}}}' }) })(event)"><i class="fa fa-eye-slash"></i></a>
+                                </li>
+                                {{/ deptshow}}
+                            {{/deptstatus}}
+                            {{# deptedit}}
+                            <li>
+                            <a href="javascript:void(0)" title="{{# str}} edit {{/str}}" onclick="(function(e){ require('local_costcenter/newcostcenter').init({selector:'createcostcentermodal', contextid:1, id:{{ deptid }}, formtype:'{{formtype}}', headstring:'{{headstring}}', labelstring: {{labelstring}} }) })(event)"><i class="fa fa-pencil fa-fw"></i></a>
+                            </li>
+                            {{/ deptedit}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-12 dept_btmcontent pull-left">
+                {{^ hide_users}}
+                <div class="w-full pull-left mt-4 dept_details dept_users">
+                    <div class="pull-left col-lg-6 col-md-12 col-sm-12 col-12 px-2 deptdetails_left">
+                        <span class="students_icon"><span class="program_icon_wrap"></span></span>
+                        <span class="details_count userscolor"><a href="{{viewuserlink_url}}" class='' title= "{{#str}} totalusers, local_costcenter {{/str}}" target="_blank">{{ totalusers }}</a></span>
+                        <span class="details_string">{{# str}} students {{/str}}</span>
+                        
+                    </div> 
+                    <div class="pull-left col-lg-6 col-md-12 col-sm-12 col-12 px-2 deptdetails_right row">
+                        <div class="inforight col-lg-6">
+                            <span class="userscolor"><a href="{{count_useractivelink_url}}" class='active_num' title= "{{#str}} activeusers, local_costcenter {{/str}}" target="_blank">{{ activeusercount }}</a></span>
+                            <span class="lable_name">{{# str}} active {{/str}}</span>
+                        </div>
+
+                         <div class="infoleft col-lg-6">
+                              <span class="userscolor"><a href="{{count_userinactivelink_url}}" class='inactive_num' title= "{{#str}} inactiveusers, local_costcenter {{/str}}" target="_blank">{{ inactiveusercount }}</a></span>
+                            <span class="lable_name">{{# str}} inactive {{/str}}</span>                
+                        </div>
+                    </div>
+                </div>
+                {{/ hide_users}}
+                {{# hide_courses}}
+                <div class="w-full pull-left mt-3 dept_details dept_courses">
+                    <div class="pull-left col-lg-6 col-md-12 col-sm-12 col-12 px-2 deptdetails_left">
+                        <span class="courses_icon"><span class="program_icon_wrap"></span></span>
+                        <span class="details_count coursescolor"><a href="{{viewcourselink_url}}" class='viewlink' title= "{{#str}} totalcoursecount, local_costcenter {{/str}}" target="_blank">{{ coursecount }}</a></span>
+                        <span class="details_string">{{# str}} courses, local_costcenter {{/str}}</span>
+                    </div>
+                    <div class="pull-left col-lg-6 col-md-12 col-sm-12 col-12 px-2 deptdetails_right row">
+                        <div class="inforight col-lg-6">
+                            <span class="coursescolor"><a href="{{count_courseactivelink_url}}" class='active_num' title= "{{#str}} activecoursecount, local_costcenter {{/str}}" target="_blank">{{ activecoursecount }}</a></span>
+                            <span class="lable_name">{{# str}} active {{/str}}</span>
+                        </div>
+
+                         <div class="infoleft col-lg-6">
+                            <span class="coursescolor"><a href="{{count_courseinactivelink_url}}" class='inactive_num' title= "{{#str}} inactivecoursecount, local_costcenter {{/str}}" target="_blank">{{ inactivecoursecount }}</a></span>
+                            <span class="lable_name">{{# str}} inactive {{/str}}</span>
+                        </div>
+                    </div>
+                </div>
+                {{/ hide_courses}}
+                {{^ hide_courses}}
+                <div class="w-full pull-left mt-3 dept_details dept_courses">
+                    <div class="pull-left col-lg-6 col-md-12 col-sm-12 col-12 px-2 deptdetails_left">
+                        <span class="courses_icon"><span class="program_icon_wrap"></span></span>
+                        <span class="details_count coursescolor"><a href="{{viewcourselink_url}}" class='viewlink' title= "{{#str}} totalcoursecount, local_costcenter {{/str}}" target="_blank">{{ coursecount }}</a></span>
+                        <span class="details_string">{{# str}} courses, local_costcenter {{/str}}</span>
+                    </div>
+                    <div class="pull-left col-lg-6 col-md-12 col-sm-12 col-12 px-2 deptdetails_right row">
+                        <div class="inforight col-lg-6">
+                            <span class="coursescolor"><a href="{{count_courseactivelink_url}}" class='active_num' title= "{{#str}} activecoursecount, local_costcenter {{/str}}" target="_blank">{{ activecoursecount }}</a></span>
+                            <span class="lable_name">{{# str}} active {{/str}}</span>
+                        </div>
+
+                         <div class="infoleft col-lg-6">
+                            <span class="coursescolor"><a href="{{count_courseinactivelink_url}}" class='inactive_num' title= "{{#str}} inactivecoursecount, local_costcenter {{/str}}" target="_blank">{{ inactivecoursecount }}</a></span>
+                            <span class="lable_name">{{# str}} inactive {{/str}}</span>
+                        </div>
+                    </div>
+                </div>
+                {{/ hide_courses}}
+                {{# hide_program}}
+                <div class="w-full pull-left mt-3 dept_details dept_programs">
+                    <div class="pull-left col-lg-6 col-md-12 col-sm-12 col-12 px-2 deptdetails_left">
+                        <span class="programs_icon"><span class="program_icon_wrap"></span></span>
+                        <span class="details_count programscolor"><a href="{{viewprogramlink_url}}" class='viewlink' title= "{{#str}} allprogramcount, local_costcenter {{/str}}" target="_blank">{{ allprogramcount }}</a></span>
+                        <span class="details_string">{{# str}} programs, local_costcenter {{/str}}</span>
+                    </div>
+                    <div class="pull-left col-lg-6 col-md-12 col-sm-12 col-12 px-2 deptdetails_right row">
+                        <div class="inforight col-lg-6">
+                             <span class="programscolor"><a href="{{count_programactivelink_url}}" class='active_num' title= "{{#str}} activeprogramcount, local_costcenter {{/str}}" target="_blank">{{ activeprogramcount }}</a></span>
+                            <span class="lable_name">{{# str}} active {{/str}}</span>  
+                        </div>
+
+                         <div class="infoleft col-lg-6">
+                            <span class="programscolor"><a href="{{count_programinactivelink_url}}" class='inactive_num' title= "{{#str}} inactiveprogramcount, local_costcenter {{/str}}" target="_blank">{{ inactiveprogramcount }}</a></span>
+                            <span class="lable_name">{{# str}} inactive {{/str}}</span>
+                        </div>
+                    </div>
+                </div>
+                {{/hide_program}}
+                {{^ hide_program}}
+                <div class="w-full pull-left mt-3 dept_details dept_programs">
+                    <div class="pull-left col-lg-6 col-md-12 col-sm-12 col-12 px-2 deptdetails_left">
+                        <span class="programs_icon"><span class="program_icon_wrap"></span></span>
+                        <span class="details_count programscolor"><a href="{{viewprogramlink_url}}" class='viewlink' title= "{{#str}} allprogramcount, local_costcenter {{/str}}" target="_blank">{{ allprogramcount }}</a></span>
+                        <span class="details_string">{{# str}} programs, local_costcenter {{/str}}</span> 
+                    </div>
+                    <div class="pull-left col-lg-6 col-md-12 col-sm-12 col-12 px-2 deptdetails_right row">
+                        <div class="inforight col-lg-6">
+                            <span class="programscolor"><a href="{{count_programactivelink_url}}" class='active_num' title= "{{#str}} activeprogramcount, local_costcenter {{/str}}" target="_blank">{{ activeprogramcount }}</a></span>
+                            <span class="lable_name">{{# str}} active {{/str}}</span>
+                        </div>
+
+                         <div class="infoleft col-lg-6">
+                            <span class="programscolor"><a href="{{count_programinactivelink_url}}" class='inactive_num' title= "{{#str}} inactiveprogramcount, local_costcenter {{/str}}" target="_blank">{{ inactiveprogramcount }}</a></span>
+                            <span class="lable_name">{{# str}} inactive {{/str}}</span>
+                        </div>
+                    </div>
+                </div>
+                {{/hide_program}}
+            </div>
+        </div>

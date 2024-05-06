@@ -1,0 +1,72 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_quiz/random_challenge_form_preview
+
+    A preview section for the list of challenges that match the random
+    challenge criteria in the random challenge form.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * title A cleaned string (use clean_text()) to display.
+    * body HTML content for the boday
+
+    Example context (json):
+    {}
+}}
+{{#response}}
+ <div class=" pull-right mb-1">
+                <ul class=" w-full pull-left">
+                    <li>
+                        <span>
+                            <span >Total: </span>
+                            <span >{{{totalcount}}}</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+<table class="generaltable" id="previous_timetable">
+    <thead>
+        <tr>
+            <th >{{#str}}subject, block_todays_timetable{{/str}}</th>
+            <th >{{#str}}date, block_todays_timetable{{/str}}</th>
+            <th >{{#str}}previous, block_todays_timetable{{/str}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#records}}
+            {{#hascourses}}
+                <tr>
+                    <td>{{courses}}</td>
+                    <td>{{date}}</td>
+                  <td>
+                    {{# atttaken}}
+                        <a href="{{cfg_url}}/local/timetable/individual_session_update.php?id={{previouslink}}&sessionid={{sessid}}&action=2&semesterid={{sessionlink}}&courseid={{courseid}}" target="_blank">{{#str}}reschedule, block_todays_timetable{{/str}}</a>
+                    {{/ atttaken}}
+
+                    <br><a href="{{cfg_url}}/local/attendance/take.php?id={{previouslink}}&sessionid={{sessid}}&grouptype=0&viewmode=2&semid={{sessionlink}}&batch_group=0">{{#str}}pendingattendance, block_todays_timetable{{/str}}</a></td>
+                </tr>
+            {{/hascourses}}
+        {{/records}}
+    </tbody>
+</table>
+{{/response}}

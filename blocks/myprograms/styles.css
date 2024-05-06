@@ -1,0 +1,71 @@
+.block_myprograms {
+    box-shadow: 0px 0px 5px lightgrey;
+}
+.block_myprograms .programname {
+    display: flex;
+    justify-content: space-between;
+    /*margin-top: 2rem;*/
+}
+.block_myprograms .program_details div span:last-child {
+    font-size: 14px;
+}
+.block_myprograms .current_semester {
+    padding: 1rem;
+    background-color: #e6f0fc;
+    color: #185a9f;
+    border-radius: 3px;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+.block_myprograms .program_details {
+    display: flex;
+}
+.block_myprograms .program_details_icons img {
+    width: 25px;
+    height: 25px;
+}
+.block_myprograms .program_details_icons {
+    margin-right: 10px;
+}
+.block_myprograms .program_details div {
+    font-size: 14px;
+    padding: 0 20px;
+    font-weight: 350;
+}
+.block_myprograms .program_details div:nth-child(2) {
+    border-left: 2px solid lightgrey;
+    border-right: 2px solid lightgrey;
+}
+.block_myprograms .myprogram_content{
+	font-size: 16px;
+    color: darkslategrey;
+}
+.block_myprograms .next_arrow .fa-arrow-right{
+	background-color: #a42834;
+    color: #fff;
+    padding: 9px 11px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+}
+.block_myprograms .next_arrow{
+	float: right;
+}
+.block_myprograms .years_tabs.active .years_bars {
+    background: #25a7da;
+}
+.block_myprograms .years_tabs.active{
+	color: #25a7da;
+}
+.block_myprograms .years_tabs .years_bars {
+    padding: 1.5px;
+    background: darkgrey;
+    width: 100%;
+    margin: auto;
+}
+.block_myprograms .years_tabs {
+    color: darkgrey;
+}
+.block_myprograms .program_details div:first-child {
+    padding-left: 0px;
+}

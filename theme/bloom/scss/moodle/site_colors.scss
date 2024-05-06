@@ -1,0 +1,294 @@
+/*user assign page css starts here*/
+
+body button,
+body [type="reset"], 
+body [type="submit"], 
+/*body [type="cancel"], */
+body .btn-primary, 
+body .btn, .cat_btn {
+    background-color: #25a7da;
+    color: #fff;
+    border-color: #25a7da;
+    border-radius: 0.25rem;
+}
+.modal .modal-header .close, 
+div.editor_atto_toolbar button, 
+div.editor_atto_toolbar button:hover, 
+div.editor_atto_toolbar button:focus, 
+.alert button.close {
+    background-color: #E1E1E1;
+    color: inherit;
+    font-weight: 400;
+}
+body .btn-link {
+    background-color: transparent!important;
+    border-color: transparent!important;
+    /*color: #534193;*/
+}
+.btn-primary.disabled, 
+.btn-primary:disabled {
+    background-color: #25a7da;
+    border-color: #25a7da;
+}
+#page-admin-roles-assign #assigningrole select[size], select[multiple] {
+    width: 100%!important;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.bootstrap-duallistbox-container select {
+    border-radius: 0 0 8px 8px;
+    padding: 10px!important;
+    min-height: 410px;
+}
+input[type=text], input[type=search], body select, input#search {
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,.15);
+    -webkit-box-shadow: inset 0 0 0 #fafafb, 0 0 5px rgb(0 0 0 / 15%);
+    box-shadow: inset 0 0 0 #fafafb, 0 0 5px rgb(0 0 0 / 15%);
+}
+.bootstrap-duallistbox-container {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+    background-color: #d1ecf7;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px 10px;
+}
+/*user assign page css ends here*/
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.active,
+.dataTables_wrapper .dataTables_paginate .paginate_button:active,
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button:focus{
+    background-color: #ffffff !important;
+    color:  #12395e!important;
+    border-color: #12395e !important;
+    background-image: none;
+}
+body .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+body .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+body .dataTables_wrapper .dataTables_paginate .paginate_button.current:focus {
+    background-color: #0058a8 !important;
+    color: #fff !important;
+    /*border-color: #12395e !important;*/
+    background-image: none;
+}
+body .dataTables_wrapper .dataTables_paginate .paginate_button a, 
+body .dataTables_wrapper .dataTables_paginate .paginate_button:hover a {
+    color: #ffffff !important;
+}
+body .dataTables_wrapper .dataTables_paginate .paginate_button.active a,
+body .dataTables_wrapper .dataTables_paginate .paginate_button:hover a {
+    color: #12395e !important;
+}
+.form-autocomplete-suggestions li:hover, .form-autocomplete-suggestions li:focus, .form-autocomplete-suggestions li[aria-selected="true"] {
+    background-color: #25a7da;
+    color: #fff;
+}
+.form-autocomplete-suggestions li[aria-selected=true] {
+    box-shadow: 0 0 0 0.2rem rgb(37 167 218 / 75%);
+}
+
+/*pagination css ends here*/
+
+.aabtn.focus, .aabtn:focus,
+.btn-link.focus,
+.btn-link:focus,
+.nav-link.focus,
+.nav-link:focus,
+.editor_atto_toolbar button.focus,
+.editor_atto_toolbar button:focus,
+.editor_atto_toolbar .atto_toolbar_row.focus,
+.editor_atto_toolbar .atto_toolbar_row:focus,
+[role="button"].focus,
+[role="button"]:focus,
+.list-group-item-action.focus,
+.list-group-item-action:focus,
+input[type="checkbox"].focus,
+input[type="checkbox"]:focus,
+input[type="radio"].focus,
+input[type="radio"]:focus,
+input[type="file"].focus,
+input[type="file"]:focus,
+input[type="image"].focus,
+input[type="image"]:focus,
+.sr-only-focusable.focus,
+.sr-only-focusable:focus,
+a.dropdown-toggle.focus,
+a.dropdown-toggle:focus,
+.modal-dialog[tabindex="0"].focus,
+.modal-dialog[tabindex="0"]:focus,
+.moodle-dialogue-base .closebutton.focus,
+.moodle-dialogue-base .closebutton:focus,
+button.close.focus,
+button.close:focus,
+.form-autocomplete-selection.focus,
+.form-autocomplete-selection:focus,
+[role="treeitem"]:not([aria-expanded="true"]).focus,
+[role="treeitem"]:not([aria-expanded="true"]):focus {
+  outline: 0;
+  box-shadow: none; 
+}
+
+body .dataTables_wrapper .dataTables_paginate .paginate_button {
+    /*background-color: #064d97!important;
+    color: #fff!important;*/
+    border: none;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 2px 7px!important;
+    font-size: 12px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    /*border: 1px solid #ddd!important;*/
+}
+body .dataTables_wrapper .dataTables_paginate .paginate_button:hover, 
+body .dataTables_wrapper .dataTables_paginate .paginate_button:focus, 
+body .dataTables_wrapper .dataTables_paginate .paginate_button:active {
+    background-color: #0058a8!important;
+    color: #fff!important;
+}
+body a {
+    color: #0f6cbf;
+}
+/*body#page-local-users-index #manage_users1 .userscontainer .userpic{
+    border: 2px solid #25a7da;
+}*/
+body .btn-link{
+    color: #232323;
+}
+.moremenu .nav-link.active{
+    border-bottom-color: #25a7da;
+}
+.btn-link:hover {
+    color: #0058a8;
+}
+.dropdown-item:hover{
+    background-color: #25a7da!important;
+}
+body a:hover {
+    color: #0058a8;
+}
+.btn-footer-popover {
+    background-color: #d1ecf7 !important;
+}
+.page-item.disabled .page-link {
+    color: #25a7da;
+}
+.btn-primary:hover {
+    color: #25a7da;
+    background-color: #fff;
+    border-color: #25a7da;
+}
+.btn-secondary:hover {
+    color: #25a7da;
+    background-color: #fff;
+    border-color: #25a7da;
+}
+.moremenu .nav-link.active:focus, .moremenu .nav-link.active:hover {
+    background-color: #f8f9fa;
+    border-bottom-color: #25a7da;
+}
+.btn-primary:focus, .btn-primary.focus {
+    background-color: #25a7da;
+    border-color: #25a7da;
+}
+.btn-primary:not(:disabled):not(.disabled):active, 
+.btn-primary:not(:disabled):not(.disabled).active, 
+.show > .btn-primary.dropdown-toggle{
+    background-color: #25a7da;
+    border-color: #25a7da;
+}
+a.bg-secondary:hover, a.bg-secondary:focus, button.bg-secondary:hover, button.bg-secondary:focus{
+    background-color: #ccebf7 !important;
+}
+.drawer-toggles .drawer-toggler .btn .icon {
+    color: #25a7da;
+}
+.drawer-toggles .drawer-toggler .btn {
+    background-color: #e5f2f6;
+}
+.btn-outline-secondary.disabled, .btn-outline-secondary:disabled {
+    color: #25a7da;
+}
+table thead, table.dataTable.no-footer>thead,
+table.generaltable thead, 
+.path-grade-report-grader .gradeparent tr.heading {
+    background-color: #009ad7;
+}
+.custom-control-input:focus~.custom-control-label::before {
+    box-shadow: 0 0 0 0.2rem rgb(255 176 188);
+}
+.custom-control-input:not(:disabled):active~.custom-control-label::before {
+    color: #fff;
+    background-color: #f9d9de;
+    border-color: #f9d9de;
+}
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #25a7da;
+    background-color: #25a7da;
+}
+#page-my-index .add_block_button a {
+    color: #25a7da;
+}
+#page-course-view-topics .section-modchooser-link{
+    color: #25a7da!important;
+}
+.activity-add .pluscontainer, .block-add .pluscontainer {
+    border: 1px solid #25a7da;
+}
+#changenumsections {
+    border-top: 1px solid #25a7da;
+}
+.editing .activity-item:hover {
+    background-color: #fbf4f6;
+    border-color: #25a7da;
+}
+.add_block_button .btn-link.block-add {
+    color: #25a7da !important;
+}
+.drawer-toggles .drawer-toggler .btn:focus {
+    box-shadow: 0 0 0 0.2rem rgb(159 28 51 / 45%);
+}
+.btn:focus, 
+.btn.focus {
+    box-shadow: 0 0 0 0.2rem rgb(37 167 218 / 75%);
+}
+.courseindex .courseindex-item.pageitem{
+    background-color: #25a7da;
+}
+.activityiconcontainer.content {
+    background-color: #25a7da;
+}
+.form-control:focus {
+    border-color: #25a7da;
+    box-shadow: 0 0 0 0.2rem rgb(37 167 218 / 75%);
+}
+.dropdown-item:active, 
+.dropdown-item:hover, 
+.dropdown-item:focus, 
+.dropdown-item:focus-within{
+    background-color: #36c6ff;
+}
+.maincalendar .calendarmonth td.today .day-number-circle {
+    background-color: #25a7da;
+}
+.block .bottom span.footer-link:after {
+    color: #25a7da;
+}
+.maincalendar .calendarmonth ul li .calendar-circle.calendar_event_course {
+    background-color: #fdaab7;
+    border: 2px solid #a81e33;
+}
+.page-link{
+    color: #25a7da;
+}
+
+/*new css*/
+
+#page-local-groups-index  button.btn.btn-icon.btn-footer-popover{
+    background-color: #d1ecf7!important;
+}

@@ -1,0 +1,88 @@
+#page-local-location-index .generaltable.dataTable.no-footer td img.iconsmall{
+	cursor:pointer;
+	padding:0 10px;
+}
+#page-local-location-index #local_institutes_wrapper #local_institutes_length{
+	display:none;
+}
+#page-local-location-room #local_rooms_wrapper #local_rooms_length{
+	display:none;
+}
+#page-local-location-room .generaltable.dataTable.no-footer td img.iconsmall{
+	cursor:pointer;padding:0 10px;
+}
+#page-local-location-index #local_institutes_filter{
+	float:left;
+}
+#page-local-location-index .course_extended_menu_list,#page-local-location-room .course_extended_menu_list{
+	top: 9em;
+}
+#page-local-location-index #local_institutes_wrapper table#local_institutes{
+	min-width:500px;
+}
+#page-local-location-index #region-main .card.card-block,#page-local-location-room #region-main .card.card-block{
+	overflow-x:visible;
+}
+body#page-local-location-room #local_rooms_filter{
+	float:left;
+}
+#local_institutes_wrapper,#local_rooms_wrapper{
+	width:100%;
+	float:left;
+}
+#page-local-location-index .moodle-dialogue-confirm .moodle-dialogue{
+	top:150px!important;
+}
+@media (max-width:520px){
+	body#page-local-location-index .moodle-dialogue-base .yui3-panel,body#page-local-location-room .moodle-dialogue-base .moodle-dialogue-fullscreen{
+		margin-top:30px!important;
+		margin-bottom:30px!important;
+		margin-left:0!important;
+	}
+	#local_institutes_wrapper,#local_rooms_wrapper{
+		overflow:auto;
+	}
+}
+
+/*css by kiran*/
+#page-local-location-index .moodle-dialogue-bd .confirmation-dialogue{
+	height: 70px;
+}
+#page-local-location-index .alert.alert-info, #page-local-location-room .alert.alert-info {
+	margin-top: 3rem;
+}
+#page-local-location-index #page-header h1.h2,
+#page-local-location-room #page-header h1.h2 {
+    border-left: 3px solid #ff3d19;
+    padding-left: 6px;
+}
+#page-local-location-index #tm_locations .action_icons .edit_icon,
+#page-local-location-room #tm_rooms .action_icons .edit_icon {
+    background-color: #6fba31;
+}
+#page-local-location-index #tm_locations .action_icons .delete_icon,
+#page-local-location-room #tm_rooms .action_icons .delete_icon {
+    background-color: #f34b3e;
+}
+#page-local-location-index #tm_locations .action_icons i,
+#page-local-location-room #tm_rooms .action_icons i {
+    color: #fff;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+#page-local-location-room .global_filter_structure {
+	margin-top: 3rem;
+}
+#page-local-location-index #b_address {
+    word-break: break-all;
+    width: 20rem;
+}
+#page-local-location-index #b_fullname {
+    word-break: break-all;
+    width: 15rem;
+}

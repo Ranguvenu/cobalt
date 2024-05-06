@@ -1,0 +1,11 @@
+.submissionclass {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.green
+{
+border:1px solid #000;
+padding:30px;
+}

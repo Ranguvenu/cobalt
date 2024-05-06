@@ -1,0 +1,49 @@
+{{!
+    This file is part of eAbyas
+    Copyright eAbyas Info Solutons Pvt Ltd, India
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @author eabyas  <info@eabyas.in>
+}}
+<!-- <div class="profile_complete_details"> -->
+    <!-- <div class="profile_details">  -->
+<div class="row user_profile m-auto h-100 w-100">
+    <div class="col-md-4 ">
+        <div class="d-block leftprofile h-100">
+            <div class="user_info_left">
+                <div class="user_gen_info ">
+                    <div class="general_info">
+                        <div class="general_info_container">
+                            <div class="col-12 m-auto d-flex align-items-center flex-column justify-content-center userimage-container">
+                            <div class="text-left welcome_content">
+                                <div class="welcome_nametext">{{ username }}</div>
+                            </div>
+                                <div class="text-center">{{{ userimage }}}</div>
+                                <div class="edit_log_button text-center m-auto">
+                                    {{# capabilityedit}}
+                                        <a href="javascript:void(0)" class="edit_icon mr-1" title="{{#str}}edit_profile, local_employees{{/str}}" onclick='(function(e){ require("local_employees/newemployees").init({selector:"createusermodal", context:1, id:{{{userid}}}, form_status:0}) })(event)'><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    {{/ capabilityedit}}
+                                    {{# loginasurl}}
+                                        <a href="{{{loginasurl}}}" class="edit_icon mr-1" title="{{#str}}loginas{{/str}}"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                                    {{/ loginasurl}}
+                                </div>
+                                <div class="user_email">
+                                    <span>{{ user_email }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{> local_employees/employeesprofiletabs }}

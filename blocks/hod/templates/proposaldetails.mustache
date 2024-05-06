@@ -1,0 +1,104 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_hod/block
+    Example context (json):
+    {
+    }
+}}
+<div class="pull-right mb-3">
+<button  class="btn btn-info" style="padding: 5px"><a href="{{url}}" title="Back"><i class="fa fa-arrow-circle-left" style="font-size:40px;color:#c9243f"></i></a></button>
+</div>
+<div style="border:4px solid #f6f6f6 ; border-radius:10px; padding:20px;">
+<table>
+<tbody>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Unique Applicatiion Number</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{refid}}</td>
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Name</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{user}}</td>
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+
+        <td style="text-align:left; font-size:14px;"><h5>Email</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{email}}</td>
+    </tr>
+    <!-- <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Department</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{school}}</td>
+    </tr> -->
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Course</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{program}}</td>
+    </tr>
+        <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Project Name</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{title}}</td>
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Status</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{status}}</td>
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Application Type </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{type}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Rationale </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{rationale}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Novelty/Innovation </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{innovation}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Project Description </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{description}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Strength of Principle Investigator</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{strength}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Department Support  </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{support}}</td>     
+    </tr>
+        <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Financial Support </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{financial}}</td>     
+    </tr>
+        <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Comment</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{comment}}</td>     
+    </tr>
+    {{#attachment}}
+        <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Proposal Files</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{attachment}}" download>Download Proposal files</a></td>     
+        </tr>
+    {{/attachment}}
+    {{^attachment}}
+        <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Proposal Files</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+        </tr>
+    {{/attachment}}
+              
+    </tbody>
+</table>
+</div>
+
+

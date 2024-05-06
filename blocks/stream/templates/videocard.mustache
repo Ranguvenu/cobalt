@@ -1,0 +1,25 @@
+<div class="w-100 pull-left">
+    <div class="card-body">
+    	{{# delete_enable}}
+    		<span class="pull-right deleteuploadedvideo" data-id={{id}}>
+    			<i class="fa fa-trash" aria-hidden="true"></i>
+    		</span>
+    	{{/ delete_enable}}
+            <div class="card main_card">
+                <img class="card-img-top renderervideo" src="{{thumbnail}}" alt="{{title}}" data-id="{{videoid}}" data-streamurl="{{path}}" data-title="{{title}}" class="w-100" height="150px">
+                <div class="card-block">
+                    <h6 class="card-title">{{{title}}}</h6>
+                    
+                    <div class="card-text">
+                        <p class="te_mt upload">Upload By <span class="upload_by_clr"> {{usercreated}} on {{timecreated}} </span></p>
+                    </div>
+                </div>
+            </div>
+			<!-- <div class="card-title col-md-6"><b>{{{title}}}</b></div>
+			<div class="col-md-6" style="text-align: end">{{{status}}}</div> -->
+		
+    	<!-- <div><p>{{{tagsname}}}</p></div>
+    	<div><img src="{{thumbnail}}" alt="{{title}}" class="thumbnail_img" height="100px" width="100px"></div>
+		<div><p>Uploaded by <b>{{username}}</b> on {{timecreated}}</p></div> -->
+  	</div>
+</div>

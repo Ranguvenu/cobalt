@@ -1,0 +1,185 @@
+#page-blocks-stream-index .nav-tabs {
+    border: solid 1px #c4a9e7;
+    display: inline-flex;
+    border-radius:5px;
+    overflow: hidden;
+}
+#page-blocks-stream-index .nav-tabs .nav-link {
+    color: #a89b9b;
+    background-color: #fff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border:none;
+    margin-right: .0rem;
+    margin-bottom: .0rem;
+    padding: .7em 1.5em !important;
+}
+#page-blocks-stream-index .dataTables_wrapper .dataTables_paginate .paginate_button {
+    border-radius:5px !important;
+    padding: 1px 7px !important;
+}
+#page-blocks-stream-index .nav-tabs .nav-link.active {
+    border-bottom: none;
+    background-color: #0e4ca3;
+    color:#fff;
+}
+#page-blocks-stream-index .card.main_card h6 {
+    font-weight: 600;
+    padding: 10px 0px 0px 0px;
+}
+#page-blocks-stream-index h1 {
+    font-size: 18px;
+    font-weight: 500;
+}
+#page-blocks-stream-index .te_mt .upload {
+    color: #6598ca;
+}
+#page-blocks-stream-index .te_mt {
+    font-size:12px;
+    line-height: 0.6;
+    color: #baa3a3;
+}
+#page-blocks-stream-index .extended_menu_list {
+    list-style-type: none;
+}
+#page-blocks-stream-index .upload_btn {
+    font-size: 13px;
+    background-color: #0e4ca3;
+}
+#page-blocks-stream-index #uploaded_videos_data .card-body,
+#page-blocks-stream-index #get_stream_data .card-body {
+    flex: 1 1 auto;
+    padding: .5rem;
+}
+#page-blocks-stream-index #uploaded_videos_data_filter,
+#page-blocks-stream-index #get_stream_data_filter {
+    float: right;
+}
+#uploaded_videos_data, #get_stream_data {
+    width: 100% !important;
+}
+#uploaded_videos_data tr,
+#get_stream_data tr {
+    background: none;
+}
+#uploaded_videos_data tbody td,
+#get_stream_data tbody td {
+    width: 20%;
+    border-top: none;
+    float: left;
+    background: none;
+}
+#uploaded_videos_data tbody td.dataTables_empty, 
+#get_stream_data tbody td.dataTables_empty {
+    width: 100%;
+    text-align: center;
+    border: 1px solid #0e4ca3;
+    border-radius: 6px;
+}
+#page-blocks-stream-index [type="search"],[type="search"]:focus {
+    outline-offset: -2px;
+    padding: 5px 5px 5px 10px;
+    overflow: hidden;
+    -webkit-box-shadow: none;
+    outline: none;
+    box-shadow: 0px 0px 1px 1px #ccc;
+    border: none;
+    border-radius: 20px;
+}
+
+/* responsive starts */
+#page-blocks-stream-index #page{
+    background-color: #f6f7fa;
+}
+#page-blocks-stream-index #region-main {
+    background-color: #f6f7fa;
+}
+#page-blocks-stream-index #uploaded_videos_data tr:nth-child(odd) td, tr:nth-child(odd) td {
+    background: transparent !important;
+}
+#page-blocks-stream-index #get_stream_data tr:nth-child(odd) td {
+    background: #f6f7fa!important;
+}
+#page-blocks-stream-index #uploaded_videos_data .card, #get_stream_data .card{
+    background-color: #f6f7fa;
+}
+#page-blocks-stream-index #uploaded_videos_data .main_card .card-title, #get_stream_data .main_card .card-title{
+    font-size: 16px;
+    color: #000;
+    padding: 15px 0px 0px 0px;
+}
+#page-blocks-stream-index #get_stream_data .main_card .card-block {
+    min-height: 100px;
+}
+#page-blocks-stream-index #uploaded_videos_data .main_card .card-block, #get_stream_data .main_card .card-block{
+    padding: 0px 0px 0px 3px;
+}
+
+#page-blocks-stream-index #uploaded_videos_data .main_card .te_mt, #get_stream_data .main_card .te_mt{
+    font-size: 13px;
+    color: #a09cab;
+    padding: 8px 0px 0px 0px;
+    font-weight: 500;
+}
+.upload_by_clr{
+    color: #4b79ba;
+}
+#page-blocks-stream-index #uploaded_videos_data_wrapper #uploaded_videos_data_filter, #get_stream_data_wrapper #get_stream_data_filter{
+    position: absolute;
+    top: -34px;
+    right: 33px;
+}
+#page-blocks-stream-index #uploaded_videos_data_wrapper #uploaded_videos_data_filter [type="search"], [type="search"]:focus, #get_stream_data_wrapper #get_stream_data_filter [type="search"], [type="search"]:focus {
+    margin-left: 5px;
+    box-shadow: 1px 3px 3px #dbdcdfed;
+}
+#page-blocks-stream-index .dataTables_wrapper .dataTables_paginate .paginate_button:active {
+    background-color: #f6f7fa;
+    color: #535561;
+}
+@media only screen and (max-width: 767px) {
+    #uploaded_videos_data tbody td,
+    #get_stream_data tbody td {
+        width: 100%;
+    }
+    #page-blocks-stream-index #uploaded_videos_data .main_card .te_mt, #get_stream_data .main_card .te_mt {
+        padding: 0px 0 0 0;
+        line-height: 1.6;
+    }
+    #page-blocks-stream-index #uploaded_videos_data_wrapper #uploaded_videos_data_filter, #get_stream_data_wrapper #get_stream_data_filter{
+        position: static;
+    }
+
+    #page-blocks-stream-index .upload_btn {
+        margin-bottom: 15px;
+    }
+    #page-blocks-stream-index #region-main .nav-tabs .nav-item {
+        width: 100%;
+    }
+    #page-blocks-stream-index #region-main .nav-tabs {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
+    #uploaded_videos_data tbody td,
+    #get_stream_data tbody td {
+        width: 50%;
+    }
+}
+
+/* responsive ends */
+
+
+#page-blocks-stream-index .stream_video {
+    margin:0 auto;
+}
+
+.stream-list{
+    clear: both;
+}
+
+.stream-list .dashboard-card-deck .dashboard-card .dashboard-card-img {
+    height: 12rem;
+}

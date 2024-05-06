@@ -1,0 +1,47 @@
+<div class="row mb-4">
+    <div class="col-xl-87 col-lg-7">
+        <div class="w-100 content_wrap p-4">
+            <div class="p-3 d-flex justify-content-between align-items-center">
+                <h6 class="m-0 report_heading pull-left">{{#str}}studentparticipation, mod_stream{{/str}}</h6>
+                <div class="action-icons pull-right">
+                    <span class="dropdown nav-item">
+                        <a class="dropdown-toggle htitle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="icon fa fa-th-large fa-fw"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right dropdown-content">
+                              <li class="dropdown-item menu-action togglecontaier2" data-reporttype="graph" data-reportcontainer="container2">{{#str}}graph, mod_stream{{/str}}</li>
+                              <li class="dropdown-item menu-action togglecontaier2" data-reporttype="table" data-reportcontainer="container2"  
+                              data-toggle="modal" data-target=".highcharts-data-table">{{#str}}reporttable, mod_stream{{/str}}</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+            <div class="chart-pie pt-4 pb-2">
+                  <div id="container2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5 video_trends_top">
+        {{> mod_stream/videotrends }}
+        </div>
+      {{# sitelevel }}
+        <div class="w-100 content_wrap p-3">
+              <div class="p-3">
+                <h6 class="m-0 report_heading">{{#str}}coursestats, mod_stream{{/str}}</h6>
+              </div>
+              <div class="table-responsive px-3">
+                  <table class="generaltable" id="coursestats" data-function = "coursestats" data-id = {{courseid}} width="100%" cellspacin="0">
+                      <thead>
+                        <tr>
+                          <th>{{#str}}course, mod_stream{{/str}}</th>
+                          <th>{{#str}}totalvideos, mod_stream{{/str}}</th>
+                          <th>{{#str}}activevideos, mod_stream{{/str}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                  </table>
+              </div>
+        </div>
+        {{/ sitelevel}}
+    </div> 

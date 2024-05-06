@@ -1,0 +1,15 @@
+#page-blocks-proposals-funded #fitem_id_departmentname .form-control {
+    width: 100%;
+}
+#page-blocks-proposals-funded #fitem_id_departmentname .form-autocomplete-downarrow {
+    top: 0.7rem;
+}
+#page-block-proposals-view .actions_btns button:nth-child(2){
+    margin: 0px 1rem;
+}
+#page-blocks-proposals-funded #funded {
+    margin-top: 1rem;
+}
+#page-blocks-proposals-nonfunded section#region-main form {
+    margin-top: 1rem;
+}

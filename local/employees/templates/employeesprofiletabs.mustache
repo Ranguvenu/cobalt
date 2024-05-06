@@ -1,0 +1,229 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+    <div class="col-md-8">
+        <div class="tab-content d-flex align-items-center justify-content-center">
+               <!--  <div class="text-left welcome_content">
+                    <div class="welcome_nametext">{{ username }}</div>
+                </div> -->
+            <div class="tab-pane active" id="profile_tab" role="tabpanel">
+                {{> local_employees/employeesprofile }}
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+<!-- </div> -->
+    <!-- <div class="profile_blocks">
+        <div class="p-3">
+            <div class="row">
+               <div class="col-lg-4 mb-1">
+                    <div class="statistics_cards">
+                        <div class="enroll_count">{{ procount }}</div>
+                        <div class="statisticscard_text">{{# str }} completedcount, local_employees {{/ str }}</div>
+                        <div class="statistics_bar"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-1">
+                    <div class="statistics_cards">
+                        <div class="enroll_count">{{ allcoursecount }}</div>
+                        <div class="statisticscard_text">{{# str }} coursesenrolled, local_employees {{/ str }}</div>
+                        <div class="statistics_bar"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-1">
+                    <div class="statistics_cards">
+                        <div class="enroll_count">{{avgrating}}</div>
+                        <div class="statisticscard_text">{{# str }} rating, local_employees {{/ str }}</div>
+                        <div class="statistics_bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-3">
+            <div class="row">
+                <div class="col-lg-12 mb-1">
+                    <div class="boxfor_info">
+                        
+                        <button class="rolesuserpopup" href="javascript:void(0)" data-id={{id}} data-action="popupmodal{{id}}">
+                         {{ allcoursecount }} Courses</button>
+
+                        <div class="heading"><b>Content Statistics</b></div><br>
+                        <div class="p-0 col-lg-7 col-md-12 col-12 pull-left userdetails_left">
+                            <p class="mb-2 w-full pull-left">
+                                <span class="pull-left user_info_lable">{{# str}} files, local_employees{{/ str}}
+                                <span class="pull-right mr-2">:</span>
+                                </span>
+                                <span>
+                                    <b class="break_all">{{#filecount}}{{count}}{{/filecount}}</b>
+                                </span>
+                            </p>
+                            <p class="mb-2 w-full pull-left">
+                                <span class="pull-left user_info_lable">{{# str}}quizes, local_employees{{/ str}}
+                                <span class="pull-right mr-2">:</span>
+                                </span>
+                                <span>
+                                <b class="break_all">{{#quiz}}{{count}}{{/quiz}}</b>
+                                </span>
+                            </p>
+                        </div>
+                            <div class="p-0 col-lg-5 col-md-12 col-12 pull-left userdetails_right">
+                                <p class="mb-2 w-full pull-left">
+                                    <span class="pull-left user_info_lable">{{# str}} assignments, local_employees{{/ str}}
+                                        <span class="pull-right mr-2">:</span>
+                                    </span>
+                                    <span>
+                                        <b>{{#gradecount}}{{count}}{{/gradecount}}</b>
+                                    </span>
+                                </p>
+                                <p class="mb-2 w-full pull-left">
+                                    <span class="pull-left user_info_lable">{{# str}} questions, local_employees{{/ str}} 
+                                        <span class="pull-right mr-2">:</span>
+                                    </span>
+                                    <span>
+                                        <b>{{#questioncount}}{{count}}{{/questioncount}}</b>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div> -->
+
+           <!--  <div class="p-3">
+                <div class="course_table"><b>{{# str}}latest_courses, local_employees{{/ str}}</b></div>
+                    <table class="generaltable" >
+                        <thead>
+                            <tr>
+                                <th>{{# str}}courses, local_employees{{/ str}}</th>
+                                <th>{{# str}}student, local_users{{/ str}}</th>
+                                <th>{{# str}}attendance, local_employees{{/ str}}</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {{#coursename}}
+                            <tr>
+                                <td>{{ fullname }}</td>
+                                <td><button class="rolesstudentpopup" href="javascript:void(0)" data-id={{cid}} data-action="popupmodal{{id}}">{{ count }}</button></td>
+                                <td>{{percentage}}%</td>          
+                            </tr>
+                        {{/coursename}}
+                        </tbody> -->
+                    <!-- <div class="course_table_down"><b>{{# str}}latest_courses, local_employees{{/ str}}</b></div> -->
+                    <!-- </table> -->
+                    <!-- {{^coursename}}
+                <h6 style="text-align: center;">{{# str}}no_coursesfound, local_employees{{/ str}}</h6>
+                {{/coursename}}
+            </div> -->
+
+       <!--  <div class="p-3">
+            <div class="program_table"><b>{{# str}}programs_involved, local_employees{{/ str}}</b></div>
+            <table class="generaltable">
+                <thead>
+                    <tr>
+                        <th>{{# str}}programs, local_employees{{/ str}}</th>
+                        <th>{{# str}}duration, local_employees{{/ str}}</th>
+                        <th>{{# str}}batchname, local_employees{{/ str}}</th>
+                        <th>{{# str}}courses, local_employees{{/ str}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#coursedetails}}
+                    <tr>
+                        <td>{{ programname }}</td>
+                        <td>{{duration}}</td>
+                        <td>{{batchname}}</td>          
+                        <td><button class="rolescoursepopup" href="javascript:void(0)" data-id={{programid}} data-count={{count}} data-action="popupmodal">{{ coursecount }}</button></td>
+                    </tr>
+                {{/coursedetails}}
+                </tbody>
+            </table>
+                {{^coursedetails}}
+                <h6 style="text-align: center;">{{# str}}no_programsfound, local_employees{{/ str}}</h6>
+                {{/coursedetails}}
+        </div>
+    </div>
+</div> -->
+
+{{#js}}
+require(['core/ajax', 'core/templates', 'jquery'], function(Ajax, Templates, $){
+    $(".profiledatadisplay").click(function(){
+        if ($(this).find('a').hasClass('active')){
+            return true;
+        }
+        $(".tab-content").css('display','none');
+        $("#display_modulesdata").css('display','block');
+        $(".skillprfltabs_container").css('display','none');
+        var moduletype = $(this).data('status');
+
+        var servicename = 'local_employees_profile_moduledata';
+
+        var targetid = $(this).data('action');
+        var userid = $(this).attr('id');
+        var options = {targetID: 'display_modulesdata',
+                    templateName: "local_"+moduletype+"/employeesprofile",
+                    methodName: servicename,
+                    perPage: 4,
+                    cardClass: 'col-md-6 col-12',
+                    viewType: 'card'};
+        var dataoptions = {moduletype: moduletype,userid:userid,contextid: 1};
+        var filterdata = {};
+        require(['local_costcenter/cardPaginate'], function(cardPaginate) {
+            cardPaginate.reload(options, dataoptions,filterdata);
+        });
+    });
+
+    $(".profiledisplay").click(function(){
+        $(".tab-content").css('display','block');
+        $("#display_modulesdata").css('display','none');
+        $(".skillprfltabs_container").css('display','none');
+    });
+    $(".profileskilldatadisplay").click(function(){
+        if ($(this).find('a').hasClass('active')){
+            return true;
+        }
+        $(".tab-content").css('display','none');
+        $("#display_modulesdata").css('display','none');
+        $(".skillprfltabs_container").css('display','block');
+        var moduletype = $(this).data('status');
+        var targetid = $(this).data('action');
+        var userid = $(this).attr('id');
+        var options = {targetID: 'display_modulesdata',
+                    templateName: "local_employees/employeesprofile",
+                    methodName: "local_employees_skillprofile"
+                    };
+        var dataoptions = {moduletype: moduletype,userid:userid,contextid: 1};
+        var filterdata = {};
+        var params = {};
+        params.userid = userid;
+
+        var promise = Ajax.call([{
+            methodname: "local_employees_skillprofile",
+            args: params
+        }]);
+        promise[0].done(function(resp){
+            Templates.render('local_employees/skillprofiletabs', resp).then(function(html,js) {
+                var container = $('.skillprfltabs_container');
+                var container_html = $('.skillprfltabs_container').html();
+                Templates.replaceNodeContents(container, html, js);
+            });
+        });
+
+    });
+});
+{{/js}}

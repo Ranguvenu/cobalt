@@ -1,0 +1,222 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+    {{#response}}
+            {{#viewtypeCard}}
+            <div class="customcount d-flex align-items-center justify-content-end">
+                <ul class="dashboard_count_list">
+                    <li class="d-inline-block dashbaord_count_item total">
+                        <span class="">
+                            <span class="dashboard_count_string">{{# str}}total, local_employees{{/ str}}: </span>
+                            <span class="dashboard_count_value">{{{totalcount}}}</span>
+                        </span>
+                    </li>
+                    <li class="d-inline-block dashbaord_count_item active">
+                        <span class="">
+                            <span class="dashboard_count_string">{{# str}}active, local_employees{{/ str}}: </span>
+                            <span class="dashboard_count_value">{{{activeusercount}}}</span>
+                        </span>
+                    </li>
+                    <li class="d-inline-block dashbaord_count_item inactive">
+                        <span class="">
+                            <span class="dashboard_count_string">{{# str}}inactive, local_employees{{/ str}}: </span>
+                            <span class="dashboard_count_value">{{{inactiveusercount}}}</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                {{#records}}
+                        <div class="{{cardClass}} ">
+                            <div class="userscontainer mb-3 {{# visible}} invisible_user {{/ visible}}">
+                                <div class="topcontainer">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        {{# visible}}
+                                            <button class="btn btn_inactive_user"><span></span>{{# str}} inactive, local_employees{{/ str}}</button>
+                                        {{/ visible}}
+                                        {{^ visible}}
+                                            <button class="btn btn_active_user"><span></span>{{# str}} active, local_employees{{/ str}}</button>
+                                        {{/ visible}}
+                                        <div class="pull-right text-right actionicons showoptions{{userid}}">
+                                            <span  class="pull-right showoptions" data-action="showoptions{{userid}}" onmouseenter="(function(e){ require('theme_bloom/quickactions').quickactionsCall({ selector:'showoptions{{userid}}' }) })(event)" onmouseleave="(function(e){require('theme_bloom/quickactions').quickactionsCall({ selector:'showoptions{{userid}}' }) })(event)"><i class="fa fa-ellipsis-h options"></i>
+                                            </span>
+                                            <ul class="col-md-12 col-sm-12 col-12 p-0 options_container" id = "showoptions{{userid}}">
+
+                                            {{^ delteacher }}
+                                            <li>
+                                                <a href="javascript:void(0)" title="{{#str}}trash, local_employees{{/str}}" onclick="(function(e){ require('local_employees/newemployees').trashConfirm({ action: 'trash_employees' ,id:{{userid}},context:1, fullname:'{{fullname}}'}) })(event)">
+                                                    <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            {{/ delteacher }}
+
+                                            {{# delteacher }}
+                                            <li>
+                                                <a href="javascript:void(0)" title="{{#str}}trash, local_employees{{/str}}" onclick="(function(e){ require('local_employees/newemployees').deleteteacherConfirm({ action: 'trash_employees' ,id:{{userid}},context:1, fullname:'{{fullname}}'}) })(event)">
+                                                    <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            {{/ delteacher }}
+
+                                            {{# editcap }}
+                                            <li>
+                                                <a href="javascript:void(0)" title="{{#str}}edit{{/str}}" data-action="createusersmodal" class="createusersmodal" data-value="{{userid}}" onclick="(function(e){ require('local_employees/newemployees').init({selector:'createusersmodal', context:1, id:{{userid}}, form_status:0}) })(event)" style="cursor:pointer" title="Edit">
+                                                    <i class="fa fa-pencil fa-fw"></i>
+                                                </a>
+                                            </li>
+                                            {{/ editcap }}
+                                            {{# visible}}
+                                            <li>
+                                                <a href="javascript:void(0)" title="{{# str}}makeactive,local_employees{{/ str}}" onclick="(function(e){ require('local_employees/newemployees').employeesSuspend({ id:{{userid}},context:1, fullname:'{{fullname}}', status: 'disable' }) })(event)">
+                                                    <i class="fa fa-eye-slash"></i></a>
+                                            </li>
+                                            {{/ visible}}
+
+                                            {{^ visible}}
+                                            {{^ delteacher}}
+                                            <li>
+                                                <a href="javascript:void(0)" title="{{# str}} makeinactive,local_employees{{/ str}}" onclick="(function(e){ require('local_employees/newemployees').employeesSuspend({ id:{{userid}},context:1, fullname:'{{fullname}}', status: 'enable'}) })(event)">
+                                                    <i class="fa fa-eye"></i></a>
+                                            </li>
+                                            {{/ delteacher}}
+                                            {{# delteacher}}
+                                             <li>
+                                                <a href="javascript:void(0)" title="{{# str}} makeinactive,local_employees{{/ str}}" onclick="(function(e){ require('local_employees/newemployees').teachernothide({ id:{{userid}},context:1, fullname:'{{fullname}}', status: 'enable'}) })(event)">
+                                                    <i class="fa fa-eye"></i></a>
+                                            </li>
+                                            {{/ delteacher}}
+                                            <!-- teachernothide -->
+                                            <!-- <li> -->
+                                                <!-- <a href="javascript:void(0)" title="{{# str}} makeinactive,local_employees{{/ str}}" onclick="(function(e){ require('local_employees/newemployees').employeesSuspend({ id:{{userid}},context:1, fullname:'{{fullname}}', status: 'enable'}) })(event)">
+                                                    <i class="fa fa-eye"></i></a> -->
+                                            <!-- </li> -->
+                                            {{/ visible}}
+                                        </ul>
+                                        </div>
+                                    </div>
+
+
+                                    
+
+                                    <div class="d-flex justify-content-center w-100 user_image">
+                                        <div class="userpic defaultuserpic" style="background-image: url({{userpic}});">
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <div class="userdetails" title="{{fullname}}"><b>{{{ username }}}</b></div>
+                                        <div class="userdetails" title="{{fullemail}}">{{ email }}</div>
+                                        <!-- <div class="userdetails">{{ open_type }}</div> -->
+
+                                        <!--  <div class="p-0 col-lg-7 col-md-12 col-12 pull-left userdetails_left">
+                                        <p class="mb-2 w-full pull-left">
+                                        <span class="pull-left user_info_lable">{{# str}} name{{/ str}}
+                                        <span class="pull-right mr-2">:</span>
+                                        </span>
+                                        <span>
+                                        <b class="break_all">{{{ username }}}</b>
+                                        </span>
+                                         </p>
+                                        <p class="mb-2 w-full pull-left">
+                                        <span class="pull-left user_info_lable">{{# str}}email, local_employees{{/ str}}
+                                        <span class="pull-right mr-2">:</span>
+                                        </span>
+                                        <span>
+                                            <b class="break_all">{{ email }}</b>
+                                        </span>
+                                        </p>
+                                        </div> -->
+                                        <!-- <div class="p-0 col-lg-5 col-md-12 col-12 pull-left userdetails_right">
+                                         <p class="mb-2 w-full pull-left">
+                                        <span class="pull-left user_info_lable">{{# str}} organization, local_employees{{/ str}}
+                                        <span class="pull-right mr-2">:</span>
+                                        </span>
+                                        <span title="{{org}}">
+                                            <b>{{ orgstring }}</b>
+                                        </span>
+                                        </p>
+                                        <p class="mb-2 w-full pull-left">
+                                            <span class="pull-left user_info_lable">{{# str}} designation, local_users{{/ str}} 
+                                            <span class="pull-right mr-2">:</span>
+                                            </span>
+                                            <span title="{{ designation }}">
+                                                <b>{{ open_type }}</b>
+                                            </span>
+                                        </p>
+                                        </div>
+ -->
+                                        <!-- <div class="p-0 col-lg-7 col-md-12 col-12 pull-left userdetails_right">
+                                         <p class="mb-2 w-full pull-left">
+                                            <span class="pull-left user_info_lable">{{# str}} courses, local_employees{{/ str}}
+                                            <span class="pull-right mr-2">:</span>
+                                            </span>
+                                            {{# coursecount }}
+                                            <a class="courseviewpopup" href="javascript:void(0)" data-id={{id}} data-action="popupmodal{{id}}"><b>{{ coursecount }}</b></a>
+                                                {{/ coursecount }}
+                                                 {{^ coursecount }}
+                                                <b>{{ coursecount }}</b>
+                                                {{/ coursecount }}
+                                            </p>
+                                        </div> -->
+                                         <!--  <div class="p-0 col-lg-5 col-md-12 col-12 pull-left userdetails_right">
+                                            <p class="mb-2 w-full pull-left">
+                                            <span class="pull-left user_info_lable">{{# str}} program, local_employees{{/ str}} 
+                                            <span class="pull-right mr-2">:</span>
+                                            </span>
+                                            {{# programcount}}
+                                            <a class="programpopup" href="javascript:void(0)" data-id={{id}} data-action="popupmodal{{id}}"><b>{{ programcount }}<b></a>
+                                            {{/ programcount }}
+                                            {{^ programcount}}
+                                            <b>{{ programcount }}<b>
+                                            {{/ programcount }}
+                                            </p>
+                                        </div> -->
+                                    </div>
+                                </div>
+                        <div class="row userinfo">
+                            <div class="col-4 org_name">
+                                <div class="label">{{# str}} organization, local_employees, {{firstlabelstring}}{{/ str}}</div>
+                                <div class="data" title="{{org}}">{{ orgstring }}</div>
+                            </div>
+                            <div class="col-4 course_count">
+                                <div class="label">{{# str}} courses, local_employees{{/ str}}</div>
+                                <div class="data"> 
+                                    {{# coursecount }}
+                                        <a class="courseviewpopup" href="javascript:void(0)" data-id={{id}} data-action="popupmodal{{id}}">{{ coursecount }}</a>
+                                    {{/ coursecount }}
+                                    {{^ coursecount }}
+                                        {{ coursecount }}
+                                    {{/ coursecount }}
+                                </div>
+                            </div>
+                            <div class="col-4 program_name">
+                                <div class="label">{{# str}} program, local_employees{{/ str}}</div>
+                                <div class="data">{{ programcount }}</div>                     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/records}}
+
+            {{^records}}
+                {{# nousers}}
+                    <div class="w-100 pull-left alert alert-info">{{# str}}nousers, local_employees{{/ str}}</div>
+                {{/ nousers}}
+            {{/records}}
+        </div>
+    {{/viewtypeCard}}
+{{/response}}

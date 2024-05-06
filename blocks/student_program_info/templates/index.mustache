@@ -1,0 +1,355 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_student_program_info/index
+    Example context (json):
+    {
+    }
+}}
+
+{{# rowdata}}
+<div class="divb student_info_block">
+    <div class="container-fluid">
+        <div class="rowdata">
+            <div class="row student_info">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-7 d-flex justify-content-between">
+                            <span class="user_info">{{#str}}programname, block_student_program_info{{/str}}</span> 
+                            <span class="mr-2">{{#str}}colon, block_student_program_info{{/str}}</span>
+                        </div>
+                        <div class="col-5">
+                            <span><b>{{programname}}</b></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-7 d-flex justify-content-between">
+                            <span class="user_info">{{#str}}curriculumname, block_student_program_info{{/str}}</span>
+                            <span class="mr-2">{{#str}}colon, block_student_program_info{{/str}}</span>
+                        </div>
+                        <div  class="col-5">
+                            <span><b>{{curriculumname}}</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row student_info">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-7 d-flex justify-content-between">
+                            <span class="user_info">{{#str}}programstartdate, block_student_program_info{{/str}}</span>
+                            <span class="mr-2">{{#str}}colon, block_student_program_info{{/str}}</span>
+                        </div>
+                        <div  class="col-5">
+                            <span><b>{{startdate}}</b></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-7 d-flex justify-content-between">
+                            <span class="user_info">{{#str}}programenddate, block_student_program_info{{/str}}</span>
+                            <span class="mr-2">{{#str}}colon, block_student_program_info{{/str}}</span>
+                        </div>
+                        <div  class="col-5">
+                            <span><b>{{enddate}}</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row student_info">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-7 d-flex justify-content-between">
+                            <span class="user_info">{{#str}}totalcourses, block_student_program_info{{/str}}</span>
+                            <span class="mr-2">{{#str}}colon, block_student_program_info{{/str}}</span>
+                        </div>
+                        <div  class="col-5">
+                            <span><b>{{totalcourses}}</b></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-7 d-flex justify-content-between">
+                            <span class="user_info">{{#str}}totalsemesters, block_student_program_info{{/str}}</span>
+                            <span class="mr-2">{{#str}}colon, block_student_program_info{{/str}}</span >
+                        </div>
+                        <div  class="col-5">
+                            <span><b>{{totalsemesters}}</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row student_info">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-7 d-flex justify-content-between">
+                            <span class="user_info">{{#str}}corecourses, block_student_program_info{{/str}} </span>
+                            <span class="mr-2">{{#str}}colon, block_student_program_info{{/str}}</span>
+                        </div>
+                        <div  class="col-5">    
+                            <span><b>{{core}}</b></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-7 d-flex justify-content-between">
+                            <span class="user_info">{{#str}}electivecoursesnm, block_student_program_info{{/str}}</span>
+                            <span class="mr-2">{{#str}}colon, block_student_program_info{{/str}}</span>
+                        </div>
+                        <div  class="col-5"> 
+                            <span><b>{{elactive}}</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/ rowdata}}
+
+<!-- Active semester data -->
+<div class="bottom_tab_content mb-4">
+    <div class="current_semtab">
+        <div class="row mt-3">
+            <div class="col-12 py-3">
+                <span class="header">{{#str}}current_semesters, block_student_program_info{{/str}}
+                {{#str}}colon, block_student_program_info{{/str}}</span>
+                <span class="sem_name"><b>{{#semnamevalue1}} {{semnamevalue}} {{/semnamevalue1}}</b></span>
+                <span><b>{{^semnamevalue1}} {{#str}}na, block_student_program_info{{/str}} {{/semnamevalue1}}</b></span>
+            </div>
+            <div class="col-12">
+                <div class="row mt-3">
+                {{#leveldata}}
+                    <!-- <div class="progress" style ="margin-bottom:21px;">
+                        {{#sem}}
+                            <div class="progress-bar active bg-{{colours}}" role="progressbar" style="width: {{coursebarlength}}%" title = "{{fullname}}- {{per}}%" aria-valuemax="100">
+                                {{per}}%
+                            </div>
+                        {{/sem}}
+                    </div> -->
+                    {{#sem}}
+                    <div class="col-md-3 d-flex flex-column align-items-center mb-4">
+                        <!-- <div class="blankdiv"></div> -->
+                        <!-- <div class="cfullname">{{fullname}}</div> -->
+                        <div class="progress-bar static" id="{{identifier}}" title="{{fullname}}- {{per}}%">
+                            <div class="left"></div>
+                            <div class="right">
+                                <div class="back"></div>
+                            </div>
+                            <div class="barOverflow">
+                                <div class="bar"></div>
+                            </div>
+                            <div>
+                                <lable class="bar-percent text-dark">{{per}}</lable><lable class="text-dark"> %</lable>
+                            </div>
+                        </div>
+                        <div class="cfullname">{{fullname}}</div>
+                    </div>
+                        {{#js}}
+                            $({{identifier}}).each(function(){
+                                var bar = $(this).find(".bar");
+                                var val = $(this).find("lable");
+                                var percent = parseInt( val.text(), 10);
+                                var $right = $('.right');
+                                var $back = $('.back');
+                                $({p:0}).animate({p:percent}, {
+                                    duration: 3000,
+                                    step: function(p) {
+                                        bar.css({
+                                            transform: "rotate("+ (45+(p*1.8)) +"deg)",
+                                            borderBottomColor: "{{colours}}",
+                                            borderRightColor: "{{colours}}"
+                                        });
+                                    }
+                                }).delay( 200 );
+
+                                if (percent == 100) {
+                                    $back.delay( 2600 ).animate({'top': '18px'}, 200 );
+                                }
+
+                                if (percent == 0) {
+                                    $('.left').css('background', 'gray');
+                                }
+                            });
+                        {{/js}}
+                    {{/sem}}
+                {{/leveldata}}
+                {{#criteriadata}}
+                    {{#criteria}}
+                    <div class="col-md-3 d-flex flex-column align-items-center mb-4">
+                        <div class="progress-bar static" id="{{identifier}}" title="{{fullname}}- {{progress}}">
+                            <div class="left"></div>
+                            <div class="right">
+                                <div class="back"></div>
+                            </div>
+                            <div class="barOverflow">
+                                <div class="bar"></div>
+                            </div>
+                            <div>
+                                <lable class="bar-percent criteria">{{per}}</lable><span class="text-dark copmletion">{{progress}} </span>
+                            </div>
+                        </div>
+                        <div class="cfullname">{{fullname}}</div>
+                    </div>
+                        {{#js}}
+                            $({{identifier}}).each(function(){
+                                var bar = $(this).find(".bar");
+                                var val = $(this).find("lable");
+                                var percent = parseInt( val.text(), 10);
+                                var $right = $('.right');
+                                var $back = $('.back');
+                                $({p:0}).animate({p:percent}, {
+                                    duration: 3000,
+                                    step: function(p) {
+                                        bar.css({
+                                            transform: "rotate("+ (45+(p*1.8)) +"deg)",
+                                            borderBottomColor: "{{colours}}",
+                                            borderRightColor: "{{colours}}"
+                                        });
+                                    }
+                                }).delay( 200 );
+
+                                if (percent == 100) {
+                                    $back.delay( 2600 ).animate({'top': '18px'}, 200 );
+                                }
+
+                                if (percent == 0) {
+                                    $('.left').css('background', 'gray');
+                                }
+                            });
+                        {{/js}}
+                    {{/criteria}}
+                {{/criteriadata}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Inactive semesters data -->
+    <div class="inactive_semtab col-12 p-0 mt-2">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading card-header active" role="tab" id="headingOne">
+                    <h6 class="panel-title m-0">
+                        <a id="expand_tab" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                           {{#str}}semesters, block_student_program_info{{/str}}
+                        </a>
+                    </h6>
+                </div>
+                <div id="collapseOne" class="panel-collapse p-3 collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    {{#glass}}
+                    <div class = "row align-items-center px-3">
+                        <div class="col-md-3">
+                            <div><b>{{semname}}</b></div>
+                        </div>
+                        <div class="col-sm-9" >
+                            <div class="row">
+                            {{#semcourses}}
+                                <div class="col-4 d-flex flex-column align-items-center">
+                                    <div>
+                                        <div class="progress-bar static" id="{{inactive_identifier}}" title="{{fullname}}- {{per}}%">
+                                            <div class="left"></div>
+                                            <div class="right">
+                                                <div class="back"></div>
+                                            </div>
+                                            <div class="barOverflow">
+                                                <div class="bar"></div>
+                                            </div>
+                                            <div>
+                                                <lable class="bar-percent text-dark">{{per}}</lable><lable class="text-dark"> %</lable>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="align-content: center;">
+                                        <div class="cfullname">{{fullname}}</div>
+                                    </div>
+                                    {{#js}}
+                                        $({{inactive_identifier}}).each(function(){
+                                            var bar = $(this).find(".bar");
+                                            var val = $(this).find("lable");
+                                            var percent = parseInt( val.text(), 10);
+                                            var $right = $('.right');
+                                            var $back = $('.back');
+                                            $({p:0}).animate({p:percent}, {
+                                            duration: 3000,step: function(p){bar.css({
+                                                transform: "rotate("+ (45+(p*1.8)) +"deg)",
+                                                borderBottomColor: "{{colour}}",borderRightColor: "{{colour}}"});}}).delay( 200 );
+                                                if (percent == 100) {
+                                                    $back.delay( 2600 ).animate({'top': '18px'}, 200 );
+                                                }
+                                                if (percent == 0) {
+                                                    $('.left').css('background', 'gray');
+                                                }
+                                            });
+                                    {{/js}}
+                                </div>
+                            {{/semcourses}}
+                            {{#criteria}}
+                                <div class="col-4 d-flex flex-column align-items-center">
+                                    <div>
+                                        <div class="progress-bar static" id="{{inactive_identifier}}" title="{{fullname}}- {{per}}%">
+                                            <div class="left"></div>
+                                            <div class="right">
+                                                <div class="back"></div>
+                                            </div>
+                                            <div class="barOverflow">
+                                                <div class="bar"></div>
+                                            </div>
+                                            <div>
+                                                <lable class="bar-percent criteria">{{per}}</lable><span class="text-dark copmletion">{{progress}} </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="align-content: center;">
+                                        <div class="cfullname">{{fullname}}</div>
+                                    </div>
+                                    {{#js}}
+                                        $({{inactive_identifier}}).each(function(){
+                                            var bar = $(this).find(".bar");
+                                            var val = $(this).find("lable");
+                                            var percent = parseInt( val.text(), 10);
+                                            var $right = $('.right');
+                                            var $back = $('.back');
+                                            $({p:0}).animate({p:percent}, {
+                                            duration: 3000,step: function(p){bar.css({
+                                                transform: "rotate("+ (45+(p*1.8)) +"deg)",
+                                                borderBottomColor: "{{colour}}",borderRightColor: "{{colour}}"});}}).delay( 200 );
+                                                if (percent == 100) {
+                                                    $back.delay( 2600 ).animate({'top': '18px'}, 200 );
+                                                }
+                                                if (percent == 0) {
+                                                    $('.left').css('background', 'gray');
+                                                }
+                                            });
+                                    {{/js}}
+                                </div>
+                            {{/criteria}}
+                            </div>
+                        </div>
+                    </div>
+                    {{/glass}}
+                    <div id="inactive_sem_id">
+                        {{^glass}}
+                            {{#str}}note, block_student_program_info{{/str}} {{#str}}notyetactivesemesters, block_student_program_info{{/str}}
+                        {{/glass}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,64 @@
+/* Hide the first dropdown-divider if no filter option element is listed before it.
+   This can happen for some subset configurations of the block_myoverview course filter. */
+.block_myoverview button#groupingdropdown + .dropdown-menu li:first-of-type.dropdown-divider:first-of-type {
+    display: none;
+}
+#page-my-index .drawers .block_myoverview > .card-body {
+    padding: 1rem!important;
+}
+#page-my-index .block-myoverview.block-cards .dashboard-card-deck .dashboard-card{
+    /*background-image: linear-gradient(to bottom right, #ffbdbd, #f24242);*/
+    background: transparent;
+    box-shadow: 0px 0px 2px #8f959e;
+    /*border: 1px solid #ebb9a1;*/
+    padding: 7px;
+}
+#page-my-index .block_myoverview.card{
+    background-color: transparent;
+}
+@media (min-width: 840px){
+    .block_myoverview  .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+        width: calc(25% - 0.5rem)!important;
+    }
+}
+.block_myoverview .block-cards .card .coursemenubtn {
+    height: 28px!important;
+}
+.block_myoverview .course_progress{
+    width: 100%;
+    padding: 0 1.5rem 1rem 1rem ;
+}
+.block_myoverview .course_progress .progress {
+    background-color: #e1ccc3;
+}
+.block_myoverview .course_progress .progress-bar {
+    background-color: #231f20;
+}
+.block_myoverview .course_progress .play_icon {
+    background-color: #231f20;
+    color: #fff;
+    padding: 13px 18px 11px 22px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.block_myoverview .course_progress .play_icon .fa-play{
+    font-size: 18px;
+}
+.block_myoverview .dashboard-card .d-flex.align-items-start .card-footer {
+    display: none!important;
+}
+
+.block-myoverview.block-cards .card.dashboard-card span.multiline {
+       font-weight: bold;
+       font-size: 14px;
+}
+
+.block-myoverview.block-cards .card.dashboard-card span.categoryname {
+    color: #231f20!important;
+    font-size: 12px;
+}
+.block .card-body .card-title{
+    font-size: 18px!important;
+}

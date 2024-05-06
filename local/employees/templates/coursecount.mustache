@@ -1,0 +1,44 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+
+
+   Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+
+
+   Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+
+
+   You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+<div>
+   <table class="generaltable" id="popup_course">
+            <thead>
+                <th>{{#str}}courses, local_users{{/str}}</th>
+                <th>{{#str}}student, local_users{{/str}}</th>
+                <th>{{#str}}attendance, local_employees{{/str}}</th>
+
+            </thead>
+        <tbody>
+            {{#coursename}}
+            <tr>
+                <td>{{fullname}}</td>
+                <td>
+                    <button class="rolesstudentpopup" href="javascript:void(0)" data-id={{id}} data-action="popupmodal{{id}}">
+                {{count}}</button></td>
+                <td>{{aa}}%</td>
+            </tr>
+            {{/coursename}}
+        </tbody>
+    </table>
+</div>

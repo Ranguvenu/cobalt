@@ -1,0 +1,216 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+    {{#response}}
+            {{#viewtypeCard}}
+            <div class="customcount d-flex align-items-center justify-content-end">
+                <ul class="dashboard_count_list">
+                    <li class="d-inline-block dashbaord_count_item total">
+                        <span class="">
+                            <span class="dashboard_count_string">{{# str}}total, local_users{{/ str}}: </span>
+                            <span class="dashboard_count_value">{{{totalcount}}}</span>
+                        </span>
+                    </li>
+                    <li class="d-inline-block dashbaord_count_item active">
+                        <span class="">
+                            <span class="dashboard_count_string">{{# str}}active, local_users{{/ str}}: </span>
+                            <span class="dashboard_count_value">{{{activeusercount}}}</span>
+                        </span>
+                    </li>
+                    <li class="d-inline-block dashbaord_count_item inactive">
+                        <span class="">
+                            <span class="dashboard_count_string">{{# str}}inactive, local_users{{/ str}}: </span>
+                            <span class="dashboard_count_value">{{{inactiveusercount}}}</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row w-100">
+                {{#records}}
+                        <div class="{{cardClass}}">
+                            <div class="userscontainer {{# visible}} invisible_user {{/ visible}} mb-3">
+                            <div class="topcontainer">
+                            <div class="d-flex align-items-center justify-content-between">
+                                {{# visible}}
+                                <button class="btn btn_inactive_user"><span></span>{{# str}} inactive, local_users{{/ str}}</button>
+                                {{/ visible}}
+                                {{^ visible}}
+                                    <button class="btn btn_active_user"><span></span>{{# str}} active, local_users{{/ str}}</button>
+                                {{/ visible}}
+                            <div class="text-right actionicons showoptions{{userid}}">
+                                <span  class="showoptions" data-action="showoptions{{userid}}" onmouseenter="(function(e){ require('theme_bloom/quickactions').quickactionsCall({ selector:'showoptions{{userid}}' }) })(event)" onmouseleave="(function(e){require('theme_bloom/quickactions').quickactionsCall({ selector:'showoptions{{userid}}' }) })(event)"><i class="fa fa-ellipsis-h options"></i>
+                                </span>
+                                <ul class="col-md-12 col-sm-12 col-12 p-0 options_container" id = "showoptions{{userid}}">
+                                    {{^ deluser }}
+                                    {{^ batchuser }}
+                                    <li>
+                                        <a href="javascript:void(0)" title="{{#str}}delete, local_users{{/str}}" onclick="(function(e){ require('local_users/newuser').deleteConfirm({ action: 'delete_user' ,id:{{userid}},context:1, fullname:'{{fullname}}'}) })(event)">
+                                            <i class="fa fa-trash fa-fw" aria-hidden="true" aria-label="Delete"></i>
+                                        </a>
+                                    </li>
+                                    {{/ batchuser }}
+                                    {{/ deluser }}
+                                    
+                                    {{# deluser }}
+                                    <li>
+                                        <a href="javascript:void(0)" title="{{#str}}delete, local_users{{/str}}" onclick="(function(e){ require('local_users/newuser').notdeleteConfirm({ action: 'delete_user' ,id:{{userid}},context:1, fullname:'{{fullname}}', programstring:'{{programstring}}',  batchinfo:'{{batchinfo}}'}) })(event)">
+                                            <i class="fa fa-trash fa-fw" aria-hidden="true" aria-label="Delete"></i>
+                                        </a>
+                                    </li>
+                                    {{/ deluser }}
+
+                                    {{# batchuser }}
+                                    {{^ deluser }}
+                                    <li>
+                                        <a href="javascript:void(0)" title="{{#str}}delete, local_users{{/str}}" onclick="(function(e){ require('local_users/newuser').batchdeleteConfirm({ action: 'delete_user' ,id:{{userid}},context:1, fullname:'{{fullname}}', batchinfo:'{{batchinfo}}'}) })(event)">
+                                            <i class="fa fa-trash fa-fw" aria-hidden="true" aria-label="Delete"></i>
+                                        </a>
+                                    </li>
+                                    {{/ deluser }}
+                                    {{/ batchuser }}
+
+                                    {{# editcap }}
+                                    <li>
+                                        <a href="javascript:void(0)" title="{{#str}}edit{{/str}}" data-action="createusermodal" class="createusermodal" data-value="{{userid}}" onclick="(function(e){ require('local_users/newuser').init({selector:'createusermodal', context:1, id:{{userid}}, form_status:0}) })(event)" style="cursor:pointer" title="Edit">
+                                            <i class="fa fa-pencil fa-fw"></i>
+                                        </a>
+                                    </li>
+                                    {{/ editcap }}
+                                    {{# visible}}
+                                         {{^ deluser }}
+                                         {{^ batchuser }}
+                                        <li>
+                                            <a href="javascript:void(0)" title="{{# str}}makeactive,local_users{{/ str}}" onclick="(function(e){ require('local_users/newuser').userSuspend({ id:{{userid}},context:1, fullname:'{{fullname}}', status: 'disable' }) })(event)">
+                                                <i class="fa fa-eye-slash"></i></a>
+                                        </li>
+                                            {{/ batchuser }}
+                                            {{/ deluser }}
+                                        {{/ visible}}
+                                            
+                                        {{^ visible}}
+                                        {{^ deluser }}
+                                         {{^ batchuser }}
+                                        <li>
+                                            <a href="javascript:void(0)" title="{{# str}} makeinactive,local_users{{/ str}}" onclick="(function(e){ require('local_users/newuser').userSuspend({ id:{{userid}},context:1, fullname:'{{fullname}}', status: 'enable'}) })(event)">
+                                                <i class="fa fa-eye"></i></a>
+                                        </li>
+                                         {{/ batchuser }}
+                                            {{/ deluser }}
+                                        {{/ visible}}
+
+                                        {{^ visible}}
+                                        {{# deluser }}
+                                    <li>
+                                        <a href="javascript:void(0)" title="{{#str}}delete, local_users{{/str}}" onclick="(function(e){ require('local_users/newuser').notsuspendConfirm({ action: 'delete_user' ,id:{{userid}},context:1, fullname:'{{fullname}}', programstring:'{{programstring}}',  batchinfo:'{{batchinfo}}'}) })(event)">
+                                             <i class="fa fa-eye"></i></a>
+                                        </a>
+                                    </li>
+                                    {{/ deluser }}
+                                    {{/ visible}}
+                                </ul>
+                            </div>
+
+                             
+                            </div>
+                            <div class="d-flex justify-content-center w-100 p-0 user_image">
+                                <div class="userpic defaultuserpic" style="background-image: url({{userpic}});">
+                                    <!-- <img src="{{userpic}}" class="userpic defaultuserpic" width="70" height="70" alt="Picture of {{fullname}}" title="{{# str}} pictureof, local_users{{/ str}} {{fullname}}"> -->
+                                </div>
+                            </div>
+                           
+                        <div class="text-center mt-3">
+                            <div class="userdetails" title="{{fullname}}"><b>{{{ username }}}</b></div>
+                            <div class="userdetails" title="{{fullemail}}">{{ email }}</div>
+
+                           <!--  <div class="p-0 col-lg-7 col-md-12 col-12 pull-left userdetails_left">
+                                <p class="mb-2 w-full pull-left">
+                                    <span class="pull-left user_info_lable">{{# str}} name{{/ str}}
+                                        <span class="pull-right mr-2">:</span>
+                                    </span>
+                                    <span>
+                                        <b class="break_all">{{{ username }}}</b>
+                                    </span>
+                                </p>
+                                <p class="mb-2 w-full pull-left">
+                                    <span class="pull-left user_info_lable">{{# str}}email, local_users{{/ str}} 
+                                        <span class="pull-right mr-2">:</span>
+                                    </span>
+                                    <span>
+                                        <b class="break_all">{{ email }}</b>
+                                    </span>
+                                </p>
+                                <p class="mb-2 w-full pull-left">
+                                    <span class="pull-left user_info_lable">{{# str}} programs, local_users{{/ str}} 
+                                        <span class="pull-right mr-2">:</span>
+                                    </span>
+                    <span title="{{ dept }}">
+        <a  id = "userprogrampopup" href="javascript:void(0)" data-programid="{{programid}}"  data-action="popupmodal{{programid}}" data-userid="{{userid}}"  data-value={{role_count}}>
+                                        <b>{{{ programstring }}}</b>
+                </a>
+                    </span>
+                                </p>
+ 
+                            </div> -->
+                            <!-- <div class="p-0 col-lg-5 col-md-12 col-12 pull-left userdetails_right">
+                                <p class="mb-2 w-full pull-left">
+                                    <span class="pull-left user_info_lable userid_lable">{{# str}} batch, local_users{{/ str}}
+                                        <span class="pull-right mr-2"> :</span>
+                                    </span>
+                                    <span>
+                                        <b>{{ batchinfo }}</b>
+                                    </span>
+                                </p>
+                                <p class="mb-2 w-full pull-left">
+                                    <span class="pull-left user_info_lable">{{# str}} organization, local_users{{/ str}} 
+                                        <span class="pull-right mr-2">:</span>
+                                    </span>
+                                    <span title="{{org}}">
+                                        <b>{{ orgstring }}</b>
+                                    </span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+                        <div class="row userinfo">
+                            <div class="col-4 org_name">
+                                <div class="label">{{# str}} organization, local_employees, {{firstlabelstring}}{{/ str}}</div>
+                                <div class="data" title="{{org}}">{{ orgstring }}</div>
+                            </div>
+                            <div class="col-4 course_count">
+                                <div class="label">{{# str}} batch, local_users{{/ str}}</div>
+                                <div class="data" title="{{batchinfo}}">{{ batchinfo }}</div>
+                            </div>
+                            <div class="col-4 program_name">
+                                <div class="label">{{# str}} programs, local_users{{/ str}} </div>
+                                <div class="data" title="{{programstring}}">{{{ programstring }}}</div>                     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/records}}
+
+            {{^records}}
+                {{# nousers}}
+                    <div class="w-100 pull-left alert alert-info">{{# str}}nousers, local_users{{/ str}}</div>
+                {{/ nousers}}
+            {{/records}}
+        </div>
+    {{/viewtypeCard}}
+{{/response}}
+
+
+

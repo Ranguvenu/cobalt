@@ -1,0 +1,58 @@
+<span id="reportsHeader">
+    <div class="row" style="padding: 5px 0px;">
+        <div class="col-xl-4 col-md-4 col-sm-6 mb-6">
+            <div class="total_views report_card">
+                <div class="px-2 py-3">
+                    <div class="row no-gutters align-items-center">
+                        <div class="w-100 d-flex justify-content-between align-items-center">
+                            <div class="text-uppercase mb-1 report_card_text">{{#str}}totalviews, mod_stream{{/str}}</div>
+                            <div class="report_card_icon">
+                                {{# pix }} card_icons/views, mod_stream, {{#str}}totalviews, mod_stream{{/str}} {{/ pix }}
+                            </div>
+                        </div>
+                        <div class="report_card_graph w-100 d-flex justify-content-between align-items-center">
+                            <div id="totalviews"></div>
+                            <div class="pl-3 mr-1 report_card_count">{{totalviews}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-4 col-sm-6 mb-6">
+            <div class="liked_videos report_card">
+                <div class="px-2 py-3">
+                    <div class="row no-gutters align-items-center">
+                        <div class="w-100 d-flex justify-content-between align-items-center">
+                            <div class="text-uppercase mb-1 report_card_text">{{#str}}likesdislikes, mod_stream{{/str}}</div>
+                            <div class="report_card_icon">
+                                {{# pix }} card_icons/like, mod_stream, {{#str}}likesdislikes, mod_stream{{/str}} {{/ pix }}
+                            </div>
+                        </div>
+                        <div class="report_card_graph w-100 d-flex justify-content-between align-items-center">
+                            <div id="likesdislikes"></div>
+                            <div class="pl-3 mr-1 report_card_count">{{likesinfo}}/{{dislikesinfo}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-4 col-sm-6 mb-6">
+            <div class="ratings report_card">
+                <div class="px-2 py-3">
+                    <div class="row no-gutters align-items-center">
+                        <div class="w-100 d-flex justify-content-between align-items-center">
+                            <div class="text-uppercase mb-1 report_card_text">{{#str}}ratings, mod_stream{{/str}}</div>
+                            <div class="report_card_icon">
+                                {{# pix }} card_icons/rating, mod_stream, {{#str}}ratings, mod_stream{{/str}} {{/ pix }}
+                            </div>
+                        </div>
+                        <div class="report_card_graph w-100 d-flex justify-content-between align-items-center">
+                            <div id="ratings"></div>
+                            <div class="pl-3 mr-1 report_card_count">{{ratingsinfo}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</span>

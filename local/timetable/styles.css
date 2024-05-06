@@ -1,0 +1,1321 @@
+/*css for jquery dialog*/
+#page-local-timetable-timelayoutedit .ui-dialog .ui-dialog-titlebar-close{
+    right: 2px !important;
+    top: 19px !important;
+    width: 14px !important;
+    height: 14px !important;
+}
+.inputCommand {
+    width: 10px;
+}
+#emp label{
+    display:inline;
+    margin-top:10px;
+
+}
+
+ul.teamlist {
+    list-style: none;
+    margin: 0 0 0 50px;
+    padding: 0;
+    //margin-top: -10px !important;
+    /* -webkit-padding-start: 0; */
+}
+.teamlist li {
+    display: inline-block;
+    padding-right: 2px;
+
+}
+
+.teamlist a {
+    border: 1px solid rgba(173, 160, 160, 0.65);
+    padding: 2px;
+    border-radius: 9px;
+    font-size: 12px;
+    display: block;
+    width: 55px;
+    text-align: center;
+    -moz-box-shadow:    inset 0 0 5px #DADDBD;
+    -webkit-box-shadow: inset 0 0 5px #DADDBD;
+    box-shadow:         inset 0 0  5px #DADDBD;
+}
+
+.tmcell{
+
+    vertical-align:middle !important ; 
+}
+
+.tm_empname {
+    font-size: 15px;
+    font-weight: bold;
+}
+.tm_empdesg {
+    font-size: 11px;
+}
+
+div#tmuserdiv {
+    padding: 0 15px 0 0px;
+}
+/*div#tmusertextdiv {
+font-size: 12px;
+}*/
+
+#tm-info {
+    margin: 0 0 0 0px;
+    padding: 2px;
+    border: 1px dashed #CCC;
+    background: #FFF;
+    margin-bottom: 10px;
+    font-size:14px;
+    width:98%;
+}
+
+.mview { 
+    /*    margin: 0 0 0 0px;
+        padding: 10px;
+        border: 1px dashed #CCC;
+        background: #FFF;
+        margin-bottom: 10px;*/
+    float:left;
+    /*   min-width:50%;*/
+
+}
+
+#tm-info li {
+    list-style: none;
+    display: inline-block;
+    width: 30%;
+    font-size: 12px;
+    text-indent: 21px;
+    padding: 5px 0 5px 0px;
+}
+
+div#tmlastlogindiv {
+    font-size: 11px;
+    padding: 5 0 0 5px;
+}
+
+
+
+div#tmdescription {
+    font-size: 12px;
+    color: rgb(112, 105, 105);
+}
+
+#addmembersform table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+div#toggletmuserdiv {
+    padding-right: 5px;
+}
+
+
+.myteam_ul {
+    float: left;
+    width: 60%;
+    padding-bottom: 10px;
+}
+
+div.myteam_view {
+    /*width: 90%;*/
+    /*margin-left: 47px;*/
+    padding-top: 17px;
+}
+
+select#tmcostcenter {
+    // margin-top: 40px;
+}
+
+.tmdialog {
+    //background: rgb(233, 135, 135);
+    margin: 7px 0;
+    width: 95%;
+    margin: 7px auto;
+    //padding-top:5px;
+    //padding-bottom:5px;
+    //border-top: 2px solid rgb(233, 135, 135);
+    border-top:  9px solid rgb(110, 109, 114);
+    border-bottom: 9px solid rgb(110, 109, 114);
+    border-radius: 8px;
+}
+
+#timetable_clinfo {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#timetable_secondinner {
+    margin: 0 0 20 0px;
+    padding: 10px;
+    border: 1px dashed #CCC;
+    background: #FFF;
+    clear: both;
+    /* margin-bottom: 25px; */
+}
+
+#timetable_secondinner li{
+    display:inline-block;
+
+}
+
+a.timetable_scbutton {
+    display: block;
+    border: 1px solid;
+    padding: 0 9px 0 9px;
+    border-radius: 8px;
+}
+
+div#timetable_thirdinner {
+    float: right;
+    font-size: 11px;
+    font-style: italic;
+    padding-bottom: 7px;
+}
+ul#timetable_scformat {
+    font-size: 12px;
+    display: inline-flex;
+    /* padding-right: 8px; */
+    list-style: none;
+}
+
+ul#timetable_scformat li{
+    padding-right: 50px;
+
+}
+
+ul#timetable_secondinner li {
+    padding-right: 37px;
+}
+
+a#settiming_buttton {
+    float: right;
+    display: block;
+    border: 1px solid;
+    padding: 0 17px 0 17px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+ul#settiming_firstrow {
+    list-style: none;
+    font-size: 12px;
+    float: left;
+    margin-left: 5px;
+
+}
+.cl_curdrow li{    
+    list-style: none;
+    display: inline-flex;
+    font-size: 12px;
+
+}
+
+
+ul.cl_curdrow {
+    float: right;
+    margin-bottom: -6px;
+}
+
+ul#toggle_scview {
+    list-style: none;
+    font-size: 14px;
+}
+
+ul.togglesc_actionbutton {
+    list-style: none;
+    display: inline-flex;
+}
+
+/*table#schedule_toggleview tr td {
+    background-color: rgb(199, 204, 229) !important;
+
+}*/
+
+/*#schedule_toggleview th.header {
+    background-color: rgb(77, 90, 155) !important;
+}
+*/
+table.custom_toggleview {
+    border: 1px solid #AAAAAA;
+    margin: 8px auto;
+    width: 90%;
+}
+
+table.custom_toggleview thead {
+    background: #e8e8e8;
+    border-bottom: 1px solid #AAAAAA;
+}
+
+span#customevent {
+  font-weight: bolder;
+  /*color: rgb(223, 236, 235);*/
+  font-size: 12px;
+  padding-top: 11px;
+  padding-left: 20px;
+  cursor: pointer;
+  display: block;
+  /* margin-top: 31px; */
+}
+
+table#local_timetable_timelayout {
+    font-size: 12px !important;
+    text-align: center !important;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+table#local_timetable_timelayout td {
+    border: 1px solid;
+    padding: 0px;
+}
+
+table#local_timetable_timelayout th{
+    border: 1px solid;
+}
+
+.local_timetable_celldata{
+    list-style: none;
+    margin: 0 5px;
+ }
+.local_timetable_crudlink{
+    display: inline-flex;
+    list-style:none;
+    padding-left: 0;
+}
+
+ul#timelayoutview_firstrow {
+    list-style: none;
+    font-size: 12px;
+    float: left;
+    width: 100%;
+    padding-left: 0rem;
+}
+
+
+#timelayoutview-info {
+  margin: 5px 0 0 0;
+  padding: 2px;
+  border: 1px dashed #CCC;
+  background: #FFF;
+  margin-bottom: 10px;
+  font-size: 14px;
+  width: 100%;
+}
+
+#timelayoutview-info li {
+  list-style: none;
+  display: inline-block;
+  font-size: 14px;
+  text-indent: 10px;
+  padding: 3px 0 2px 0px;
+}
+
+ .ui-dialog .ui-state-error { padding: .3em; }
+ .validateTips { border: 1px solid transparent; padding: 0.3em; color:#cc0000; }
+ 
+ .local_timetable_crudlink {
+  display: inline-flex;
+  list-style: none;
+  /*float: right;*/
+}
+
+.local_timetable_celldata {
+  list-style: none;
+  margin: 0.5px;
+  padding:4px;
+}
+
+ul.local_timetable_layoutheading li:first-child {
+  font-size: 18px;
+  font-weight: bolder;
+  font-family: "Times New Roman", Times, serif;
+}
+ul.local_timetable_layoutheading {
+  text-align: center;
+  list-style: none;
+}
+
+ul.local_timetable_layoutheading li:nth-child(2) {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Times New Roman",Times,serif;
+}
+
+ul.local_timetable_layoutheading li:nth-child(3) {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Times New Roman",Times,serif;
+}
+
+
+table#local_timetable_timelayout{ box-sizing: border-box; border-bottom: 1px solid #e8e8e8; }
+
+
+table#local_timetable_timelayout tbody td:hover {
+    background-color: rgba(239, 202, 209, 0.3);
+  /*  color:#ffffff; */
+    text-shadow: 0px 0px #000000;
+  /*  box-shadow: 0px 0px 10px #ff0000;
+    -webkit-box-shadow: 0px 0px 10px #ff0000;
+    -moz-box-shadow: 0px 0px 10px #ff0000; */
+}
+.add_timetable{
+      float: right;
+  padding: 3px;
+    cursor: pointer;
+}
+hr {
+  margin: 12px 0;
+}
+
+hr#local_timetable_cellhr {
+  border: 1px solid;
+}
+
+.local_timetable_addbutton{
+    float:right;
+    cursor: pointer;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  background: url([[pix:t/delete]]) no-repeat 100% 0 !important;
+}
+
+#local_timetable_batchwisebu{
+    margin-bottom: 10px;
+    float:right;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  position: absolute;
+  right: 0.1em;
+  top: 25%;
+  width: 40px;
+  margin: -10px 0 0 0;
+  padding: 1px;
+  height: 38px;
+  border: none;
+}
+#timelayoutview-info li:first-child {
+  width: 30%;
+}
+
+#timelayoutview-info li:nth-child(2) {
+  width: 25%;
+}
+
+
+#timelayoutview-info li:nth-child(3) {
+  width: 25%;
+}
+
+
+
+table#local_timetable_timelayout td:first-child {
+  padding: 4px;
+  text-align: center !important;
+  font-weight: bolder;
+}
+
+
+label.local_timetable_dialog_label {
+    display: block;
+}
+
+/*table#local_timetable_timelayout th {
+font-size:75%;
+}*/
+
+
+.zoomin.local_timetable_celldata li {
+  line-height: 12px;
+  /* padding: 2px; */
+  font-size: 75%;
+}
+
+ul#settiming_firstrow li:first-child {
+  display: block;
+}
+
+ul#settiming_firstrow li {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+table#local_timetable_timelayout th {
+    background-color: #9f1c33;
+}
+
+table#local_timetable_timelayout th {
+      background-color: #9f1c33;
+    color: #fff;
+    border-color: #000;
+
+}
+
+table#local_timetable_timelayout td:first-child {
+      background-color: #9f1c33;
+    color: #fff;
+    border-color: #000;
+    vertical-align: middle;
+    width: 5% !important;
+}
+
+
+.local_timetable_celldata {
+    list-style: none;
+    margin: 0.5px;
+    padding: 2px;
+}
+
+@media (max-width: 979px) and (min-width: 768px){
+table#local_timetable_timelayout th {
+font-size:75%;
+}
+.local_timetable_celldata li{
+font-size:75%;
+}
+
+.local_timetable_studentcell li{
+font-size:75%;
+}
+
+
+ 
+}
+
+
+#timetable_customtext{
+    font-size: 16px;
+}
+#page-local-timetable-timelayoutedit .ui-dialog{
+    z-index: 9999 !important;
+}
+
+label.local_timetable_dialog_label {
+    width: 28%;
+    display: inline-block;
+}
+
+/*Customized CSS*/
+
+table#local_timetable_studentlayout th {
+    background-color: #9F1C33;
+    color: #fff;
+    border-color: #F5F5F5;
+    border: 1.5px solid;
+}
+table#local_timetable_studentlayout tr td * {
+    color: #9f1c33;
+}
+table#local_timetable_studentlayout td:first-child {
+width: 10% !important;
+text-align: left !important;
+font-weight: bold;
+ background-color: #9f1c33 !important;
+border-color: #fff;
+padding: 10px;
+
+}
+
+table#local_timetable_studentlayout {
+    color: #fff;
+    /*width: 100% !important;*/
+}
+/*table#local_timetable_studentlayout:nth-child(2) tr:nth-child(1) td
+{
+    background-color:#7BBDD7;
+     color: #fff !important;
+}
+
+table#local_timetable_studentlayout:nth-child(2) tr:nth-child(2) td{
+    background-color:#00A27C;
+}
+table#local_timetable_studentlayout:nth-child(2) tr:nth-child(3) td{ 
+    background-color:#36648B;
+}
+
+table#local_timetable_studentlayout:nth-child(2) tr:nth-child(4) td{
+    background-color:#5E94B3;
+}
+
+table#local_timetable_studentlayout:nth-child(2) tr:nth-child(5) td{
+    background-color:#82B441;
+}
+
+table#local_timetable_studentlayout:nth-child(2) tr:nth-child(6) td{
+    background-color:rgba(73, 119, 64, 0.91);;
+}*/
+.local_timetable_studentcell {
+    list-style: none;
+    margin: 0.5px;
+    padding: 2px;
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+     color:#fff !important;
+     font-size: 12px;
+}
+
+/*.local_timetable_celldata li{
+  color:#fff !important;
+  padding: 7px;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}*/
+
+.local_timetable_studentcell li span{
+  color:#9f1c33 !important;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+/*table#local_timetable_studentlayout:nth-child(2) tr:nth-child(1) td:hover{
+  background-color: #578A9E;
+  cursor: pointer;
+}
+table#local_timetable_studentlayout:nth-child(2) tr:nth-child(2) td:hover{
+  background-color: rgba(0, 162, 124, 0.72);
+  cursor: pointer;
+}
+table#local_timetable_studentlayout:nth-child(2) tr:nth-child(3) td:hover{
+  background-color: rgba(54, 100, 139, 0.67);
+  cursor: pointer;
+}
+table#local_timetable_studentlayout:nth-child(2) tr:nth-child(4) td:hover{
+      background-color: #598096;
+  cursor: pointer;
+}
+table#local_timetable_studentlayout:nth-child(2) tr:nth-child(5) td:hover{
+  background-color: rgb(115, 138, 86);
+  cursor: pointer;
+}*/
+
+table#local_timetable_studentlayout tr td{
+    border: 2px solid #F5F5F5;
+    border-style:inset;
+    width: 18% !important;
+    padding: 4px;
+    background-color: #e7e7e7;
+}
+
+ul.local_timetable_studentcell li:first-child {
+    padding-bottom: 11px;
+}
+
+/*table#local_timetable_studentlayout:nth-child(2) tr:nth-child(7) td {
+    background-color: #627DA7;
+}*/
+body#page-local-timetable-index button.ui-state-default {
+    background-image: none !important;
+}
+body#page-local-timetable-index button.ui-state-default .ui-button-text {
+    padding: 0px;
+}
+#page-local-timetable-timelayoutview .generaltable#timelayoutm_view tbody td.tmcell {
+    /*text-align: center;*/
+    width: 100%;
+}
+@media (max-width:428px) {
+    .filemanager.fm-noitems .fm-empty-container,
+    .openLMStransition.local_timetable .filepicker-filelist .filepicker-container {
+        bottom: 0
+    }
+    .openLMStransition.local_timetable .form_status .form_status_listitem_link:before {
+        content: none
+    }
+    .openLMStransition.local_timetable .form_status .form_status_listitem_link:after {
+        content: none
+    }
+    .openLMStransition.local_timetable .form_status .form_status_listitem .form_status_listitem_link {
+        margin: 0!important
+    }
+}
+@media (max-width:375px) {
+    #page-local-timetable-timelayoutedit .course_extended_menu_list {
+        left: 0
+    }
+    .openLMStransition.local_timetable .form_status .form_status_listitem .form_status_listitem_link {
+        font-size: 11px
+    }
+    body#page-local-timetable-timelayoutedit #manage_employees1 .userscontainer {
+        padding: 15px 10px
+    }
+}
+
+#page-local-timetable-timelayoutedit .local_timetable_celldata li {
+    text-align: left;
+}
+
+#page-local-timetable-timelayoutview #page-header h1.h2,
+#page-local-timetable-timelayoutedit #page-header h1.h2,
+#page-local-timetable-timelayout #page-header h1.h2,
+#page-local-timetable-individual_insert #page-header h1.h2,
+#page-local-timetable-individual_sesson_update #page-header h1.h2,
+#page-local-timetable-individual_session #page-header h1.h2,
+#page-local-timetable-session_type #page-header h1.h2,
+#page-local-timetable-timetavle_view #page-header h1.h2 {
+    border-left: 3px solid #ff3d19;
+    padding-left: 6px;
+}
+
+#page-local-timetable-timelayoutedit #id_sessiondate_calendar,
+#page-local-timetable-individual_session #id_start_date_calendar, #id_end_date_calendar {
+    display: none;
+}
+
+@media (max-width: 767px) {
+  #page-local-timetable-timelayoutview .course_extended_menu_list_add {
+    top: -41px;
+    position: none;
+    width: 100%;
+    left: -18px;
+  }
+}
+#page-local-timetable-timelayoutview .course_extended_menu_itemlink .createicon .user_icon{
+  background-image: url("[[pix:local_timetable|calendar1]]");
+  -webkit-background-size: cover;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  border: none;
+  background-color: transparent;
+}
+#page-local-timetable-timelayoutview .course_extended_menu_itemlink .createicon .user_icon:before,
+.course_extended_menu_itemlink .createiconchild:before {
+  content: "";
+}
+
+#page-local-timetable-timelayoutview #local_courses-filter_collapse,
+#page-local-timetable-individual_session #local_courses-filter_collapse {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 100% !important;
+}
+#page-local-timetable-timelayoutview #filters_form,
+#page-local-timetable-individual_session #filters_form {
+    margin-top: 0px;
+}
+#page-local-timetable-timelayoutview a#tmtblfltrbtn,
+#page-local-timetable-individual_session a#tmtblfltrbtn {
+    margin-top: -20px;
+}
+/*#page-local-timetable-individual_insert #id_cancel {
+    margin-top: -3.24rem;
+    margin-left: 24rem;
+}*/
+#page-local-timetable-individual_session #local_timetable_batchwisebu {
+    float: right;
+    margin-top: -2rem;
+    margin-bottom: 10px;
+}
+/*#page-local-timetable-individual_sesson_update #id_cancel {
+    margin-top: -3.24rem;
+    margin-left: 24rem;
+}*/
+#page-local-timetable-individual_insert #id_sessiondate_calendar,
+#page-local-timetable-individual_sesson_update #id_sessiondate_calendar {
+    display: none;
+}
+#page-local-timetable-individual_session #enable_check{
+    align-items: center;
+    width: 100%;
+    display: flex;
+}
+#page-local-timetable-individual_session select#id_start_date_year,
+#page-local-timetable-individual_session select#id_end_date_year{
+    margin-left: 2rem;
+}
+
+#page-local-timetable-individual_session select#id_start_date_month,
+#page-local-timetable-individual_session select#id_end_date_month {
+    margin-left: -0.5rem;
+}
+
+/*#page-local-timetable-individual_session p#id_end_date_label {
+    margin-left: 1.5rem;
+}
+*/
+#page-local-timetable-timelayoutview .createiconn .user_icon{
+    background-image: url("[[pix:local_timetable|sessiontype1]]");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    border: none;
+    mix-blend-mode: multiply;
+}
+
+#page-local-timetable-individual_session p#id_start_date_label,
+#page-local-timetable-individual_session p#id_end_date_label {
+    margin-top: 0.8rem;
+}
+
+#page-local-timetable-individual_session div.checkbox {
+    margin-right: 10rem;
+}
+#page-local-timetable-timelayoutview .createiconn .user_icon:before{
+    content: none;
+}
+#page-local-timetable-timelayoutview #timelayoutview-info .iconsmall{
+    font-size: 14px;
+    text-indent: 1px;
+    cursor: pointer;
+}
+
+#page-local-timetable-individual_session #enable_check>.fitem.form-group{
+    max-width: 45%;
+    flex: 0 0 45%;
+}
+@media (min-width: 425px) and (max-width: 1022px){
+    #page-local-timetable-individual_session #enable_check>.fitem.form-group{
+        max-width: 100%;
+    }
+    #page-local-timetable-individual_session #enable_check{
+        flex-direction: column;
+    }
+    #page-local-timetable-individual_session #local_timetable_batchwisebu{
+        margin-top: 2rem;
+    }
+    #page-local-timetable-individual_session #enable_check fieldset .form-group{
+        width: auto;
+    }
+    #page-local-timetable-individual_session #enable_check .form-inline fieldset .custom-select{
+        margin-left: 0;
+    }
+    #page-local-timetable-individual_session div.checkbox{
+        margin-right: 0;
+    }
+    
+}
+#page-local-timetable-session_type div#tm_sess_tp_wrapper {
+    margin-top: 2rem;
+}
+
+#page-local-timetable-sync-hrms_async div[role="main"] h2 {
+    font-size: 20px;
+    padding-left: 6px;
+    border-left: 3px solid red;
+}
+#page-local-timetable-session_type #page-content form {
+    margin-top: 3rem;
+}
+#page-local-timetable-timetavle_view .ec-button.ec-today:disabled  {
+    color: #cbc6c6;
+}
+
+
+/*timetable view page changes*/
+#page-local-timetable-timelayoutview #timelayoutview-info{
+    background-color: #eaf0fe;
+    margin: 0;
+    border: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+#page-local-timetable-timelayoutview #timelayoutview-info[aria-expanded="false"]{
+    background-color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+#page-local-timetable-timelayoutview #timelayoutm_view .panel{
+    border: 2px dotted #becdef;
+    border-radius: 6px;
+}
+#page-local-timetable-timelayoutview #timelayoutm_view .panel-body .level_view{
+    border-top: 1px solid #e1e1e1;
+}
+#page-local-timetable-timelayoutview #timelayoutm_view .program_name{
+    color: #00a9c3;
+    text-decoration: underline;
+    font-size: 12px !important;
+    font-weight: 400;
+}
+#page-local-timetable-timelayoutview #timelayoutm_view .org_name{
+    color: #575757;
+    font-weight: 500;
+}
+#page-local-timetable-timelayoutview #timelayoutm_view .level_view .icon_container i,
+#page-local-timetable-session_type #tm_sess_tp .action_icons i{
+    color: #fff;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+#page-local-timetable-timelayoutview #timelayoutm_view .icon_container .view_icon{
+    background-color: #009fba;
+}
+#page-local-timetable-timelayoutview #timelayoutm_view .icon_container .edit_icon,
+#page-local-timetable-session_type #tm_sess_tp .action_icons .edit_icon{
+    background-color: #6fba31;
+}
+#page-local-timetable-timelayoutview #timelayoutm_view .icon_container .delete_icon,
+#page-local-timetable-session_type #tm_sess_tp .action_icons .delete_icon{
+    background-color: #f34b3e;
+}
+#page-local-timetable-timelayoutview #timelayoutm_view .icon_container a:hover{
+    text-decoration: none;
+}
+#page-local-timetable-timelayoutview #timelayoutview-info .iconsmall{
+    font-size: 22px;
+}
+#page-local-timetable-timelayoutview #timelayoutview-info[aria-expanded="false"] .iconsmall{
+    color:#c5c5c5;
+}
+#page-local-timetable-timelayoutview #timelayoutview-info[aria-expanded="true"] .iconsmall{
+    color: #0048d3;
+}
+#page-local-timetable-timelayoutview #timelayoutview-info[aria-expanded="true"] .iconsmall:before{
+    content: none;
+}
+#page-local-timetable-timelayoutview #timelayoutview-info[aria-expanded="true"] .iconsmall:after{
+    content:'\f13a';
+}
+
+
+#page-local-timetable-timelayout .ftoggler .icons-collapse-expand{
+    background-color: #0048d3;
+    color: #fff;
+    border-color: #0048d3;
+}
+#page-local-timetable-timelayout .ftoggler .icons-collapse-expand.btn:focus{
+    box-shadow: none;
+}
+#page-local-timetable-timelayout #id_settingsheader .ftoggler h3{
+    font-size: 20px !important;
+}
+#page-local-timetable-timelayout #fitem_id_option_add_fields #id_option_add_fields{
+    background-color: #0048d3;
+    color: #fff;
+    border-color: #0048d3;
+    border-radius: 3px;
+}
+
+#page-local-timetable-timelayout #fgroup_id_buttonar #id_submitbutton{
+    background-color:#ff4611;
+    border-color: #ff4611;
+    margin-right: 10px;
+    padding: 5px 25px !important;
+    border-radius: 3px;
+}
+#page-local-timetable-timelayout #fgroup_id_buttonar{
+    margin-top: 2rem;
+}
+#page-local-timetable-timelayout #fgroup_id_buttonar #id_cancel{
+    background-color: #fff;
+    border-color: #ff4611;
+    color: #000;
+    border-radius: 3px;
+}
+#page-local-timetable-timelayoutview #timelayoutm_view .tmem_toggle .alert-info {
+    margin-top: 1rem !important;
+}
+#page-local-timetable-individual_session #sessions_manage_table.generaltable{
+    margin-top: 2rem;
+}
+#page-local-timetable-individual_session #sessions_manage_table.generaltable td{
+    color: #5d5d5d;
+}
+#page-local-timetable-individual_session #sessions_manage_table.generaltable th:not(:first-child, :last-child), 
+#page-local-timetable-individual_session #sessions_manage_table.generaltable td:not(:first-child, :last-child) {
+    text-align: left !important;
+}
+#page-local-timetable-individual_session #sessions_manage_table .helptooltip a .icon{
+    margin-right: 3px;
+}
+#page-local-timetable-timelayoutview .modal-dialog-scrollable .modal-footer{
+    border: none ;
+}
+#page-local-timetable-timelayoutview .modal-dialog-scrollable .modal-body{
+    text-align: center;
+}
+#page-local-timetable-timelayoutview .modal-dialog-scrollable .modal-header{
+    border-bottom: 1px solid #ddd !important;
+    padding: 0.5rem;
+    align-items: center;
+}
+#page-local-timetable-timelayoutview .modal-dialog-scrollable .modal-footer .btn{
+    border-radius: 3px;
+    font-weight: 400;
+}
+#page-local-timetable-individual_insert form.mform{
+    max-width: 75%;
+}
+#page-local-timetable-individual_insert .mform .form-control,
+#page-local-timetable-individual_insert .mform .form-inline .custom-select{
+    width: 100%;
+    border-radius: 2px !important;
+    box-shadow: none;
+    border-color: #00000026;
+}
+#page-local-timetable-individual_insert .mform .form-inline .d-md-inline-block{
+    width: 100%;
+}
+#page-local-timetable-individual_insert .form-autocomplete-selection [data-active-selection=true]{
+    background-color: #e1ecfe !important;
+    color: #000;
+    padding: 4px;
+    font-weight: 400;
+    border-radius: 3px;
+}
+#page-local-timetable-sync-hrms_async .mform{
+    max-width: 80%;
+}
+#page-local-timetable-sync-hrms_async .mform #fitem_id_userfile .fp-btn-choose{
+    margin-bottom: 1rem;
+    background-color: #0048d3;
+    border-color: #0048d3;
+}
+#page-local-timetable-sync-hrms_async .mform #fitem_id_userfile .fp-btn-choose:hover{
+    color: #fff;
+}
+#page-local-timetable-sync-hrms_async .mform #fgroup_id_buttonar fieldset .d-flex{
+    justify-content: end;
+}
+#page-local-timetable-sync-hrms_async .mform .filepicker-filelist{
+    border-radius: 0;
+    min-height: 200px;
+}
+#page-local-timetable-sync-hrms_async .mform #fgroup_id_buttonar #id_submitbutton{
+    background-color: #ff4611;
+    border-color: #ff4611;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+#page-local-timetable-sync-hrms_async .mform #fgroup_id_buttonar #id_cancel{
+    border-color: #ff4611;
+    background-color: #fff;
+    color: #000;
+    border-radius: 3px;
+}
+#page-local-timetable-sync-hrms_async .mform #fgroup_id_buttonar .btn{
+    padding: 5px 25px !important;
+
+}
+#page-local-timetable-sync-hrms_async div[role="main"] #download_users{
+    color: #000;
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    padding: 0 10px;
+    margin: 0px !important;
+}
+#page-local-timetable-sync-hrms_async div[role="main"] #download_users:focus {
+    color: #000 !important;
+    box-shadow: none;
+    outline: none;
+}
+#page-local-timetable-sync-hrms_async div[role="main"] .sample_btn {
+    border-right: 1px solid #6f6f6f !important;
+    border-left: 1px solid #6f6f6f !important;
+}
+
+/*#page-local-timetable-timelayoutview .form-autocomplete-selection [data-active-selection=true]{
+    background-color: #e2ecfe;
+    color: #000;
+    border-radius: 4px;
+    font-weight: 400;
+}*/
+#page-local-timetable-timelayoutview #filters_form #id_cancel{
+    background-color: transparent;
+    color: #ff3d19;
+}
+#page-local-timetable-timelayoutview #filters_form .form-inline .form-control{
+    box-shadow: none;
+}
+#page-local-timetable-timetavle_view .modal-dialog-scrollable .modal-header {
+    border-bottom: 1px solid #ddd !important;
+    padding: 10px;
+    align-items: center;
+}
+#page-local-timetable-timetavle_view .modal-dialog-scrollable .modal-body .attendance_btn{
+    background-color: #ff4611;
+    border-color: #ff4611;
+    border-radius: 3px;
+
+}
+#page-local-timetable-timetavle_view .modal-dialog-scrollable .modal-body .attendance_btn:hover{
+    color: #fff;
+}
+
+@media (min-width: 1023px){
+    #page-local-timetable-timelayoutview #filters_form #formfilteringform .fitem.form-group {
+        max-width: 25%;
+        flex: 0 0 25%;
+    }
+}
+
+
+#page-local-timetable-individual_insert #id_sessiondate {
+    width: 100%;
+}
+#page-local-timetable-individual_insert #id_sessiondate .fdate_selector .fitem:nth-child(1){
+    flex: 0 0 27.6666%;
+}
+#page-local-timetable-individual_insert #id_sessiondate .fdate_selector .fitem:nth-child(2){
+    flex: 0 0 42%;
+}
+#page-local-timetable-individual_insert #id_sessiondate .fdate_selector .fitem:nth-child(3){
+    flex: 0 0 27.6666%;
+}
+#page-local-timetable-individual_insert #id_sessiondate .fdate_selector .fitem span {
+    width: 100%;
+}
+#page-local-timetable-individual_insert #id_submitbutton,
+#page-local-timetable-individual_sesson_update #id_submitbutton{
+    background-color: #ff4611;
+    border-color: #ff4611;
+    padding: 5px 25px!important;
+    border-radius: 3px;
+}
+#page-local-timetable-individual_insert #id_submitbutton:hover,
+#page-local-timetable-individual_sesson_update #id_submitbutton:hover,
+#page-local-timetable-session_type #fgroup_id_buttonar #id_submitbutton:hover,
+#page-local-timetable-sync-hrms_async .mform #fgroup_id_buttonar #id_submitbutton:hover,
+#page-local-timetable-session_type #fitem_id_option_add_fields #id_option_add_fields:hover{
+    color: #fff;
+}
+#page-local-timetable-individual_sesson_update #id_submitbutton:focus,
+#page-local-timetable-individual_insert .btn:focus,
+#page-local-timetable-sync-hrms_async .mform #fgroup_id_buttonar .btn:focus,
+#page-local-timetable-session_type #fitem_id_option_add_fields #id_option_add_fields:focus,
+#page-local-timetable-session_type #fgroup_id_buttonar .btn:focus{
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+#page-local-timetable-individual_insert #id_cancel,
+#page-local-timetable-individual_sesson_update #id_cancel{
+    background-color: #fff;
+    border-color: #ff4611;
+    color: #000;
+    border-radius: 3px;
+}
+#page-local-timetable-session_type #fitem_id_option_add_fields #id_option_add_fields{
+    background-color: #0048d3;
+    border-color: #0048d3;
+    color: #fff;
+    border-radius: 3px;
+}
+#page-local-timetable-session_type #fgroup_id_buttonar .btn{
+    padding: 5px 25px !important;
+}
+#page-local-timetable-session_type #fgroup_id_buttonar #id_submitbutton{
+    background-color: #ff4611;
+    border-color: #ff4611;
+    color: #fff;
+    margin-right: 10px;
+}
+#page-local-timetable-session_type #fgroup_id_buttonar .btn-cancel .btn{
+    background-color: #fff;
+    border-color: #ff4611;
+    color: #000;
+ }
+#page-local-timetable-timelayoutedit table#local_timetable_timelayout th{
+    background-color: #31aad9;
+    color: #fff;
+    border-color: #077ba5;
+    text-align: center !important;
+}
+#page-local-timetable-timelayoutedit table#local_timetable_timelayout td:first-child{
+    background-color: #31aad9;
+    color: #fff;
+    border-color: #077ba5;
+    min-width: 120px;
+}
+#page-local-timetable-timelayoutedit table#local_timetable_timelayout td{
+    border-color: #077ba5;
+    padding: 10px !important;
+    position: relative;
+}
+#page-local-timetable-timelayoutedit table#local_timetable_timelayout tbody td:hover{
+    background-color: transparent;
+    text-shadow: none;
+}
+#page-local-timetable-timelayoutedit table#local_timetable_timelayout td:first-child:hover{
+    background-color: #31aad9;
+}
+#page-local-timetable-timetavle_view .ec-month .ec-header .ec-day {
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+    background-color: #e5e6e8;
+    font-size: 12px;
+}
+#page-local-timetable-timetavle_view .ec-month .ec-title{
+    color: #6d6d6d;
+}
+#page-local-timetable-timetavle_view .ec-month .ec-header .ec-day:first-child  ,
+#page-local-timetable-timetavle_view .ec-month .ec-header .ec-day:last-child  {
+    background-color: #2d6fe4;
+    color: #fff;
+}
+#page-local-timetable-timetavle_view .ec-month .ec-header .ec-day:first-child  {
+    border-left: 0px;
+}
+
+#page-local-timetable-timetavle_view .ec-month .ec-header .ec-day:last-child {
+    border-right: 0px;
+}
+#page-local-timetable-timetavle_view .ec-month .ec-header {
+    border: 0px;
+    border-bottom: 5px solid #fff;
+}
+#page-local-timetable-timetavle_view .ec-month .ec-body .ec-day.ec-other-month {
+    background-color: #f5f5f6;
+    border-top: 0px !important;
+}
+#page-local-timetable-timetavle_view .ec-content  .ec-days {
+    border-bottom: 1px solid #939292 !important;
+}
+#page-local-timetable-timetavle_view .ec-content .ec-days:first-child .ec-day {
+    border-top: 1px solid #939292;
+}
+#page-local-timetable-timetavle_view .ec-content .ec-days .ec-day {
+    border-left: 1px solid #939292 !important;
+}
+#page-local-timetable-timetavle_view .ec-content .ec-days:first-child .ec-other-month:first-child {
+    border-left: 1px solid #fff !important;
+}
+#page-local-timetable-timetavle_view .ec-content .ec-days:last-child .ec-day.ec-other-month:last-child {
+    border-right: 1px solid #fff;
+}
+#page-local-timetable-timetavle_view .ec-content .ec-days:last-child .ec-day {
+    border-bottom: 1px solid #939292;
+}
+#page-local-timetable-timetavle_view .ec-content .ec-days .ec-day:last-child {
+    border-right: 1px solid #939292;
+}
+#page-local-timetable-timetavle_view .ec-body {
+    border: none !important;
+}
+#page-local-timetable-timetavle_view .ec-content .ec-days:last-child .ec-other-month {
+    border-bottom: none !important;
+}
+#page-local-timetable-timetavle_view .ec-content .ec-days:last-child {
+    border-bottom: none !important;
+}
+#page-local-timetable-timetavle_view .ec-content .ec-days:last-child .ec-day {
+    border-bottom: 1px solid #939292;
+}
+#page-local-timetable-timetavle_view .ec-month .ec-body .ec-day{
+    display: flex;
+    flex-direction: column-reverse;
+}
+#page-local-timetable-timetavle_view .ec-month .ec-day-head{
+    padding: 10px;
+}
+#page-local-timetable-timetavle_view .ec-month .ec-body .ec-days .ec-day:first-child,
+#page-local-timetable-timetavle_view .ec-month .ec-body .ec-days .ec-day:last-child {
+    color: #d84849;
+}
+#page-local-timetable-timetavle_view .ec-month .ec-body .ec-event-body{
+    justify-content: center;
+}
+#page-local-timetable-session_type div#tm_sess_tp_wrapper{
+    background-color: #f9fbff;
+    padding: 1rem;
+}
+#page-local-timetable-session_type #page-content form{
+    padding: 15px;
+}
+#page-local-timetable-session_type div[role="main"],
+#page-local-timetable-session_type #region-main {
+    padding: 0 !important;
+}
+#page-local-timetable-session_type #local_timetable_batchwisebu{
+    margin: 15px 15px 0 15px ;
+}
+#page-local-timetable-session_type .disabled {
+    display: none;
+}
+#page-local-timetable-session_type .enabled {
+    display: inline;
+}
+#page-local-timetable-individual_session a:active .creation_not_allowed {
+    pointer-events: none;
+}
+#page-local-timetable-individual_session #tm_action {
+    width: 9rem;
+}
+#page-local-timetable-individual_session #tm_sess_name {
+    word-break: break-all;
+    width: 12rem;
+}
+#page-local-timetable-timelayoutview .locationicon .location_icon{
+    background-image: url("[[pix:local_timetable|Building1]]");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    border: none;
+    mix-blend-mode: multiply;
+}
+#page-local-timetable-timelayoutview .locationicon .location_icon:before{
+    content: none;
+}
+#page-local-timetable-timelayoutedit table#local_timetable_timelayout thead tr .header.c0{
+    border-bottom: none !important;
+}
+#page-local-timetable-timelayoutedit table#local_timetable_timelayout .local_timetable_celldata{
+    min-height: 70px;
+}
+#page-local-timetable-timelayoutedit table#local_timetable_timelayout .local_timetable_celldata li .addsession_icon{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+table#local_timetable_timelayout tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+table#local_timetable_timelayout tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+table#local_timetable_timelayout tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+table#local_timetable_timelayout tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+#page-local-timetable-individual_insert #id_cancelbutton,
+#page-local-timetable-individual_sesson_update #id_cancelbutton{
+    padding: 0px;
+    border: none;
+    margin-left: 1rem;
+}
+
+#page-local-timetable-individual_insert #fgroup_id_buttonar .felement .d-flex,
+#page-local-timetable-individual_sesson_update #fgroup_id_buttonar .felement .d-flex {
+    justify-content: center;
+}
+#page-local-timetable-individual_insert #fgroup_id_buttonar .felement{
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+#page-local-timetable-individual_sesson_update #fgroup_id_buttonar .felement{
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+#page-local-timetable-individual_insert #id_cancel:focus, 
+#page-local-timetable-individual_sesson_update #id_cancel:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+#page-local-timetable-timelayoutedit .local_timetable_celldata li:first-child {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+#page-local-timetable-timelayoutedit .local_timetable_celldata li:first-child .local_timetable_crudlink li:first-child{
+    position: static !important;
+}

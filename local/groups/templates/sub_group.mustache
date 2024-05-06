@@ -1,0 +1,56 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_groups/sub_group
+    Example context (json):
+    {
+    }
+}}
+
+<table id="batch_sub_group" class="generaltable mt-5" style="align-items: flex-end;">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>{{#str}}groupname, local_groups{{/str}}</th>
+            <th>{{#str}}group_id, local_groups{{/str}}</th>
+            <th>{{#str}}action, local_groups{{/str}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#data}}
+        <tr>
+            <td>
+                {{count}}
+            </td>
+            <td>
+                {{name}}
+            </td>
+            <td>
+                {{idnumber}}
+            </td>
+            <td>
+                <a href="{{configwwwroot}}/local/groups/batchgroup.php?batchid={{batchid}}&id={{id}}" title="{{#str}}editsubgroups, local_groups{{/str}}">
+                    <i class="icon fa fa-pencil {{users_and_group}}" aria-hidden="true"></i>
+                </a>
+                <a href="javascript:void(0)" title="{{#str}}delete, local_groups{{/str}}" onclick="(function(e){ require('local_groups/newgroup').deletesub({ action: 'delete_sub_group', id:{{id}}, actionstatus: '{{actionstatus}}', actionstatusmsg: '{{actionstatusmsg}}' }) })(event)">
+                    <i class="icon fa fa-trash fa-fw {{users_and_group}}" aria-hidden="true"></i>
+                </a>
+                <a title="{{#str}}bulk_enroll, local_groups {{/str}}" href="{{configwwwroot}}/local/groups/assign.php?id={{groupid}}">
+                    <i class="icon fa fa-users fa-fw " title="{{#str}}bulk_enroll, local_groups {{/str}}" role="img" aria-label="{{#str}}bulk_enroll, local_groups {{/str}}"></i>
+                </a>
+            </td>
+        </tr>
+        {{/data}}
+    </tbody>
+</table>

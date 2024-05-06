@@ -1,0 +1,101 @@
+{{> mod_stream/reportactions }}
+{{#activitylevel}}
+{{> mod_stream/reportHeading }}
+{{/activitylevel}}
+{{^activitylevel}}
+{{> mod_stream/reportsHeading }}
+{{/activitylevel}}
+{{^activitylevel}}
+{{> mod_stream/trendcharts }}
+{{> mod_stream/summaryreport }}
+
+{{> mod_stream/viewsreport }}
+{{/activitylevel}}
+
+{{#activitylevel}}
+ <!-- Content Row -->
+
+          <div class="row">
+
+            <div class="col-xl-12 col-lg-12">
+              <div class="card shadow mb-4">
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-pie pt-4 pb-2">
+                  <div class="action-icons pull-right">
+                    <span class="dropdown nav-item">
+                      <a class="dropdown-toggle htitle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="icon fa fa-th-large fa-fw"></i>
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-right dropdown-content">
+                        <li class="dropdown-item menu-action togglecontaier3" data-reporttype="graph" data-reportcontainer="container3">{{#str}}graph, mod_stream{{/str}}
+                        </li>
+                        <li class="dropdown-item menu-action togglecontaier3" data-reporttype="table">{{#str}}reporttable, mod_stream{{/str}}</li>
+                      </ul>
+                    </span>
+                  </div>
+                    <div id="container3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">{{#str}}activitystatus, mod_stream{{/str}}</h6>
+            </div>
+            <div style="width:100%">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered dataTable" id="activitystatus" data-function = "activitystatus" data-id = {{activitylevel}} width="100%" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>{{#str}}user, mod_stream{{/str}}</th>
+                              <th>{{#str}}email, mod_stream{{/str}}</th>
+                              <th>{{#str}}views, mod_stream{{/str}}</th>
+                              <th>{{#str}}status, mod_stream{{/str}}</th>
+                              <th>{{#str}}startedon, mod_stream{{/str}}</th>
+                              <th>{{#str}}completedon, mod_stream{{/str}}</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          </div>
+{{/activitylevel}}
+
+<!--
+<div class="w-100 table_wrap">
+    <div class="content_wrap">
+        <div class="p-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 report_heading">{{#str}}timeperiod, mod_stream{{/str}}</h6>
+            <select name="timeperiod" id="timeperiod" class="timeperiod custom-select" data-courseid = {{courseid}}>
+              <option value="DAY">{{#str}}day, mod_stream{{/str}}</option>
+              <option value="WEEK">{{#str}}week, mod_stream{{/str}}</option>
+              <option value="MONTH">{{#str}}month, mod_stream{{/str}}</option>
+            </select>
+        </div>
+        <div class="table-responsive timeperiod px-3">
+            <table class="table table-bordered"  width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>{{#str}}user, mod_stream{{/str}}</th>
+                      <th>{{#str}}completedvideos, mod_stream{{/str}}</th>
+                  </tr>
+                  </thead>
+                  <tbody class="timeperioddata">
+                  {{# timeperiods}}
+                  <tr>
+                      <td>{{fullname}}</td>
+                      <td>{{completedvideos}}</td>
+                  </tr>
+                  {{/ timeperiods}}                  
+                  </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+-->

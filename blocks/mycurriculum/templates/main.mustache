@@ -1,0 +1,32 @@
+<div class="curriculumname" style="font-size: 1.34375rem;margin-bottom: 20px;">  
+<hr>
+<div class="accordion" id="accordionExample">
+{{#semname}}
+<div class="card">
+    <div class="card-header" id="heading{{semister_id}}" style="padding: 0.5rem 0.25rem;">
+      <h2 class="mb-0">
+        <a class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{semister_id}}" aria-expanded="true" aria-controls="collapse{{semister_id}}" style="color: #25a7da;">
+          {{name}} <i class="fa fa-arrow-down" aria-hidden="true" style="float:right"></i> 
+        </a>
+      </h2>
+    </div> 
+
+    <div id="collapse{{semister_id}}" class="collapse" aria-labelledby="heading{{semister_id}}" data-parent="#accordionExample">
+        <div class="card-body">
+             <ul style="margin-left:25px;">
+                {{#courses}}
+               
+                <li class="course" style="font-size: 1rem;">
+                    <a href="{{url}}/course/view.php?id={{courseid}}">{{coursename}}</a>
+                </li>
+               
+                {{/courses}} 
+             </ul>
+        </div>
+   </div>
+<!-- </div> -->
+  </div>
+{{/semname}}
+</div>
+
+

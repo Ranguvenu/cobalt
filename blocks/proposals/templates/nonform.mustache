@@ -1,0 +1,427 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_hod/block
+    Example context (json):
+    {
+    }
+}}
+<div class="pull-right mb-3">
+<a href="{{url}}"  title="Back"><button  class="btn btn-info" style="padding: 5px"><i class="fa fa-arrow-circle-left" style="font-size:40px;color:#c9243f"></i></button></a>
+<a href="{{pdfurl}}?formid={{formid}}"><button  class="btn btn-info" style="padding: 15px"><i class="fa fa-download" title="Downloadpdf" ></i></button></a>
+
+</div>
+<div>
+<table>
+<tbody>
+    {{#refid}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Unique Applicatiion Number</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{refid}}</td>
+    </tr>
+    {{/refid}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Name</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{user}}</td>
+    </tr>
+
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Email</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{email}}</td>
+    </tr>
+    <!-- <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Department</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{school}}</td>
+    </tr> -->
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Course</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{program}}</td>
+    </tr>
+        <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Project Name</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{title}}</td>
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Status</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{status}}</td>
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Application Type </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{type}}</td>     
+    </tr>
+   
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Scientific title of the study </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{scientifictitleofthestudy}}</td>     
+    </tr>
+   
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Principle Investigator</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{principleinvestigator}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Guide/Co-Guide</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{nameoftheguide}}</td>
+    </tr>
+     <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Name of the guide</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{guidename}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Name of the co-guide</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{coguidename}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Contactperson</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{contactperson}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Funding</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{funding}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Sponsor</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{sponsorss}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Studysite</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{studysite}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Health condition</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{healthcondition}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Population</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{population}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Type of study</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{typeofstudy}}</td>     
+    </tr>
+    <!-- <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Sponsor</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{sponsor}}</td>     
+    </tr>  -->
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Intervention </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{intervention}}</td>     
+    </tr>
+     <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Intervention Other </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{interventionother}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Blindingyes</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{blindingyes}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Complete study design</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{completestudydesign}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Inclusion criteria</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{inclusioncriteria}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Exclusion criteria</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{exclusioncriteria}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Aim Objectives</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{aimobjectives}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Primary Objective</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{primaryobjective}}</td>     
+    </tr>
+
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Groupradio</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{groupradio}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Control</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{control}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Comparator</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{comparator}}</td>     
+    </tr> 
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Secondary Objective</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{secondaryobjective}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Primary Outcome</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{primaryoutcome}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Secondary Outcome</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{secondaryoutcome}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Studygroups </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{studygroups}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Enrollment Process</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{enrollmentprocess}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Study procedure </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{studyprocedure}}</td>     
+    </tr>
+{{#downloadurlstudyprocedure}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Study Procedurefile</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{downloadurlstudyprocedure}}" download >Download</a></td>     
+    </tr> 
+    {{/downloadurlstudyprocedure}}
+    {{^downloadurlstudyprocedure}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Study Procedurefile</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+    </tr> 
+    {{/downloadurlstudyprocedure}}
+
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Samplesize Justrification</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{samplesizejustrification}}</td>     
+    </tr>
+    {{#downloadurlsamplesize}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Samplesize Justrification file</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{downloadurlsamplesize}}" download >Download</a></td>     
+    </tr> 
+    {{/downloadurlsamplesize}}
+
+    {{^downloadurlsamplesize}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Samplesize Justrification file</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+    </tr> 
+    {{/downloadurlsamplesize}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Biological material handling</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{biologicalmaterialhandling}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Phase of trial</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{phaseoftrial}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Studyperiod startdate</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{startdate}}</td>     
+    </tr>
+     <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Studyperiod enddate</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{enddate}}</td>     
+    </tr>
+
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Briefsummary</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{briefsummary}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Vancouverstyleonly</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{vancouverstyleonly}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Studyarm</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{studyarm}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Department Name </h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{departmentname}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Blinding</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{blinding}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Biological handling</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{biologicalhandling}}</td>     
+    </tr> 
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Method of sampling</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{methodofsampling}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Method of sampling other</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{methodofsamplingother}}</td>     
+    </tr>
+<tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Co-Investigator1</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{coinvestigator1}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Co-Investigator2</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{coinvestigator2}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Co-Investigator3</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{coinvestigator3}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Co-Investigator4</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{coinvestigator4}}</td>     
+    </tr>
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Co-Investigator5</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">{{coinvestigator5}}</td>     
+    </tr> 
+   {{#patientproforma}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Case report form</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{patientproforma}}" download >Download</a></td>     
+    </tr>
+
+    {{/patientproforma}}
+
+    {{^patientproforma}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Case report form</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+    </tr>
+    {{/patientproforma}} 
+
+    {{#waiverofconsentform}}
+     <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Waiverofconsentform</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{waiverofconsentform}}" download >Download</a></td>     
+    </tr>
+    {{/waiverofconsentform}}
+
+    {{^waiverofconsentform}}
+     <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Waiverofconsentform</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+    </tr>
+    {{/waiverofconsentform}}
+    {{#patientinformationsheet}}
+     <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Participant information sheet</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{patientinformationsheet}}" download >Download</a></td>     
+    </tr>
+    {{/patientinformationsheet}}
+
+    {{^patientinformationsheet}}
+     <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Participant information sheet</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+    </tr>
+    {{/patientinformationsheet}}
+
+    {{#informedconsentform}}
+     <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Informed consent form</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{informedconsentform}}" download >Download</a></td>     
+    </tr>
+    {{/informedconsentform}}
+    {{^informedconsentform}}
+     <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Informed consent form</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+    </tr>
+    {{/informedconsentform}}
+
+    {{#otherquestionnaires}}
+     <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Other questionnaires</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{otherquestionnaires}}" download >Download</a></td>     
+    </tr>
+    {{/otherquestionnaires}}
+
+    {{^otherquestionnaires}}
+     <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>Other questionnaires</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+    </tr>
+    {{/otherquestionnaires}}
+
+    {{#otherquestionnairesone}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>1. Additional Document</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{otherquestionnairesone}}" download >Download</a></td>     
+    </tr>
+    {{/otherquestionnairesone}}
+
+    {{^otherquestionnairesone}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>1. Additional Document</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+    </tr>
+    {{/otherquestionnairesone}}
+
+    {{#otherquestionnairestwo}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>2. Additional Document</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{otherquestionnairestwo}}" download >Download</a></td>     
+    </tr>
+    {{/otherquestionnairestwo}}
+
+    {{^otherquestionnairestwo}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>2. Additional Document</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+    </tr>
+    {{/otherquestionnairestwo}}
+
+    {{#otherquestionnairesthr}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>3. Additional Document</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{otherquestionnairesthr}}" download >Download</a></td>     
+    </tr>  
+    {{/otherquestionnairesthr}}
+
+    {{^otherquestionnairesthr}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>3. Additional Document</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+    </tr>  
+    {{/otherquestionnairesthr}}
+
+    {{#otherquestionnairesfou}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>4. Additional Document</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{otherquestionnairesfou}}" download >Download</a></td>     
+    </tr>
+    {{/otherquestionnairesfou}}
+
+    {{^otherquestionnairesfou}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>4. Additional Document</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+    </tr>
+    {{/otherquestionnairesfou}}
+
+    {{#otherquestionnairesfiv}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>5. Additional Document</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;"><a class="btn btn-danger"  href="{{otherquestionnairesfiv}}" download >Download</a></td>     
+    </tr>
+    {{/otherquestionnairesfiv}}
+    {{^otherquestionnairesfiv}}
+    <tr style="border-bottom:2px solid #ddd7d7;">
+        <td style="text-align:left; font-size:14px;"><h5>5. Additional Document</h5></td>
+        <td style="text-align:left;padding:15px;font-size:16px;">NA</td>     
+    </tr>
+    {{/otherquestionnairesfiv}}
+
+    </tbody>
+</table>
+</div>
+
+

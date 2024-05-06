@@ -1,0 +1,8 @@
+#teacher_courses_table_wrapper{
+	font-size: .9375rem;
+	margin-top: 2%;
+}
+.block_students_attendance .card-text{
+	box-shadow: 0 5px 6px #ddd;
+	border-radius: 5px;
+}

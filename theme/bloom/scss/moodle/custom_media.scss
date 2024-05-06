@@ -1,0 +1,83 @@
+@media (min-width: 768px){
+    #quickaccess-popover-container .popover-region-container {
+        width: 720px;
+        right: auto;
+        left: -webkit-calc(100% - 440px);
+        left: -moz-calc(100% - 440px);
+        left: -o-calc(100% - 440px);
+        left: calc(100% - 440px);
+    }  
+}
+
+@media (min-width: 1024px) and (max-width: 1199px){
+    .block_quick_navigation .quicknav_icon_user,
+    .block_quick_navigation .quicknav_icon_courses,
+    .block_quick_navigation .quicknav_icon_feedback,
+    .quick_nav_list.manage_bootcamp .quicknav_icon_programs_icon_wrap {
+        width: 35px;
+        height: 35px;
+    }
+    .quick_nav_list.manage_feedbacks .anch_span{
+        height: inherit;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+    .block.block_quick_navigation .quick_nav .quick_nav_list {
+        align-items: center;
+        flex-direction: column;
+    }
+    .block_quick_navigation .quick_navigation_detail{
+        width: 100%;
+    }
+    .quick_nav .quick_nav_list .span_str{
+        text-align: center;
+    }
+    .quick_nav .span_createlink{
+        float: inherit;
+    }
+    .block.block_quick_navigation .card-body{
+        padding: 0px;
+    }
+}
+
+@media (max-width: 767px){
+    .block_quick_navigation .quick_nav_list.manage_feedbacks, 
+    .block_quick_navigation .quick_nav_list.manage_courses{
+        height: inherit ;
+    }
+    .popover-region-content .quickpop_over_ul li {
+        width: 100%;
+    }
+    .navbar .popover-region .popover-region-container{
+        left: inherit;
+    }
+}
+@media (max-width: 1024px){
+    #filters_form{
+        width: 100%;
+    }
+    #filters_form .fitem.form-group {
+        width: 100%;
+    }
+}
+@media (min-width: 375px) and (max-width: 424px){
+    .block.block_quick_navigation .quick_nav .quick_nav_list .span_createlink a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 424px){
+    .block_quick_navigation .quick_nav .quick_nav_list {
+        flex-direction: column;
+    }
+    .block_quick_navigation .quick_navigation_detail {
+        width: 100%;
+    }
+    .quick_nav .quick_nav_list .span_str{
+        text-align: center;
+    }
+    .quick_nav .span_createlink{
+        float: none;
+    }
+}

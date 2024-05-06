@@ -1,0 +1,133 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{^teacher}}
+    {{^individual}}
+    <div class="timetableaddbutton">
+        <a id="local_timetable_batchwise" class='course_extended_menu_itemlink'
+            title = "{{#str}} building, local_timetable {{/str}}"
+            href="{{configroot}}/local/location/index.php" target="_blank">
+            <span class='locationicon'>
+                <i class='icon fa fa-location location_icon float-right' aria-hidden='true'></i>
+                <i class='createiconchild fa fa-location'
+                    aria-hidden='true'></i>
+            </span>
+        </a>
+        {{#capability}}
+            <a id="local_timetable_batchwise" class='course_extended_menu_itemlink'
+                title = "{{#str}} create_session_type, local_timetable {{/str}}"
+                href="{{configroot}}/local/timetable/session_type.php">
+                <span class='createiconn'>
+                    <i class='icon fa fa-calendar user_icon float-right' aria-hidden='true'></i>
+                    <i class='createiconchild fa fa-calendar-plus-o'
+                        aria-hidden='true'></i>
+                </span>
+            </a>
+        {{/capability}}
+        <a id="local_timetable_batchwise" class='course_extended_menu_itemlink'
+            title = "{{#str}} createtimeintervals, local_timetable {{/str}}"
+            href="{{configroot}}/local/timetable/timelayout.php">
+            <span class='createicon'>
+                <i class='icon fa fa-calendar-plus-o user_icon float-right' aria-hidden='true'></i>
+                <i class='createiconchild fa fa-calendar-plus-o'
+                    aria-hidden='true'></i>
+            </span>
+        </a>
+    </div>
+    {{/individual}}
+{{/teacher}}
+{{^teacher}}
+    {{#individual}}
+        <div class="timetableaddbutton">
+            <a id="local_timetable_batchwise" class='course_extended_menu_itemlink'
+                title = "{{#str}} uploadtimetable, local_timetable {{/str}}"
+                href="{{configroot}}/local/timetable/sync/hrms_async.php?semid={{semid}}&action=1">
+                <span class='createicon'>
+                    <i class='icon fa fa-upload upload_icon float-right' aria-hidden='true'></i>
+                    <i class='createiconchild fa fa-calendar-plus-o'
+                        aria-hidden='true'></i>
+                </span>
+            </a>
+            <a id="local_timetable_batchwise" class='course_extended_menu_itemlink'
+                title = "{{title}}"
+                href="{{configroot}}/local/timetable/timelayoutedit.php?tlid={{semid}}">
+                <span class='createicon'>
+                    <i class='icon fa fa-calendar float-right {{disable}}' aria-hidden='true'></i>
+                    <i class='createiconchild fa fa-calendar-plus-o'
+                        aria-hidden='true'></i>
+                </span>
+            </a>
+            <a id="local_timetable_batchwise" class='course_extended_menu_itemlink'
+                title = "{{#str}} create_individual_timetable, local_timetable {{/str}}"
+                href="{{configroot}}/local/timetable/individual_insert.php?semid={{semid}}&action=1">
+                <span class='createicon'>
+                    <i class='icon fa fa-calendar-plus-o user_icon float-right' aria-hidden='true'></i>
+                    <i class='createiconchild fa fa-calendar-plus-o'
+                        aria-hidden='true'></i>
+                </span>
+            </a>
+        </div>
+    {{/individual}}
+{{/teacher}}
+{{#teacher}}
+    {{^individual}}
+        <div class="timetableaddbutton">
+            <!-- <a id="local_timetable_batchwise" class='course_extended_menu_itemlink'
+                title = "{{#str}} uploadtimetable, local_timetable {{/str}}"
+                href="{{configroot}}/local/timetable/sync/hrms_async.php?semid={{semid}}&action=1">
+                <span class='createicon'>
+                    <i class='icon fa fa-upload upload_icon float-right' aria-hidden='true'></i>
+                    <i class='createiconchild fa fa-calendar-plus-o'
+                        aria-hidden='true'></i>
+                </span>
+            </a> -->
+            <a id="local_timetable_batchwise" class='course_extended_menu_itemlink'
+                title = "{{#str}} create_individual_timetable, local_timetable {{/str}}"
+                href="{{configroot}}/local/timetable/individual_insert.php?semid=0&action=1">
+                <span class='createicon'>
+                    <i class='icon fa fa-calendar-plus-o user_icon float-right' aria-hidden='true'></i>
+                    <i class='createiconchild fa fa-calendar-plus-o'
+                        aria-hidden='true'></i>
+                </span>
+            </a>
+        </div>
+    {{/individual}}
+{{/teacher}}
+{{#teacher}}
+    {{#individual}}
+    <div class="timetableaddbutton">
+            <!-- <a id="local_timetable_batchwise" class='course_extended_menu_itemlink'
+                title = "{{#str}} uploadtimetable, local_timetable {{/str}}"
+                href="{{configroot}}/local/timetable/sync/hrms_async.php?semid={{semid}}&action=1">
+                <span class='createicon'>
+                    <i class='icon fa fa-upload upload_icon float-right' aria-hidden='true'></i>
+                    <i class='createiconchild fa fa-calendar-plus-o'
+                        aria-hidden='true'></i>
+                </span>
+            </a> -->
+            <a id="local_timetable_batchwise" class='course_extended_menu_itemlink'
+                title = "{{#str}} create_individual_timetable, local_timetable {{/str}}"
+                href="{{configroot}}/local/timetable/individual_insert.php?semid=0&action=1">
+                <span class='createicon'>
+                    <i class='icon fa fa-calendar-plus-o user_icon float-right' aria-hidden='true'></i>
+                    <i class='createiconchild fa fa-calendar-plus-o'
+                        aria-hidden='true'></i>
+                </span>
+            </a>
+        </div>
+    {{/individual}}
+{{/teacher}}

@@ -1,0 +1,48 @@
+#page-content #tests_summary_wrapper {
+	margin-top: 3%;
+}
+/*.block_teachers_tests_summary .card-body.p-3 {
+	height: 55vh;
+}*/
+#block_teachers_tests_summary_viewmore {
+	float: right;
+}
+.filter_btn {
+	margin-right: 92.5%;
+}
+#page-blocks-teachers_tests_summary-summary .global_filter_structure {
+    position: relative;
+    bottom: -0.5rem;
+    padding-left: .5rem;
+    width: 50%;
+    z-index: 1;
+}
+#page-my-index .block_teachers_tests_summary .generaltable thead th,
+#page-my-index .block_teachers_tests_summary .generaltable tbody tr,
+/*#page-blocks-teachers_tests_summary-summary #test_summary .generaltable thead th,
+#page-blocks-teachers_tests_summary-summary #test_summary .generaltable tbody tr,*/
+#page-my-index #notattemptedquiz_student_summary td,
+#page-my-index #notattemptedquiz_student_summary th,
+#page-blocks-teachers_tests_summary-summary #notattemptedquiz_student_summary th,
+#page-blocks-teachers_tests_summary-summary #notattemptedquiz_student_summary td,
+#page-my-index #quiz_student_summary td,
+#page-my-index #quiz_student_summary th,
+#page-blocks-teachers_tests_summary-summary #quiz_student_summary td,
+#page-blocks-teachers_tests_summary-summary #quiz_student_summary th,
+#page-my-index #inprogressquiz_student_summary td,
+#page-my-index #inprogressquiz_student_summary th,
+#page-blocks-teachers_tests_summary-summary #inprogressquiz_student_summary td,
+#page-blocks-teachers_tests_summary-summary #inprogressquiz_student_summary th {
+	text-align: center;
+}
+
+
+#block_teachers_tests_summary_viewmore.view_more{
+	float: none;
+	text-align: end;
+	padding: 10px;
+}
+#block_teachers_tests_summary_viewmore.view_more a{
+	text-decoration: underline;
+	color: #ff3d19;
+}

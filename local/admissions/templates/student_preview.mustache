@@ -1,0 +1,186 @@
+
+<div class="mx-5 container-fluid">
+    {{#preview}}
+        <h4 class="application"><p>{{#str}}appdetails, local_admissions, {{programname}}{{/str}}</p></h4><br>
+        <div class="persinf_block">
+            <h1 class="personalinformation">{{#str}}personalinformation, local_admissions{{/str}}</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="left_details p-2">
+                        <div class="d-flex  p-2">
+                            <span class="pinf_details">{{#str}}registrationno, local_admissions{{/str}} :</span>
+                            <span class="pinf_data">{{registrationid}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="pinf_details">{{#str}}collegename, local_admissions, {{firstlevel}} {{/str}} :</span>
+                            <span class="pinf_data">{{collegename}}</span>
+                        </div>
+                        <div class="d-flex  p-2">   
+                            <span class="pinf_details">{{#str}}username, local_admissions{{/str}} :</span>
+                            <span class="pinf_data">{{firstname}} {{lastname}}</span>
+                        </div>
+                        <div class="d-flex  p-2">    
+                            <span class="pinf_details">{{#str}}dob, local_admissions{{/str}} :</span>
+                            <span class="pinf_data">{{dob}}</span>
+                        </div>
+                        <div class="d-flex  p-2">    
+                            <span class="pinf_details">{{#str}}gender, local_admissions{{/str}} :</span>
+                            <span class="pinf_data">{{gender}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right_details p-2">
+                        <div class="d-flex  p-2">
+                            <span class="pinf_details">{{#str}}fathername, local_admissions{{/str}} : </span>
+                            <span class="pinf_data">{{fathername}}</span>
+                        </div>
+                        <div class="d-flex  p-2">    
+                            <span class="pinf_details">{{#str}}mothername, local_admissions{{/str}} : </span>
+                            <span class="pinf_data">{{mothername}}</span>
+                        </div>
+                        <div class="d-flex  p-2">    
+                            <span class="pinf_details">{{#str}}maritalstatus, local_admissions{{/str}} : </span>
+                            <span class="pinf_data">{{maritalstatus}}</span>
+                        </div>
+                        <div class="d-flex  p-2"> 
+                            <span class="pinf_details">{{#str}}nationality, local_admissions{{/str}} : </span>
+                            <span class="pinf_data">{{nationality}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="pinf_details">{{#str}}religion, local_admissions{{/str}} : </span>
+                            <span class="pinf_data">{{religion}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="pinf_details">{{#str}}occupation, local_admissions{{/str}} :</span> 
+                            <span class="pinf_data">{{occupation}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <div class="contdet_block mt-4">
+            <h1 class="contactdetails">{{#str}}contactdetails, local_admissions{{/str}}</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="top_details p-2">
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details">{{#str}}email, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{email}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details">{{#str}}mobile, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{mobile}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details">{{#str}}altermobileno, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{altermobileno}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="current_details p-2">
+                        <h5 class="current_address p-2">{{#str}}current_address, local_admissions{{/str}}</h5>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details"> {{#str}}addressline1, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{addressline1}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details"> {{#str}}addressline2, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{addressline2}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details"> {{#str}}city, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{city}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details"> {{#str}}state, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{state}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details"> {{#str}}country, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{country}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details"> {{#str}}pincode, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{pincode}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="permanent_details p-2">
+                        <h5 class="permanentaddress p-2">{{#str}}permanentaddress, local_admissions{{/str}}</h5>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details">{{#str}}paddressline1, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{paddressline1}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details">{{#str}}paddressline2, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{paddressline2}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details">{{#str}}city, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{pcity}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details">{{#str}}state, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{pstate}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details">{{#str}}country, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{pcountry}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="cnt_details">{{#str}}pincode, local_admissions{{/str}} :</span>
+                            <span class="cnt_data">{{ppincode}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="eduinfo_block mt-4">
+            <h1 class="educationalinfo">{{#str}}educationalinfo, local_admissions{{/str}}</h1>
+            {{#educationdetails}}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="courseone_details p-2">
+                        <div class="d-flex  p-2">
+                            <span class="edu_details">{{#str}}coursename, local_admissions{{/str}} :</span>
+                            <span class="edu_data">{{coursename}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="edu_details">{{#str}}university, local_admissions{{/str}} :</span>
+                            <span class="edu_data">{{university}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="edu_details">{{#str}}yearofpassing, local_admissions{{/str}} :</span>
+                            <span class="edu_data">{{yearofpassing}}</span>
+                        </div>
+                        <div class="d-flex  p-2">
+                            <span class="edu_details">{{#str}}percentage, local_admissions{{/str}} :</span>
+                            <span class="edu_data">{{percentage}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            {{/educationdetails}}
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex p-2 mx-2">
+                        <div class="mr-5 ml-2">{{#str}}attachments, local_admissions{{/str}} <span class="ml-5">:</span></div>
+                        <div class="mx-5"><a href="{{imgsrc}}">{{uploaddocs}}</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="down_buttons d-flex justify-content-end mt-4">
+            <a href="{{configwwwroot}}/local/admissions/download.php?id={{registrationid}}"><button type="button" class="btn btn-success mr-2 download_btn">Download pdf</button>
+            </a>
+            <a href="{{configwwwroot}}/local/admissions/view.php"><button type="button" class="btn btn-info go_btn">Go back</button></a>
+        </div>
+    {{/preview}}
+</div>

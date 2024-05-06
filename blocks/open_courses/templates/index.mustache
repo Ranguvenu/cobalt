@@ -1,0 +1,539 @@
+{{!
+  This file is part of Moodle - http://moodle.org/
+  Moodle is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  Moodle is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  You should have received a copy of the GNU General Public License
+  along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+
+<style>
+    /*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.progress {
+  width: 50px;
+  height: 50px;
+  background: none;
+  position: relative;
+}
+
+.progress::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px solid #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress>span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.progress .progress-left {
+  left: 0;
+}
+
+.progress .progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 6px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+}
+
+.progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+.progress .progress-right {
+  right: 0;
+}
+
+.progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+}
+
+.progress .progress-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+
+body {
+  background: #ff7e5f;
+  background: -webkit-linear-gradient(to right, #ff7e5f, #feb47b);
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  min-height: 100vh;
+}
+
+.rounded-lg {
+  border-radius: 1rem;
+}
+
+.text-gray {
+  color: #aaa;
+}
+
+div.h4 {
+  line-height: 1rem;
+}
+
+</style>
+
+ <table id ="manage_courses" class="generaltable">
+    <thead>
+        <tr>
+            <th class="text-left">Name</th>
+            <th class="topic_header">Topic</th>
+            <th class="test_header">Test</th>
+            <th class="text-center">Assignment</th>
+            <th>Percentage</th>
+        </tr>
+    </thead>
+</table>
+
+<div id="semblockcontent" class="pb-3">
+<ul class='unlist'>
+  {{#electivecnt}}
+    {{#can_access}}
+      {{#course}}
+        {{#criteriaselected}}
+          <li class="post d-flex justify-content-between align-items-center">
+            <div class="container py-2"> 
+              <div class="row semester_course align-items-center">
+                <div class="col-md-3">
+                  <div class="d-block info mr-1">
+                    {{#mandatory}}
+                      <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank" title="{{fullname}}"> {{fullname}}</a> 
+                    {{/mandatory}}
+                  </div>
+                </div>
+                <div class="col-md-3 p-0 ">
+                  <div class="row">
+                    <div class="col-md-6 course_container ">
+                      <span class="topics_coursedata d-flex">
+                        <span class="count d-flex">{{nooftopics}}</span>
+                        <span class="text_content"> {{#str}}topics, block_semester_progress{{/str}}</span>
+                      </span>
+                    </div>
+                    <div class="col-md-6 course_container">
+                      <span class="topics_coursedata d-flex">
+                        <span class="count d-flex">{{testcount}}</span>
+                        <span class="text_content"> {{#str}}tests, block_semester_progress{{/str}}</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 course_container p-0 ">
+                  <span class="topics_coursedata d-flex">
+                    <span class="count  d-flex">{{assignmentscount}}</span>
+                    <span class="text_content">{{#str}}assignment, block_semester_progress{{/str}}</span>
+                  </span>
+                </div>
+                <div class="col-md-3 p-0 course_contentcontainer ">
+                  <div class="topics_content">
+                    <div class=" progress_content d-flex align-items-center pl-3 justify-content-between ">
+                      <div class="progress" data-value='{{courseprogress}}'>
+                        <span class="progress-left">
+                          <span class="progress-bar border-primary"></span>
+                        </span>
+                        <span class="progress-right">
+                          <span class="progress-bar border-primary"></span>
+                        </span>
+                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                          <div class="h6 mb-0">{{courseprogress}}%</div>
+                        </div>
+                      </div>
+                        <div class="current_semicon px-3">
+                          <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank">
+                              <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        {{/criteriaselected}}
+      {{#criterianotselected}}
+      <li class="post d-flex justify-content-between align-items-center">
+        <div class="container py-2"> 
+          <div class="row semester_course align-items-center">
+              <div class="col-md-3">
+                <div class="d-block info mr-1">
+                  {{#mandatory}}
+                    <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank" title="{{fullname}}"> {{fullname}}</a> 
+                  {{/mandatory}}
+                </div>
+              </div>
+              <div class="col-md-3 p-0">
+                <div class="row">
+                  <div class="col-md-6 course_container">
+                    <span class="topics_coursedata d-flex">
+                      <span class="count d-flex">{{nooftopics}}</span>
+                      <span class="text_content"> {{#str}}topics, block_semester_progress{{/str}}</span> 
+                    </span>
+                  </div>
+                  <div class="col-md-6 course_container">
+                    <span class="topics_coursedata d-flex">
+                       <span class="count  d-flex "> {{testcount}}</span>
+                       <span class="text_content">
+                       {{#str}}tests, block_semester_progress{{/str}}
+                      </span>  
+                    </span>
+                  </div>
+                </div>
+              </div>
+                <div class="col-md-3 course_container p-0">
+                  <span class="topics_coursedata d-flex">
+                    <span class="count  d-flex ">{{assignmentscount}}</span>
+                     <span class="text_content">
+                     {{#str}}assignment, block_semester_progress{{/str}}
+                   </span>  
+                 </span>
+                </div>
+                <div class="col-md-3 p-0 course_contentcontainer">
+                   <div class="topics_content">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="coursein_progress">{{courseprogress}}</div>
+                        <div class="current_semicon px-3">
+                          <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                          </a>
+                        </div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          {{/criterianotselected}}
+        {{/course}}
+{{/can_access}}
+{{/electivecnt}}
+{{#electivecnt}}
+{{^can_access}}
+<div class="text-center">
+  <label class="text-danger">{{dateaccess_message}}</label>
+</div>
+{{#course}}
+{{#criteriaselected}}
+    <li class="post d-flex justify-content-between align-items-center"  >
+      <div class="container py-2"> 
+        <div class="row semester_course align-items-center">
+          <div class="col-md-3">
+            <div class="d-block info mr-1">
+              {{#mandatory}}
+                <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank" title="{{fullname}}"> {{fullname}}</a> 
+              {{/mandatory}}
+            </div>
+          </div>
+          <div class="col-md-3 p-0">
+            <div class="row">
+              <div class="col-md-6 course_container ">
+                <span class="topics_coursedata d-flex">
+                  <span class="count  d-flex ">{{nooftopics}}</span> 
+                  <span class="text_content">
+                  {{#str}}topics, block_semester_progress{{/str}}
+                  </span>  
+                </span>
+              </div>
+              <div class="col-md-6 course_container ">
+                  <span class="topics_coursedata d-flex">
+                    <span class="count  d-flex ">{{testcount}}</span> 
+                     <span class="text_content">
+                      {{#str}}tests, block_semester_progress{{/str}}
+                     </span>  
+                  </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 course_container p-0 ">
+            <span class="topics_coursedata d-flex">
+              <span class="count  d-flex ">{{assignmentscount}}</span>
+               <span class="text_content">
+                {{#str}}assignment, block_semester_progress{{/str}}
+              </span>  
+           </span>
+          </div>
+          <div class="col-md-3 p-0 course_contentcontainer">
+            <div class="topics_content">
+              <div class="progress_content d-flex align-items-center pl-3">
+                <div class="progress " data-value='{{courseprogress}}'>
+                  <span class="progress-left">
+                      <span class="progress-bar border-primary"></span>
+                  </span>
+                  <span class="progress-right">
+                      <span class="progress-bar border-primary"></span>
+                  </span>
+                  <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                      <div class="h6 mb-0">{{courseprogress}}%</div>
+                  </div>
+                </div>
+                <div class="current_semicon px-3">
+                  <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank">
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </li>
+{{/criteriaselected}}
+{{#criterianotselected}}
+    <li class="post d-flex justify-content-between align-items-center" >
+      <div class="container py-2"> 
+        <div class="row semester_course align-items-center">
+          <div class="col-md-3">
+            <div class=" d-block info mr-1">
+              {{#mandatory}}
+                <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank" title="{{fullname}}"> {{fullname}}</a> 
+              {{/mandatory}}
+            </div>
+          </div>
+          <div class="col-md-3 p-0">
+            <div class="row">
+              <div class="col-md-6 course_container">
+                <span class="topics_coursedata d-flex">
+                  <span class="count   d-flex ">{{nooftopics}}</span> 
+                  <span class="text_content">
+                  {{#str}}topics, block_semester_progress{{/str}}</span>
+                </span>
+              </div>
+              <div class="col-md-6 course_container">
+                <span class="topics_coursedata d-flex">
+                  <span class="count  d-flex ">{{testcount}}</span>
+                  <span class="text_content">
+                  {{#str}}tests, block_semester_progress{{/str}}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 course_container p-0 ">
+            <span class="topics_coursedata d-flex">
+              <span class="count  d-flex ">{{assignmentscount}}</span>
+              <span class="text_content">
+              {{#str}}assignment, block_semester_progress{{/str}}</span> 
+            </span>
+          </div>
+          <div class="col-md-3 p-0 course_contentcontainer">
+            <div class="topics_content">
+              <div class="d-flex align-items-center ">
+                <div class="coursein_progress">{{courseprogress}}</div>
+                <div class="current_semicon px-3">
+                  <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank">
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+{{/criterianotselected}}
+{{/course}}
+{{/can_access}}
+{{/electivecnt}}
+
+{{^electivecnt}}
+<!--<div class="text-center">
+  <label class="text-danger">Complete electives selection to start accessing the semester courses...!!!</label>
+</div>-->
+{{#course}}
+{{#criteriaselected}}
+  <li class="post d-flex justify-content-between align-items-center"  >
+    <div class="container py-2"> 
+      <div class="row semester_course align-items-center">
+        <div class="col-md-3">
+          <div class=" d-block info mr-1">
+            {{#mandatory}}
+              <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank" title="{{fullname}}"> {{fullname}}</a> 
+            {{/mandatory}}
+          </div>
+        </div>
+        <div class="col-md-3 p-0">
+          <div class="row">
+            <div class="col-md-6 course_container">
+              <span class="topics_coursedata d-flex">
+                  <span class="count   d-flex ">{{nooftopics}}</span> 
+                  <span class="text_content">
+                  {{#str}}topics, block_semester_progress{{/str}}</span>  
+              </span>
+            </div>
+            <div class="col-md-6 course_container">
+              <span class="topics_coursedata d-flex">
+                <span class="count   d-flex ">{{testcount}}</span>
+                <span class="text_content">
+                    {{#str}}tests, block_semester_progress{{/str}}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 course_container p-0">
+          <span class="topics_coursedata d-flex">
+             <span class="count   d-flex ">{{assignmentscount}}</span> 
+            <span class="text_content">
+           {{#str}}assignment, block_semester_progress{{/str}}</span>
+          </span>
+        </div>
+        <div class="col-md-3 p-0 course_contentcontainer">
+          <div class="topics_content">
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="progress " data-value='{{courseprogress}}'>
+                <span class="progress-left">
+                  <span class="progress-bar border-primary"></span>
+                </span>
+                <span class="progress-right">
+                  <span class="progress-bar border-primary"></span>
+                </span>
+                <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                  <div class="h6 mb-0">{{courseprogress}}%</div>
+                </div>
+              </div>
+            <div class="current_semicon px-3">
+              <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank">
+                <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+{{/criteriaselected}}
+{{#criterianotselected}}
+  <li class="post d-flex justify-content-between align-items-center"  >
+    <div class="container py-2"> 
+      <div class="row semester_course align-items-center">
+        <div class="col-md-3">
+          <div class=" d-block info mr-1">
+            {{#mandatory}}
+              <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank" title="{{fullname}}"> {{fullname}}</a> 
+            {{/mandatory}}
+          </div>
+        </div>
+        <div class="col-md-3 p-0">
+          <div class="row">
+            <div class="col-md-6 course_container">
+              <span class="topics_coursedata d-flex">
+                <span class="count  d-flex ">{{nooftopics}}</span> 
+                <span class="text_content">
+                  {{#str}}topics, block_semester_progress{{/str}}</span>  
+              </span>
+            </div>
+            <div class="col-md-6 course_container">
+              <span class="topics_coursedata d-flex">
+                <span class="count  d-flex ">{{testcount}}</span>
+                <span class="text_content">
+                  {{#str}}tests, block_semester_progress{{/str}}</span>  
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 course_container p-0">
+          <span class="topics_coursedata d-flex">
+            <span class="count  d-flex ">{{assignmentscount}}</span>
+            <span class="text_content">
+              {{#str}}assignment, block_semester_progress{{/str}}</span> 
+          </span>
+        </div>
+        <div class="col-md-3 p-0 course_contentcontainer">
+          <div class="topics_content">
+            <div class="d-flex align-items-center ">
+              <div class="coursein_progress">{{courseprogress}}</div>
+              <div class="current_semicon px-3">
+                <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank">
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+{{/criterianotselected}}
+{{/course}}
+{{/electivecnt}}
+</ul>
+<div>
+  {{# visible}}
+  <div class="mt-3 mx-3 " id="viewmore">
+    <a href="{{configwwwroot}}/blocks/open_courses/semesterprogress_table.php">{{#str}}viewmore,block_semester_progress{{/str}}</a>
+  </div>
+  {{/ visible}}
+</div>
+{{^ course }}
+<div class="alert alert-info w-100 text-center">
+  {{#str}}nodataavailable, block_semester_progress{{/str}}
+</div>
+{{/ course }}
+</div>
+{{#js}}
+
+$(function() {
+$(".progress").each(function() {
+  var value = $(this).attr('data-value');
+  var left = $(this).find('.progress-left .progress-bar');
+  var right = $(this).find('.progress-right .progress-bar');
+
+  if (value > 0) {
+    if (value <= 50) {
+      right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+    } else {
+      right.css('transform', 'rotate(180deg)')
+      left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+    }
+  }
+})
+
+function percentageToDegrees(percentage) {
+  return percentage / 100 * 360
+}
+});
+
+{{/js}}

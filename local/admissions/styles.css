@@ -1,0 +1,963 @@
+#page-local-admissions-view .dynamic_form_id_uploaddocs {
+    cursor: pointer;
+}
+/*.form {
+    margin-left: 1%;
+    margin-top: 4%;
+}
+.fields{
+    margin-left: 5%;
+}
+.heading {
+    font-size: 1.3rem;
+}
+.addressheading {
+    font-size: 1rem;
+}
+#page-local-admissions-submitteddata #modal-body{
+    color: green;
+}
+#page-content .mform {
+    margin-top: -20px;
+    width: 950px;
+}
+.admission_preview {
+    margin-left: 10em;
+}
+.personalinformation {
+    color: rgb(12, 72, 13);
+}
+.contactdetails {
+    color: rgb(12, 72, 13);
+}
+.educationalinfo {
+    color: rgb(12, 72, 13);
+}
+.application {
+    color: rgb(186, 64, 20);
+}
+.permanentaddress {
+    color: rgb(108, 43, 19);
+}
+.current_address {
+    color: rgb(108, 43, 19);
+}
+.mx-5.container-fluid {
+    width: 90%;
+}
+.btncontainer {
+    margin-left: 29.5%;
+}
+
+.edu-mar {
+    margin-left: 41px;
+}
+.con-mar {
+    margin-left: 123px;
+}*/
+#page-local-admissions-programs .page-header-headings h1 {
+    border-left: 3px solid #ff3d19;
+    padding-left: 6px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: 600;
+}
+#page-local-admissions-programs{
+    margin-left:0px !important;
+}
+#page-local-admissions-programs .program_cards_img img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#page-local-admissions-programs .program_cards {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px #ddd;
+    height: 100%;
+}
+#page-local-admissions-programs .program_cards .program_card_content {
+    padding: 1rem;
+}
+#page-local-admissions-programs .program_cards .program_card_content .card-title a {
+    color: #1d2125;
+    font-size: 16px;
+}
+#page-local-admissions-programs .program_cards .other_details {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #f5f7ff;
+    border-top: 1px solid #ebf1fe;
+}
+#page-local-admissions-programs .program_cards .lable_align{
+    color:#808080;
+    font-size: 12px;
+}
+#page-local-admissions-programs .program_cards .pr_details:not(:last-child){
+    border-right:1px solid #ddd;
+}
+#page-local-admissions-programs .program_cards .other_details .info_value{
+    font-size: 12px;
+    font-weight:600;
+}
+#page-local-admissions-programs .other_details .row .col-md-4:second-child{
+    border-right: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+}
+
+/*srilatha css*/
+
+/*manage admissions after login css*/
+#page-local-admissions-view .card-nav-tabs{
+    border:0;
+}
+#page-local-admissions-view .nav-tabs{
+    align-items: center;
+    border: 1px solid #ddd !important;
+    border-radius: 22px;
+    max-width: fit-content;
+    margin: 0 auto;
+}
+#page-local-admissions-view  .nav-tabs .nav-link.active,
+#page-local-admissions-view .nav-tabs .nav-item.show .nav-link{
+    color: #fff;
+    background-color: #0048d3;
+    border-color: #dee2e6 #dee2e6 #e4d9d9;
+}
+#page-local-admissions-view .nav-tabs .nav-link:hover,
+#page-local-admissions-view .nav-tabs .nav-link:focus {
+    border-color: #e9ecef #e9ecef #dee2e6;
+    border-radius: 22px;
+}
+#page-local-admissions-view .nav-tabs .nav-link{
+    border: none;
+    color: #6b6b6b;
+    font-size: 14px;
+    padding: 9px 34px;
+    border-radius: 22px;
+    /* border: 1px solid #ddd; */
+}
+#page-local-admissions-view .card-header-primary{
+    background-color: transparent;
+    border-bottom: 0;
+}
+#page-local-admissions-view .dataTables_wrapper .dataTables_length select{
+    padding: 2px 8px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#page-local-admissions-view table thead{
+    background-color: #eaf0fe;
+    color: #6f6f71;
+    border-radius: 5px;
+}
+#page-local-admissions-view .table-bordered th{
+    border:none;
+    text-align: left !important;
+    padding: 12px 32px;
+}
+#page-local-admissions-view table.dataTable tr.odd{
+    background-color: transparent;
+    line-height: 35px;
+}
+#page-local-admissions-view table.dataTable tr.even{
+    background-color: transparent;
+    line-height: 35px;
+}
+#page-local-admissions-view table.dataTable{
+    border-bottom: none;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#page-local-admissions-view .table-bordered td {
+    border-top: 0;
+    border-left: 0;
+    border-right:0;
+    color: #717171;
+    text-align: left !important;
+    padding: 7px 1px 7px 32px;
+}
+#page-local-admissions-view .table-bordered tr button{
+    background: transparent;
+    border: none;
+    color: #70bb32;
+    padding: 0;
+    margin-right: 10px;
+}
+#page-local-admissions-view .table-bordered tr .download_btn{
+    color: #38b8e3;
+    text-decoration: underline;
+    padding: 0;
+}
+#page-local-admissions-view .table-bordered tr .view_btn{
+    color: #0048d3;
+    text-decoration: underline;
+    padding: 0;
+}
+#page-local-admissions-view .table-bordered td.status_approve{
+    color: #70bb32;
+    font-weight: 100;
+}
+/*#page-local-admissions-view .dataTables_wrapper .dataTables_filter input{
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    border: 1px solid #bebebe;
+    box-shadow:none;
+}
+#page-local-admissions-view #table_filter label:after{
+    position: absolute;
+    content:"\f002";
+    font-family: 'FontAwesome';
+    top: 3px;
+    font-size: 17px;
+    right: 18px;
+    color: #949393;
+}
+#page-local-admissions-view #table_filter label{
+    position: relative;
+}
+#page-local-admissions-view .dataTables_wrapper .dataTables_filter input:hover{
+    border-radius: 20px;
+    width: 180px;
+    height: 32px;
+}*/
+
+/* view application page after login css */
+#page-local-admissions-preview .persinf_block,
+#page-local-admissions-preview .contdet_block,
+#page-local-admissions-preview .eduinfo_block{
+    border:1px solid #c8c8c8;
+    border-radius: 6px;
+}
+#page-local-admissions-preview .personalinformation,
+#page-local-admissions-preview .contactdetails,
+#page-local-admissions-preview .educationalinfo{
+    font-size: 15px;
+    color: #0048d3;
+    background-color: #eaf0fe;
+    padding: 20px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom:1px solid #c8c8c8;
+}
+#page-local-admissions-preview .persinf_block .pinf_details,
+#page-local-admissions-preview .contdet_block .cnt_details,
+#page-local-admissions-preview .eduinfo_block .edu_details{
+    text-align: left;
+    color: #5d5d5d;
+    min-width: 40%;
+}
+#page-local-admissions-preview .persinf_block .pinf_data,
+#page-local-admissions-preview .contdet_block .cnt_data,
+#page-local-admissions-preview .eduinfo_block .edu_data {
+    text-align: left;
+    font-weight: 600;
+    color: #000;
+}
+#page-local-admissions-preview .current_address,
+#page-local-admissions-preview .permanentaddress{
+    font-size: 15px;
+}
+#page-local-admissions-preview .down_buttons button{
+    background-color: #ff3b1f;
+    border-color: #ff3b1f;
+}
+
+
+/*apply online form css before login*/
+.path-local-admissions .form-control,
+.path-local-admissions .form-inline .custom-select{
+    width: 100% !important;
+    border-radius:3px !important;
+    box-shadow: none;
+    border: 1px solid #00000026;
+    color: #717171;
+}
+
+.path-local-admissions .form-control:focus{
+    box-shadow: none;
+    border-color: #00000026;
+}
+.path-local-admissions #page-header h1 {
+    border-left: 3px solid #ff3d19;
+    padding-left: 6px;
+    font-size: 18px;
+}
+.path-local-admissions .form-label-addon {
+    margin-left: 3px !important;
+}
+.path-local-admissions .form-inline .custom-select option {
+    color: #717171;
+}
+.path-local-admissions #id_submitbutton,
+.path-local-admissions #id_option_add_fields {
+    background-color: #ff4611;
+    border-color: #ff4611;
+}
+.path-local-admissions .edu-mar #id_submitbutton,
+.path-local-admissions .btncontainer #id_submitbutton{
+    padding-right: 23px !important;
+}
+.path-local-admissions .btncontainer  .btn,
+.path-local-admissions .edu-mar .btn{
+    min-width: 100px;
+    padding:6px 23px !important;
+}
+.path-local-admissions .btncontainer  .btn:focus,
+.path-local-admissions .btn-primary:focus,
+.path-local-admissions .btn-secondary:focus{
+    outline:1px solid transparent;
+    box-shadow: none !important;
+}
+.path-local-admissions #id_submitbutton:hover,
+.path-local-admissions .buttons-container .prev-per-btn:hover,
+.path-local-admissions #id_option_add_fields:hover{
+    color:#fff;
+}
+.path-local-admissions .edu-mar{
+    margin-left: 0;
+}
+.path-local-admissions #id_cancel,
+.path-local-admissions .cont-nxt-btn{
+    color: #000;
+    border-color: #ff4611;
+    background-color: #fff;
+}
+.path-local-admissions #id_dob_calendar .icon:before{
+    content: none;
+}
+.path-local-admissions #id_dob_calendar .icon{
+    background-image: url('[[pix:local_admissions|calendar]]');
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.path-local-admissions .form .heading{
+    display: none;
+}
+.path-local-admissions .form-group{
+    margin-top: 2rem;
+}
+.path-local-admissions .form-group.checkboxgroup1,
+.path-local-admissions .form .per_address .checkboxgroup1 .checkbox label{
+    margin: 0;
+}
+.path-local-admissions .addressheading b{
+    border-left: 3px solid #ff3d19;
+    padding-left: 6px;
+    font-size: 18px;
+}
+.path-local-admissions .form-group.checkboxgroup1 .col-form-label{
+    display: none;
+}
+.path-local-admissions #page-content .mform{
+    width: 100%;
+    padding: 2rem;
+}
+.path-local-admissions .btncontainer{
+    margin-left: 0;
+}
+.path-local-admissions .form .per_address{
+    width:100%;
+    align-items: center;
+}
+.path-local-admissions .buttons-container .prev-per-btn
+{
+    background-color: #0048d3 !important;
+    border-color:#0048d3 ;
+    padding: 6px 23px;
+}
+.path-local-admissions .form .per_address .checkboxgroup1 .checkbox{
+    min-width: 200px;
+}
+.path-local-admissions .form .per_address  .form-check>div{
+    margin-left: 0 !important;
+}
+.path-local-admissions .form_btn_row{
+    justify-content: center;
+    margin-top: 2rem;
+}
+body.notloggedin{
+    margin-left: 0 !important;
+}
+.path-local-admissions .page-header-headings h1{
+    border-left: 3px solid #ff3d19;
+    padding-left: 6px;
+    font-size: 20px;
+}
+.path-local-admissions .form-inline .custom-select#id_dob_day,
+.path-local-admissions .form-inline .custom-select#id_dob_month,
+.path-local-admissions .form-inline .custom-select#id_dob_year{
+    max-width: 100% !important;
+}
+.path-local-admissions .btncontainer{
+    margin-top: 2rem;
+}
+.path-local-admissions .fdescription.required {
+    margin-left: 1rem;
+}
+@media (max-width:1023px){
+    .path-local-admissions #id_option_add_fields{
+        width: 100%;
+    }
+    .path-local-admissions .form .per_address{
+        flex-direction: column;
+    }
+    .path-local-admissions .checkbox .form-check-input{
+        margin-left: -3.5rem;
+    }
+}
+@media (max-width:767px){
+
+.path-local-admissions .buttons-container.edu-mar .btn,
+.path-local-admissions .buttons-container .btn{
+    width: 100%;
+    margin-top: 10px;
+}
+
+}
+
+
+#page-local-admissions-view .dynamic_form_id_uploaddocs {
+    cursor: pointer;
+}
+/*.form {
+    margin-left: 1%;
+    margin-top: 4%;
+}
+.fields{
+    margin-left: 5%;
+}*/
+.heading {
+    font-size: 1.3rem;
+}
+.addressheading {
+    font-size: 1rem;
+}
+#page-local-admissions-submitteddata #modal-body{
+    color: green;
+}
+.admission_preview {
+    margin-left: 10em;
+}
+.personalinformation {
+    color: rgb(12, 72, 13);
+}
+.contactdetails {
+    color: rgb(12, 72, 13);
+}
+.educationalinfo {
+    color: rgb(12, 72, 13);
+}
+.application {
+    color: rgb(186, 64, 20);
+}
+.permanentaddress {
+    color: rgb(108, 43, 19);
+}
+.current_address {
+    color: rgb(108, 43, 19);
+}
+.mx-5.container-fluid {
+    width: 90%;
+}
+.btncontainer {
+    margin-left: 29.5%;
+}
+
+.edu-mar {
+    margin-left: 41px;
+}
+/* .con-mar {
+    margin-left: 123px;
+} */
+
+/*hema added personal information in login page css*/
+/*#page-local-admissions-personal_information h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    border-left: 3px solid #ff3d19;
+    padding-left: 6px;
+}
+#page-local-admissions-personal_information #id_submitbutton {
+    color: #fff;
+    background: #ff3d19;
+    border-color: #ff3d19;
+}
+#page-local-admissions-personal_information input#id_cancel{
+    color: #000;
+    background: #fff;
+    border-color: #ff3d19;
+}*/
+
+
+/* hema added manage admissions card css*/
+body.notloggedin{
+    margin-left: 0 !important;
+}
+
+#page-local-admissions-index .admisssion_card a{
+    color: #fff;
+    background: #0042d3;
+    border: 1px solid #0042d3;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+#page-local-admissions-index .cardlist_icon{
+    background-image: url('[[pix:local_admissions|dashboardwhite]]');
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+}
+#page-local-admissions-index  .page-header-headings  h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    border-left: 3px solid #ff3d19;
+    padding-left: 6px;
+}
+#page-local-admissions-index .btn-primary{
+    color: #fff;
+    background: #ff3c1b;
+    border-color: #ff3c1b;
+}
+#page-local-admissions-index .lable_align {
+    color: #878787;
+}
+#page-local-admissions-index .info_head.h6 {
+    color: #444444;
+    font-size: 16px;
+}
+#page-local-admissions-index .nav-tabs .nav-link.active{
+    background-color:transparent; 
+    color:#ff3c1b;
+    border-bottom: 2px solid #ff3c1b;
+}
+#page-local-admissions-index .nav-tabs .nav-link{
+    margin-bottom: -1px;
+    border: none; 
+    background-color:transparent;
+    border-radius: 0;
+    color:#000;
+    border-bottom:1px solid #dee2e6;
+    border-color:transparent;
+    padding: 0.5rem 4rem;
+}
+#page-local-admissions-index .course_sem .sem_credits {
+    border: 1px solid #dfeafe;
+    padding: 10px;
+    color: #0044d3;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px #dfeafe;
+}
+#page-local-admissions-index .decription_head {
+    font-weight: 600;
+    font-size: 17px;
+}
+#page-local-admissions-index .descrp p{
+    color: #454242 !important;
+    font-size: 13px !important;
+}
+#page-local-admissions-index .comp_content,
+#page-local-admissions-index .pgram_content {
+    font-size: 14px;
+    color: #000000c9;
+}
+#page-local-admissions-index .computer_circle{
+    border: 2px solid #ff6f47;
+    width: 12px;
+    border-radius: 50%;
+    font-size: 10px;
+    margin-right: 6px;
+    content: "";
+    display: block;
+    height: 12px;
+}
+#page-local-admissions-index .cprogram_circle{
+    border: 2px solid #00c2be;
+    content: "";
+    width: 12px;
+    border-radius: 50%;
+    font-size: 10px;
+    margin-right: 6px;
+    content: "";
+    display: block;
+    height: 12px;  
+}
+#page-local-admissions-index .tabcourse_container .java_course:nth-child(8) .cprogram_circle{
+    border-color:#0059d8;
+} 
+#page-local-admissions-index .tabcourse_container .java_course:nth-child(7) .cprogram_circle{
+    border-color:#ff3c1b;
+}
+#page-local-admissions-index .tabcourse_container .architecture_course:nth-child(2) .computer_circle{
+    border-color:#ff3c1b;
+}
+#page-local-admissions-index .tabcourse_container .architecture_course:nth-child(3) .computer_circle{
+    border-color:#0059d8;
+}
+#page-local-admissions-index .tabcourse_container .architecture_course:nth-child(4) .computer_circle{
+    border-color:#00b3b0;
+}
+#page-local-admissions-index .tabcourse_container .architecture_course:nth-child(5) .computer_circle{
+    border-color:#7580f8;
+}
+#page-local-admissions-index .info_value {
+    color: #000000;
+    font-weight: 500;
+}
+#page-local-admissions-index .tabcourse_container {
+    padding: 4px 25px;
+}
+#page-local-admissions-index  .faculty {
+    font-size: 15px;
+    padding-left: 25px;
+}
+#page-local-admissions-index .manage_content,
+#page-local-admissions-index .elective_course{
+    font-size: 15px;
+    font-weight:600;
+}
+#page-local-admissions-index .elective_content{
+    color:#929292;
+    font-size:11px;
+    font-weight:400;
+
+}
+#page-local-admissions-index  .admission_course{
+    border-bottom: 0 !important;
+    border-radius:6px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: -13px;
+}
+#page-local-admissions-index  .admission_bottom{
+    background-color: #eaf0fe;
+    box-shadow: none !important;
+}
+#page-local-admissions-index  .admission_bottom a{
+    font-size:14px;
+    color:#0044d3;
+}
+#page-local-admissions-index .tab{
+    width: 100px;
+    height: auto;
+    margin: auto;
+    background: none;
+    border: 13px solid #e8f0fd;
+    border-top: none;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+    display: flex;
+    align-items: center;
+}
+ #page-local-admissions-index  .courseimg_container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 6px;
+}
+#page-local-admissions-programs .program_cards .program_cards_img{
+    background-image: url('[[pix:local_admissions|default]]');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 130px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    z-index: 1;
+    position: relative;
+}
+#page-local-admissions-programs .program_cards .sylabus_strip{
+    background-color: #0048d3;
+    color: #fff;
+    font-size: 11px;
+    position: absolute;
+    font-weight: 600;
+    padding: 1px 11px;
+    top: 0px;
+    margin-top: 0.5rem;
+    border-radius: 3px;
+    right: 10px;
+}
+.path-local-admissions .apply_btn{
+    background-color: #ff4611;
+    border-color: #ff4611;
+}
+/*mobile view*/
+@media (max-width:1024px){
+    #page-local-admissions-index .course_program .program_content{
+        font-size:13px;
+    }
+}
+
+
+/* admissions list icon css*/
+#page-local-admissions-programs .admission_listcontainer a{
+    color: #fff;
+    background: #0042d3;
+    border: 1px solid #0042d3;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+#page-local-admissions-programs .list_icon{
+    background-image: url('[[pix:local_admissions|listwhite]]');
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+}
+
+
+/* admissions cse btech nav css*/
+#page-local-admissions-admission .nav.nav-tabs{
+    width: fit-content;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    margin: auto;
+    position: relative;
+}
+#page-local-admissions-admission .nav-tabs .nav-link{
+    color:#000;
+    padding:0.7rem 4rem;
+}
+#page-local-admissions-admission .nav-tabs .nav-link,
+#page-local-admissions-admission .nav-tabs .nav-link.active{
+    border:none;
+}
+#page-local-admissions-admission .nav-tabs .nav-link.active{
+    background:#0042d3;
+    color:#fff;
+    border-radius:25px;
+}
+#page-local-admissions-admission .page-header-headings h1{
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    border-left: 3px solid #ff3d19;
+    padding-left: 6px;
+}
+#page-local-admissions-admission .apply_now {
+    color: #fff;
+    background: #ff3d19;
+    border-color: #ff3d19;
+}
+#page-local-admissions-admission .admsnprogram_content{
+    color: #515151;
+}
+#page-local-admissions-admission .current_level a{
+    background: transparent;
+    color: #999999;
+    border: none;
+    padding: 0.5rem 3rem;
+}
+#page-local-admissions-admission .current_level a.active{
+    color: #ff3a21;
+    border-bottom: 2px solid #ff3a21;
+    border-radius: 0;
+}
+#page-local-admissions-admission a#currentlevel-tab:focus{
+    border:none;
+    border-radius:0;
+    background:transparent;
+    box-shadow: none !important;
+}
+
+#page-local-admissions-admission .admission_levelcontent .course_sem .sem_credits {
+    border: 1px solid #d8e4fe;
+    background-color: #eaf0fe;
+    padding: 7px 10px 1px 10px;
+    color: #0044d3;
+    font-weight: 600;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px #dfeafe;
+}
+#page-local-admissions-admission .network_circle{
+    border: 2px solid #ff6f47;
+    width: 12px;
+    border-radius: 50%;
+    font-size: 10px;
+    margin-right: 6px;
+    content: "";
+    display: block;
+    height: 12px;
+}
+#page-local-admissions-admission .management_circle{
+    width: 12px;
+    border-radius: 50%;
+    font-size: 10px;
+    margin-right: 6px;
+    content: "";
+    display: block;
+    height: 12px;
+    border: 2px solid #00c2be;
+}
+#page-local-admissions-admission .faculty_course .teacher_content {
+    font-size: 18px;
+}
+#page-local-admissions-admission .decription_head {
+    font-size: 18px;
+    font-weight: 600;
+}
+#page-local-admissions-admission  .descrp{
+    font-size: 12px;
+    color: #454242 ;
+}
+#page-local-admissions-admission .admission_levelcontent .manage_course,
+#page-local-admissions-admission  .admission_levelcontent .optional_content{
+    font-size: 15px;
+    font-weight: 600;
+}
+#page-local-admissions-admission .admission_levelcontent .elective_descrp{
+    font-size:11px;
+    color:#929292;
+}
+#page-local-admissions-admission .admission_levelcontent .network_programming:nth-child(5) {
+    border-bottom: 1px solid #c6c6c6;
+    padding-bottom: 10px;
+}
+#page-local-admissions-admission .admission_levelcontent .network_programming:nth-child(5) .network_circle{
+    border-color:#7580f8;
+}
+#page-local-admissions-admission .admission_levelcontent .network_programming:nth-child(4) .network_circle{
+    border-color:#00b3b0;
+}
+#page-local-admissions-admission .admission_levelcontent .network_programming:nth-child(3) .network_circle{
+    border-color:#0059d8;
+}
+#page-local-admissions-admission .admission_levelcontent .network_programming:nth-child(2) .network_circle{
+    border-color:#ff3c1b;
+}
+#page-local-admissions-admission .admission_levelcontent .project_management:nth-child(7) .management_circle{
+    border-color:#ff3c1b;
+}
+#page-local-admissions-admission .admission_levelcontent .project_management:nth-child(8) .management_circle{
+    border-color:#0059d8;
+}
+#page-local-admissions-admission .current_level.nav {
+    border-bottom: 1px solid #c6c6c6;
+    margin: 0px 10px;
+}
+#page-local-admissions-admission .apply_content a {
+    color: #fff;
+    background: #ff3c1b;
+    border-color: #ff3c1b;
+}
+#page-local-admissions-index .admission_course .courseimg_container {
+    background-image: url('[[pix:local_admissions|default]]');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 130px;
+    border-radius: 9px;
+}
+
+#page-local-admissions-view .modal-content button.not-allowed {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+}
+/*student admission navtab styles*/
+#page-local-admissions-studentview .card-nav-tabs{
+    border:0;
+}
+#page-local-admissions-studentview .nav-tabs{
+    align-items: center;
+    border: 1px solid #ddd !important;
+    border-radius: 22px;
+    max-width: fit-content;
+    margin: 0 auto;
+}
+#page-local-admissions-studentview  .nav-tabs .nav-link.active,
+#page-local-admissions-studentview .nav-tabs .nav-item.show .nav-link{
+    color: #fff;
+    background-color: #0048d3;
+    border-color: #dee2e6 #dee2e6 #e4d9d9;
+}
+#page-local-admissions-studentview .nav-tabs .nav-link:hover,
+#page-local-admissions-studentview .nav-tabs .nav-link:focus {
+    border-color: #e9ecef #e9ecef #dee2e6;
+    border-radius: 22px;
+}
+#page-local-admissions-studentview .nav-tabs .nav-link{
+    border: none;
+    color: #6b6b6b;
+    font-size: 14px;
+    padding: 9px 34px;
+    border-radius: 22px;
+    /* border: 1px solid #ddd; */
+}
+#page-local-admissions-studentview .card-header-primary{
+    background-color: transparent;
+    border-bottom: 0;
+}
+
+/* view application page after login on user dashboard css */
+#page-local-admissions-student_preview .persinf_block,
+#page-local-admissions-student_preview .contdet_block,
+#page-local-admissions-student_preview .eduinfo_block{
+    border:1px solid #c8c8c8;
+    border-radius: 6px;
+}
+#page-local-admissions-student_preview .personalinformation,
+#page-local-admissions-student_preview .contactdetails,
+#page-local-admissions-student_preview .educationalinfo{
+    font-size: 15px;
+    color: #0048d3;
+    background-color: #eaf0fe;
+    padding: 20px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom:1px solid #c8c8c8;
+}
+#page-local-admissions-student_preview .persinf_block .pinf_details,
+#page-local-admissions-student_preview .contdet_block .cnt_details,
+#page-local-admissions-student_preview .eduinfo_block .edu_details{
+    text-align: left;
+    color: #5d5d5d;
+    min-width: 40%;
+}
+#page-local-admissions-student_preview .persinf_block .pinf_data,
+#page-local-admissions-student_preview .contdet_block .cnt_data,
+#page-local-admissions-student_preview .eduinfo_block .edu_data {
+    text-align: left;
+    font-weight: 600;
+    color: #000;
+}
+#page-local-admissions-student_preview .current_address,
+#page-local-admissions-student_preview .permanentaddress{
+    font-size: 15px;
+}
+#page-local-admissions-student_preview .down_buttons button{
+    background-color: #ff3b1f;
+    border-color: #ff3b1f;
+}
+
+#page-local-admissions-personal_information #id_cancel {
+    background-color: #fff;
+    border-color: #ff4611;
+    color: #000;
+    border-radius: 3px;
+}

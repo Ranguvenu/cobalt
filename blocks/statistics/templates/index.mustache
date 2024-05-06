@@ -1,0 +1,50 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_statistics/index
+    Example context (json):
+    {
+    }
+}}
+
+{{#obj}}
+    <div class="row">
+        <div class="col-lg-4 mb-1">
+            <div class="statistics_cards">
+              {{#enrolled}}
+                <div class="enroll_count">{{course}}</div>
+                <div class="statisticscard_text">{{#str}}coursesenrolled, block_statistics{{/str}}</div>
+                <div class="statistics_bar"></div>
+                {{/enrolled}}
+            </div>
+        </div>
+        <div class="col-lg-4 mb-1">
+            <div class="statistics_cards">
+              {{#completionscount}}
+                <div class="enroll_count">{{completions}}</div>
+                <div class="statisticscard_text">{{#str}}completedcount, block_statistics{{/str}}</div>
+                <div class="statistics_bar"></div>
+                {{/completionscount}}
+            </div>
+        </div>
+        <div class="col-lg-4 mb-1">
+            <div class="statistics_cards">
+                <div class="enroll_count">{{percentage}}<span>%</span></div>
+                <div class="statisticscard_text">{{#str}}attendance, block_statistics{{/str}}</div>
+                <div class="statistics_bar"></div>
+            </div>
+        </div>
+    </div>
+{{/obj}}
+

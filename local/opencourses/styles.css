@@ -1,0 +1,109 @@
+#page-local-opencourses-opencourses .course_container .courseimage {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 135px;
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+#page-local-opencourses-opencourses .course_container .showoptions_btn {
+    position: absolute;
+    top: 10px;
+    right: 1.5rem;
+}
+#page-local-opencourses-opencourses  .course_container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px #d3d3d3;
+}
+#page-local-opencourses-opencourses  .course_container .coursecontent {
+    padding: 5px 10px 10px;
+}
+#page-local-opencourses-opencourses .course_container .courseimage .course_status {
+    background-color: #ff3c1b;
+    color: #fff;
+    padding: 3px 10px 0px;
+    border-radius: 20px;
+    font-size: 11px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+#page-local-opencourses-opencourses .course_container .desc p {
+    text-align: inherit;
+    font-size: 12px;
+    margin-bottom: 5px;
+    margin-top: 10px !important;
+}
+#page-local-opencourses-opencourses .course_container .course_name a {
+    color: #333;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+#page-local-opencourses-opencourses .course_container .cat_btm {
+    color: #333;
+    font-size: 12px;
+}
+#page-local-opencourses-opencourses .course_container .cat_btm .text-muted {
+    color: #707070!important;
+}
+#page-local-opencourses-opencourses .course_extended_menu_list {
+    position: static;
+}
+#page-local-opencourses-upload-index #download_courses {
+    float: right;
+    margin-left: 10px;
+}
+#page-local-opencourses-opencourses .global_filter_structure {
+    margin-top: 1rem;
+}
+#page-local-opencourses-opencourses .customcount a{
+    margin-left: 1rem;
+}
+/*@media (min-width: 768px){*/
+    #page-local-opencourses-courseenrol .box3.col-md-2.actions {
+        margin-top: 220px;
+    }
+/*}*/
+#page-local-opencourses-courseenrol button.custom_btn.btn.remove.btn-default, 
+#page-local-opencourses-courseenrol button.custom_btn.btn.move.btn-default {
+    margin: 2% 0;
+    width: 100%;
+    font-size: inherit;
+    padding: 0.285rem 0.4rem;
+}
+
+.quickpop_over_ul li .user_navigation_link .dypatil_cmn_icon.fa-columns{
+
+    color: #000;
+}
+
+#page-local-opencourses-opencourses .course_container{
+    height: 100%;
+    border: none;
+}
+#page-local-opencourses-opencourses .course_container .cat_btm .catbtm_colon{
+    font-weight: 500;
+    margin-right: 5px;
+}
+#page-local-opencourses-opencourses .course_container:hover .actionicons {
+    visibility: visible;
+}
+#page-local-opencourses-opencourses .course_container .actionicons {
+    visibility: hidden;
+}
+#page-local-opencourses-opencourses .course_name a {
+  font-size: 18px;
+  word-break: break-word;
+  color: #000;
+}
+#page-local-opencourses-opencourses .coursecontent .course_name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  text-align: left;
+}

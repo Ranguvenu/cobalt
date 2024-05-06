@@ -1,0 +1,16 @@
+<div id="fitem_id_externalurl" class="form-group row  url fitem   ">
+    <div class="col-md-3  Browse Video" id="Browse Video">
+        <label class="col-form-label d-inline " for="id_externalurl">
+           {{#str}}browsevideo, stream{{/str}}<abbr class="initialism text-danger" title="{{#str}}required, stream{{/str}}"><i class="icon fa fa-exclamation-circle text-danger fa-fw " title="{{#str}}required, stream{{/str}}" aria-label="Required"></i></abbr>
+        </label>
+    </div>
+    <div class="col-md-9 form-inline felement" data-fieldtype="custom-url">
+        <div class="{{class}} stream_file_selector">
+            <video id="mod_stream_form_video" class="stream_video video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" height="150" width="250">
+            </video>
+        </div>
+    </div>
+    <button type="button" id="filepicker-button-js-{{clientid}}" class="visibleifjs btn btn-secondary" style="margin-right:70%;margin-top:5px;">
+    {{#str}}selectvideo, stream{{/str}}
+    </button>'
+</div>

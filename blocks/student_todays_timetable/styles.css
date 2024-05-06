@@ -1,0 +1,137 @@
+.block_stusent_todays_timetable .ui-tabs .ui-tabs-panel{padding:0;}
+.block_stusent_todays_timetable .dataTable>tbody>tr{border-bottom:0;border-top:0;}
+.block_stusent_todays_timetable .dataTable tbody tr td{padding:8px;}
+.block_stusent_todays_timetable .pagination{text-align:right;margin:0;}
+.block_stusent_todays_timetable .dataTables_length{padding:0 10px;display:inline-block;}
+
+#middle-blocks .block_stusent_todays_timetable button{background-color: #FFF !important;color: #FFF;border: 0 !important;}
+/*css added by Raghuvaran from media.css*/
+@media (max-width: 683px){
+#page-blocks-stusent_todays_timetable-stuview #filter-box .filterarea .selfilterpos{width: 100% !important;}
+#page-blocks-stusent_todays_timetable-stuview #filter-box .filterarea .selfilterpos select{width: 82% !important;}
+#page-blocks-stusent_todays_timetable-stuview .datefilterpos{width: 100% !important;}
+#page-blocks-stusent_todays_timetable-stuview .uneditable-input, input, textarea{width: 62%;}
+}
+@media (max-width: 568px){
+#page-blocks-stusent_todays_timetable-stuview #filter-box .filterarea .selfilterpos{width: 100% !important;}
+#page-blocks-stusent_todays_timetable-stuview #filter-box .filterarea .selfilterpos select{width: 82% !important;}
+#page-blocks-stusent_todays_timetable-stuview .datefilterpos{width: 100% !important;}
+#page-blocks-stusent_todays_timetable-stuview .uneditable-input,#page-blocks-stusent_todays_timetable-stuview input,#page-blocks-todays_timetable-stuview textarea{width: 62%;}
+}
+@media (max-width: 480px){
+#page-blocks-stusent_todays_timetable-stuview #filter-box .filterarea .selfilterpos{width: 100% !important;}
+#page-blocks-stusent_todays_timetable-stuview #filter-box .filterarea .selfilterpos select{width: 82% !important;}
+#page-blocks-stusent_todays_timetable-stuview .datefilterpos{width: 100% !important;}
+#page-blocks-stusent_todays_timetable-stuview .uneditable-input,#page-blocks-stusent_todays_timetable-stuview input,#page-blocks-todays_timetable-stuview textarea{width: 62%;}
+/* .block_todays_timetable .ui-tabs .ui-tabs-nav li{width: 60%;font-size: 18px;} */
+}
+@media (max-width: 320px){
+#page-blocks-stusent_todays_timetable-stuview #filter-box .filterarea .selfilterpos{width: 100% !important;}
+#page-blocks-stusent_todays_timetable-stuview #filter-box .filterarea .selfilterpos select{width: 82% !important;}
+#page-blocks-stusent_todays_timetable-stuview .datefilterpos{width: 100% !important;}
+#page-blocks-stusent_todays_timetable-stuview .uneditable-input,#page-blocks-todays_timetable-stuview input,#page-blocks-todays_timetable-stuview textarea{width: 62%;}
+/* .block_todays_timetable .ui-tabs .ui-tabs-nav li{width: 60%;font-size: 18px;} */
+}
+span.timetable_viewall {float: right;}
+div#stusent_todays_timetable_addnewsession_filter {float: right;}
+.block_stusent_todays_timetable .todaystimetable_tabs ul {
+    background-color: #f7f7f7;
+    padding: 8px 0px;
+}
+.block_stusent_todays_timetable .todaystimetable_tabs li a {
+    padding: 10px;
+}
+.block_stusent_todays_timetable .ui-tabs-nav {
+    border: 1px solid #f3f3f3;
+    margin: 0px;
+}
+.block_stusent_todays_timetable .ui-state-default {
+    padding: 5px 10px;
+}
+.block_stusent_todays_timetable .ui-state-default.ui-tabs-active {
+    background-color: #25a7da;
+}
+.block_stusent_todays_timetable .ui-state-default.ui-tabs-active a {
+    color: #fff;
+    background-color: #25a7da;
+}
+.block_student_todays_timetable table.dataTable thead th,
+.block_student_todays_timetable table.dataTable tbody td {
+    padding: 0.75rem!important;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    border-bottom: none;
+}    
+.block_student_todays_timetable table.dataTable{
+    margin-bottom: 1rem;
+}
+.block_student_todays_timetable .dataTables_wrapper .dataTables_paginate .paginate_button{
+    border: 1px solid #e6e6e6!important;
+}
+.block table.dataTable thead th {
+    padding: 10px 5px!important;
+}
+.block_student_todays_timetable .dataTables_length{
+    float: right;
+}
+.block_student_todays_timetable #block_student_table_filter input[type="search"] {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 2rem;
+}
+.block_student_todays_timetable #block_student_table_wrapper select{
+    padding: 4px 2px;
+    color: #951937;
+    height: 2rem;
+}
+.block_student_todays_timetable table.generaltable thead{
+    background-color: #e6e6e6 !important;
+    color: #000 !important;
+}
+.block_student_todays_timetable .table-responsive{
+    overflow: hidden;
+}
+.block_student_todays_timetable .dataTables_wrapper .dataTables_paginate .paginate_button:first-child {
+    margin-right: 10px;
+}
+@media (min-width: 900px){
+    .block_student_todays_timetable #block_student_table_filter{
+        position: absolute;
+        top: 1rem;
+        right: 9rem;
+    }
+    .block_student_todays_timetable #block_student_table_wrapper {
+        position: static;
+    }
+    .block_student_todays_timetable .dataTables_length{
+        position: absolute;
+        top: 1rem;
+        right: 10px;
+    }
+}
+#page-blocks-student_todays_timetable-studenttime_table #block_student_table_wrapper{
+    margin-top: 40px;
+}
+
+/* .block_student_todays_timetable {
+    height: 98%;
+} */
+
+#viewmore {
+	float: right;
+    margin-top: 3%;
+}
+
+/*#id_filter_apply {
+	margin-top: 35px;
+}
+*/
+/*#page-blocks-semester_progress-semesterprogress_table  #id_cancel {
+	margin-top: 35px;
+}*/
+
+
+.block_student_todays_timetable .card-text{
+    box-shadow: 0 5px 6px #ddd;
+    border-radius: 5px;
+}

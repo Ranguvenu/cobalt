@@ -1,0 +1,101 @@
+<div class="row">
+    <div class="col-md-4">
+        <div style="width:100%">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">{{#str}}likesbelowfive, stream{{/str}}</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered"  width="100%" cellspacing="0">
+                      <thead>
+                        <tr>
+                          <th>{{#str}}videoname, stream{{/str}}</th>
+                          <th>{{#str}}likes, stream{{/str}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          {{# fivemins}}
+                              <tr>
+                                  <td>
+                                      <a href="{{config.wwwroot}}/mod/stream/view.php?id={{id}}" target="_blank">{{name}}</a>
+                                  </td>
+                                  <td>
+                                      <span style="cursor:pointer" class="drilldownreportpopup" data-id="{{id}}" data-function="fivemin" data-reportname="{{#str}}likesbelowfivereport, stream{{/str}}">
+                                          <u>{{likes}}</u>
+                                      </span>
+                                  </td>
+                              </tr>
+                          {{/ fivemins}}
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div style="width:100%">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">{{#str}}likesbetweenfiveten, stream{{/str}}</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered"  width="100%" cellspacing="0">
+                      <thead>
+                        <tr>
+                          <th>{{#str}}videoname, stream{{/str}}</th>
+                          <th>{{#str}}likes, stream{{/str}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          {{# fivetotenmins}}
+                              <tr>
+                                  <td>
+                                      <a href="{{config.wwwroot}}/mod/stream/view.php?id={{id}}" target="_blank">{{name}}</a>
+                                  </td>
+                                  <td>
+                                      <span style="cursor:pointer" class="drilldownreportpopup" data-id="{{id}}" data-function="fivemin" data-reportname="{{#str}}likesbetweenfivetenreport, stream{{/str}}">
+                                          <u>{{likes}}</u>
+                                      </span>
+                                  </td>
+                              </tr>
+                          {{/ fivetotenmins}}
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div style="width:100%">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">{{#str}}likesaboveten, stream{{/str}}</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered"  width="100%" cellspacing="0">
+                      <thead>
+                        <tr>
+                          <th>{{#str}}videoname, stream{{/str}}</th>
+                          <th>{{#str}}likes, stream{{/str}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          {{# abovetenmins}}
+                              <tr>
+                                  <td>
+                                      <a href="{{config.wwwroot}}/mod/stream/view.php?id={{id}}" target="_blank">{{name}}</a>
+                                  </td>
+                                  <td>
+                                      <span style="cursor:pointer" class="drilldownreportpopup" data-id="{{id}}" data-function="fivemin" data-reportname="{{#str}}likesabovetenreport, stream{{/str}}">
+                                          <u>{{likes}}</u>
+                                      </span>
+                                  </td>
+                              </tr>
+                          {{/ abovetenmins}}
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

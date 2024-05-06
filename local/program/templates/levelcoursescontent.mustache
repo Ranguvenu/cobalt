@@ -1,0 +1,233 @@
+<div class="tab-content">
+    {{# programlevel }}
+        <div class="programlevel_content mt-3">
+            <div class="date_details">
+                <div class="level_startdate"><span>Start Date : </span><b>{{startdate}}</b></div>
+                <div class="level_enddate"><span>End Date : </span><b>{{enddate}}</b></div>
+                {{# is_level_active }}
+                    <div class="ml-3 text-primary">({{#str}}currentsem, local_program{{/str}})</div>
+                {{/ is_level_active }}
+            </div>
+            {{# canaddcourse }}
+            <div class="addcourse_content d-flex align-items-center">
+                
+              {{# programCompleted}}
+                <a href="javascript:void(0)" class="addcourse btn btn-sm btn-primary" onclick="(function(e){ require('local_program/ajaxforms').init({contextid:{{ contextid }}, component:'local_program', callback:'course_form', form_status:0, plugintype: 'local_program', pluginname: 'course', id:0, bcid: {{ programid }}, programname:'{{ name }}', levelid: {{levelid}}, prevlvlid: {{prevlvlid}}, levelposition:{{levelposition}} }) })(event)">{{#str}}assigncourses, local_program{{/str}}</a>
+              {{/ programCompleted}}
+              {{# createNewProgram}}
+                <!-- <a href="javascript:void(0)" class="addcourse btn btn-sm btn-primary" onclick="(function(e){ require('local_program/ajaxforms').init({contextid:{{ contextid }}, component:'local_program', callback:'course_form', form_status:0, plugintype: 'local_program', pluginname: 'course', id:0, bcid: {{ programid }}, programname:'{{ name }}', levelid: {{levelid}}, levelposition:{{levelposition}}  }) })(event)">{{#str}}assigncourses, local_program{{/str}}</a> -->
+              {{/ createNewProgram}}
+              {{#enableenrolicon}}
+              <a href="{{enrolstudenturl}}" class="float-right"><i class="text-primary fa fa-user-plus fa-fw " title="{{#str}}enrolstudent, local_program{{/str}}"></i></a>
+              {{/enableenrolicon}}
+
+                <div class="action_btns_container ml-2">
+                    {{# caneditlevel }}
+                    {{^caneditsemester}}
+                    <a href="javascript:void(0)" onclick="(function(e){ require('local_program/ajaxforms').init({contextid:1, component:'local_program', callback:'program_managelevel_form', form_status:0, plugintype: 'local', pluginname: 'program_addlevel', id: {{id}}, programid:{{programid}}  }) })(event)">
+                        <i class="icon fa fa-pencil fa-fw" aria-hidden="true" title="{{# str}} editlevel, local_program {{/ str}}"></i>
+                    </a>
+                    {{/caneditsemester}}
+                    {{/ caneditlevel }}
+
+                    {{# caneditlevel }}
+                    {{#caneditsemester}}
+                    <a href="javascript:void(0)">
+                        <i class="icon fa fa-pencil fa-fw text-muted" aria-hidden="true" title="{{# str}} you cannot edit semester, it is already completed, local_program {{/ str}}"></i>
+                    </a>
+                    {{/caneditsemester}}
+                    {{/ caneditlevel }}
+
+
+                    {{# candeletelevel}}
+                        {{^candeletesem}}
+                        <a href="javascript:void(0)" onclick="(function(e){ require('local_program/program').deleteConfirm({action:'deletelevel', id: {{ id }}, programid: {{ programid }}}) })(event)">
+                            <i class="icon fa fa-trash fa-fw" aria-hidden="true" title="{{# str}} deletelevel, local_program {{/ str}}"></i>
+                        </a>
+                        {{/candeletesem}}
+                        {{#candeletesem}}
+                        <a href="javascript:void(0)" onclick="(function(e){ require('local_program/program').deleteConfirm({action:'cannotdeletelevel', id: {{ id }}, programid: {{ programid }}}) })(event)">
+                            <i class="icon fa fa-trash fa-fw" aria-hidden="true" title="{{# str}} deletelevel, local_program {{/ str}}"></i>
+                        </a>
+                        {{/candeletesem}}
+                    {{/ candeletelevel}}
+                </div>
+            </div>
+            {{/ canaddcourse }}
+        {{# userview}}
+            {{# semcompletionstatus }}
+                {{# semcompletionstat}}
+                    <span class="mt-15 mb-10 levelcomplition completed bg-success">{{# str}} levelcompleted, local_program {{/ str}}</span>
+                {{/ semcompletionstat}}
+                {{^ semcompletionstat}}
+                    <span class=" mt-15 mb-10 levelcomplition inprogress bg-primary">{{# str}} levelinprogress, local_program {{/ str}}</span>
+                {{/ semcompletionstat}}
+            {{/ semcompletionstatus }}
+            {{^ semcompletionstatus }}
+                <span class=" mt-15 mb-10 levelcomplition tobestarted bg-warning">{{# str}} semcompletionstat, local_program {{/ str}}</span>
+            {{/ semcompletionstatus }}
+        {{/ userview}}
+        </div>
+        <!-- Level Description -->
+        {{# description }}
+            <div class="w-full level_description my-3" title="{{wholedescription}}">{{{description}}}</div>
+        {{/ description }}
+        {{^ description }}
+            <div class="w-full level_description my-3"><p class="alert alert-info">{{#str}}nocoursedesc, local_program{{/str}}</p></div>
+        {{/ description }}
+        <!-- Allowed Elective courses info   -->
+        {{#has_ele}}
+        {{#userview}}
+            {{^ semcompletionstatus }}
+                <div class="w-full  electives_info alert alert-info bold" role="alert">
+                    {{#str}}accessinfo, local_program, {{startdate}} {{/str}}
+                </div>
+            {{/ semcompletionstatus }}
+        {{^is_elec_enrolled}}
+        <div class="w-full  electives_info alert alert-info bold" role="alert">{{{has_ele_info}}}</div>
+        {{/is_elec_enrolled}}
+        {{/userview}}
+        {{/has_ele}}
+        {{^has_ele}}
+            {{#userview}}
+            {{^ semcompletionstatus }}
+                <div class="w-full electives_info alert alert-info bold" role="alert">
+                    {{#str}}accessinfo, local_program, {{startdate}} {{/str}}
+                </div>
+            {{/ semcompletionstatus }}
+            {{/userview}}
+        {{/has_ele}}
+        <!-- Level courses -->
+        <div class="row mt-4">
+        {{# programlevelcourses }}
+        {{^hidecourse}}
+        <div class="col-md-6 lpcourse_content mb-3" >
+            <div class="w-100 levelcourse_list h-100 p-3{{ coursecompletionstatus }}" >
+                <div class="row ">
+                    <div class="col-md-3">
+                        <div class="levelcourse_img" style="background-image: url('{{{ courseimage }}}');"></div>
+                    </div>
+                    <div  class="col-md-9 pl-0">
+                        <div class="levelcourse_desc">
+                            <div class="levelcourse_left">
+                                <div class="w-100 p-2 text-truncate-3">
+                                    {{# userview}}
+                                    {{# access}}
+                                    <div class="coursename" {{{view_mand}}}>
+                                        <!-- <span class="course_icon mr-15">
+                                            <i class="fa fa-book" aria-hidden="true"></i>
+                                        </span> -->
+                                        {{#mandatory}}
+                                            <span title="{{coursefullname}}">{{{ course }}}</span> <sup class="text-success">( Core )</sup>
+                                            <span title="{{coursefullname}}" class="{{courseview}}">{{courseprogress}}</span>
+                                        {{/mandatory}}
+                                        {{^mandatory}}
+                                            <span title="{{coursefullname}}">{{{ course }}}</span> <sup class="text-info">( Elective )</sup>
+                                            <span title="{{coursefullname}}" class="{{courseview}}">{{courseprogress}}</span>
+                                        {{/mandatory}}
+                                    </div>
+                                    {{/ access}}
+                                    {{^ access}}
+                                    <div class="coursename" style="color: #25a7da">
+                                        <!-- <span class="course_icon mr-15">
+                                            <i class="fa fa-book" aria-hidden="true"></i>
+                                        </span> -->
+                                        {{{ fullname }}}
+                                    </div>
+                                    {{/ access}}
+                                {{/ userview}}
+                                {{^ userview}}
+                                    <div class="coursename">
+                                        <!-- <span class="course_icon mr-15">
+                                            <i class="fa fa-book" aria-hidden="true"></i>
+                                        </span> -->
+                                        {{#mandatory}}
+                                            <span title="{{coursefullname}}">{{{ course }}}</span> <sup class="text-success">( Core )</sup>
+                                            <a href="{{enrol_url}}" class="float-right"><i class="text-primary faculty_icon fa fa-user-plus fa-fw " title="{{#str}}enrolfaculty, local_program{{/str}}"></i></a>
+                                        {{/mandatory}}
+                                        {{^mandatory}}
+                                            <span title="{{coursefullname}}">{{{ course }}}</span> <sup class="text-info">( Elective )</sup>
+                                            <a href="{{enrol_url}}" class="float-right"><i class="text-primary faculty_icon fa fa-user-plus fa-fw " title="{{#str}}enrolfaculty, local_program{{/str}}"></i></a>
+
+                                            <!-- <span title="{{coursefullname}}">{{{ course }}}</span> <sup class="text-info">( Elective )</sup> -->
+                                            {{#cancreatelevel}}
+                                            <a href="{{enrol_student_url}}" class="float-right"><i class="text-primary stdnt_icon fa fa-user-plus fa-fw " title="{{#str}}enrolstudent, local_program{{/str}}"></i></a>
+                                            {{/cancreatelevel}}
+                                        {{/mandatory}}
+                                    </div>
+                                {{/ userview}}
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    {{#summary}}
+                                    <div class="col-12 coursedesc">
+                                        <p class="text-left text-truncate-3" title="{{wholesummary}}">{{summary}}</p>
+                                    </div>
+                                    {{/summary}}
+                                    {{^summary}}
+                                    <div class="col-12 coursedesc">
+                                        <p class="alert-info text-truncate-3">{{#str}}nocoursedesc, local_program{{/str}}</p>
+                                    </div>
+                                    {{/summary}}
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap align-items-center p-2">
+                            {{> local_program/coursesessionblock }}
+                            {{^is_enrolled}}
+                                {{#is_level_active}}
+                                {{#enrolme}}
+                                <button class="btn btn-primary ml-3 " id="enrol_elective" title="Click to enrol yourself in this course" style="cursor: pointer;" aria-hidden="true" onclick="(function(e){ 
+                                    require('local_program/program').enroluser({
+                                        contextid:{{ contextid }},
+                                        action:'enrol', 
+                                        levelid:{{levelid}}, 
+                                        programid:{{programid}}, 
+                                        courseid:{{id}}, 
+                                        userid:{{userid}}, 
+                                        coursename: '{{{fullname}}}' 
+                                    }) 
+                                })(event)">{{#str}}enrol, local_program{{/str}}</button>
+                                {{/enrolme}}
+                                {{/is_level_active}}
+                            {{/is_enrolled}}
+                            </div>
+                            <!-- {{^is_enrolled}}
+                                {{#is_level_active}}
+                                {{#enrolme}}
+                                <button class="btn btn-primary mr-1 " id="enrol_elective" title="Click to enrol yourself in this course" style="cursor: pointer;" aria-hidden="true" onclick="(function(e){ 
+                                    require('local_program/program').enroluser({
+                                        contextid:{{ contextid }},
+                                        action:'enrol', 
+                                        levelid:{{levelid}}, 
+                                        programid:{{programid}}, 
+                                        courseid:{{id}}, 
+                                        userid:{{userid}}, 
+                                        coursename: '{{{fullname}}}' 
+                                    }) 
+                                })(event)">{{#str}}enrol, local_program{{/str}}</button>
+                                {{/enrolme}}
+                                {{/is_level_active}}
+                            {{/is_enrolled}} -->
+                        </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        {{/hidecourse}}
+        {{/ programlevelcourses }}
+         </div>
+        <!-- End of Level courses -->
+        {{#levelid}}
+        <!-- {{^ programlevelcourses }} -->
+            <div class="w-full  alert alert-info text-center">{{#str}} noassignedcourses, local_program{{/str}}</div>
+        <!-- {{/ programlevelcourses }} -->
+        {{/levelid}}
+        {{^levelid}}
+        <!-- {{^ programlevelcourses }} -->
+            <div class="w-full alert alert-info text-center">{{#str}} nosemester, local_program{{/str}}</div>
+        <!-- {{/ programlevelcourses }} -->
+        {{/levelid}}
+    {{/ programlevel }}
+</div>

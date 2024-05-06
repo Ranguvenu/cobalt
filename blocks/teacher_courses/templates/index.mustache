@@ -1,0 +1,134 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_teacher_courses/index
+    Example context (json):
+    {
+    }
+}}
+<ul class="nav nav-pills mb-1" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+      aria-controls="pills-home" aria-selected="true">Program Courses</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+      aria-controls="pills-profile" aria-selected="false">Open Courses</a>
+  </li>
+
+</ul>
+
+
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+    aria-labelledby="pills-home-tab">
+   
+
+   <div class="table-responsive">
+<table class="generaltable" id="teacher_courses_table">
+    <thead>
+    <tr>
+        <th class="text-left">{{#str}}coursetitle, block_teacher_courses{{/str}}</th>
+        <th>{{#str}}programname, block_teacher_courses{{/str}}</th>
+        
+        <th><span>{{#str}}sessiondelivered, block_teacher_courses{{/str}}</span><i class=" ml-1 fa fa-info-circle text-primary"  aria-hidden="true" title="{{#str}}sessiondeliveredmessage, block_teacher_courses{{/str}}" data-toggle="tooltip" data-placement="top"></i></th>
+        
+        <th> <span>{{#str}}attendance, block_teacher_courses{{/str}}</span><i class=" ml-1 fa fa-info-circle text-primary" aria-hidden="true" title="{{#str}}attendancemessage, block_teacher_courses{{/str}}" data-toggle="tooltip" data-placement="top"></i></th>
+        <th>{{#str}}students, block_teacher_courses{{/str}}</th>
+    </tr>
+    </thead>
+    {{#courses}}
+    <tr>
+        <td class="text-left d-flex"><a href="{{config.wwwroot}}/course/view.php?id={{cid}}" title= "{{cfullname}}" class="ml-2 " target="blank">
+          <img src="{{{courseimage}}}" id="imageindex">
+            <span class="network-content" >{{fullname}}</span></a></td>
+        <td>{{programname}}</td>
+        <td>{{sessiondelivered}}</td>
+        <td>{{attendancepercentage}}%</td>
+        
+        <td><button class="rolesstudentpopup" href="javascript:void(0)" data-id={{cid}} data-teacherid={{teacherid}} data-open_identifiedas={{open_identifiedas}} data-action="popupmodal{{id}}">{{ studentcount }}</button></td>
+    </tr>
+    {{/courses}}
+</table>
+</div>
+{{# coursecounts}}
+<span class="d-flex align-items-center justify-content-end teacher_content"><a href="{{config.wwwroot}}/blocks/teacher_courses/teachercourses.php" target="blank">{{#str}}viewall, block_teacher_courses{{/str}}</a></span>
+{{/ coursecounts}}
+
+  </div>
+
+   <!-- program details panel  -->
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+<div class="table-responsive">
+<table class="generaltable" id="teacher_courses_table">
+    <thead>
+    <tr>
+        <th class="text-left">{{#str}}coursetitle, block_teacher_courses{{/str}}</th>
+         
+        
+        <th><span>{{#str}}sessiondelivered, block_teacher_courses{{/str}}</span><i class=" ml-1 fa fa-info-circle text-primary"  aria-hidden="true" title="{{#str}}sessiondeliveredmessage, block_teacher_courses{{/str}}" data-toggle="tooltip" data-placement="top"></i></th>
+        
+        <th> <span>{{#str}}attendance, block_teacher_courses{{/str}}</span><i class=" ml-1 fa fa-info-circle text-primary" aria-hidden="true" title="{{#str}}attendancemessage, block_teacher_courses{{/str}}" data-toggle="tooltip" data-placement="top"></i></th>
+        <th>{{#str}}students, block_teacher_courses{{/str}}</th>
+    </tr>
+    </thead>
+    {{#opencourse}}
+    <tr>
+        <td class="text-left d-flex"><div><a href="{{config.wwwroot}}/course/view.php?id={{cid}}" title= "{{cfullname}}" class="ml-2 " target="blank">
+
+          <img src="{{{courseimage}}}" id="imageindex">
+        </div>
+            <span class="network-content" >{{fullname}}</a></span></td>
+         
+        <td>{{sessiondelivered}}</td>
+        <td>{{attendancepercentage}}%</td>
+        <td><button class="rolesstudentpopup" href="javascript:void(0)" data-id={{cid}} data-teacherid={{teacherid}} data-open_identifiedas={{open_identifiedas}} data-action="popupmodal{{id}}">{{ noofstudent }}</button></td>
+    </tr>
+    {{/opencourse}}
+</table>
+</div>
+ 
+ {{# opencount}}
+<span class="d-flex align-items-center justify-content-end teacher_content"><a href="{{config.wwwroot}}/blocks/teacher_courses/teacheropencourses.php" target="blank">{{#str}}viewall, block_teacher_courses{{/str}}</a></span>
+ {{/ opencount}}
+
+
+    
+    {{#js}}
+      $(function() {
+        $(".progress").each(function() {
+          var value = $(this).attr('data-value');
+          var left = $(this).find('.progress-left .progress-bar');
+          var right = $(this).find('.progress-right .progress-bar');
+
+          if (value > 0) {
+            if (value <= 50) {
+              right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)' )
+            } else {
+              right.css('transform', 'rotate(180deg)' )
+              left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)' )
+            }
+            if (value == 100) {
+              $(this).find('.progress-bar').removeClass('border-primary').addClass('progress-success');
+            }
+          }
+        })
+        function percentageToDegrees(percentage) {
+          return percentage / 100 * 360 
+        }
+      });
+    {{/js}}
+  </div>
+</div>

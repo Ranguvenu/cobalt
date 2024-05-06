@@ -1,0 +1,23 @@
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="w-100 pull-left content_wrap">
+            <div class="p-4">
+                <h6 class="m-0 report_heading">{{#str}}videotrends, mod_stream{{/str}}</h6>
+            </div>
+            <div class="report_tabs_wrap mx-2">
+                <div class="nav nav-tabs report_tabs d-flex justify-content-center mb-3" id="v-pills-tab" role="tablist">
+                  {{# data}}
+                    <a class="nav-link {{active}}" id="v-pills-{{title}}-tab" data-toggle="pill" href="#v-pills-{{title}}" role="tab" aria-controls="v-pills-{{title}}" aria-selected="true">{{title}}</a>
+                  {{/data}}
+                </div>
+                <div class="tab-content" id="v-pills-tabContent">
+                    {{# data}}
+                    <div class="tab-pane fade show  {{active}}" id="v-pills-{{title}}" role="tabpanel" aria-labelledby="v-pills-{{title}}-tab">
+                    <div id="{{name}}" data-title="{{name}}"></div>
+                 </div>
+                    {{/ data}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

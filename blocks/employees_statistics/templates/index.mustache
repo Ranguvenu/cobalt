@@ -1,0 +1,249 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_employees_statistics/index
+    Example context (json):
+    {
+    }
+}}
+
+  <div class="row">
+    <div class="col-lg-4 mb-1">
+      <div class="statistics_cards pb-2">
+          <div class="employees_text mb-2">{{# str }} enrollments, block_employees_statistics {{/ str }}</div>
+        <div class="statisticscard_text ">
+          
+            <div class="d-flex justify-content-start align-items-start">
+              <div class=" program_icon mr-3">
+                {{#str}}programcount, block_employees_statistics{{/str}}
+              </div>
+              <div class="program_content">
+                <div  class="program_count ">{{programcount}} </div>
+                <p class="program_text text-left mb-1">{{#str}}programcontent, block_employees_statistics{{/str}}
+                <span class="float-right"><i class=" ml-1 fa fa-info-circle text-primary"  aria-hidden="true" title="{{# str }} program_title, block_employees_statistics {{/ str }}" data-toggle="tooltip" data-placement="top"></i></span></p>
+              </div>
+            </div>          
+        </div>
+        <div class="statisticscard_text ">
+            
+            <div class="d-flex justify-content-start align-items-start">
+              <div class=" course_icon mr-3">
+                {{#str}} totalcourse, block_employees_statistics{{/str}}
+              </div>
+              <div class="program_content">
+                <div class="program_count">{{coursecount}}</div>
+                <p class="program_text text-left mb-1">{{#str}}totalcontent, block_employees_statistics{{/str}}
+                <span class="float-right"><i class=" ml-1 fa fa-info-circle text-primary"  aria-hidden="true" title="{{#str}}course_title, block_employees_statistics{{/str}}" data-toggle="tooltip" data-placement="top"></i></span></p>
+              </div>
+            </div>          
+        </div>
+        <div class="statisticscard_text">
+            
+            <div class="d-flex justify-content-start align-items-start">
+              <div class=" program_texticon mr-3">
+                <div class="diamond_icon mt-1">
+                  {{#str}} totalsessions, block_employees_statistics{{/str}}
+                </div>
+              </div>
+              <div class="program_content">
+                <div class="program_count">{{# sessions}} {{count}}{{/ sessions}} </div>
+                <p class="program_text text-left mb-1">{{#str}}sessioncontent, block_employees_statistics{{/str}}
+                <span class="float-right"><i class=" ml-1 fa fa-info-circle text-primary"  aria-hidden="true" title="{{#str}} session_title, block_employees_statistics{{/str}}" data-toggle="tooltip" data-placement="top"></i></span></p>
+              </div>
+            </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 mb-1">
+        <div class="statistics_cards pb-2">
+          <div class="mycontent ">
+            <div class="employees_text mb-2">{{# str }} contents, block_employees_statistics {{/ str }} </div>
+            <!-- <span class="circle">{{totalcount}}</span> -->
+               
+              <div class="chartjs-render-monitor">   
+          <canvas id="myChart"></canvas>
+          </div>
+          </div>
+          <div class="dot program"></div>
+            <div class="d-flex">
+              <div class="employee_content d-flex mb-1 mr-1">
+                <div class="column employee_course">
+                  <div class="employee_statistics d-flex justify-content-between align-items-center">
+                    <span class="employeestatistics_icon">
+                      <!-- {{# str }}filesicon, block_employees_statistics {{/ str }} -->
+                    </span>
+                    <span class="statistics_count">
+                      {{files}}
+                    </span>
+                  </div>
+                  <div class="statistics_content">{{# str }} files, block_employees_statistics {{/ str }}
+                  <span class="float-right"><i class=" ml-1 fa fa-info-circle text-primary"  aria-hidden="true" title="{{# str }}file_title, block_employees_statistics {{/ str }}" data-toggle="tooltip" data-placement="top"></i></span></div>                 
+                </div>
+            </div>
+
+          <div class="employee_content d-flex mb-1">
+            <div class="column assignment_course mb-1">
+              <div class="assign_statistics d-flex justify-content-between align-items-center">
+                    <span class="assignstatistics_icon">
+                      <!-- {{# str }}assignmenticon, block_employees_statistics {{/ str }} -->
+                    </span>
+                    <span class="statistics_count">
+                      {{ grades}} 
+                    </span>
+              </div>
+              <div class="assignstatistics_content">
+                    {{# str }} assignments, block_employees_statistics {{/ str }}
+                    <span class="float-right"><i class=" ml-1 fa fa-info-circle text-primary"  aria-hidden="true" title="{{# str }}assignment_title, block_employees_statistics {{/ str }}" data-toggle="tooltip" data-placement="top"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="d-flex content">
+            <div class="employee_content d-flex mb-1 mr-1">
+              <div class="column quizes_course">
+                  <div class="quize_statistics d-flex justify-content-between align-items-center">
+                    <span class="quizestatistics_icon">
+                      <!-- {{# str }}quizeicon, block_employees_statistics {{/ str }} -->
+                    </span>
+                    <span class="statistics_count">
+                      {{ quizes}}
+                    </span>
+                  </div>
+                  <div class="statistics_content">
+                    {{# str }}quizes, block_employees_statistics {{/ str }}
+                    <span><i class=" ml-1 fa fa-info-circle text-primary"  aria-hidden="true" title="{{# str }}quiz_title, block_employees_statistics {{/ str }}" data-toggle="tooltip" data-placement="top"></i></span>
+                  </div>
+              </div>
+            </div>
+            <div class="employee_content d-flex mb-1">
+              <div class="column questions_course">
+                <div class="question_statistics d-flex justify-content-between align-items-center">
+                    <span class="questionstatistics_icon">
+                      <!-- {{# str }}questionicon, block_employees_statistics {{/ str }} -->
+                    </span>
+                    <span class="statistics_count">
+                      {{questions}}
+                    </span>
+                  </div>
+                  <div class="questionstatistics_content">
+                    {{# str }}questions, block_employees_statistics {{/ str }}
+                    <span><i class=" ml-1 fa fa-info-circle text-primary"  aria-hidden="true" title="{{# str }}question_title, block_employees_statistics {{/ str }}" data-toggle="tooltip" data-placement="top"></i></span>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mb-1">
+        <div class="statistics_cards pb-2">
+          <div class="employees_text mb-2">{{# str }} learners, block_employees_statistics {{/ str }}</div>
+          <div class="learner_content ">
+            <div class="d-flex align-items-start justify-content-start">
+              <div class="learner_texticon mr-3">
+                <div class="diamond_icon mt-1">
+                  {{#str}}learnersicon, block_employees_statistics{{/str}}
+                </div>
+              </div>
+              <div class="learner_course">
+                
+                <div  class="learner_count " >{{# activelearner}} {{count}}{{/ activelearner}} </div>
+                <p class="learner_text text-left mb-1">
+                {{#str}}activelearner, block_employees_statistics{{/str}}
+                <span class="float-right"><i class=" ml-1 fa fa-info-circle text-primary"  aria-hidden="true" title="{{# str }} activelearner_title, block_employees_statistics {{/ str }}" data-toggle="tooltip" data-placement="top"></i></span>
+               </p>
+              </div>
+            </div>
+          </div>
+            <div class="learner_content">
+            <div class="d-flex align-items-start justify-content-start">
+              <div class="learner_texticon mr-3">
+                <div class="diamond_icon mt-1">
+                  {{#str}}completionrateicon, block_employees_statistics{{/str}}
+                </div>
+              </div>
+              <div class="learner_course">
+                
+                <div  class="learner_count ">{{participantaverage}} </div>
+                <p class="learner_text text-left mb-1">
+                {{#str}}participation, block_employees_statistics{{/str}}
+                <span><i class=" ml-1 fa fa-info-circle text-primary"  aria-hidden="true" title="{{# str }} participantaverage_title, block_employees_statistics {{/ str }}" data-toggle="tooltip" data-placement="top"></i></span>
+               </p>
+              </div>
+            </div>
+          </div>
+            <div class="learner_content">
+            <div class="d-flex align-items-start justify-content-start">
+              <div class="learner_texticon mr-3">
+                <div class="diamond_icon mt-1">
+                  {{#str}}attendanceicon, block_employees_statistics{{/str}}
+                </div>
+              </div>
+              <div class="learner_course">
+                
+                <div  class="learner_count ">{{avgattendance}} </div>
+                <p class="learner_text text-left mb-1">
+                {{#str}}attendance, block_employees_statistics{{/str}}
+                <span class="float-right"><i class=" ml-1 fa fa-info-circle text-primary"  aria-hidden="true" title="{{# str }} avgattendance_title, block_employees_statistics {{/ str }}" data-toggle="tooltip" data-placement="top"></i></span>
+               </p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{cfg_url}}/blocks/employees_statistics/js/piechart.js"></script>
+<body>
+
+
+{{#js}}
+assignment =  {{ grades}};
+empty =  '';
+files =  {{ files}};
+quizes =  {{ quizes}};
+questions =  {{ questions}};
+if (assignment == 0 && files == 0 && quizes == 0 && questions == 0) {
+  var xValues = ["No Data Available"];
+  var yValues = [empty];  
+} else {
+  var xValues = ["Assignment", "Files", "Questions", "Quizes"];
+  var yValues = [assignment, files, questions, quizes];
+}
+var barColors = [
+  "#ff0000",
+  "#ffff00",
+  "#008000",
+  "#ffa500",
+];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues,
+    }]
+  },
+  options: {
+    plugins:{
+      legend:false,
+    },
+    title: {
+      display: false,
+    }
+  }
+});
+{{/js}}

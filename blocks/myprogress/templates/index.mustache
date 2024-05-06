@@ -1,0 +1,195 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_myprogress/index
+    Example context (json):
+    {
+    }
+}}
+
+
+
+<style type="text/css">
+  .block_myprogress .card-body {
+  height: 220px;
+}
+    .flex-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.single-chart {
+    width: 100%;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+
+.circular-chart.green .circle {
+  stroke: #25c0da;
+}
+
+.percentage {
+  fill: #25a7da;
+  /*font-family: sans-serif;*/
+  font-size: 0.7em;
+      font-weight: 900;
+
+  text-anchor: middle;
+}
+</style>
+
+      
+
+    <div class="row">
+
+ <div class="col-lg-4 mb-1">
+            <div class="myprogress_cards">
+              <div class="single-chart">
+    <svg viewBox="0 0 36 36" class="circular-chart green">
+      <path class="circle-bg"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <path class="circle"
+        stroke-dasharray="{{proprogress}}, 100"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <text x="19" y="20.35" class="percentage">{{proprogress}}%</text>
+       <div class="myprogress_text">{{#str}}programprogress, block_myprogress{{/str}}</div>
+    </svg>
+  </div>
+            </div>
+        </div>
+
+ 
+
+ <div class="col-lg-4 mb-1">
+            <div class="myprogress_cards">
+              <div class="single-chart">
+    <svg viewBox="0 0 36 36" class="circular-chart green">
+      <path class="circle-bg"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <path class="circle"
+        stroke-dasharray="{{semprogress}}, 100"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <text x="19" y="20.35" class="percentage">{{semprogress}}%</text>
+       <div class="myprogress_text">{{#str}}semprogress, block_myprogress{{/str}}</div>
+    </svg>
+  </div>
+            </div>
+        </div>
+
+    {{#obj}}
+      
+
+
+         <div class="col-lg-4 mb-1">
+            <div class="myprogress_cards">
+              <div class="single-chart">
+    <svg viewBox="0 0 36 36" class="circular-chart green">
+      <path class="circle-bg"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <path class="circle"
+        stroke-dasharray="{{percentage}}, 100"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <text x="19" y="20.35" class="percentage">{{percentage}}%</text>
+       <div class="myprogress_text">{{#str}}attendance, block_myprogress{{/str}}</div>
+    </svg>
+  </div>
+            </div>
+        </div>
+
+
+
+{{/obj}}
+
+
+        <!--<div class="col-lg-4 mb-1">
+            <div class="myprogress_cards">
+              {{#enrolled}}
+                <div class="enroll_count">{{course}}</div>
+                <div class="myprogress_text">{{#str}}coursesenrolled, block_myprogress{{/str}}</div>
+                <div class="statistics_bar"></div>
+                {{/enrolled}}
+            </div>
+        </div>--->
+        <!---<div class="col-lg-4 mb-1">
+            <div class="myprogress_cards">
+              {{#completionscount}}
+                <div class="enroll_count">{{completions}}</div>
+                <div class="myprogress_text">{{#str}}completedcount, block_myprogress{{/str}}</div>
+                <div class="statistics_bar"></div>
+                {{/completionscount}}
+            </div>
+        </div>
+
+  <div class="col-lg-4 mb-1">
+            <div class="myprogress_cards">
+                <div class="enroll_count">{{percentage}}<span>%</span></div>
+                <div class="myprogress_text">{{#str}}attendance, block_myprogress{{/str}}</div>
+                <div class="statistics_bar"></div>
+            </div>
+        </div>
+
+        --->
+   
+
+
+
+</div>
+
+

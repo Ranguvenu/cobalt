@@ -1,0 +1,59 @@
+#teacher_courses_table_wrapper{
+	font-size: .9375rem;
+	margin-top: 2%;
+}
+#image{
+width:100px; 
+height: 50px;
+border-radius: 10px;	
+}
+
+#imageindex{
+ 	width:20%; 
+ 	border-radius: 10px
+ }
+
+
+
+/*hema teacher_courses added css*/
+
+.block_teacher_courses #teacher_courses_table .rolesstudentpopup,
+#page-blocks-teacher_courses-teachercourses #teacher_courses_view .rolesstudentpopup {
+   border: none;
+    border-radius: 0;
+    /* width: 30px; */
+    height: 25px;
+    border-radius: 4px;
+}
+
+.block_teacher_courses #teacher_courses_table .network-content {
+    color: #0054d7;
+    text-decoration: underline;
+}
+
+.block_teacher_courses #teacher_courses_table #imageindex {
+    width: 35px;
+    border-radius: 4px;
+    height: 35px;
+}
+.block_teacher_courses .teacher_content a {
+    color:#ff6a4e!important;
+    text-decoration: underline;
+    padding:10px 30px;
+}
+.block_teacher_courses  .card-text:last-child{
+    background:#fff !important;
+}
+.block_teacher_courses  .card-text.content{
+     box-shadow: 0 0 4px 1px #d6dae0;
+     border-radius: 10px;
+     overflow: hidden;
+     border:none;
+
+}
+.block_teacher_courses #teacher_courses_table tr:nth-child(even) td{
+    background: #f2f3f6;
+}
+.block_teacher_courses #teacher_courses_table tbody td{
+    border-top: 0;
+}

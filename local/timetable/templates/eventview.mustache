@@ -1,0 +1,46 @@
+<div>
+    {{# description}}
+    <div class="d-flex my-2">
+        <span class="mr-2"><i class="fa fa-info-circle"></i></span>
+        <div>{{{description}}}</div>
+    </div>
+    {{/ description}}
+    <div class="d-flex my-2 ">        
+        <span class="mr-2 text-dark">
+            {{#str}} set_session_type, local_timetable {{/str}} : </span> {{session_type}}
+    </div>
+    <div class="d-flex my-2 ">
+        <span class="mr-2 text-dark">
+            {{#str}} building, local_timetable {{/str}} : </span> {{building}}
+    </div>
+    <div class="d-flex my-2 ">
+        <span class="mr-2 text-dark">
+            {{#str}} room, local_timetable {{/str}} : </span> {{room}}
+    </div>
+    <div class="d-flex my-2 ">
+        <span class="mr-2 text-dark">
+            {{#str}} teacher, local_timetable {{/str}} : </span> {{teacher}}        
+    </div>
+    <div class="d-flex my-2 ">
+        <div class="mr-4"> <span class="text-dark">Start : </span> {{startdatetime}} - <span class="text-dark">End : </span> {{enddatetime}} </div>
+    </div>
+    <div class="d-flex justify-content-end align-items-center">
+        {{# dataurl}}
+        <div class="text-right mr-3">
+            <a class="btn attendance_btn btn-primary" href="{{dataurl}}">{{launchstring}}</a>
+        </div>
+        {{/ dataurl}}
+        {{# imgdataurl}}
+        <div class="text-right">
+            <a href="{{imgdataurl}}"
+               title="Password" aria-haspopup="true" target="_blank">
+               <img class="icon " alt="" aria-hidden="true"
+                    src="{{config}}/theme/image.php/bloom/attendance/1684314570/qrcode"
+                />
+            </a>
+        </div>
+        {{/ imgdataurl}}
+    </div>
+   
+</div>
+

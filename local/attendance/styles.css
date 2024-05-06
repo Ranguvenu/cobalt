@@ -1,0 +1,506 @@
+input#local_attendance_green, input#local_attendance_red, input#local_attendance_yellow, input#local_attendance_brown{
+    -webkit-appearance:none;
+    width:13px;
+    height:12px;
+    border:1px solid darkgray;
+    border-radius:50%;
+    outline:none;
+   /* box-shadow:0 0 5px 0px gray inset;*/
+}
+input#local_attendance_green:hover, input#local_attendance_red:hover, input#local_attendance_yellow:hover, input#local_attendance_brown:hover {
+    box-shadow:0 0 5px 0px orange inset;
+}
+input#local_attendance_green:before,input#local_attendance_red:before,input#local_attendance_yellow:before,input#local_attendance_brown:before {
+    content:'';
+    display:block;
+    width:80%;
+    height:80%;
+    margin: 10% auto;    
+    border-radius:50%;    
+}
+input#local_attendance_green:checked:before {
+    background:green;
+}
+
+input#local_attendance_red:checked:before {
+    background:rgb(235 76 76);
+}
+
+input#local_attendance_yellow:checked:before {
+    background:yellow;
+}
+/*input#local_attendance_brown:checked:before {
+    background:brown;
+}
+*/
+.generaltable.takegrid{
+    border: 1px solid #FFF;
+    margin-top: 30px;
+}
+/*.generaltable.takegrid th {
+    display: none;
+}*/
+.generaltable.takegrid td{
+    border: 1px solid #FFF;
+    cursor: pointer;
+}/*
+.generaltable.takegrid td .userpicture,*/
+.generaltable.takegrid td nobr{
+    display: none;
+}
+.generaltable.takegrid td .rollid {
+    color: #FFF;
+}
+.generaltable.takegrid td,
+.generaltable.takegrid tbody>tr:nth-child(odd)>td,
+.generaltable.takegrid tbody tr:hover>td{
+    background-color: rgb(255 255 255);
+}
+.generaltable.takegrid td.green,
+.generaltable.takegrid tbody>tr:nth-child(odd)>td.green,
+.generaltable.takegrid tbody tr:hover>td.green{
+    background-color: rgb(255 255 255);
+}
+.generaltable.takegrid td.red,
+.generaltable.takegrid tbody>tr:nth-child(odd)>td.red,
+.generaltable.takegrid tbody tr:hover>td.red{
+    background-color: rgb(255 255 254);
+}
+.generaltable.takegrid td.orange,
+.generaltable.takegrid tbody>tr:nth-child(odd)>td.orange,
+.generaltable.takegrid tbody tr:hover>td.orange{
+    background-color: rgb(255 255 253);
+}
+/*.generaltable.takegrid td.brown,
+.generaltable.takegrid tbody>tr:nth-child(odd)>td.brown,
+.generaltable.takegrid tbody tr:hover>td.brown{
+    background-color: rgb(193, 154, 107);
+}*/
+
+.generaltable.takegrid td{
+    border: 1px solid #FFF;
+    cursor: pointer;
+}
+.generaltable.takegrid td input[type="text"]{
+    margin: 0 auto;
+    width: 90%;
+}
+
+.path-local-attendance .attbtn {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 5px;
+    display: inline-block;
+}
+
+.path-local-attendance .attbtn {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 5px;
+    display: inline-block;
+}
+
+.path-local-attendance .attcurbtn {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 5px;
+}
+
+.path-local-attendance .attfiltercontrols {
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.path-local-attendance .attfiltercontrols #currentdate {
+    display: inline;
+}
+
+.path-local-attendance .attwidth {
+    margin: auto;
+}
+
+.path-local-attendance .userwithoutenrol,
+.path-local-attendance .userwithoutenrol a {
+    color: #fff;
+}
+
+.path-local-attendance .userwithoutdata,
+.path-local-attendance .userwithoutdata a {
+    color: red;
+}
+
+.path-local-attendance .takelist td {
+    vertical-align: middle;
+}
+
+.path-local-attendance .takelist .userpicture {
+    margin: 0 3px;
+    vertical-align: middle;
+}
+
+.path-local-attendance .takegrid input {
+    margin: 0 3px 0 6px;
+}
+
+.path-local-attendance .takegrid .fullname {
+    font-size: 0.8em;
+}
+
+.path-local-attendance div.allsessionssummary + form#attendancetakeform > div {
+    width: 100%;
+}
+
+.path-local-attendance table.controls {
+    text-align: center;
+    width: 100%;
+}
+
+.path-local-attendance table.controls tr {
+    vertical-align: top;
+}
+
+.path-local-attendance table.controls td.right,
+.path-local-attendance table.controls td.left {
+    padding: 4px;
+}
+
+.path-local-attendance table.controls .right {
+    text-align: right;
+}
+/* for IE7*/
+.path-local-attendance .filtercontrols td {
+    padding: 6px;
+}
+
+.path-local-attendance .takecontrols {
+    margin: 0 auto 20px auto;
+    /*width: 800px;*/
+    width: 100%;
+}
+.path-local-attendance .takecontrols table td {
+    padding: 10px;
+}
+#page-local-attendance-take .singlebutton {
+    float: right;
+    margin-bottom: 1rem;
+}
+#page-local-attendance-take .form-inline label:not(.sr-only):not(.accesshide)+select{
+    margin-right: 0.5rem;
+}
+#page-local-attendance-take .generaltable.takelist th a {
+    color: #fff;
+}
+.path-local-attendance .takecontrols table {
+    margin: 0 auto;
+    width: 100%;
+}
+.path-local-attendance .takecontrols .c0 {
+    text-align: left;
+    width: 500px;
+    color: #0058a8;
+    font-weight: 600;
+    font-size: 18px;
+}
+.path-local-attendance .takecontrols .c1 {
+    text-align: right;
+}
+
+.path-local-attendance .inline,
+.path-local-attendance .inline form,
+.path-local-attendance .inline div {
+    display: inline;
+}
+
+.path-local-attendance table.userinfobox {
+    border: 1px solid #eee;
+    padding: 0;
+}
+.path-local-attendance table.userinfobox td.left {
+    background-color: #eee;
+    padding: 30px 10px;
+}
+.path-local-attendance table.userinfobox .userpicture {
+    margin: 0;
+}
+.path-local-attendance table.attlist td.c0 {
+    text-align: right;
+}
+.path-local-attendance table.allsessions tr.grouper td {
+    background-color: #eee;
+}
+.path-local-attendance table.allsessions td.groupheading {
+    font-weight: bold;
+}
+.path-local-attendance .allsessionssummary > * {
+    display: inline-block;
+}
+.path-local-attendance .allsessionssummary .float-right {
+    float: right;
+}
+.path-local-attendance .allsessionssummary .float-left {
+    float: left;
+}
+
+#page-local-attendance-preferences .generalbox {
+    text-align: center;
+}
+
+.path-local-attendance .attsessions_manage_table .action-icon img.smallicon {
+    margin-left: 5px;
+}
+#page--attendance-sessions input[type="checkbox"] {
+    margin-right: 2px;
+}
+
+.path-local-attendance .setallstatuses {
+    text-align: right;
+}
+
+.path-local-attendance .remarkholder {
+    position: relative;
+}
+
+.path-local-attendance .remarkholder .remarkcontent {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px #ccc;
+    display: none;
+    left: 20px;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    width: 150px;
+    z-index: 5000;
+}
+
+.path-local-attendance .remarkholder:hover .remarkcontent {
+    display: inline-block;
+}
+
+.path-local-attendance .attendancestatus-P {
+    color: green;
+}
+
+.path-local-attendance .attendancestatus-E {
+    color: #00aee3;
+}
+
+.path-local-attendance .attendancestatus-L {
+    color: #f7931e;
+}
+
+.path-local-attendance .attendancestatus-A {
+    color: red;
+}
+
+.path-local-attendance .attreport .contrast {
+    background-color: #eaeaea;
+}
+
+.path-local-attendance .attreport .center {
+    text-align: center;
+}
+
+.path-local-attendance .attreport .left {
+    text-align: left;
+}
+
+.path-local-attendance .attreport .bottom {
+    vertical-align: bottom;
+}
+
+.path-local-attendance .attreport .nowrap {
+    white-space: nowrap;
+}
+
+.path-local-attendance .attreport .narrow {
+    width: 1px;
+}
+
+.path-local-attendance .attreport img.userpicture {
+    max-width: inherit;
+}
+
+.path-local-attendance .student-password {
+    font-size: x-large;
+    text-align: center;
+}
+.path-local-attendance .ungraded {
+    font-size: smaller;
+    font-style: italic;
+}
+#page-local-attendance-sessions .statusgroup .statusdesc {
+    margin-right: 12px;
+}
+
+#page-local-attendance-view .averageattendance {
+    font-weight: bold;
+}
+
+#page-local-attendance-preferences .form-control {
+    width: inherit;
+    display: inherit;
+}
+
+@media (max-width: 767px) {
+    .path-local-attendance .remarkscol {
+        display: none;
+    }
+
+    .path-local-attendance .statusgroup .form-check-inline {
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #page-local-attendance-view .colatt {
+        display: none;
+    }
+
+    .path-local-attendance .attfiltercontrols,
+    .path-local-attendance .attwidth {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .path-local-attendance .desccol {
+        display: none;
+    }
+
+    .path-local-attendance .pointscol {
+        display: none;
+    }
+
+    .path-local-attendance .attfiltercontrols #currentdate {
+        display: none;
+    }
+
+    #page-local-attendance-view .colsessionscompleted,
+    #page-local-attendance-view .colpointssessionscompleted {
+        display: none;
+    }
+}
+
+#page-local-attendance-report div[role=main] {
+    position: relative;
+}
+
+#page-local-attendance-report .attendancereporttable {
+    overflow-x: scroll;
+    overflow-y: visible;
+    padding: 0;
+}
+
+#page-local-attendance-report .attendancereporttable .headcol {
+    position: sticky;
+    width: 200px;
+    left: 0;
+    vertical-align: top;
+    background: white;
+    border-top-width: 1px;
+}
+
+#page-local-attendance-report .attendancereporttable .headcol input[type='checkbox'] {
+    margin-right: 4px;
+
+}
+
+.attendancereporttable img.icon {
+    padding-left: 5px;
+}
+/*css by kiran*/
+#page-local-attendance-sessions div#fgroup_id_statusarray {
+    align-items: baseline;
+}
+#page-local-attendance-take.path-local-attendance .userwithoutenrol {
+    width: 16.66%!important;
+    padding: 10px;
+}
+#page-local-attendance-take.path-local-attendance .attendance_cards {
+    box-shadow: 0px 0px 3px lightgrey;
+    border-radius: 8px;
+    padding: 10px;
+}
+#page-local-attendance-take.path-local-attendance .userwithoutenrol a {
+    color: #000 !important;
+}
+#page-local-attendance-take.path-local-attendance .takegrid .fullname{
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #000;
+}
+#page-local-attendance-take.path-local-attendance .takegrid .rollno{
+    font-size: 14px;
+    margin-top: 10px;
+}
+#page-local-attendance-take.path-local-attendance .userwithoutenrol a img {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+}
+#page-local-attendance-take.path-local-attendance .userwithoutenrol .status {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+#page-local-attendance-take.path-local-attendance .userwithoutenrol .attendancestatus {
+    background-color: #f7f7ff;
+    color: #2f363f;
+    display: flex;
+    width: 26px;
+    height: 26px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+#page-local-attendance-take.path-local-attendance .userwithoutenrol.present .attendancestatus.present {
+    background-color: #00994c;
+    color: #fff;
+}
+#page-local-attendance-take.path-local-attendance .userwithoutenrol.absent .attendancestatus.absent {
+    background-color: #e41609;
+    color: #fff;
+}
+#page-local-attendance-take.path-local-attendance .userwithoutenrol.late .attendancestatus.late {
+    background-color: #ffaa4d;
+    color: #fff;
+}
+#page-local-attendance-take .generaltable.takegrid {
+    margin-top: 0px;
+}
+#page-local-attendance-take .takecontrols {
+    margin: 0 auto 5px auto;
+}
+#page-local-attendance-take .nav.nav-tabs {
+    margin-bottom: 0px !important;
+}
+#page-local-attendance-take .generaltable.takegrid .header {
+    width: auto!important;
+}
+#page-local-attendance-take .generaltable.takegrid .header .setallstatuses .singleselect {
+    padding: 5px 10px;
+    float: left;
+    text-align: left;
+    width: 100%;
+}
+#page-local-attendance-take .generaltable.takegrid td {
+    cursor: inherit;
+}
+#page-local-attendance-take .generaltable.takegrid td .attendancestatus{
+    cursor: pointer;
+}
+#page-local-attendance-take .generaltable.takegrid .header a{
+    margin-right: 10px;
+}
+#page-local-attendance-take .generaltable.takegrid td input[type='text']{
+    display: none;
+}

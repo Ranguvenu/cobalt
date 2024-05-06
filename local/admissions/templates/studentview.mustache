@@ -1,0 +1,154 @@
+{{!
+  This file is part of Moodle - http://moodle.org/
+  Moodle is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  Moodle is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  You should have received a copy of the GNU General Public License
+  along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+  @template local_hod/view
+  Example context (json):
+  {
+  }
+}}
+<!-- <div class="pull-right mb-3">
+<a href="{{configwwwroot}}" title="Back"><i class="fa fa-arrow-circle-left" style="font-size:40px;color:#c9243f"></i>
+</a>
+</div> -->
+<div class="container">
+<div class="title text-center">
+  <h3>My Application</h3>
+</div>
+<!-- Tabs with icons on Card -->
+<div class="card card-nav-tabs">
+ <div class="card-header card-header-primary">
+    <div class="nav-tabs-navigation">
+       <div class="nav-tabs-wrapper">
+          <ul class="nav nav-tabs" data-tabs="tabs">
+             <li class="nav-item" rejected>
+                <a class="nav-link " href="#approvedapplication" data-toggle="tab">
+                <i class="fa fa-check"></i>
+                Approved Applications 
+                {{#approvedinfo}} 
+                  ({{approvedcount}}) 
+                {{/approvedinfo}}
+                </a>
+             </li>
+             <li class="nav-item" >
+                <a class="nav-link" href="#rejectedapplication" data-toggle="tab">
+                <i class="fa fa-times"></i>
+                 Rejected Applications<span style="color:red;">
+                  {{#rejectedinfo}} 
+                    ({{rejectedcount}}) 
+                  {{/rejectedinfo}}
+              </span>
+                </a>
+             </li>
+             <li class="nav-item" >
+              <a class="nav-link" href="#revisedapplication" data-toggle="tab">
+              <i class="fa fa-refresh"></i>
+              Revise Applications<span style="color:red;">
+              {{#revisedinfo}} 
+                ({{revisedcount}}) 
+              {{/revisedinfo}}
+          </span>
+              </a>
+           </li>
+          </ul>
+       </div>
+    </div>
+  </div>
+  <div class="card-body ">
+  <div class="tab-content text-center">
+    <div class="tab-pane active" id="approvedapplication" role="tabpanel">
+      <table class="table table-bordered " id="table3" style="width: 100%;margin: 0px !important;">
+        <thead>
+          <tr>
+          {{#headings}}
+          <th style="text-align:center;">{{.}}</th>
+          {{/headings}}
+          </tr>
+        </thead>
+        <tbody>
+          {{#approvedinfo}}
+          <tr>
+            <td style="text-align:center;">{{firstname}} {{lastname}}</td>
+            <td style="text-align:center;">{{email}}</td>
+            <td style="text-align:center;">{{name}}</td>
+            <td style="text-align:center;"><a href="{{upload}}" download><button>{{#str}}downloaddocuments, local_admissions{{/str}}</button></a>
+            <a href="{{configwwwroot}}/local/admissions/student_preview.php?id={{admissionid}}"><button>View Application</button></a>
+          </td>
+            <td style="text-align:center; color: green;"><b>{{#str}}applicationapproved, local_admissions{{/str}}</b></a></td>
+          </tr>
+          {{/approvedinfo}}
+        </tbody>
+      </table>
+    </div>
+    <div class="tab-pane" id="rejectedapplication" role="tabpanel">
+      <div class="col-md-12">
+        <table class="table table-bordered " id="table4" style="width: 100%;margin: 0px !important;">
+          <thead>
+            <tr>
+            {{#statusheadings}}
+            <th style="text-align:center;">{{.}}</th>
+            {{/statusheadings}}
+            </tr>
+          </thead>
+          <tbody>
+            {{#rejectedinfo}}
+            <tr>
+              <td style="text-align:center;">{{firstname}} {{lastname}}</td>
+              <td style="text-align:center;">{{email}}</td>
+              <td style="text-align:center;">{{name}}</td>
+              <td style="text-align:center;"><a href="{{upload}}" download><button>{{#str}}downloaddocuments, local_admissions{{/str}}</button></a></td>
+              <td style="text-align:center; color: red;"><b>{{#str}}applicationrejected, local_admissions{{/str}}</b></td>
+            </tr>
+            {{/rejectedinfo}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+      <div class="tab-pane" id="revisedapplication" role="tabpanel">
+          <div class="col-md-12">
+            <table class="table table-bordered " id="table4" style="width: 100%;margin: 0px !important;">
+              <thead>
+                <tr>
+                {{#statusheadings}}
+                <th style="text-align:center;">{{.}}</th>
+                {{/statusheadings}}
+                </tr>
+              </thead>
+              <tbody>
+                {{#revisedinfo}}
+                <tr>
+                  <td style="text-align:center;">{{firstname}} {{lastname}}</td>
+                  <td style="text-align:center;">{{email}}</td>
+                  <td style="text-align:center;">{{name}}</td>
+                  <td style="text-align:center;"><a href="{{upload}}" download><button>{{#str}}downloaddocuments, local_admissions{{/str}}</button></a>
+                    <!-- {{^revisecnt}}
+                      <a title="{{# str}} youcaneditonce, local_admissions {{/str}}"  href="{{configwwwroot}}/local/admissions/personal_information.php?id={{admissionid}}">
+                        <button>{{#str}}edit, local_admissions{{/str}}</button>
+                      </a>
+                    {{/revisecnt}} -->
+                  {{#cannotedit}}
+                    <span>N/A</span></td>
+                  {{/cannotedit}}
+                  </td>
+                  <td style="text-align:center; color: red;"><b>{{#str}}applicationrevised, local_admissions{{/str}}</b></td>
+                  <td style="text-align:center;text-overflow: ellipsis;">{{reason}}</a></td>
+                </tr>
+                {{/revisedinfo}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

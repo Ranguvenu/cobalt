@@ -1,0 +1,236 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_hod/view
+    Example context (json):
+    {
+    }
+}}
+<div class="pull-right mb-3">
+</div>
+<div class="container-fluid">
+  <!-- <div class="title text-center">
+    <h3>Manage Admissions</h3>
+  </div> -->
+  <!-- Tabs with icons on Card -->
+  <div class="card card-nav-tabs">
+   <div class="card-header card-header-primary">
+      <div class="nav-tabs-navigation">
+         <div class="nav-tabs-wrapper">
+            <ul class="nav nav-tabs d-flex align-items-center justify-content-center flex-wrap" data-tabs="tabs">
+               <li class="nav-item">
+                  <a class="nav-link active" href="#approvals" data-toggle="tab">
+                  <!-- <i class="fa fa-th-list"></i> -->
+                  New Applicants<span>{{#countadmissionuserinfo}} ({{countuserinfo}}) {{/countadmissionuserinfo}}</span>
+                  </a>
+               </li>
+               <li class="nav-item approved">
+                  <a class="nav-link" href="#newapplicants" data-toggle="tab">
+                  <!-- <i class="fa fa-plus"></i> -->
+                  Add New Applicants 
+                  {{#countprograminfo}}
+                   ({{programcount}}) 
+                   {{/countprograminfo}}
+                  </a>
+               </li>
+               <li class="nav-item" rejected>
+                  <a class="nav-link " href="#approvedapplicants" data-toggle="tab">
+                  <!-- <i class="fa fa-check"></i> -->
+                  Approved Applicants 
+                  {{#countapproveduserinfo}} 
+                  ({{approvedcount}}) 
+                  {{/countapproveduserinfo}}
+                  </a>
+               </li>
+               <li class="nav-item" >
+                  <a class="nav-link" href="#rejectedapplicants" data-toggle="tab">
+                  <!-- <i class="fa fa-times"></i> -->
+                 Rejected Applicants<span>
+                    {{#countrejecteduserinfo}} 
+                    ({{rejectedcount}}) 
+                    {{/countrejecteduserinfo}}
+                </span>
+                  </a>
+               </li>
+               <li class="nav-item" >
+                <a class="nav-link" href="#revisedapplicants" data-toggle="tab">
+                <!-- <i class="fa fa-refresh"></i> -->
+               Revised Applicants<span>
+                {{#countreviseuserinfo}} 
+                ({{revisedcount}}) 
+                {{/countreviseuserinfo}}
+            </span>
+                </a>
+             </li>
+            </ul>
+         </div>
+      </div>
+    </div>
+    <div class="card-body ">
+    <div class="tab-content text-center">
+	    <div class="tab-pane active" id="approvals" role="tabpanel">
+        <div class="col-md-12">
+          <table class="table table-bordered " id="table" style="width: 100%;margin: 0px !important;">
+            <thead>
+              <tr>
+              {{#headings}}
+              <th>{{.}}</th>
+              {{/headings}}
+              </tr>
+            </thead>
+            <tbody>
+              {{#userinfo}}
+              <tr>
+                <td>{{firstname}} {{lastname}}</td>
+                <td>{{email}}</td>
+                <td>{{name}}</td>
+        
+                <td><a href="{{uploaddocs}}" download><button class="download_btn" >{{#str}}downloaddocuments, local_admissions{{/str}}</button></a>
+                  <a href="{{configwwwroot}}/local/admissions/preview.php?id={{admissionid}}"><button class="view_btn">{{#str}}viewapplication, local_admissions{{/str}}</button></a></td>
+                
+                <td>
+                  <a  href="javascript:void(0)" onclick="(function(e){ require('local_admissions/admissionstatus').acceptConfirm({action:'acceptadmission', id: {{ admissionid }}, programid: {{ programid }}, context:{{context}}}) })(event)">
+                    <button aria-hidden="true" title="{{#str}}accept, local_admissions{{/str}}">{{#str}}accept, local_admissions{{/str}}</button></a>
+                  {{^revisecnt}}
+                  <a id='extended_menu_createusers' title='{{# str}}revise, local_admissions{{/str}}' class='course_extended_menu_itemlink' data-action='statusbtn' onclick ='(function(e){ require("local_admissions/confirm").init({selector:"statusbtn", context:{{context}}, admissionid:{{admissionid}}, programid:{{programid}}, clickcount:{{clickcount}}}) })(event)'  >
+                    <button>{{#str}}revise, local_admissions{{/str}}</button>
+                  </a>
+                  {{/revisecnt}}
+                  {{#revisecnt}}
+                  <button class="text-muted" title='{{# str}}revisecnttwo, local_admissions{{/str}}' disabled>
+                    <a id='extended_menu_createusers'  class='course_extended_menu_itemlink disabled-link text-muted' data-action='statusbtn' onclick ='(function(e){ require("local_admissions/confirm").init({selector:"statusbtn", context:{{context}}, admissionid:{{admissionid}}, programid:{{programid}}, clickcount:{{clickcount}}}) })(event)' >
+                    </a>
+                  {{#str}}revise, local_admissions{{/str}}</button>
+                  {{/revisecnt}}
+                  <a id='extended_menu_createusers' title='{{# str}}reject, local_admissions{{/str}}' class='course_extended_menu_itemlink' data-action='statusbtn' onclick ='(function(e){ require("local_admissions/rejectstatus").init({selector:"statusbtn", context:{{context}}, admissionid:{{admissionid}}, programid:{{programid}}, clickcount:{{clickcount}} }) })(event)' >
+                    <button>{{#str}}reject, local_admissions{{/str}}</button>
+                  </a>
+                </td>
+              </tr>
+              {{/userinfo}}
+            </tbody>
+          </table>
+        </div>
+	    </div>
+  	  <div class="tab-pane" id="newapplicants" role="tabpanel">
+        <div class="col-md-12">
+          <table class="table table-bordered " id="table2" style="width: 100%;margin: 0px !important;">
+            <thead>
+              <tr>
+              {{#programheadings}}
+              <th >{{.}}</th>
+              {{/programheadings}}
+              </tr>
+            </thead>
+            <tbody>
+              {{#programinfo}}
+              <tr>
+                <td>{{programname}}</td>
+                <td>{{cohortname}}</td>
+                <td>
+                <!-- {{#admintoapply}} -->
+                <a title="{{#str}}applynow, local_admissions {{/str}}"  href="{{configwwwroot}}/local/admissions/personal_information.php?programid={{id}}&admintoapply={{admintoapply}}">
+                  <button>{{#str}}applynow, local_admissions{{/str}}</button></a>
+                <!-- {{/admintoapply}} -->
+                <!-- {{^admintoapply}}
+                <a title="{{#str}}semesterinactive, local_admissions {{/str}}"  href="{{configwwwroot}}/local/admissions/personal_information.php?programid={{id}}">
+                  <button disabled class="text-muted">{{#str}}applynow, local_admissions{{/str}}</button></a>
+                {{/admintoapply}} -->
+                </td>
+              </tr>
+              {{/programinfo}}
+            </tbody>
+          </table>
+        </div> 
+	    </div>
+  	  <div class="tab-pane" id="approvedapplicants" role="tabpanel">
+        <table class="table table-bordered " id="table3" style="width: 100%;margin: 0px !important;">
+          <thead>
+            <tr>
+            {{#headings}}
+            <th>{{.}}</th>
+            {{/headings}}
+            </tr>
+          </thead>
+          <tbody>
+            {{#approvedinfo}}
+            <tr>
+              <td>{{firstname}} {{lastname}}</td>
+              <td>{{email}}</td>
+              <td>{{name}}</td>
+              <td>
+                <a href="{{uploaddocs}}" download><button class="download_btn">{{#str}}downloaddocuments, local_admissions{{/str}}</button></a>
+                <a href="{{configwwwroot}}/local/admissions/preview.php?id={{admissionid}}"><button class="view_btn">{{#str}}viewapplication, local_admissions{{/str}}</button></a>
+              </td>
+              <td class="status_approve"><b>{{#str}}applicationapproved, local_admissions{{/str}}</b></td>
+            </tr>
+            {{/approvedinfo}}
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane" id="rejectedapplicants" role="tabpanel">
+        <div class="col-md-12">
+          <table class="table table-bordered " id="table4" style="width: 100%;margin: 0px !important;">
+            <thead>
+              <tr>
+              {{#headings}}
+              <th>{{.}}</th>
+              {{/headings}}
+              </tr>
+            </thead>
+            <tbody>
+              {{#rejectedinfo}}
+              <tr>
+                <td>{{firstname}} {{lastname}}</td>
+                <td>{{email}}</td>
+                <td>{{name}}</td>
+                <td><a href="{{uploaddocs}}" download><button>{{#str}}downloaddocuments, local_admissions{{/str}}</button></a>
+                <a href="{{configwwwroot}}/local/admissions/preview.php?id={{id}}"><button class="view_btn">{{#str}}viewapplication, local_admissions{{/str}}</button></a></td>
+                <td style="text-align:center;color: red;"><b>{{#str}}applicationrejected, local_admissions{{/str}}</b></td>
+              </tr>
+              {{/rejectedinfo}}
+            </tbody>
+          </table>
+        </div>
+    	</div>
+        <div class="tab-pane" id="revisedapplicants" role="tabpanel">
+            <div class="col-md-12">
+              <table class="table table-bordered " id="table4" style="width: 100%;margin: 0px !important;">
+                <thead>
+                  <tr>
+                  {{#headings}}
+                  <th style="text-align:center;">{{.}}</th>
+                  {{/headings}}
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#reviseinfo}}
+                  <tr>
+                    <td>{{firstname}} {{lastname}}</td>
+                    <td>{{email}}</td>
+                    <td>{{name}}</td>
+                    <td><a href="{{uploaddocs}}" download><button>{{#str}}downloaddocuments, local_admissions{{/str}}</button></a>
+                      <a href="{{configwwwroot}}/local/admissions/preview.php?id={{admissionid}}"><button>{{#str}}viewapplication, local_admissions{{/str}}</button></a></td>
+                    <td style="color: orange;"><b>{{#str}}applicationrevised, local_admissions{{/str}}</b>
+                    </td>
+                  </tr>
+                  {{/reviseinfo}}
+                </tbody>
+              </table>
+            </div>
+            </div>
+    </div>
+  </div>
+</div>
+</div>

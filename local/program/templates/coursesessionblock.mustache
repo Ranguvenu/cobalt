@@ -1,0 +1,72 @@
+<div class="levelcourse_right">
+    <div class="course_actions">
+        {{# canremovecourse }}
+            <a class="pull-right course_delete" id="unassign_course_{{bclevelcourseid}}" onclick="(function(e){ require('local_program/program').unassignCourses({action:'unassign_course', bclcid:{{bclevelcourseid}}, levelid:{{levelid}}, bcid:{{programid}} }) })(event)" href="javascript:void(0)">
+                <button class="btn btn-sm btn-primary" type="button" aria-hidden="true" title="Un-assign" aria-label="Delete">Unassign</button>
+                <!-- <i class="icon fa fa-times fa-fw" aria-hidden="true" title="Un-assign" aria-label="Delete"></i> -->
+            </a>
+        {{/ canremovecourse }}
+
+        {{# cannotremovecourse }}
+            <a class="pull-right course_delete" id="unassign_course_{{bclevelcourseid}}" onclick="(function(e){ require('local_program/program').unassignCourses({action:'cannotunassign_course', bclcid:{{bclevelcourseid}}, levelid:{{levelid}}, bcid:{{programid}} }) })(event)" href="javascript:void(0)"><button class="btn btn-sm btn-primary" type="button" aria-hidden="true" title="Un-assign" aria-label="Delete">Unassign</button></a>
+        {{/ cannotremovecourse }}
+    </div>
+    {{^ canremovecourse }}
+    {{# userview }}
+    <div class='text-xs-right'>
+        <span class='course_status_tag'>
+            {{# coursecompletionstatus }}
+                <span class="course_status completed">{{ coursecompletionstatus }}</span>
+            {{/ coursecompletionstatus }}
+        </span>
+        <!-- {{# atten }}
+            {{# access}}
+                {{#mandatory}}
+                <span class="reschedule" {{{view_mand}}} >
+                    <a href="{{{ config.wwwroot }}}/mod/attendance/view.php?id={{atten}}">
+                        <button class="btn btn-primary reschedule_btn">
+                   {{#str}}sessions, local_program{{/str}}</button>
+                    </a>
+                </span>
+                {{/mandatory}}
+                {{^mandatory}}
+                {{^is_elec_enrolled}}
+                {{^is_enrolled}}
+                <span class="reschedule" >
+                    <a href="{{{ config.wwwroot }}}/mod/attendance/view.php?id={{atten}}" style="pointer-events: none;opacity: 0.4;">
+                        <button class="btn btn-primary reschedule_btn">
+                   {{#str}}sessions, local_program{{/str}}</button>
+                    </a>
+                </span>
+                {{/is_enrolled}}
+                {{/is_elec_enrolled}}
+                {{#is_enrolled}}
+                <span class="reschedule"{{{view_mand}}} >
+                    <a href="{{{ config.wwwroot }}}/mod/attendance/view.php?id={{atten}}" >
+                        <button class="btn btn-primary reschedule_btn">
+                   {{#str}}sessions, local_program{{/str}}</button>
+                    </a>
+                </span>
+                {{/is_enrolled}}
+                {{/mandatory}}
+                {{^is_level_active}}
+                <span class="reschedule">
+                    <a href="{{{ config.wwwroot }}}/mod/attendance/view.php?id={{atten}}" style="pointer-events: none;opacity: 0.4;">
+                        <button class="btn btn-primary reschedule_btn">
+                   {{#str}}sessions, local_program{{/str}}</button>
+                    </a>
+                </span>
+                {{/is_level_active}}
+
+            {{/ access}}
+        {{/ atten }} -->
+            {{^ access}}
+                <span class="reschedule">
+                        <button class="btn btn-primary reschedule_btn" disabled>
+                   {{#str}}sessions, local_program{{/str}}</button>
+                </span>
+            {{/ access}}
+    </div>
+    {{/ userview }}
+    {{/ canremovecourse }}
+</div>

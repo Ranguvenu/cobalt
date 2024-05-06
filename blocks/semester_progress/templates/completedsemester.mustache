@@ -1,0 +1,146 @@
+{{!
+  This file is part of Moodle - http://moodle.org/
+  Moodle is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  Moodle is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  You should have received a copy of the GNU General Public License
+  along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+{{#completedsem}}
+	<div class="container px-0 py-2 mt-2" id="cm_level">
+	  <div class="row sem-com">
+	    <div class="col-md-6 course_info">
+	      <label class="mr-3">
+	        {{#str}}startdate, block_semester_progress {{/str}}: <b>{{sdate}}</b>
+	      </label>
+	      <label class="mr-3">
+	        {{#str}}enddate, block_semester_progress {{/str}}: <b>{{edate}}</b>
+	      </label>
+	    </div>
+	    <div class="col-md-6 course_info">
+	      <label class="mr-3">
+	        {{#str}}core_courses, block_semester_progress {{/str}}: <b>{{core_courses}}</b>
+	      </label>
+	      <label class="mr-3">
+	        {{#str}}elective_courses, block_semester_progress {{/str}}: <b>{{elective_courses}}</b>
+	      </label>
+	    </div>
+	    <!-- <div class="col-md-4">
+	      <label>
+	        {{#str}}core_courses, block_semester_progress {{/str}}: <b>{{core_courses}}</b>
+	      </label><br>
+	      <label>
+	        {{#str}}elective_courses, block_semester_progress {{/str}}: <b>{{elective_courses}}</b>
+	      </label><br>
+	    </div> -->
+	    <!-- <div class="col-md-1">
+	      <div class="stud_statistics_cards">
+	        <div class="attendanceprogre">
+	          <svg viewBox="0 0 80 80" class="circular-chart-charter red">
+	            <path class="circle-bg" d="M18 2.0845
+	                a 15.9155 15.9155 0 0 1 0 31.831
+	                a 15.9155 15.9155 0 0 1 0 -31.831"/>
+	            <path class="circle" stroke-dasharray="{{progress}}, 100" d="M18 2.0845
+	                a 15.9155 15.9155 0 0 1 0 31.831
+	                a 15.9155 15.9155 0 0 1 0 -31.831"/>
+	            <text x="19" y="20" class="attendancepercentage">{{ progress }}%</text>
+	          </svg>
+	        </div>
+	      </div>
+	    </div> -->
+	  </div>
+	  {{#list}}
+	  <li class="cmdata post d-flex justify-content-between align-items-center">
+	    <div class="container py-2">
+	      <div class="row semester_course align-items-center">
+	        <div class="col-md-3">
+	          <div class="d-block info mr-1">
+	            <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank" title="{{course_name}}"> {{course_name}}</a>
+	                  <span><b>({{mandatory}})</b></span>
+	            </div>
+	          </div>
+	        <div class="col-md-3 p-0">
+	        	<div class="row"> 
+	        		<div class="col-md-6 course_container ">
+	        			<span class="topics_coursedata d-flex">
+			            <span class="count d-flex">{{nooftopics}}</span>
+			            <span class="text_content"> {{#str}}topics, block_semester_progress{{/str}}</span>
+			          </span>
+	        		</div>
+	        		<div class="col-md-6 course_container ">
+	        			<span class="topics_coursedata d-flex">
+			            <span class="count  d-flex "> {{testcount}}</span>
+			            <span class="text_content">
+			              {{#str}}tests, block_semester_progress{{/str}}
+			            </span>
+			          </span>
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="col-md-3 p-0">
+	        	<div class="row">
+	        		<div class="col-md-6 course_container">
+	        			<span class="topics_coursedata d-flex">
+	            <span class="count  d-flex ">{{assignmentscount}}</span>
+	            <span class="text_content">
+	              {{#str}}assignment, block_semester_progress{{/str}}
+	            </span>
+	          </span>
+	        		</div>
+	        		<div class="col-md-6 course_container">
+	        			<span class="topics_coursedata d-flex">
+			            <a href="{{configwwwroot}}/grade/report/user/index.php?id={{id}}" target="_blank">
+			              {{#str}}grade, block_semester_progress{{/str}}
+			            </a>
+			          </span>
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="col-md-3 p-0 course_contentcontainer {{dyclass}}">
+	          <div class="topics_content">
+	            <div class="d-flex align-items-center justify-content-between">
+	              <div class="courses_completed">{{courseprogress}}</div>
+	              <div class="current_semicon px-3">
+	                <a href="{{configwwwroot}}/course/view.php?id={{id}}" target="blank">
+	                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+	                </a>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </li>
+	  {{/list}}
+	</div>
+{{/completedsem}}
+
+{{#js}}  
+require(['core/templates'], function(Templates) {
+  $('#completed_sem').on('change', function() {
+    var semid = $(this).val();
+    $.ajax({
+          method: 'POST',
+          url: M.cfg.wwwroot+'/blocks/semester_progress/ajax.php',
+          data: {
+            semid : semid
+          },
+          success:function(resp){
+            Templates.render('block_semester_progress/completedsemester', resp).then(function(html, js) {
+                // Show the user the records set.
+                targetRoot = $('#pills-profile');
+                var paginatelistcontainer = '[data-region="cm_level-list-container"]';
+                var container = targetRoot.find(paginatelistcontainer);
+                Templates.replaceNodeContents(container, html, js);
+            })
+          }
+      });
+  });
+});
+{{/js}}

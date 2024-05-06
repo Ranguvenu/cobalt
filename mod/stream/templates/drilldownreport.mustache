@@ -1,0 +1,22 @@
+<div class="drilldown_table_wrap">
+    <table class="customdatatable generaltable" id="{{reportname}}">
+        <thead>
+            <tr>
+                <th style="display:table-column">{{title}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#data}}
+            <tr>
+                <td>
+                    <div class="card_wrap">
+                        <div class="p-3 d-flex align-items-center justify-content-between">
+                            {{{content}}}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            {{/data}}
+        </tbody>
+    </table>
+</div>

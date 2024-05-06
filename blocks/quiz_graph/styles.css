@@ -1,0 +1,16 @@
+/*.block_quiz_graph .card-body {
+	height: 55vh;
+}
+.block_quiz_graph .card-text.content.mt-3 {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.block_quiz_graph .card-text .chart-area {
+	flex: 0 0 100%;
+    width: 100%;
+    margin-bottom: 10%;
+}
+.block_quiz_graph .card-text .chart-table {
+	display: none;
+}*/

@@ -1,0 +1,51 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+<div class="p-3 border border-top-0 shadow collapse" id="sylabuscollapse{{id}}">
+    <div class="decription_head mb-2">{{#str}}programdesc, local_admissions{{/str}} :</div>
+    {{# description }}
+      <div class="descrp" title="{{{ fulldescription }}}">{{{ description }}}</div>
+    {{/ description }}
+    {{^ description }}
+      <p class="alert alert-info text-center">{{#str}}nodescprovided, local_admissions{{/str}}</p>
+    {{/ description }}
+    <div class="decription_head mb-2">{{#str}}program_prerequisite, local_admissions{{/str}} :</div>
+    {{# prerequisite }}
+      <div class="prereq" title="{{{ prerequisite }}}">{{{ prerequisite }}}</div>
+    {{/ prerequisite }}
+    <div class="my-5">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        {{# levels }}
+        <li class="nav-item">
+          <a class="nav-link active{{ id }}" id="{{ id }}current-tab" data-toggle="tab" aria-selected="true" href="javascript:void(0)" onclick="(function(e){ require('local_admissions/semestertabs').dataArguments({programid: {{programid}},levelid: {{levelid}} }) }) (event)">{{ level }}</a>
+        </li>
+        {{/ levels }}
+      </ul>
+    </div>
+    {{> local_admissions/semestertabcontent }}
+    <div class="faculty">
+        <span>{{#str}}teachers, local_admissions{{/str}} :</span>
+        {{# faculty }}
+          <span><img src="{{teacherurl}}" class="rounded-circle image-details" width="30" height="30" alt="{{#str}}teachersimg, local_admissions{{/str}}" title="{{username}}" data-toggle="tooltip" data-placement="top"></span>
+        {{/ faculty }}
+        {{^ faculty }}
+          <p class="alert alert-info text-center">{{#str}}nofacultyavail, local_admissions{{/str}}</p>
+        {{/ faculty }}
+    </div>
+</div>
+              
+      

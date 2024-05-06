@@ -1,0 +1,49 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_quiz/random_challenge_form_preview
+
+    A preview section for the list of challenges that match the random
+    challenge criteria in the random challenge form.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * title A cleaned string (use clean_text()) to display.
+    * body HTML content for the boday
+
+    Example context (json):
+    {}
+}}
+
+{{#obj}}
+<div class="todays_session">
+      <div class="today_course p-2 d-flex justify-content-between align-items-center">
+        <div><h5 class="card-text" title="{{fullcourses}}">{{courses}}</h5>
+        <span class="card-text1 todays_date">{{#dates}}{{dates}}{{/dates}}</span></div>
+        <a href="{{ config.wwwroot }}/local/attendance/take.php?id={{attendanceid}}&sessionid={{sessid}}&grouptype=0&viewmode=2&semid={{tlid}}&batch_group=0" target="_blank" class="text-danger float-right todays_context">{{#str}}takeattendance, block_todays_timetable{{/str}}</a>
+      </div>
+    </div>
+</div>
+    {{/obj}}
+    {{^obj}}
+    <p class="alert alert-info text-center">{{#str}}Nosessionsarescheduledfortoday, block_todays_timetable{{/str}}<p>
+ {{/obj}}

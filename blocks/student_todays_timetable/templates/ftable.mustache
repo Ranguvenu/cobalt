@@ -1,0 +1,32 @@
+
+    <table class="generaltable" id="student_timetable">
+    	<thead>
+    	<tr>
+    	<th>{{#str}} subject, block_student_todays_timetable {{/str}}</th>
+    	<th>{{#str}} timings, block_student_todays_timetable {{/str}}</th>
+    	<th>{{#str}} instructor, block_student_todays_timetable {{/str}}</th>
+    	</tr>
+    	</thead>
+            {{#data}}
+                	<tr>
+                        <td>{{classroom}}</td>
+                        <td>{{date}}</td>
+                        <td><span title="{{faculty_fullname}}">{{instructor}}</span></td>
+                    </tr>
+            {{/data}}
+            {{#viewmore}}
+            <tr class="ml-3">
+                <td colspan="5" class="text-right">
+                       <a href="{{cfgwwwroot}}/blocks/student_todays_timetable/studenttime_table.php">View more</a>
+                </td>
+            </tr>
+            {{/viewmore}}
+            {{^ data }}
+            <tr>
+                <td colspan="5">
+                    <div class="alert alert-info w-100 text-center">{{#str}}nodataavailable, block_student_todays_timetable{{/str}}</div>
+                </td>
+            </tr>
+            {{/ data }}
+    </table>
+

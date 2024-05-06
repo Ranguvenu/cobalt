@@ -1,0 +1,41 @@
+{{#activitylevel}}
+<div class="row mb-4">
+    <div class="col-xl-12 col-lg-12">
+        <div class="content_wrap mb-4">
+            <div class="card-body">
+              <div class="chart-pie pt-4 pb-2">
+                <div id="container3"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/activitylevel}}
+<div class="row mb-4">
+    <div class="col-12 table_wrap">
+      <div class="content_wrap">
+          <div class="p-4">
+              <h6 class="m-0 report_heading">{{#str}}videossummary, mod_stream{{/str}}</h6>
+          </div>
+          <div>
+              <div class="table-responsive">
+                  <table class="table dataTable" id="summary"  data-function = "getSummaryReport" data-id = {{courseid}} width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>{{#str}}video, mod_stream{{/str}}</th>
+                        <th>{{#str}}course, mod_stream{{/str}}</th>
+                        <th>{{#str}}views, mod_stream{{/str}}</th>
+                        <th>{{#str}}likes, mod_stream{{/str}}</th>
+                        <th>{{#str}}rating, mod_stream{{/str}}</th>
+                        <th>{{#str}}averagetime, mod_stream{{/str}}</th>
+                        <th>{{#str}}uploadedon, mod_stream{{/str}}</th>
+                        <th>{{#str}}uploadedby, mod_stream{{/str}}</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>

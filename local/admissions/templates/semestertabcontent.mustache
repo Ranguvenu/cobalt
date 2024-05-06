@@ -1,0 +1,51 @@
+<div class="tab-content" id="myTabContent_{{id}}">
+    <div class="course_sem mb-2 mt-3 d-flex justify-content-end">
+         <!-- <span class="sem_credits">
+             <label>{{#str}}semestercredits, local_admissions{{/str}} : </label>
+            {{# semestercredits}}
+                <strong>{{semestercredits}}</strong>
+            {{/ semestercredits}}
+            {{^ semestercredits}}
+                <strong>NA</strong>
+            {{/ semestercredits}}
+        </span> -->
+    </div>
+    <div class="tabcourse_container">
+        <div class="manage_course mt-2">
+            <span class="manage_content">{{#str}}mandatory, local_admissions{{/str}}</span>
+        </div>
+        {{# dataresult }}
+            <div class="architecture_course">
+                <div class="computer_course mt-2 d-flex align-items-center">
+               <span class="computer_circle"></span>
+                <span class="comp_content"> {{course}}</span>
+                </div>
+            </div>
+        {{/ dataresult }}
+
+        {{^ dataresult }}
+            <div class="alert alert-info w-100 text-center">{{#str}}nomancoursesassigned, local_admissions{{/str}}
+            </div>
+        {{/ dataresult }}
+
+        <div class="elective_course mt-2">
+            <span>{{#str}}optional, local_admissions{{/str}}</span>
+            <span class="elective_content">(<span >{{countelectives}}</span> {{#str}}electiveschoosen, local_admissions{{/str}})
+            </span>
+        </div>
+
+        {{# electives }}
+            <div class="java_course">
+                <div class="cprogram_course mt-2 d-flex align-items-center">
+                  <span class="cprogram_circle"></span>
+                    <span class="pgram_content"> {{course}}</span>
+                </div>
+            </div>
+        {{/ electives }}
+
+        {{^ electives }}
+            <div class="alert alert-info w-100 text-center">{{#str}}nooptcoursesassigned, local_admissions{{/str}}
+            </div>
+        {{/ electives }}
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="d-flex mb-2 align-items-center flex-wrap">
+    <div class="dropdown mb-1">
+        <div data-region="filter" class="d-flex align-items-center flex-wrap" aria-label="{{#str}} aria:controls, block_stream {{/str}}">
+            <button id="statusfilterdropdown" type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" 
+                    aria-expanded="false" aria-label="{{#str}} aria:statusfilterdropdown, block_stream {{/str}}">
+                {{#pix}} i/filter {{/pix}}
+                <span class="d-sm-inline-block" data-active-item-text>
+                    {{#all}}{{#str}} allvideos, block_stream {{/str}}{{/all}}
+                    {{#inprogress}}{{#str}} inprogress, block_stream {{/str}}{{/inprogress}}
+                    {{#published}}{{#str}} published, block_stream {{/str}}{{/published}}
+                </span>
+            </button>
+            <ul class="dropdown-menu" role="menu" data-show-active-item data-skip-active-class="true" data-active-item-text aria-labelledby="statusfilter">
+                <li>
+                    <a class="dropdown-item" href="#" data-filter="statusfilter" data-value="all" data-pref="all" aria-label="{{#str}} aria:allcourses, block_stream {{/str}}" 
+                       aria-controls="stream-list-container" role="menuitem" {{#all}}aria-current="true"{{/all}}>
+                        {{#str}} allvideos, block_stream {{/str}}
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#" data-filter="statusfilter" data-value="inprogress" data-pref="inprogress" aria-label="{{#str}} aria:inprogress, block_stream {{/str}}" 
+                       aria-controls="stream-list-container" role="menuitem" {{#inprogress}}aria-current="true"{{/inprogress}}>
+                        {{#str}} inprogress, block_stream {{/str}}
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#" data-filter="statusfilter" data-value="published" data-pref="published" aria-label="{{#str}} aria:published, block_stream {{/str}}" 
+                       aria-controls="stream-list-container" role="menuitem" {{#published}}aria-current="true"{{/published}}>
+                        {{#str}} published, block_stream {{/str}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mb-1 ml-1 d-flex">
+        <div data-region="filter"  class="dropdown">
+            <button id="sortingdropdown" type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false" 
+                    aria-label="{{#str}} aria:sortingdropdown, block_stream {{/str}}">
+                {{#pix}} t/sort_by {{/pix}}
+                <span class="d-sm-inline-block" data-active-item-text>
+                    {{#title}}{{#str}} title, block_stream {{/str}}{{/title}}
+                    {{#uploadeddate}}{{#str}} uploadeddate, block_stream {{/str}}{{/uploadeddate}}
+                </span>
+            </button>
+            <ul class="dropdown-menu" role="menu" data-show-active-item data-skip-active-class="true" aria-labelledby="sortfilter">
+                <li>
+                    <a class="dropdown-item" href="#" data-filter="sortfilter" data-pref="title" data-value="fullname" aria-label="{{#str}} aria:title, block_stream {{/str}}" 
+                        aria-controls="stream-list-container" role="menuitem" {{#title}}aria-current="true"{{/title}}>
+                        {{#str}} title, block_stream {{/str}}
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#" data-filter="sortfilter" data-pref="uploadeddate" data-value="uploadeddate" aria-label="{{#str}} aria:uploadeddate, block_stream {{/str}}" 
+                       aria-controls="stream-list-container" role="menuitem" {{#uploadeddate}}aria-current="true"{{/uploadeddate}}>
+                        {{#str}} uploadeddate, block_stream {{/str}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="ml-1 mb-1">
+        <div data-region="query" class="d-flex align-items-center flex-wrap" aria-label="{{#str}} aria:controls, block_stream {{/str}}">
+            <span data-fieldtype="text">
+            <input type="text" class="form-control " name="query" id="id_query" data-filter="searchfilter" data-pref="searchfilter" data-value=""  value="" placeholder="Title search">
+            </span>
+            <span class="ml-1" data-fieldtype="submit">
+                <input type="submit" class="btn btn-primary" name="search" id="id_search" value="Search">
+            </span>
+        </div>
+    </div>
+    {{# addcapability}}
+        <div class="mb-2  ml-auto">
+            <a title="{{#str}}addvideo, block_stream{{/str}}" class="btn btn-primary pull-right" href="javascript:void(0);" onclick="(function(e){ require('block_stream/upload').init({selector:'createcourseenrolmodal', context:1, id:0 })})(event)">
+              <i class="fa fa-arrow-up px-2" aria-hidden="true"></i>
+            Upload Video</a>
+        </div>
+    {{/ addcapability}}
+</div>

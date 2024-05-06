@@ -1,0 +1,285 @@
+
+ 
+ <style>
+    /*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.cssprogress {
+  width: 100px;
+  height: 100px;
+  background: none;
+  position: relative;
+}
+
+.cssprogress::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px solid #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cssprogress>span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.cssprogress .cssprogress-left {
+  left: 0;
+}
+
+.cssprogress .cssprogress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 10px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+}
+
+.cssprogress .cssprogress-left .cssprogress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+.cssprogress .cssprogress-right {
+  right: 0;
+}
+
+.cssprogress .cssprogress-right .cssprogress-bar {
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+}
+
+.cssprogress .cssprogress-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+
+body {
+  background: #ff7e5f;
+  background: -webkit-linear-gradient(to right, #ff7e5f, #feb47b);
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  min-height: 100vh;
+}
+
+.rounded-lg {
+  border-radius: 1rem;
+}
+
+.text-gray {
+  color: #aaa;
+}
+
+div.h4 {
+  line-height: 1rem;
+}
+
+</style>
+
+
+ <div class="container">
+{{#rowdata}}
+
+    <table class='generaltable' >
+        <thead>
+            <tr>
+                <th>{{name}}</th>
+                
+            </tr>
+        </thead>
+    </table>
+ 
+ 
+  <div class="row">
+    <div class="col-sm-6">
+
+<div class="row">
+
+            <div class="col-sm-12 " style="padding-bottom:15px;">
+              
+                <p class = "h6"><b> {{#str}}startdt, local_groups{{/str}} </b>  : {{ startdate }}</p> 
+             
+          </div>
+          
+</div>
+          <div class="row">
+            <div class="col-sm-12 " style="padding-bottom:15px;">
+             
+                <p class = "h6"><b>{{#str}}enddt, local_groups{{/str}} </b>   : {{enddate}}</p>
+             
+          </div> 
+  </div>
+
+ <div class="row">
+
+            <div class="col-sm-12 " style="padding-bottom:15px;">
+              
+              <p class = "h6"><b>{{#str}}semester, local_groups{{/str}} </b> :  {{semester}}</p>
+          
+        </div>
+</div>
+
+       <div class="row">
+
+            <div class="col-sm-12 " style="padding-bottom:15px;">
+             <div class="group_count pull-left">
+              <p class = "h6"><b>{{#str}}pcourses, local_groups{{/str}} </b> :  {{noofcourses}}</p>
+            </div>
+          </div> 
+  </div>
+
+
+
+        <div class="row">
+
+            <div class="col-sm-12 " style="padding-bottom:15px;">
+             <div class="group_count pull-left">
+              <p class = "h6"><b>{{#str}}pcertificate, local_groups{{/str}} </b> :  {{{downloadlink}}}</p>
+            </div>
+          </div> 
+  </div>
+
+
+    <div class="row">
+          <div class="col-sm-12" style="padding-bottom:15px;">
+              
+              <p class = "h6"><b>{{#str}}curri_name, local_groups{{/str}} </b> :  {{curr_name}}</p>
+            
+          </div>
+   </div>
+
+          
+    </div>
+    <div class="col-sm-6">
+     
+<div class="cssprogress mx-auto" data-value='{{per}}'>
+          <span class="cssprogress-left">
+                        <span class="cssprogress-bar border-primary"></span>
+          </span>
+          <span class="cssprogress-right">
+                        <span class="cssprogress-bar border-primary"></span>
+          </span>
+          <div class="cssprogress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+            <div class="h6 font-weight-bold">{{per}}<sup class="small">%</sup></div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+
+             <div class="group_count pull-left" style = "padding-bottom:15px;">
+                <p class = "h6"><b>{{#str}}pdescription, local_groups{{/str}}</b>  :</p>
+                <div > {{description}}</div>
+            </div>
+          </div>
+</div>
+{{/rowdata}}
+
+
+
+<div class = "row">
+  <div class="col-sm-3 ">
+
+       
+       <table class='generaltable'>
+        {{#semnamedata1}}
+            <tr>
+                <td >{{semnamedata}}</td>
+                
+            </tr>
+       {{/semnamedata1}}
+      </table>
+                   
+</div>
+
+   <div class="col-sm-9 pull-left" >
+ {{#glass}}
+ <div class="progress" style ="margin-bottom:21px;"
+>
+
+{{#sem}}
+
+   <div class="progress-bar bg-{{colour}}" role="progressbar" style="width: {{per}}%"   aria-valuemax="100" title = "{{fullname}} {{per}}%"></div>
+ 
+{{/sem}}
+</div>
+{{/glass}}
+</div>
+
+
+</div>
+ 
+
+
+ 
+
+ 
+</div>
+ {{#js}}
+  $('.panel-collapse').on('show.bs.collapse', function () {
+    $(this).siblings('.panel-heading').addClass('active');
+  });
+
+  $('.panel-collapse').on('hide.bs.collapse', function () {
+    $(this).siblings('.panel-heading').removeClass('active');
+  });
+{{/js}}
+
+
+{{#js}}
+$(function() {
+
+ $(".cssprogress").each(function() {
+ 
+   var value = $(this).attr('data-value');
+    var left = $(this).find('.cssprogress-left .cssprogress-bar');
+    var right = $(this).find('.cssprogress-right .cssprogress-bar');
+
+   if (value > 0) {
+      if (value <= 50) {
+        right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+      } else {
+        right.css('transform', 'rotate(180deg)')
+        left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+      }
+    }
+ })
+
+ function percentageToDegrees(percentage) {
+   return percentage / 100 * 360
+ }
+});
+
+{{/js}}

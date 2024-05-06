@@ -1,0 +1,51 @@
+
+<hr>
+<div class="programname">
+    <h3><a href="{{url}}/local/program/view.php?bcid={{programid}}">{{programname}}</a></h3>
+    <span><a href="">View Syllabus</a></span>
+</div>
+<div class="program_details">
+    <div class="d-flex align-items-center">
+        <span class="program_details_icons"><img src="{{config.wwwroot}}/blocks/myprograms/pix/calendar.png"></span><span>3 Year</span>
+    </div>
+    <div class="d-flex align-items-center">
+        <span class="program_details_icons"><img src="{{config.wwwroot}}/blocks/myprograms/pix/schedule.png"></span><span>{{semcount}} {{#str}}sem, block_myprograms{{/str}}</span>
+    </div>
+    <div class="d-flex align-items-center">
+        <span class="program_details_icons"><img src="{{config.wwwroot}}/blocks/myprograms/pix/courses.png"></span><span>{{semcoursescount}} {{#str}}courses, block_myprograms{{/str}}</span>
+    </div>
+</div>
+<div class="current_semester">{{#str}}currentsem, block_myprograms{{/str}}(1<sup>st</sup> Year/ 2<sup>nd</sup>{{#str}}sem, block_myprograms{{/str}})</div>
+
+<div class="d-flex justify-content-between p-2 my-3">
+    <div class="myprogram_content">Medical</div>
+    <div class="d-flex align-items-center">
+        <span class="program_details_icons"><img src="{{config.wwwroot}}/blocks/myprograms/pix/calendar.png"></span><span class="text-muted"> 10 May - 21 May 2022</span>
+    </div>
+</div>
+<div class="description text-muted p-2">{{description}}</div>
+<div class="my-5">
+    <div class="row">
+        <div class="col-md-11 row">
+             {{# semesters}}
+            <div class="col-md-3">
+                {{# active }}
+                <div class="years_tabs active">
+                    <div class="years_bars"></div>
+                    <div class="text-center py-2">{{ level }}</div>
+                </div>
+                {{/ active}}
+                {{^ active }}
+                <div class="years_tabs">
+                    <div class="years_bars"></div>
+                    <div class="text-center py-2">{{ level }}</div>
+                </div>
+                {{/ active}}
+            </div>
+             {{/ semesters}}
+        </div>
+        <div class="col-md-1">
+            <div class="next_arrow"><a href="{{url}}/local/program/view.php?bcid={{programid}}"><i class="fa fa-arrow-right"></i></a></div>
+        </div>
+    </div>
+</div>

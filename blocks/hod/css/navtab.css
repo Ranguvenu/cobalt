@@ -1,0 +1,53 @@
+<style>
+ul.nav.nav-tabs {
+    clear: both;
+}
+ul.nav.nav-tabs li {
+    list-style: none;
+    float: left;
+}   
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+    .nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}     
+          .nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+.nav>li {
+    position: relative;
+    display: block;
+}
+.nav-tabs>li {
+    float: left;
+    margin-bottom: -1px;
+}
+.nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+    display: table;
+    content: " ";
+}
+.nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
+    clear: both;
+}   
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+} 
+.tab-pane:not(.active) {
+    display: none;
+}         
+</style>

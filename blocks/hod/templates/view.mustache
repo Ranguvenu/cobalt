@@ -1,0 +1,177 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_hod/view
+    Example context (json):
+    {
+    }
+}}
+<div class="pull-right mb-3">
+<a href="{{url}}" title="Back"><i class="fa fa-arrow-circle-left" style="font-size:40px;color:#c9243f"></i>
+</a>
+</div>
+<div class="container">
+  <div class="title text-center">
+    <h3>PROPOSAL STATUS</h3>
+  </div>
+  <!-- Tabs with icons on Card -->
+  <div class="card card-nav-tabs">
+   <div class="card-header card-header-primary">
+      <div class="nav-tabs-navigation">
+         <div class="nav-tabs-wrapper">
+            <ul class="nav nav-tabs" data-tabs="tabs">
+               <li class="nav-item " style="margin-bottom:20px;">
+                  <a class="nav-link active" href="#approvals" data-toggle="tab">
+                  <i class="fa fa-th-list"></i>
+                  Waiting for approval<span style="color:red;">({{open}})</span>
+                  </a>
+               </li>
+               <li class="nav-item approved">
+                  <a class="nav-link" href="#approved" data-toggle="tab">
+                  <i class="fa fa-check"></i>
+                  Approved submissions({{approved}})
+                  </a>
+               </li>
+               <li class="nav-item" rejected>
+                  <a class="nav-link " href="#rejected" data-toggle="tab">
+                  <i class="fa fa-times"></i>
+                  Rejected  submissions({{rejected}})
+                  </a>
+               </li>
+               <li class="nav-item" >
+                  <a class="nav-link" href="#revised" data-toggle="tab">
+                  <i class="fa fa-search"></i>
+                    Under revision<span style="color:red;">({{revised}})</span>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </div>
+    </div>
+    <div class="card-body ">
+    <div class="tab-content text-center">
+	    <div class="tab-pane active" id="approvals" role="tabpanel">
+        <div class="col-md-12">
+          <table class="table table-bordered " id="table" style="width: 100%;margin: 0px !important;">
+            <thead>
+              <tr>
+              {{#allform_headings}}
+              <th style="text-align:center;">{{.}}</th>
+              {{/allform_headings}}
+              </tr>
+            </thead>
+            <tbody>
+              {{#allform_rows}}
+              <tr>
+                <td style="text-align:center;">{{aname}}</td>
+                <td style="text-align:center;">{{atitle}}</td>
+                <td style="text-align:center;">{{astatus}}</td>
+                <td style="text-align:center;"><a class="action_btn btn btn-danger" data-id="{{id}}" href='details.php?formid={{id}}' >Details</a></td>
+              </tr>
+              {{/allform_rows}}
+            </tbody>
+          </table>
+        </div>
+        {{# download }}
+        <div class="pull-right mb-3">
+          <a class="action_btn btn btn-danger" data-id="{{id}}" href='download.php' >Download reports</a>
+        </div>
+        {{/ download }}
+	    </div>
+  	  <div class="tab-pane" id="approved" role="tabpanel">
+        <div class="col-md-12">
+          <table class="table table-bordered " id="table2" style="width: 100%;margin: 0px !important;">
+            <thead>
+              <tr>
+              {{#ap_headings}}
+              <th style="text-align:center;">{{.}}</th>
+              {{/ap_headings}}
+              </tr>
+            </thead>
+            <tbody>
+              {{#ap_rows}}
+              <tr>
+                <td style="text-align:center;">{{apname}}</td>
+                <td style="text-align:center;">{{aptitle}}</td>
+                <td style="text-align:center;">{{apstatus}}</td>
+                <td style="text-align:center;"><a class="action_btn btn btn-danger" data-id="{{id}}" href='proposaldetails.php?formid={{id}}' >Details</a></td>
+              </tr>
+              {{/ap_rows}}
+            </tbody>
+          </table>
+        </div> 
+        {{# download }} 
+        <div class="pull-right mb-3">
+          <a class="action_btn btn btn-danger" data-id="{{id}}" href='approved.php' >Download reports</a>
+        </div>
+        {{/ download }}
+	    </div>
+  	  <div class="tab-pane" id="rejected" role="tabpanel">
+        <table class="table table-bordered " id="table3" style="width: 100%;margin: 0px !important;">
+          <thead>
+            <tr>
+            {{#r_headings}}
+            <th style="text-align:center;">{{.}}</th>
+            {{/r_headings}}
+            </tr>
+          </thead>
+          <tbody>
+            {{#r_rows}}
+            <tr>
+              <td style="text-align:center;">{{rname}}</td>
+              <td style="text-align:center;">{{rtitle}}</td>
+              <td style="text-align:center;">{{rstatus}}</td>
+              <td style="text-align:center;"><a class="action_btn btn btn-danger" data-id="{{id}}" href='proposaldetails.php?formid={{id}}' >Details</a></td>
+            </tr>
+            {{/r_rows}}
+          </tbody>
+        </table>
+        {{# download }}
+        <div class="pull-right mb-3">
+          <a class="action_btn btn btn-danger" data-id="{{id}}" href='rejected.php' >Download reports</a>
+        </div>
+        {{/ download }}
+      </div>
+      <div class="tab-pane" id="revised" role="tabpanel">
+        <div class="col-md-12">
+          <table class="table table-bordered " id="table4" style="width: 100%;margin: 0px !important;">
+            <thead>
+              <tr>
+              {{#re_headings}}
+              <th style="text-align:center;">{{.}}</th>
+              {{/re_headings}}
+              </tr>
+            </thead>
+            <tbody>
+              {{#re_rows}}
+              <tr>
+                <td style="text-align:center;">{{rename}}</td>
+                <td style="text-align:center;">{{retitle}}</td>
+                <td style="text-align:center;">{{restatus}}</td>
+                <td style="text-align:center;"><a class="action_btn btn btn-danger" data-id="{{id}}" href='details.php?formid={{id}}' >Details</a></td>
+              </tr>
+              {{/re_rows}}
+            </tbody>
+          </table>
+        </div>
+        {{# download }}
+        <div class="pull-right mb-3">
+          <a class="action_btn btn btn-danger" data-id="{{id}}" href='revised.php' >Download reports</a>
+        </div>
+        {{/ download}}
+    	</div>
+    </div>
+  </div>
+</div>
+</div>

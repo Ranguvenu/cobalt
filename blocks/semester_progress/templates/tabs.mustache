@@ -1,0 +1,91 @@
+<ul class="nav nav-pills mb-1" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+       role="tab" aria-controls="pills-home" aria-selected="true">
+        {{#str}} current_semester, block_semester_progress {{/str}}
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
+       role="tab" aria-controls="pills-profile" aria-selected="false">
+        {{#str}} completed_semester, block_semester_progress {{/str}}
+    </a>
+  </li>
+</ul>
+
+{{#currentsem}}
+{{#semdate}}
+<div class="sems-date block_header w-100 d-flex justify-content-end " id="sem_date">
+  <label class="sem-startdate un-hide mt-1 mr-2 ">
+    <b>{{#str}}startdate, block_semester_progress{{/str}}</b> : {{startdate}}</label>
+  <label class="sem-enddate un-hide mt-1">
+    <b>{{#str}}enddate, block_semester_progress{{/str}}</b> : {{enddate}}</label>
+</div>
+{{/semdate}}
+<div class="tab-content" id="cr-tabContent">
+  <div class="tab-pane fade active show" id="pills-home" role="tabpanel"
+    aria-labelledby="pills-home-tab">
+        {{> block_semester_progress/block_semester_progress }}
+    </div>
+</div>
+{{/currentsem}}
+{{#completedsem}}
+<div class="tab-content" id="cm-tabContent">
+  <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <label class="cm_lb">
+        {{#data}}
+          {{#str}}name, block_semester_progress {{/str}}:
+        {{/data}}
+        {{#levelcount}}
+          <select name="sem" id="completed_sem">
+            {{#levelname}}
+                <option value="{{id}}"> {{level}} </option>
+            {{/levelname}}
+          </select>
+        {{/levelcount}}
+        {{^levelcount}}
+          {{#levelname}}
+              <b>{{level}}</b>
+          {{/levelname}}
+        {{/levelcount}}
+      </label><br>
+      <div class="container p-0" id="#cm_level_data">
+        <div data-region="cm_level-list-container">
+          {{#data}}
+            {{> block_semester_progress/completedsemester }}
+          {{/data}}
+          {{#empty}}
+            <div class="alert alert-info w-100 text-center">
+              {{#str}}nosemdataavailable, block_semester_progress{{/str}}
+            </div>
+          {{/empty}}
+        </div>
+      </div>
+  </div>
+</div>
+{{/completedsem}}
+
+{{#js}}
+require(['jquery'], function($){
+  $(document).ready(function(){
+    $('.block_semester_progress #pills-profile-tab').on('click', function() {
+      $('div#sem_date').find('.sem-startdate').removeClass('un-hide').addClass('hide');
+      $('div#sem_date').find('.sem-enddate').removeClass('un-hide').addClass('hide');
+    });
+    $('.block_semester_progress #pills-home-tab').on('click', function() {
+      $('div#sem_date').find('.sem-startdate').removeClass('hide').addClass('un-hide');
+      $('div#sem_date').find('.sem-enddate').removeClass('hide').addClass('un-hide');
+    });
+    $('#pills-profile-tab').on('click', function() {      
+      if ($('#pills-home').hasClass('show') == true) {
+        $('#cr-tabContent').find('.tab-pane').removeClass('show active');
+      }
+    });
+    $('#pills-home-tab').on('click', function() {      
+      if ($('#pills-profile').hasClass('show') == true) {
+        $('#cm-tabContent').find('.tab-pane').removeClass('show active');
+      }
+    });
+  });
+});
+{{/js}}

@@ -1,0 +1,48 @@
+<div class="admission_levelcontent">
+   <div class="course_sem mb-2  d-flex justify-content-between">
+        <div class="manage_course mt-2">
+            <span>{{#str}}mandatory, local_admissions{{/str}}</span>
+        </div>
+        <!-- <span class="sem_credits">
+            <label>{{#str}}semestercredits, local_admissions{{/str}} : </label>
+            {{# semestercredits}}
+                <strong>{{semestercredits}}</strong>
+            {{/ semestercredits}}
+            {{^ semestercredits}}
+                <strong>NA</strong>
+            {{/ semestercredits}}
+        </span> -->  
+    </div>
+        {{# dataresult }}
+            <div class="network_programming">
+                <div class="network_course mt-2 d-flex align-items-center">
+                    <span class="network_circle"></span>
+                <span class="network_content"> {{course}}</span>
+                </div>
+            </div>
+        {{/ dataresult }}
+
+        {{^ dataresult }}
+            <div class="alert alert-info w-100 text-center">{{#str}}nomancoursesassigned, local_admissions{{/str}}
+            </div>
+        {{/ dataresult }}
+
+        <div class="optional_course mt-2">
+            <span class="optional_content">{{#str}}optional, local_admissions{{/str}}
+            </span>
+            <span class="elective_descrp">(<span>{{countelectives}}</span> {{#str}}electiveschoosen, local_admissions{{/str}})
+            </span>
+        </div>
+        {{# electives }}
+            <div class="project_management">
+                <div class="management_course mt-2 d-flex align-items-center">
+                    <span class="management_circle"></span>
+                    <span class="management_content" > {{course}}</span>
+                </div>
+            </div>
+        {{/ electives }}
+        {{^ electives }}
+            <div class="alert alert-info w-100 text-center">{{#str}}nooptcoursesassigned, local_admissions{{/str}}
+            </div>
+        {{/ electives }}
+</div>

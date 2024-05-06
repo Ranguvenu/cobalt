@@ -1,0 +1,68 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+
+
+   Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+
+
+   Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+
+
+   You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+
+
+
+
+<div>
+   <table class="generaltable" id="popup_student">
+            <thead>
+                <th>{{#str}}name, local_employees{{/str}}</th>
+                <th>{{#str}}email, local_employees{{/str}}</th>
+                <th>{{#str}}attendance, local_employees{{/str}}</th>
+                <th>{{#str}}courseprogress, local_employees{{/str}}</th>
+                <th>{{#str}}coursecompletion, local_employees{{/str}}</th>
+
+            </thead>
+        <tbody>
+           {{#coursename}}
+	            <tr>
+	                <td>{{firstname}} {{lastname}}</td>
+	                <td>{{email}}</td>
+                    <td>{{aa}}%</td>
+                    {{#criteria}}
+                    <td><span>{{progress}}</span></td>
+                    {{/criteria}}
+                    {{^criteria}}
+	                <td class="single-chart-chart-chart"><b>
+                        <svg viewBox="0 0 36 36" class="circular-chart-chart red">
+                            <path class="circle-bg"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <path class="circle"
+                            stroke-dasharray="{{progress}}, 100"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <text x="18" y="21" class="percentage">{{progress}}%
+                            </text>
+                        </svg></b>
+                    </td>
+                    {{/criteria}}
+                    <td title="{{coursecompleted_criteria}}">{{coursecompleted}}</td>
+	               </tr>
+            {{/coursename}} 
+        </tbody>
+    </table>
+</div>

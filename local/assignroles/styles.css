@@ -1,0 +1,22 @@
+#page-local-assignroles-index .generaltable .dataTables_empty{text-align:center}body.path-local-assignroles table.dataTable thead td,body.path-local-assignroles table.dataTable thead th{padding:10px 10px!important}body#page-local-assignroles-index table#local_assign_role tbody td,body#page-local-assignroles-index table#local_assign_role thead th{text-align:center!important}body#page-local-assignroles-index table#local_assign_role tbody td:first-child,body#page-local-assignroles-index table#local_assign_role thead th:first-child{text-align:left!important}#page-admin-roles-assign #popup_user_paginate{float:inherit;text-align:right}#popup_user_wrapper{overflow:auto}
+table {
+    border: 1px solid #ddd;
+}
+table thead,
+table.dataTable.no-footer>thead, 
+table.generaltable thead, 
+.path-grade-report-grader .gradeparent tr.heading {
+    background-color: #25a7da;
+    color: #fff;
+}
+#page-local-assignroles-index .generaltable tbody tr:nth-of-type(odd) {
+	background:#fff !important;
+}
+
+/*newcss*/
+#page-local-assignroles-index .generaltable .sorting_desc,
+#page-local-assignroles-index .generaltable .sorting,
+#page-local-assignroles-index .generaltable  .sorting_asc{
+    background-image:none;
+
+}

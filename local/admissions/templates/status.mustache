@@ -1,0 +1,128 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+<style type="text/css">
+  .status {
+    text-align: center;
+    font-size: 1.3em;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: yellowgreen;
+    width: 60%;
+    margin-left: 20%;
+    user-select: none;
+  }
+  .wrnginput {
+    font-size: 1.3em;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: yellowgreen;
+    width: 60%;
+    margin-left: 20%;
+    user-select: none;
+  }
+  #page.drawers .main-inner {
+    margin-top: 32px!important;
+  }
+  .shadow { 
+    box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
+  }
+  .wrngtext {
+    margin-left: 1.5%;
+  }
+</style>
+<br>
+<div>
+ <br>
+  {{# status}}
+    {{# approved}}
+      <div class="status shadow">
+        <label class="text-success">{{approved}}</label>
+      </div>
+    {{/approved}}
+    {{# rejected}}
+      <div class="status">
+        <label class="text-danger"> {{rejected}}</label>
+      <br>
+        <label>Rejected Reason: {{reason}}</label>
+      </div>
+    {{/ rejected}}
+    {{# revised}}
+      <div class="status">
+        <label class="text-danger">{{revised}}</label>
+        <br>
+        <label>Review Comments: {{reason}}</label>
+      </div>
+    {{/ revised}}
+    {{#wronginputfirst}}
+    <div class="wrnginput shadow">
+      <div class="wrngtext">
+        <lable>Hi <b>{{wronginputfirst}}</b></lable>
+        <br>
+        &emsp;&emsp;<lable>{{wronginputsecond}}</lable>
+      </div>
+      <div class="wrngtext">
+        &emsp;&emsp;<lable>{{wronginputthird}}</lable>
+      </div>
+    </div>
+  {{/wronginputfirst}}
+  {{/ status}}
+  {{^ status}}
+    {{# revisednext}}
+      <div class="status">
+        <label class="text-primary">{{revisednext}}</label>
+        <br>
+        <label>Review Comments: {{reason}}</label>
+      </div>
+    {{/ revisednext}}
+  {{/ status}}
+
+
+    {{# approved}}
+      <br>
+      <center>
+        <a href="{{configwwwroot}}/local/admissions/download.php?id={{id}}"><button class="btn btn-primary" title="Approved">View my application</button></a>
+      </center>
+    {{/approved}}
+    {{# rejected}}
+      <br>
+      <center>
+        <a href="{{configwwwroot}}/local/admissions/download.php?id={{id}}"><button class="btn btn-primary" title="For reason of reject">View my application</button></a>
+      </center>
+    {{/ rejected}}
+    {{# revised}}
+      <br>
+      <center>
+        <a href="{{configwwwroot}}/local/admissions/personal_information.php?id={{admissionid}}"><button class="btn btn-primary" title="{{#str}}youcaneditonce, local_admissions {{/str}}">Update application</button></a>
+      </center>
+    {{/ revised}}
+    {{# revisednext}}
+      <br>
+      <center>
+        <a href="{{configwwwroot}}/login/index.php"><button class="btn btn-primary" title="{{#str}}youcaneditonce, local_admissions {{/str}}">Back to Login</button></a>
+      </center>
+    {{/ revisednext}}
+</div>
+<br>
+{{# js}}
+$(document).ready(function () {
+    $('#id_registrationid').keyup(function () {
+      $(this).val($(this).val().toUpperCase());
+    });
+});
+{{/ js}}

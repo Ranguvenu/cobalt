@@ -1,0 +1,385 @@
+.path-mod-attendance .attbtn {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 5px;
+    display: inline-block;
+}
+
+.path-mod-attendance .attcurbtn {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 5px;
+}
+
+.path-mod-attendance .attfiltercontrols {
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.path-mod-attendance .attfiltercontrols #currentdate {
+    display: inline;
+}
+
+.path-mod-attendance .attwidth {
+    margin: auto;
+}
+
+.path-mod-attendance .userwithoutenrol,
+.path-mod-attendance .userwithoutenrol a {
+    color: #fff;
+}
+
+.path-mod-attendance .userwithoutdata,
+.path-mod-attendance .userwithoutdata a {
+    color: red;
+}
+
+.path-mod-attendance .takelist td {
+    vertical-align: middle;
+}
+
+.path-mod-attendance .takelist .userpicture {
+    margin: 0 3px;
+    vertical-align: middle;
+}
+
+.path-mod-attendance .takegrid input {
+    margin: 0 3px 0 6px;
+}
+
+.path-mod-attendance .takegrid .fullname {
+    font-size: 0.8em;
+}
+
+.path-mod-attendance div.allsessionssummary + form#attendancetakeform > div {
+    width: 100%;
+}
+
+.path-mod-attendance table.controls {
+    text-align: center;
+    width: 100%;
+}
+
+.path-mod-attendance table.controls tr {
+    vertical-align: top;
+}
+
+.path-mod-attendance table.controls td.right,
+.path-mod-attendance table.controls td.left {
+    padding: 4px;
+}
+
+.path-mod-attendance table.controls .right {
+    text-align: right;
+}
+/* for IE7*/
+.path-mod-attendance .filtercontrols td {
+    padding: 6px;
+}
+
+.path-mod-attendance .takecontrols {
+    margin: 0 auto 20px auto;
+    /*width: 800px;*/
+    width: 100%;
+}
+.path-mod-attendance .takecontrols table td {
+    padding: 10px;
+}
+#page-mod-attendance-take .singlebutton {
+    float: right;
+    margin-bottom: 1rem;
+}
+#page-mod-attendance-take .form-inline label:not(.sr-only):not(.accesshide)+select{
+    margin-right: 0.5rem;
+}
+#page-mod-attendance-take .generaltable.takelist th a {
+    color: #fff;
+}
+.path-mod-attendance .takecontrols table {
+    margin: 0 auto;
+    width: 100%;
+}
+.path-mod-attendance .takecontrols .c0 {
+    text-align: left;
+    width: 500px;
+    color: #0058a8;
+    font-weight: 600;
+    font-size: 18px;
+}
+.path-mod-attendance .takecontrols .c1 {
+    text-align: right;
+}
+
+.path-mod-attendance .inline,
+.path-mod-attendance .inline form,
+.path-mod-attendance .inline div {
+    display: inline;
+}
+
+.path-mod-attendance table.userinfobox {
+    border: 1px solid #eee;
+    padding: 0;
+}
+.path-mod-attendance table.userinfobox td.left {
+    background-color: #eee;
+    padding: 30px 10px;
+}
+.path-mod-attendance table.userinfobox .userpicture {
+    margin: 0;
+}
+.path-mod-attendance table.attlist td.c0 {
+    text-align: right;
+}
+.path-mod-attendance table.allsessions tr.grouper td {
+    background-color: #eee;
+}
+.path-mod-attendance table.allsessions td.groupheading {
+    font-weight: bold;
+}
+.path-mod-attendance .allsessionssummary > * {
+    display: inline-block;
+}
+.path-mod-attendance .allsessionssummary .float-right {
+    float: right;
+}
+.path-mod-attendance .allsessionssummary .float-left {
+    float: left;
+}
+
+#page-mod-attendance-preferences .generalbox {
+    text-align: center;
+}
+
+.path-mod-attendance .attsessions_manage_table .action-icon img.smallicon {
+    margin-left: 5px;
+}
+#page-mod-attendance-sessions input[type="checkbox"] {
+    margin-right: 2px;
+}
+
+.path-mod-attendance .setallstatuses {
+    text-align: right;
+}
+
+.path-mod-attendance .remarkholder {
+    position: relative;
+}
+
+.path-mod-attendance .remarkholder .remarkcontent {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px #ccc;
+    display: none;
+    left: 20px;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    width: 150px;
+    z-index: 5000;
+}
+
+.path-mod-attendance .remarkholder:hover .remarkcontent {
+    display: inline-block;
+}
+
+.path-mod-attendance .attendancestatus-P {
+    color: green;
+}
+
+.path-mod-attendance .attendancestatus-E {
+    color: #00aee3;
+}
+
+.path-mod-attendance .attendancestatus-L {
+    color: #f7931e;
+}
+
+.path-mod-attendance .attendancestatus-A {
+    color: red;
+}
+
+.path-mod-attendance .attreport .contrast {
+    background-color: #eaeaea;
+}
+
+.path-mod-attendance .attreport .center {
+    text-align: center;
+}
+
+.path-mod-attendance .attreport .left {
+    text-align: left;
+}
+
+.path-mod-attendance .attreport .bottom {
+    vertical-align: bottom;
+}
+
+.path-mod-attendance .attreport .nowrap {
+    white-space: nowrap;
+}
+
+.path-mod-attendance .attreport .narrow {
+    width: 1px;
+}
+
+.path-mod-attendance .attreport img.userpicture {
+    max-width: inherit;
+}
+
+.path-mod-attendance .student-password {
+    font-size: x-large;
+    text-align: center;
+}
+.path-mod-attendance .ungraded {
+    font-size: smaller;
+    font-style: italic;
+}
+#page-mod-attendance-sessions .statusgroup .statusdesc {
+    margin-right: 12px;
+}
+
+#page-mod-attendance-view .averageattendance {
+    font-weight: bold;
+}
+
+#page-mod-attendance-preferences .form-control {
+    width: inherit;
+    display: inherit;
+}
+
+@media (max-width: 767px) {
+    .path-mod-attendance .remarkscol {
+        display: none;
+    }
+
+    .path-mod-attendance .statusgroup .form-check-inline {
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #page-mod-attendance-view .colatt {
+        display: none;
+    }
+
+    .path-mod-attendance .attfiltercontrols,
+    .path-mod-attendance .attwidth {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .path-mod-attendance .desccol {
+        display: none;
+    }
+
+    .path-mod-attendance .pointscol {
+        display: none;
+    }
+
+    .path-mod-attendance .attfiltercontrols #currentdate {
+        display: none;
+    }
+
+    #page-mod-attendance-view .colsessionscompleted,
+    #page-mod-attendance-view .colpointssessionscompleted {
+        display: none;
+    }
+}
+
+#page-mod-attendance-report div[role=main] {
+    position: relative;
+}
+
+#page-mod-attendance-report .attendancereporttable {
+    overflow-x: scroll;
+    overflow-y: visible;
+    padding: 0;
+}
+
+#page-mod-attendance-report .attendancereporttable .headcol {
+    position: sticky;
+    width: 200px;
+    left: 0;
+    vertical-align: top;
+    background: white;
+    border-top-width: 1px;
+}
+
+#page-mod-attendance-report .attendancereporttable .headcol input[type='checkbox'] {
+    margin-right: 4px;
+
+}
+
+.attendancereporttable img.icon {
+    padding-left: 5px;
+}
+/*css by kiran*/
+#page-mod-attendance-sessions div#fgroup_id_statusarray {
+    align-items: baseline;
+}
+#page-mod-attendance-take.path-mod-attendance .userwithoutenrol {
+    width: 16.66%!important;
+    padding: 10px;
+    background-color: #fff !important;
+}
+#page-mod-attendance-take.path-mod-attendance .attendance_cards {
+    box-shadow: 0px 2px 4px 2px #ebe8e8;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ededed;
+}
+#page-mod-attendance-take.path-mod-attendance .userwithoutenrol a {
+    color: #000 !important;
+}
+#page-mod-attendance-take.path-mod-attendance .takegrid .fullname{
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #fff;
+}
+#page-mod-attendance-take.path-mod-attendance .takegrid .rollno{
+    font-size: 14px;
+    margin-top: 10px;
+}
+#page-mod-attendance-take.path-mod-attendance .userwithoutenrol a img {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+}
+#page-mod-attendance-take.path-mod-attendance .userwithoutenrol .status {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+#page-mod-attendance-take.path-mod-attendance .userwithoutenrol .attendancestatus {
+    background-color: #f7f7ff;
+    color: #2f363f;
+    display: flex;
+    width: 26px;
+    height: 26px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+#page-mod-attendance-take.path-mod-attendance .userwithoutenrol.present .attendancestatus.present {
+    background-color: #00994c;
+    color: #fff;
+}
+#page-mod-attendance-take.path-mod-attendance .userwithoutenrol.absent .attendancestatus.absent {
+    background-color: #e41609;
+    color: #fff;
+}
+#page-mod-attendance-take.path-mod-attendance .userwithoutenrol.late .attendancestatus.late {
+    background-color: #ffaa4d;
+    color: #fff;
+}
+#page-local-attendance-take .generaltable tbody td, 
+#page-local-attendance-take table.dataTable tbody td{
+    vertical-align: initial;
+}

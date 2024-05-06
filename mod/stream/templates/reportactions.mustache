@@ -1,0 +1,36 @@
+<div class="row mb-4">
+    <div id="reportbox_shadow" class="col-md-6 col-12" >
+        <div id="segmented-button" data-course={{courseid}} data-moduleid={{activityid}} data-action="reportsHeader">
+            <input type="radio" name="duration" value="week" id="seg-Week">
+            <label for="seg-Week" class="week">{{#str}}week, stream{{/str}}</label>
+            <input type="radio" name="duration" value="month" id="seg-Month">
+            <label for="seg-Month">{{#str}}month, stream{{/str}}</label>
+            <input type="radio" name="duration" value="year" id="seg-Year">
+            <label for="seg-Year">{{#str}}year, stream{{/str}}</label>
+            <input type="radio" name="duration" value="custom" id="seg-Custom">
+            <label for="seg-Custom">{{#str}}custom, stream{{/str}}</label>
+            <input type="radio" name="duration" value="clear" id="seg-Clear" checked="true">
+            <label for="seg-Clear">{{#str}}all, stream{{/str}}</label>
+        </div>
+        <span class="flatpickr">
+        <input type="text" name="customduration" value="" style="display: none;"
+                id="customrange" placeholder="{{#str}}startdateenddate, stream{{/str}}">
+        </span>
+    </div>
+    <div class="col-md-6 col-12 text-right pull-right mod_fiters filter_alignment">
+        <label class="filterlabel">{{#str}}filter, stream{{/str}}</label>
+        <select id='course_select_filter' class='custom-select filter_select_m singleselect'>
+            {{#courses}}
+                <option value={{id}} data-page='reports.php' {{selected}} >{{name}}</option>
+            {{/courses}}
+        </select>
+        {{^sitelevel}}
+        <!-- <label class="filterlabel">{{#str}}activities, stream{{/str}}</label> -->
+        <select id='module_select_filter' class='custom-select singleselect'>
+            {{#activities}}
+                <option value={{id}} data-page='reports.php' {{selected}} >{{name}}</option>
+            {{/activities}}
+        </select>
+        {{/sitelevel}}
+    </div>
+</div>

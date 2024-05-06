@@ -1,0 +1,52 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template teacher_courses/studentcourses
+    Example context (json):
+    {
+    }
+}}
+{{#response}}
+    <table class="generaltable" id="teacher_courses_view">
+        <thead>
+            <tr>
+                <th>{{#str}}coursetitle, block_teacher_courses{{/str}}</th>
+                <th>{{#str}}programname, block_teacher_courses{{/str}}</th>
+                <th>{{#str}}sessiondelivered, block_teacher_courses{{/str}}</th>
+                <th>{{#str}}attendance, block_teacher_courses{{/str}}</th>
+                <th>{{#str}}students, block_teacher_courses{{/str}}</th>
+                <!-- <th>{{#str}}courseparticipations, block_teacher_courses{{/str}}</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            {{#records}}
+                {{#hascourses}}
+                    <tr>
+                        <td class="text-left"><span><img src="{{courseimage}}" id ="image"><a href="{{cfg_url}}/course/view.php?id={{cid}}" class="ml-2"></span><span title= "{{cfullname}}">{{fullname}}</a></span></td>
+
+                        <td>{{programname}}</td>
+                        <td>{{sessiondelivered}}</td>
+                        <td>{{attendancepercentage}}%</td>
+                        <td>
+                            <button class="rolesstudentpopup" href="javascript:void(0)" data-id={{cid}} data-teacherid={{teacherid}} data-open_identifiedas={{open_identifiedas}} data-action="popupmodal{{cid}}">
+                                {{ studentcount }}
+                            </button>
+                        </td>
+                        <!-- <td>{{courseparticipants}}%</td> -->
+                    </tr>
+                {{/hascourses}}
+            {{/records}}
+        </tbody>
+    </table>
+{{/response}}

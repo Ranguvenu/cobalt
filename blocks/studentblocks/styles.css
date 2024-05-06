@@ -1,0 +1,14 @@
+/*.block_studentblocks .card-body {
+	height: 63.5vh;
+}*/
+.block_studentblocks .card-text .chart-table {
+    display: none;
+}
+.block_studentblocks .card-text .chart-area .chart-image .chartjs-render-monitor {
+	display: flex;
+	margin-top: 1rem;
+	flex: 0 0 100%;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+

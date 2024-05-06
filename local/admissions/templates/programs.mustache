@@ -1,0 +1,63 @@
+<div>
+    <div class="my-1 p-3 admission_listcontainer d-flex justify-content-between">
+        <span class="h4">{{#str}}programslist, local_admissions{{/str}}</span>
+        <a href="{{cfgroot}}/local/admissions/index.php">
+            <span class="list_icon"></span>
+            <span class="ml-2 list_content">{{#str}}list, local_admissions{{/str}}</span>
+        </a>
+    </div>
+    <div class="programs_container row w-full m-0">
+        {{# programs }}
+            <div class="col-md-3 mb-3">
+                <div class="program_cards">
+                    <div class="program_cards_img" style="background-image:url('{{{imageurl}}}') ;">
+                        <span class="sylabus_strip"><a href="{{cfgroot}}/local/admissions/admission.php?id={{id}}" class="text-white">{{#str}}syllabus, local_admissions{{/str}}</a></span>
+                    </div>
+                    <div class="program_card_content">
+                        <h5 class="card-title"><a href="{{cfgroot}}/local/admissions/admission.php?id={{id}}">{{ name }}</a></h5>
+                        <div class="w-full">
+                            <span class="lable_align">{{#str}}startdate, local_admissions{{/str}} :</span>
+                            <span class="info_value">{{ progstartdate }}</span>
+                        </div>
+                        <div class="w-full">
+                            <span class="lable_align">{{#str}}enddate, local_admissions{{/ str}} :</span>
+                            <span class="info_value">{{ progenddate }}</span>
+                        </div>
+                        <div>
+                            <span class="lable_align">{{#str}}admissionends, local_admissions{{/str}} :</span>
+                            <span class="info_value">{{ enddate }}</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-end">
+                            <a href="{{cfgroot}}/local/admissions/personal_information.php?programid={{id}}&format=card" class=" ml-3"><button class="btn apply_btn" title="{{#str}}applynow, local_admissions{{/str}}">{{#str}}applynow, local_admissions{{/str}}</button></a>
+                        </div>
+                    </div>
+                    <div class="other_details py-2">
+                        <div class="row w-full m-0">
+                            <div class="col-md-4 pr_details">
+                                <div class="p-1 text-center">
+                                    <div class="lable_align">{{#str}}noofsems, local_admissions{{/str}}</div>
+                                    <div class="info_value">{{ levelscount }}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 pr_details">
+                                <div class="p-1 text-center">
+                                    <div class="lable_align">{{#str}}noofcourses, local_admissions{{/ str}}</div>
+                                    <div class="info_value">{{ totalcourses }}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 pr_details">
+                                <div class="p-1 text-center">
+                                    <div class="lable_align">{{#str}}certificate, local_admissions{{/str}}</div>
+                                    <div class="info_value" title="{{certificatename}}">{{ certificate }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </div>
+        {{/ programs }}
+    </div>
+    {{^ programs }}
+        <div class="alert alert-info w-100 text-center">{{#str}}nodetailsavail, local_admissions{{/str}}</div>
+    {{/ programs }}
+</div>

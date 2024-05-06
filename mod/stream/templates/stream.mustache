@@ -1,0 +1,17 @@
+{{=<% %>=}}
+<!-- <div class="col-lg-8 col-md-7 view_left_wrapper">
+    <div class='w-100 media_videojs video-js videojs vjs-default-skin vjs-big-play-centered'>
+        <video id='my_video_1' class='w-100 media_videojs video-js videojs vjs-default-skin vjs-big-play-centered' controls preload='auto'
+          data-setup='{}' width="800" height="450" src="<% stream.externalurl %>">
+        </video>
+    </div>
+</div> -->
+
+<div class="mediaplugin mediaplugin_videojs">
+    <div style="max-width:400px;">
+        <video controls="" data-setup-lazy="{'language': 'en', 'fluid': true}" id="id_videojs_<% courseid $>_<% cmid %>" class="video-js" title="index.m3u8">
+            <source src="<% stream.externalurl %>" type="application/x-mpegURL" />
+                <% stream.externalurl %>
+        </video>
+    </div>
+</div>

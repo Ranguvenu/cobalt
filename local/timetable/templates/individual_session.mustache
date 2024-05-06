@@ -1,0 +1,103 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_teachers_tests_summary/summary
+    Example context (json):
+    {
+    }
+}}
+{{#response}}
+    <table class="generaltable" id="sessions_manage_table">
+    	<thead>
+    		<tr>
+    			<th>#</th>
+    			<th>{{#str}}sessionname, local_timetable{{/str}}</th>
+    			<th>{{#str}}date, local_timetable{{/str}}</th>
+    			<th>{{#str}}time, local_timetable{{/str}}</th>
+    			<th>{{#str}}group, local_timetable{{/str}}</th>
+    			<th>{{#str}}teacher, local_timetable{{/str}}</th>
+    			<th>{{#str}}program_name, local_timetable{{/str}}</th>
+    			<th>{{#str}}building, local_timetable{{/str}}</th>
+    			<th>{{#str}}room, local_timetable{{/str}}</th>
+    			<th>{{#str}}action, local_timetable{{/str}}</th>
+    		</tr>
+    	</thead>
+        {{#records}}
+	        {{#hassession}}
+		    	<tbody>
+		    		<tr>
+		    			<td>{{sr}}</td>
+		    			<td id="tm_sess_name">{{sessioname}}</td>
+		    			<td>{{date}}</td>
+		    			<td>{{time}}</td>
+		    			<td>{{group_name}}</td>
+		    			<td>{{teacher}}</td>
+		    			<td>{{programname}}</td>
+		    			{{#building}}
+			    			<td>{{building}}</td>
+			    		{{/building}}
+			    		{{^building}}
+			    			<td>N/A</td>
+			    		{{/building}}
+			    		{{#room}}
+			    			<td>{{room}}</td>
+			    		{{/room}}
+			    		{{^room}}
+			    			<td>N/A</td>
+			    		{{/room}}
+		    			<td id="tm_action">
+		    				<span class="helptooltip">
+		    					<a href="{{configwwwroot}}/local/attendance/password.php?session={{sessionid}}"
+		    					   title="Password" aria-haspopup="true" target="_blank">
+		    					   <img class="icon " alt="" aria-hidden="true"
+				    					src="{{configwwwroot}}/theme/image.php/bloom/attendance/1684314570/qrcode"
+				    				/>
+		    					</a>
+		    					{{# taken}}
+		    						<a href="{{configwwwroot}}/local/attendance/take.php?id={{cmid}}&sessionid={{sessionid}}&grouptype={{grouptype}}&viewmode={{viewmode}}&semid={{semid}}&batch_group={{batch_group}}" id="action_link649add12130f510" class="action-icon">
+			    						<img class="icon " alt="Change attendance" title="Change attendance" src="{{configwwwroot}}/theme/image.php/bloom/attendance/1687870697/redo">
+			    					</a>
+			    				{{/ taken}}
+		    					{{^ taken}}
+		    					{{# active}}
+			    					<a href="{{configwwwroot}}/local/attendance/take.php?id={{cmid}}&sessionid={{sessionid}}&grouptype={{grouptype}}&viewmode={{viewmode}}&semid={{semid}}&batch_group={{batch_group}}" id="action_link64649b62890601" class="action-icon" >
+			    						<i class="icon fa fa-play fa-fw " title="Take attendance"
+				    						role="img" aria-label="Take attendance">
+			    						</i>
+			    					</a>
+		    					{{/ active}}
+		    					{{^ active}}
+			    					<a href="javascript:void(0)">
+			                            <i class="icon fa fa-play fa-fw " title="{{#str}}cannottake, local_timetable{{/str}}"
+				    						role="img" aria-label="Take attendance">
+			    						</i>
+			                        </a>
+		    					{{/ active}}
+		    					<a href="{{configwwwroot}}/local/timetable/individual_session_update.php?id={{cmid}}&sessionid={{sessionid}}&action=2&semesterid={{semid}}&courseid={{courseid}}" class="action-icon">
+		    						<i class="icon fa fa-cog fa-fw " title="Edit Session"
+			    						role="img" aria-label="Edit Session">
+		    						</i>
+		    					</a>
+		    					<a href="javascript:void(0)" title="{{#str}}delete, local_timetable{{/str}}" onclick="(function(e){ require('local_timetable/ajaxforms').deletesessionConfirm({ action: 'delete_session' ,id:{{sessionid}},context:1,semesterid:{{semid}}, name: '{{sessioname}}' }) })(event)">
+		    						<i class="icon fa fa-trash fa-fw" aria-hidden="true"></i>
+		    					</a>
+		    					{{/ taken}}
+		    				</span>
+		    			</td>
+		    		</tr>
+		    	</tbody>
+		    {{/hassession}}
+        {{/records}}
+    </table>
+{{/response}}

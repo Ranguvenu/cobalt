@@ -1,0 +1,80 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_quiz/random_challenge_form_preview
+
+    A preview section for the list of challenges that match the random
+    challenge criteria in the random challenge form.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * title A cleaned string (use clean_text()) to display.
+    * body HTML content for the boday
+
+    Example context (json):
+    {}
+}}
+<!-- <table class="generaltable" id="block_todays_timetable_addnewsessions" width="100%">
+<thead>
+    <tr>
+        <th>{{#str}}Course, block_todays_timetable{{/str}}</th>
+        <th>{{#str}}Newsession, block_todays_timetable{{/str}}</th>
+    </tr>
+</thead>
+<tbody>
+    {{#obj}}
+        <tr class="lastrow">
+            <td>{{course}}</td>
+            <td><a class="btn text-light" href="{{config.wwwroot}}/mod/attendance/sessions.php?id={{addsession}}&action=1">Add session</a></td> 
+        </tr>
+    {{/obj}}
+</tbody>
+</table>
+{{^obj}}
+    <p class="alert alert-info text-center">{{#str}}nocoursesareenrolled, block_todays_timetable{{/str}}</p>
+{{/obj}} -->
+
+
+
+<!-- <style type="text/css">
+ .block_todays_timetable .card-text{
+    color: #25a7da;
+ }
+.block_todays_timetable .card-body{
+ padding: 0.25rem;
+}
+.block_todays_timetable .card{
+margin-top: 10px;
+}    
+</style> -->
+
+{{#obj}}
+<div class="add_session">
+      <div class="add_session_course d-flex align-items-center justify-content-between p-2">
+        <h5 class="card-text m-0">{{course}}</h5>
+        <a class="btn text-light btn-sm float-right" href="{{config.wwwroot}}/local/timetable/individual_insert.php?semid={{addsession}}&action=1&courseid={{courseid}}" target="_blank">Add session</a>
+      </div>
+    </div>
+    {{/obj}}
+    {{^obj}}
+    <p class="alert alert-info text-center">{{#str}}nocoursesareenrolled, block_todays_timetable{{/str}}</p>
+{{/obj}}

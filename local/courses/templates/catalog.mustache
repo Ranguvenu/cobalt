@@ -1,0 +1,158 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_courses/catalog
+
+    This template renders the courses content for the courses plugin.
+
+    Example context (json):
+    {}
+}}
+{{#response}}
+    {{! card view }}
+    {{#viewtypeCard}}
+    <div class="customcount d-flex align-items-center justify-content-end my-3">
+                <ul class="dashboard_count_list mb-0">
+                    <li class="d-inline-block dashbaord_count_item total">
+                        <span class="">
+                            <span class="dashboard_count_string">{{# str}}total, local_employees{{/ str}}: </span>
+                            <span class="dashboard_count_value">{{{totalcount}}}</span>
+                        </span>
+                    </li>
+                    <li class="d-inline-block dashbaord_count_item active">
+                        <span class="">
+                            <span class="dashboard_count_string">{{# str}}active, local_employees{{/ str}}: </span>
+                            <span class="dashboard_count_value">{{{totalactive}}}</span>
+                        </span>
+                    </li>
+                    <li class="d-inline-block dashbaord_count_item inactive">
+                        <span class="">
+                            <span class="dashboard_count_string">{{# str}}inactive, local_employees{{/ str}}: </span>
+                            <span class="dashboard_count_value">{{{totalinactive}}}</span>
+                        </span>
+                    </li>
+                </ul>
+                {{{cardbutton}}}
+            </div>
+
+        <div class=" clearfix row">
+            {{#records}}
+                {{# hascourses}}
+                        <div class="{{cardClass}}  mb-2 catcourses_list {{course_class}} ">
+                            <div class=" d-flex h-100 course_container">
+                                <div class="courseimg_container">
+                                    <div style="background-image: url('{{{ courseimage }}}');" alt="{{ coursename }}" class="courseimg courseimg_bg" ></div>
+                                </div>
+                                <div class="coursecontent flex-grow-1">
+                                    {{#actions}}
+                                    <div class="d-flex justify-content-end">
+                                        <div class="w-full pull-right showoptions{{courseid}} actionicons">
+                                            <span  class="pull-right showoptions" data-action="showoptions{{courseid}}" onmouseenter="(function(e){ require('theme_bloom/quickactions').quickactionsCall({ selector:'showoptions{{courseid}}' }) })(event)" onmouseleave="(function(e){require('theme_bloom/quickactions').quickactionsCall({ selector:'showoptions{{courseid}}' }) })(event)"><i class="fa fa-ellipsis-h options"></i></span>
+                                            <ul class="col-md-12 col-sm-12 col-12 p-0 options_container" id="showoptions{{courseid}}">
+                                            
+                                            {{#delete}}<li>{{{ deleteaction }}}</li>{{/delete}}
+
+                                            {{#update}}
+                                            {{#auto_enrol}}
+                                            <li>
+                                               <a href="{{ auto_enrol }}" title= "{{#str}}auto_enrol, local_courses{{/str}}"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                                            </li>
+                                            {{/auto_enrol}}
+                                            {{/update}}
+                                            {{#update}}
+                                             <li>
+                                              {{{ editcourse }}}
+                                              </li>
+                                              <li>
+                                                  {{{update_status}}}
+                                              </li>
+                                            {{/update}}
+           
+                                        </ul>
+                                    </div>
+                                    </div>
+                                    {{/actions}}
+                                    <div class="d-inline-block">
+                                        {{^ coursenameCut}}
+                                            <p class="course_name m-0" ><a href="{{ courseurl }}" title="{{ coursename }}"><b>{{ coursename }}</b></a></p>
+                                        {{/ coursenameCut}}
+                                        {{# coursenameCut}}
+                                            <p class="course_name m-0" ><a href="{{ courseurl }}" title="{{ coursename }}">{{ coursenameCut }}</a></p>
+                                        {{/ coursenameCut}}
+                                    </div>
+                                    
+                                    <div class="w-full ">
+                                        <div class="coursedesc">
+                                            {{# coursesummary }}
+                                                <p class=" mb-0 desc text-truncate-3" title = "{{summarydescription}}" >{{ coursesummary }}</p>
+                                            {{/ coursesummary }}
+                                            {{^ coursesummary }}
+                                                <p class="alert alert-info text-center mt-1 text-truncate-3">{{#str}}nocoursedesc, local_courses{{/str}}</p>
+                                            {{/ coursesummary }}
+                                        </div>
+                                        {{^ colgfieldnotvisible}}
+                                            <!-- <div class="d-flex  flex-wrap cat_btm">
+                                                <span class="catbtm_colon">{{#str}}department, local_costcenter, {{secondlabelstring}}{{/str}} <span class="colon_align">:</span> </span><span class="text-muted catbtm_info" title="{{coursedepartment}}">{{shortcoursedepartment}}</span>
+                                            </div> -->
+
+                                            {{^dept}}
+                                            <div class="d-flex  flex-wrap cat_btm">
+                                                <span class="catbtm_colon">{{#str}}organization, local_costcenter, {{firstlabelstring}}{{/str}} <span class="colon_align">:</span> </span><span class="text-muted catbtm_info" title="{{coursecostcenter}}">{{shortcoursecostcenter}}</span>
+                                            </div>
+                                            {{/dept}}
+
+                                            <div class="d-flex  flex-wrap cat_btm">
+                                                <span class="catbtm_colon">{{#str}}department, local_costcenter, {{secondlabelstring}}{{/str}} <span class="colon_align">:</span> </span><span class="text-muted catbtm_info" title="{{coursedepartment}}">{{shortcoursedepartment}}</span>
+                                            </div>
+
+                                            <div class="d-flex  flex-wrap cat_btm">
+                                                <span class="catbtm_colon">{{#str}}subdepartment, local_costcenter, {{thirdlabelstring}}{{/str}} <span class="colon_align">:</span> </span><span class="text-muted catbtm_info" title="{{coursesubdepartment}}">{{shortcsuboursedepartment}}</span>
+                                            </div>
+                                        {{/ colgfieldnotvisible}}                                    
+                                        {{# colgfieldnotvisible}}
+                                              <div class="d-flex  flex-wrap cat_btm">
+                                                <span class="catbtm_colon">{{#str}}subdepartment, local_costcenter, {{thirdlabelstring}}{{/str}} <span class="colon_align">:</span> </span><span class="text-muted catbtm_info" title="{{coursesubdepartment}}">{{shortcsuboursedepartment}}</span>
+                                            </div>                          
+                                        {{/ colgfieldnotvisible}}                                    
+                                    </div>
+                                    <!-- {{# tagenable}}
+                                    <div class="col-lg-12 col-12 p-0 ">
+                                        <span class="text-muted  catbtm_colon">
+                                            Tags
+                                        <span class="colon_align">:</span></span>
+                                        <span class="catbtm_info" title = '{{tag_title}}'><b>{{{tagstring}}}</b></span>
+                                    </div>
+                                    {{/ tagenable}} -->
+                                </div>
+                                
+                               <!--  <div class="col-12 pull-left coursetype">
+                                    <span class="text-muted">{{# str}}type, local_courses{{/ str}} :</span>
+                                    {{{coursetype}}}
+                                </div> -->
+                            </div>
+                        </div>
+                {{/ hascourses}}
+                <div class="col-md-12">{{{ pagination }}}</div>
+                {{# nocourses}}
+                  <div class='w-full  text-center alert alert-info'>No courses available.</div>
+                {{/ nocourses}}
+            {{/records}}
+        </div>
+    {{/viewtypeCard}}
+{{/response}}
+
+

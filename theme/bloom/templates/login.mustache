@@ -1,0 +1,102 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_bloom/login
+
+    Login page template
+
+    Example context (json):
+    {
+        "output": {
+            "doctype": "<!DOCTYPE html>",
+            "page_title": "Login page",
+            "favicon": "favicon.ico",
+            "main_content": "<h1>Headers keep HTML validators happy</h1>"
+        }
+    }
+}}
+{{> theme_bloom/head }}
+
+<body {{{ bodyattributes }}}>
+{{> core/local/toast/wrapper}}
+
+<div id="page-wrapper">
+
+    {{{ output.standard_top_of_body_html }}}
+
+    <div id="page" class="container-fluid pt-5 mt-0 login_main">
+        <!-- <nav id="mainnav" class="navbar fixed-top navbar-light border-0 navbar-expand moodle-has-zindex main_navbar" aria-label="Site navigation">
+            <div class="logo_container d-flex align-items-center">
+            {{#logourl}}
+            <div id="loginlogo" class="login-logo">
+                <img id="logoimage" src="{{logourl}}" class="img-fluid" alt="{{sitename}}"/>
+                <h1 class="login-heading sr-only">{{#str}} loginto, core, {{sitename}} {{/str}}</h1>
+            </div>
+        {{/logourl}}
+        {{^logourl}}
+            <h1 class="login-heading mb-4">{{#str}} loginto, core, {{sitename}} {{/str}}</h1>
+        {{/logourl}}
+            </div>
+            <div id="usernavigation" class="navbar-nav ml-auto usernav  align-items-center">                  
+                <a class="btn btn-primary nav_bar_btns ml-4 mr-4 pl-4 pr-4"
+                href="{{{applicationstatus}}}">Check Application Status</a>
+                <a class="btn btn-primary nav_bar_btns" href="{{{admissionsindex}}}">Apply Online</a>
+                <a href="index.php" class="btn btn-primary ml-4 mr-4 pl-4 pr-4" id="loginbtn">{{#str}}login{{/str}}</a>
+            </div>
+            
+        </nav> -->
+
+        <div class="online_layout d-flex  flex-row justify-content-end">
+            <a class="btn btn-primary nav_bar_btns mr-1" href="{{{applicationstatus}}}">Check Application Status</a>
+            <a class="btn btn-primary nav_bar_btns" href="{{{admissionsindex}}}">Apply Online</a>
+        </div>
+        <div id="page-content" class="row">
+            <div id="region-main-box" class="col-12">
+                <section id="region-main" class="col-12 h-100" aria-label="{{#str}}content{{/str}}">
+                <div class="login-wrapper">
+                    <div class="login-container">
+                    {{{ output.main_content }}}
+                    </div>
+                    <div class="d-flex justify-content-center cookies_notice">
+                        {{#languagemenu}}
+                            <div class="login-languagemenu">
+                                {{>core/action_menu}}
+                            </div>
+                            <div class="divider border-left align-self-center mx-3"></div>
+                        {{/languagemenu}}
+                        <button type="button" class="btn btn-secondary" {{!
+                        }} data-modal="alert"{{!
+                        }} data-modal-title-str='["cookiesenabled", "core"]' {{!
+                        }} data-modal-content-str='["cookiesenabled_help_html", "core"]'{{!
+                        }}>{{#str}}cookiesnotice{{/str}}</button>
+                    </div>
+                </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- {{> theme_bloom/footer }} -->
+</div>
+
+</body>
+</html>
+{{#js}}
+M.util.js_pending('theme_bloom/loader');
+require(['theme_bloom/loader'], function() {
+  M.util.js_complete('theme_bloom/loader');
+});
+{{/js}}

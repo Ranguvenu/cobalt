@@ -1,0 +1,100 @@
+<div class="tab-content">
+            <div class="w-full  semester_description">{{{description}}}</div>
+    <div class="local_program-semisters_wrap">
+        {{# curriculumsemesters }}
+        <div class="w-full  lpcourse_content " id = "lpcourse_content{{semesterid}}">
+            <div class="col-md-12 col-sm-12 col-12 p-0 semestercourse_list  accordion {{ coursecompletionstatus }}">
+                <div class='w-full semcontentlist card
+                {{# semesters}} 
+                semabove
+                {{/ semesters}}' 
+                {{# semesters}}
+                data-toggle="collapse" data-target="#semcollapse_{{semesterid}}" aria-expanded="false" aria-controls="semcollapse_{{semesterid}}"
+                {{/ semesters}} 
+                id="semcontentlist{{semesterid}}">
+                    <div class="semestercourse_left card-header d-flex justify-content-between align-items-center" >
+                        <div>
+                            <h5 class="coursename mb-0" >
+                                <button class="btn btn-link collapsed sem_btn" type="button" data-toggle="collapse" data-target="#semcollapse_{{semesterid}}" aria-expanded="false" aria-controls="semcollapse_{{semesterid}}" >{{{ semester }}}</button>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="{{# semesters}}collapse{{/semesters}} courseslist col-md-12 p-0" {{# semesters}} id="semcollapse_{{semesterid}}" {{/ semesters}}>
+                    <div class="card-body">
+                        <p class="h6 text-left"><strong>{{#str}}mandatorycourses, local_curriculum{{/str}} :</strong></p>
+                        <ul>
+                            {{#isactive}}
+                                {{#mandatorycourses}}
+                                    <!-- <div class="col-md-4 courselist">
+                                        <div class="w-full mb-3"> -->
+                                            <li class="course_listitems mb-2">
+                                                <span class="coursesuburl text-center">{{course}}</span>
+                                            </li>
+                                       <!--  </div>
+                                    </div> -->
+                                {{/mandatorycourses}}
+                                {{^mandatorycourses}}
+                                    <div class="w-full alert alert-info text-center">{{#str}} noassignedcourses, local_program{{/str}}</div>
+                                {{/mandatorycourses}}
+                            {{/isactive}}
+                            {{^isactive}}
+                                {{#mandatcourses}}
+                                    <!-- <div class="col-md-4 courselist">
+                                        <div class="w-full mb-3"> -->
+                                            <li class="course_listitems mb-2">
+                                                <span class="coursesuburl text-center">{{course}}</span>
+                                            </li>
+                                       <!--  </div>
+                                    </div> -->
+                                {{/mandatcourses}}
+                                {{^mandatcourses}}
+                                    <div class="w-full alert alert-info text-center">{{#str}} noassignedcourses, local_program{{/str}}</div>
+                                {{/mandatcourses}}
+                            {{/isactive}}
+                        </ul>
+                        <p class="h6 text-left"><strong>{{#str}}electivecourses, local_curriculum{{/str}} :</strong></p>
+                        <ul>
+                            {{#isactive}}
+                                {{#electivecourses}}
+                                    <!-- <div class="col-md-4 courselist">
+                                        <div class="w-full mb-3"> -->
+                                            <li class="course_listitems mb-2">
+                                                <span class="coursesuburl text-center">{{course}}{{#isenrolled}}<sup class="m-1 text-success">({{#str}}selected, local_curriculum{{/str}})</sup>{{/isenrolled}}</span>
+                                            </li>
+                                        <!-- </div>
+                                    </div> -->
+                                {{/electivecourses}}
+                                {{^electivecourses}}
+                                    <div class="w-full alert alert-info text-center">{{#str}} noassignedcourses, local_program{{/str}}</div>
+                                {{/electivecourses}}
+                            {{/isactive}}
+                            {{^isactive}}
+                                {{#electcourses}}
+                                    <!-- <div class="col-md-4 courselist">
+                                        <div class="w-full mb-3"> -->
+                                            <li class="course_listitems mb-2">
+                                                <span class="coursesuburl text-center">{{course}}{{#isenrolled}}<sup class="m-1 text-success">({{#str}}selected, local_curriculum{{/str}})</sup>{{/isenrolled}}</span>
+                                            </li>
+                                        <!-- </div>
+                                    </div> -->
+                                {{/electcourses}}
+                                {{^electcourses}}
+                                    <div class="w-full alert alert-info text-center">{{#str}} noassignedcourses, local_program{{/str}}</div>
+                                {{/electcourses}}
+                            {{/isactive}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/ curriculumsemesters }}
+    </div>
+</div>
+
+{{# js }}
+if($('.tab-content .local_program-semisters_wrap .lpcourse_content:first-child .courseslist').hasClass('collapse')){
+    $('.tab-content .local_program-semisters_wrap .lpcourse_content:first-child .courseslist').removeClass('collapse').addClass('collapse in');
+}
+$('#semcollapse_{{semids}}').addClass('show');
+{{/ js }}

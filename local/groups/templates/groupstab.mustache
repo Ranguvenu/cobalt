@@ -1,0 +1,115 @@
+<!-- Groups users View -->
+ 
+
+
+
+ {{#response}}
+{{#viewtypeCard}}
+ <div class="row mt-4">
+ {{#records}}
+  <div class="{{cardClass}} ">
+             <div class="card-page {{visible}} card">
+              {{ # groupname }}
+               <div class="card-title d-flex align-items-center">
+                    
+                    <div class="batch_card_icon">
+                        <span></span>
+                    </div>
+                    <div class="w-100 px-2">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <b class="group_name">{{ groupname }}</b>
+                            <div class="text-right actionicons showoptions{{userid}}">
+                                <span  class="pull-right showoptions" data-action="showoptions{{userid}}" onmouseenter="(function(e){ require('theme_bloom/quickactions').quickactionsCall({ selector:'showoptions{{userid}}' }) })(event)" onmouseleave="(function(e){require('theme_bloom/quickactions').quickactionsCall({ selector:'showoptions{{userid}}' }) })(event)"><i class="fa fa-ellipsis-h options"></i>
+                                </span>
+                                  {{ / groupname }}
+                                <ul class="options_container" id="showoptions{{userid}}">{{{actions}}} </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="group_id">
+                            <p>{{#str}}tabgroupid, local_groups{{/str}}:<b class="text-dark">
+                                <span title="{{groupid}}">{{ groupid }}</span></b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_body card-body">
+                    {{#superadmin}}
+                    <div class="group_count">
+                        <p>{{#str}}orgname, local_groups, {{firstlevel}} {{/str}}: <b class="text-dark">
+                            <span title="{{collegefullname}}">{{costfullname}}</span></b></p>
+                    </div>
+                    <div class="group_count">
+                      <p>{{#str}}deptname, local_groups, {{secondlevel}} {{/str}}: <b class="text-dark">
+                        <span title="{{departmentname}}">{{deptname}}</span></b></p>
+                    </div>
+                    <div class="group_count">
+                      <p>{{thirdlevel}}: <b class="text-dark">
+                        <span title="{{subdepartmentname}}">{{subdepartmentname}}</span></b></p>
+                    </div>
+                    {{/superadmin}}
+                    {{#firstlevelhead}}
+                    <div class="group_count">
+                      <p>{{#str}}deptname, local_groups, {{secondlevel}} {{/str}}: <b class="text-dark">
+                        <span title="{{departmentname}}">{{deptname}}</span></b></p>
+                    </div>
+                    <div class="group_count">
+                      <p>{{thirdlevel}}: <b class="text-dark">
+                        <span title="{{subdepartmentname}}">{{subdepartmentname}}</span></b></p>
+                    </div>
+                    {{/firstlevelhead}}
+                    {{#secondlevelhead}}
+                    <div class="group_count">
+                      <p>{{thirdlevel}}: <b class="text-dark">
+                        <span title="{{subdepartmentname}}">{{subdepartmentname}}</span></b></p>
+                    </div>
+                    {{/secondlevelhead}}
+                    <div class="group_count">
+                        <p>{{#str}}grouptabuserscount, local_groups{{/str}}: 
+                            {{# groupcount}}
+                            <a  id = "batchuserpopup" href="javascript:void(0)" data-batchid="{{batchid}}"  data-action="popupmodal{{batchid}}"  data-value="{{role_count}}">
+                                <b>{{groupcount}}</b>
+                           </a>
+                           {{/ groupcount}}
+                           {{^ groupcount}}
+                               <b class="text-dark">N/A</b>
+                           {{/ groupcount}}
+                        </p>
+                    </div>
+                      <!-- <div class="group_id">
+                        <p>{{#str}}startdt, local_groups{{/str}}:<b class="text-dark"> </b></p>
+                      </div> -->
+                     <div class="group_count">
+                        <p>{{#str}}date, local_groups{{/str}}: <b class="text-dark">{{ startdate }} - {{enddate}}</b></p>
+                    </div>
+                    <div class="group_id">
+                        <!--<a  href="javascript:void(0)" data-roleid="{{roleid}}"  data-action="popupmodal{{roleid}}"  data-value={{role_count}}>
+                            <p>{{#str}}programname, local_groups{{/str}}:<b> {{ programname }}</b></p>
+                        </a> -->
+                        <p>{{#str}}programnamet, local_groups{{/str}}: 
+                            {{# programname}}
+                            <a  id = "batchprogrampopup" href="javascript:void(0)" data-roleid="{{roleid}}" data-batchid="{{batchid}}"  data-action="popupmodal{{roleid}}"  data-value="{{role_count}}" title="{{pname}}">
+                          <b>{{programname}}</b>
+                           </a>
+                           {{/ programname}}
+                           {{^ programname}}
+                           <b class="text-dark">N/A</b>
+                           {{/ programname}}
+                        </p>
+                    </div>
+                    <!-- <div class="group_count">
+                      <p>{{#str}}deptname, local_groups, {{secondlevel}} {{/str}}: <b class="text-dark">
+                        <span title="{{departmentname}}">{{deptname}}</span></b></p>
+                    </div>
+                    <div class="group_count">
+                        <p>{{#str}}orgname, local_groups, {{firstlevel}} {{/str}}: <b class="text-dark">
+                            <span title="{{collegefullname}}">{{costfullname}}</span></b></p>
+                    </div> -->
+                </div>
+ 
+        <!-- <a href="{{ user_url }}" class=" group_view btn btn-primary pull-right mr-10 ">{{#str}}enrolledlist, local_groups{{/str}}</a> -->
+      </div>
+    </div>
+  {{/records}}
+</div>
+ {{/viewtypeCard}}
+{{/response}}

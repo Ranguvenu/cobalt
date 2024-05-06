@@ -1,0 +1,360 @@
+.block_employees_statistics {
+    background-color: transparent!important;
+    border: none!important;
+}
+/*.block_employees_statistics .enroll_count {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c6cbf;
+}
+*/
+.block_employees_statistics .statistics_cards:before {
+    content: " ";
+    background-color: #2c6cbf;
+    position: absolute;
+    bottom: 26px;
+    width: 21%;
+    border-radius: 25px;
+}
+.block_employees_statistics .statistics_cards {
+    background-color: #fff;
+    border-radius: 15px;
+    position: relative;
+}
+#page-my-index .block_employees_statistics .statistics_cards {
+    background-color: #eff3fb;
+    border: 1px solid #dddee2;
+    box-shadow: 0 2px 5px #ddd;
+}
+#page-my-index .block_employees_statistics .statisticscard_text {
+    color: #25a7da;
+}
+body#page-my-index .block_employees_statistics .statistics_cards:before {
+    background-color: #25a7da;
+}
+/*.block_employees_statistics .enroll_count span {
+    font-size: 1.1rem;
+}*/
+/*body#page-my-index .block_employees_statistics .enroll_count{
+    color: #25a7da;
+}*/
+.block_employees_statistics .card-body {
+  height: 100%;
+}
+.block_employees_statistics .flex-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+/*.block_employees_statistics .single-chart {
+    width: 100%;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+
+/*.block_employees_statistics .circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+}*/
+
+/*.block_employees_statistics .circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}*/
+
+.block_employees_statistics .circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.block_employees_statistics .circular-chart.green .circle {
+  stroke: #25c0da;
+}
+
+/*.block_employees_statistics .percentage {
+  fill: #25a7da;
+  font-size: 0.7em;
+      font-weight: 900;
+
+  text-anchor: middle;
+}*/
+.block_employees_statistics .statistics_cards {
+    background-color: #25a7da;
+    border: 1px solid #ffc6c1;
+    padding: 1rem 0.5rem 0rem 0.5rem;
+    height: 100%;
+    border-radius: 15px;
+    position: relative;
+}
+/*.block_employees_statistics .statistics_cards1 {
+    background-color: #25a7da;
+    border: 1px solid #ffc6c1;
+    padding: 1rem 1.5rem 2.7rem 1.5rem;
+    border-radius: 15px;
+    position: relative;
+}*/
+/*.block_employees_statistics .statistics_cards2 {
+    background-color: #25a7da;
+    padding: 1rem 1.5rem 2.7rem 1.5rem;
+    height: 70%;
+    border-radius: 15px;
+    position: relative;
+}*/
+/*.block_employees_statistics .program_name {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 100;
+}*/
+/*.block_employees_statistics .my_learners{
+  color: #fff;
+    font-size: 1rem;
+    font-weight: 100;
+    margin-right:57% ;
+}
+.block_employees_statistics .my_learner{
+  color: #fff;
+    font-size: 1rem;
+    font-weight: 100;
+    margin-right:67% ;
+}*/
+.block_employees_statistics .statisticscard_text {
+        border: 1px solid #fff;
+        background:#fff;
+        border-radius: 10px;
+/*        height: 33%;*/
+/*        padding: 0.5rem 0.5rem 1.7rem 0.5rem;*/
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom:10px !important;
+        padding:10px 24px;
+}
+/*.block_employees_statistics .statistics_bar{
+ background-color: #fde4e2;
+    border: 1px solid #ffc6c1;
+    padding: 0rem 0.5rem 1.7rem 0.5rem;
+    width: 60%;
+    height: 30%;
+    border-radius: 15px;
+    position: relative;
+    color: #fff;
+    background-color: #009cd9;
+    text-align: center;
+}*/
+/*.block_employees_statistics .statistics_bar1{
+ background-color: #fde4e2;
+    border: 1px solid #ffc6c1;
+    padding: 0rem 0.5rem 1.7rem 0.5rem;
+    width: 60%;
+    height: 30%;
+    border-radius: 15px;
+    position: relative;
+    color: #fff;
+    background-color: #009cd9;
+    text-align: center;
+}*/
+/*.block_employees_statistics .column {
+  padding: 10px;
+  color: #25a7da;
+}*/
+.block_employees_statistics .box {
+  border: 1px solid #ffc6c1;
+  border-radius: 15px;
+}
+.block_employees_statistics .box1 {
+  border: 1px solid #ffc6c1;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+/*.block_employees_statistics .counts{
+  padding-right: 90%;
+  font-size: 20px;
+}*/
+
+.block_employees_statistics p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+/*.block_employees_statistics .mycontent{
+    font-size: 140%;
+    font-weight: 300;
+    color: #2c6cbf;
+}*/
+/*.block_employees_statistics .program_count {
+    font-size: 160%;
+    font-weight: 300;
+    color: #2c6cbf;
+
+}*/
+/*.block_employees_statistics .dot {
+  height: 30px;
+  width: 50px;
+  display: inline-block;
+}*/
+.block_employees_statistics .circle{
+      font-size: 120%;
+    font-weight: 600;
+    color: #2c6cbf;
+    border: 1px solid #ffc6c1;
+    border-radius: 5px;
+}
+
+
+/*hema write new css*/
+.block_employees_statistics  .statisticscard_text  .icon.diamond_icon,
+.block_employees_statistics  .statisticscard_text .icon.book_icon,
+.block_employees_statistics  .linechart_icon,
+.block_employees_statistics  .signal_icon
+{
+    font-size: 24px;
+}
+.block_employees_statistics .statisticscard_text .icon.diamond_icon,
+.block_employees_statistics .statisticscard_text .icon.clock_icon,
+.block_employees_statistics .linechart_icon
+{
+     color:#ff3f1d;
+}
+.block_employees_statistics .statisticscard_text .icon.book_icon,
+.block_employees_statistics .signal_icon{
+     color:#0042d0;
+}
+.block_employees_statistics .statisticscard_text .program_text,
+.block_employees_statistics .learner_text{
+    color: #000;
+    font-size: 13px;
+}
+.block_employees_statistics .statisticscard_text .program_count,
+.block_employees_statistics .column .statistics_count,
+.block_employees_statistics .learner_count {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+}
+
+.block_employees_statistics .statistics_cards .mycontent{
+    margin-bottom: 0.5rem;
+}
+.block_employees_statistics .statistics_cards .employees_text {
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+}
+.block_employees_statistics .statistics_cards .circle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-left: 10px;
+    border:none;
+    border-radius:0;
+}
+.block_employees_statistics  .column{
+    color: #000;
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px 10px 16px 10px;
+}
+/*.block_employees_statistics  .questionstatistics_content,
+.block_employees_statistics  .assignstatistics_content,
+.block_employees_statistics  .statistics_content {
+    font-size: 11px;
+}*/
+.block_employees_statistics  .employeestatistics_icon,
+.block_employees_statistics  .quizestatistics_icon,
+.block_employees_statistics .assignstatistics_icon,
+.block_employees_statistics .questionstatistics_icon{
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width:20px;
+    height:20px;
+    display: inline-block; 
+}
+.block_employees_statistics  .employeestatistics_icon{
+    background-image: url([[pix:block_employees_statistics|files]]);  
+}
+.block_employees_statistics  .quizestatistics_icon{
+    background-image: url([[pix:block_employees_statistics|quiz]]); 
+}
+.block_employees_statistics .assignstatistics_icon{
+    background-image: url([[pix:block_employees_statistics|assignments]]);
+}
+.block_employees_statistics .questionstatistics_icon{
+    background-image: url([[pix:block_employees_statistics|questions]]);
+}
+.block_employees_statistics .diamond_icon .attendance_icon:before{
+    content:"";
+}
+.block_employees_statistics .diamond_icon .attendance_icon{
+    background-image: url([[pix:block_employees_statistics|attendance]]);
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width:30px;
+    height:30px;
+    display: inline-flex; 
+}
+.block_employees_statistics  .statistics_cards  .mycontent.learner_title {
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+}
+.block_employees_statistics .learner_content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 24px;
+    margin-bottom: 10px;
+}
+.block_employees_statistics .employee_content{
+    max-width:49%;
+    flex:0 0 49%;
+}
+.chartjs-render-monitor{
+    width: 200px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.block_employees_statistics .statisticscard_text .program_icon .fa-diamond:before,
+.block_employees_statistics .statisticscard_text .course_icon .fa-book:before{
+    content: "";
+}
+.block_employees_statistics .statisticscard_text .program_icon .fa-diamond{
+    background-image: url([[pix:block_employees_statistics|programs]]);
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width:30px;
+    height:30px;
+    display: inline-flex; 
+}
+.block_employees_statistics .statisticscard_text .course_icon .fa-book{
+    background-image: url([[pix:block_employees_statistics|courses]]);
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width:30px;
+    height:30px;
+    display: inline-flex; 
+}
+.block_employees_statistics .column{
+    height: 100%;
+    width: 100%;
+}
+
+.block_employees_statistics  .statisticscard_text .clock_icon{
+    font-size: 30px;
+    color: #ff3f1d;
+}

@@ -1,0 +1,292 @@
+#page-blocks-announcement-announcements .modal.openLMStransition input[type="checkbox"] {
+    display: inherit;
+}
+#page-blocks-announcement-announcements #region-main {
+    overflow: visible;
+}
+#page-blocks-announcement-announcements .modal.openLMStransition .mform .fdescription {
+    width: 100%;
+    display: flex;
+}
+.path-blocks-announcement .modal.openLMStransition .mform .fitem .col-md-3 {
+    padding-left: 0;
+}
+.path-blocks-announcement .modal.openLMStransition .modal-content .mform .fp-restrictions {
+    width: 100%;
+}
+.block_announcement .technicalsupport .loadmore a {
+    color: #439adc;
+}
+.block_announcement .totalannouncements .notactiveannouncements{
+    /*background-color: #A9A9A9 !important;*/
+    padding: 5px 0px;
+}
+.block_announcement .singleannouncemet>div.descriptionannounce{
+    overflow-x: auto;
+    width: 100%;
+}
+.block_announcement .totalannouncements .fullannouncement{
+    /*border: 1px solid #e5e5e5;*/
+    position: relative;
+    /*padding: 10px 0;*/
+    /*border-bottom: 1px solid #F4F6F9;*/
+}
+.fstaticlabel{
+    font-size: 15px;
+}
+.block_announcement.block i.fa.fa-volume-up{
+    /*width: 1.25em;*/
+    font-size: 14px;
+    float: left;
+    margin-right: 10px;
+}
+.block_announcement div.technicalsupport{
+    text-align: right;
+}
+.block_announcement div.cratenew{
+    text-align: right;
+}
+.block_announcement.block .news_fa_icon{
+    float: left;
+    font-size: 13px;
+    margin-right: 10px;
+    line-height: 18px;
+}
+.block_announcement.block .totalannouncements b > a {
+    color: #555658;
+    font-size: 14px;
+    font-weight: 400;
+}
+/*code by bunesh 26_05*/
+body#page-blocks-announcement-announcements div[role="main"]{
+    position: relative;
+}
+body#page-blocks-announcement-announcements .collapsibleregioncaption{
+    float: right;
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    right: 11px;
+    font-weight: normal;
+    top: 27px;
+}
+body#page-blocks-announcement-announcements .collapsibleregioncaption a{
+    color: #fff;
+}
+body#page-blocks-announcement-announcements .collapsibleregioncaption img{
+    display: none;
+}
+/*code starts here 27_05*/
+body#page-blocks-announcement-news .createnews{
+    text-align: center;
+    font-weight: 400;
+    padding: 10px 1%;
+    height: auto;
+    font-size: 24px;
+    width: 98%;
+}
+body#page-blocks-announcement-news div.addnews{
+    font-size: 15px;
+    height: 100%;
+    padding-left: 6px;
+    padding: 9px;
+    width: 98%;
+    float: left;
+    min-height: 150px;
+}
+body#page-blocks-announcement-news #region-main {
+    box-shadow: 4px 4px 5px #dedcdc;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+/*body#page-blocks-announcement-news .delnews a{
+    color: #0072bc;
+}*/
+body#page-blocks-announcement-announcements a.pull-left{
+    /*margin-top: 55px;*/
+    font-size: 18px;
+    padding-right: 10px;
+}
+body#page-blocks-announcement-announcements .coursebackup.course_extended_menu_itemcontainer {
+    margin-top: 46px;
+}
+body#page-blocks-announcement-news div.addnews img{
+        width: 100%;
+        height: 430px;
+}
+.block.block_announcement .content {
+    min-height: 170px;
+}
+#page-blocks-announcement-announcements #region-main .card.card-block {overflow-x: visible;}
+#page-blocks-announcement-announcements .course_extended_menu_list {top: -40px;position: static;}
+.block_announcement .content.mt-3 {
+    margin-bottom: 1rem;
+}
+.block.block_announcement .announcement_right{
+    padding-left: 15px;
+    margin-top:-3px;
+    flex-grow: 1;
+}
+.block.block_announcement .annoncement_name{
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.block.block_announcement .annoncement_name a{
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.block.block_announcement .annonun_created{
+    font-size: 12px;
+    color: #9e9e9e;
+}
+/*.block.block_announcement .announcedate_container {
+    border-left: 3px solid #ffbe28;
+}*/
+.block.block_announcement .announcedate_container .announcemy{
+    width: 100%;
+    float: left;
+    font-size: 12px;
+    color: #aeaeae;
+/*    padding: 0 5px;*/
+}
+.block.block_announcement .announcedate_container .announceday{
+    line-height: .9;
+    font-size: 20px;
+    padding: 0 5px;
+    margin-bottom: 4px;
+}
+/*#table_block_announcement_wrapper {
+    overflow: auto;
+}*/
+#table_block_announcement_wrapper #table_block_announcement {
+    min-width: 810px;
+}
+body.path-blocks div[role="main"] .dataTables_wrapper #table_block_announcement>thead>tr{
+    background-color: transparent;    
+}
+#page-blocks-announcement-announcements #table_block_announcement tbody td:last-child {
+    width: 85px;
+}
+#page-blocks-announcement-announcements #table_block_announcement tbody td.c3 {
+    width: 150px;
+}
+#page-blocks-announcement-announcements .modal.openLMStransition .mform #fitem_id_startdate, 
+#page-blocks-announcement-announcements .modal.openLMStransition .mform #fitem_id_enddate {
+    width: 100%;
+    float: inherit;
+    min-height: inherit;
+    max-height: inherit;
+}
+#page-blocks-announcement-announcements .paging_simple_numbers .paginate_button.current {
+    color: #fff !important;
+}
+
+/*@media(min-width: 1366px){
+    .block.block_announcement .announcedate_container {max-width: 70px;min-width: 23%;}
+    .block.block_announcement .announcement_right {
+        width: -webkit-calc(75% - 7%);
+        width: -moz-calc(75% - 7%);
+        width: -o-calc(75% - 7%);
+        width: calc(75% - 7%);
+    }
+}
+@media (min-width:768px) and (max-width: 1199px){
+    .block.block_announcement .announcement_right{
+        padding-left: 15px;
+        font-size: 14px;
+    }
+}*/
+
+/*hema added new css*/
+.block_announcement .totalannouncements .activeannouncements:nth-child(3n-2),
+.block_announcement .totalannouncements .activeannouncements:nth-child(3n-1),
+.block_announcement .totalannouncements .activeannouncements:nth-child(3n){
+    margin-top:5px;
+}
+.block_announcement .totalannouncements .activeannouncements {
+    border-bottom: 1px solid #f3f3f3;
+    padding: 10px 0 !important;
+}
+.block_announcement .totalannouncements .activeannouncements:last-child {
+    border-bottom: none;
+}
+.block_announcement .totalannouncements .activeannouncements:nth-child(3n-2) .announcedate_content {
+    background-color: #d5f5f0;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+}
+.block_announcement .activeannouncements .announcement_download {
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    justify-content: center;
+}
+.block_announcement .activeannouncements .announcement_download a i{
+    font-size: 18px;
+}
+.block_announcement .totalannouncements .activeannouncements:nth-child(3n-2) .announcedate_container .announcedate_icons{
+    background-image: url([[pix:block_announcement|01]]); 
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    float: left;
+    background-size: 100% 100%;
+}
+.block_announcement .totalannouncements .activeannouncements:nth-child(3n-1) .announcedate_content {
+    background-color: #e2eafa;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+}
+.block_announcement .totalannouncements .activeannouncements:nth-child(3n-1) .announcedate_container .announcedate_icons{
+    background-image: url([[pix:block_announcement|02]]); 
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    float: left;
+    background-size: 100% 100%;
+}
+.block_announcement .totalannouncements .activeannouncements:nth-child(3n) .announcedate_content {
+    background-color: #fdeae5;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+}
+.block_announcement .totalannouncements .activeannouncements:nth-child(3n) .announcedate_container .announcedate_icons{
+    background-image: url([[pix:block_announcement|03]]); 
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    float: left;
+    background-size: 100% 100%;
+}
+.block.block_announcement .card-text.content{
+    background:#fff;
+/*    box-shadow: 0 0 4px 1px #ddd;*/
+/*    padding:15px;*/
+    border-radius: 4px;
+}
+.block.block_announcement .totalannouncements {
+    padding: 0 15px 15px 15px;
+}
+.block.block_announcement .announcedate_container .announcemy{
+    padding-left:5px;
+}
+.block.block_announcement {
+    box-shadow: 0px 0px 3px #ccc !important;
+}
+.block_announcement .card-body {
+    position: relative;
+}
+.block_announcement .card-body .cratenew {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+.block_announcement .card-body .cratenew a {
+    text-decoration: underline;
+}

@@ -1,0 +1,51 @@
+<div class=" d-flex align-items-center justify-content-end">
+    <a href="{{configwwwroot}}/local/admissions/programs.php" class="btn text-decoration-none float-right" title="{{#str}}back, local_admissions{{/str}}">{{#str}}back, local_admissions{{/str}}
+    </a>
+    <a href="{{configwwwroot}}/local/admissions/personal_information.php?programid={{programid}}&format=card" class=" ml-3"><button class="btn apply_btn" title="{{#str}}applynow, local_admissions{{/str}}">{{#str}}applynow, local_admissions{{/str}}</button></a>
+</div>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">{{#str}}overview, local_admissions{{/str}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="programoutcome-tab" data-toggle="tab" href="#programoutcome" role="tab" aria-controls="programoutcome" aria-selected="false">{{#str}}programdetails, local_admissions{{/str}}</a>
+  </li>
+</ul>
+<div class="decription_head m-2  pl-2">{{#str}}programdesc, local_admissions{{/str}} :</div>
+{{# description }}
+  <div class="descrp m-2 pl-2">{{{ description }}}</div>
+{{/ description }}
+{{^ description }}
+  <p class="alert alert-info text-center">{{#str}}nodescprovided, local_admissions{{/str}}</p>
+{{/ description }}
+<div class="tab-content" id="myContent">
+  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+  <h5 class="m-3">{{#str}}program_prerequisite, local_admissions{{/str}} :</h5>
+  <span class="m-3">{{prerequisite}}</span>
+  <div class="m-3 faculty_course">
+      <span class="teacher_content ">
+        <strong>{{#str}}teachers, local_admissions{{/str}} :</strong></span>
+        {{#programfaculty}}
+        <img src="{{teacherurl}}" class="rounded-circle userimage" title="{{fullname}}" data-toggle="tooltip" data-placement="top">
+        {{/programfaculty}}
+        {{^programfaculty}}
+        <p class="alert alert-info text-center">{{#str}}nofacultyavail, local_admissions{{/str}}</p>
+        {{/programfaculty}}
+      </div>
+  </div>
+  <div class="tab-pane fade" id="programoutcome" role="tabpanel" aria-labelledby="programoutcome-tab">
+    <div class="mt-3 current_level nav">
+      {{#programlevels}}
+          <a href="javascript:void(0)" id="currentlevel-tab" class="nav-link" aria-selected="true" data-toggle="tab" onclick="(function(e){ require('local_admissions/semestertabs').semTabsCollection({levelid: {{id}}, programid: {{programid}} }) }) (event)">{{level}}</a>
+      {{/programlevels}}
+    </div>
+    <div class="level-courses  p-3" id="levelCourses_{{programid}}">
+      {{> local_admissions/levelcontent}}
+    </div>
+  </div>
+</div>
+{{#js}}
+  $('#programoutcome-tab').click(function(){
+    $('#currentlevel-tab').trigger('click');
+  });
+{{/js}}

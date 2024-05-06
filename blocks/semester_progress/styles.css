@@ -1,0 +1,541 @@
+.block_semester_progress {
+    background-color: transparent!important;
+    border: none!important;
+}
+.block_semester_progress .card-body li.post {
+    background-color: #fff;
+    /* padding: 0px 13px 0px 0px; */
+    border-radius: 10px;
+}
+.block_semester_progress  .card-body .fa.fa-book {
+    border-radius: 7px;
+    color: #fff;
+    transform: rotate(45deg);
+    font-size: 28px;
+}
+.block_semester_progress  .card-body .info a {
+    padding: 0px 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* display: -webkit-box; */
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+.block_semester_progress .card-body .date {
+    font-size: 12px;
+    font-weight: 400;
+    color: grey;
+}
+.block_semester_progress .card-body .details a {
+    font-size: 12px;
+    color: #3b8ded;
+    font-weight: 600;
+    padding: 0px 10px;
+}
+.block_semester_progress .card-body  .name {
+    font-weight: 400;
+    padding: 0px 10px;
+}
+.block_semester_progress .description_text p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin: 0px;
+    font-weight: 500;
+    text-align: left;
+    word-break: break-all;
+}
+.block_semester_progress .newlink {
+    text-align: right;
+    padding: 10px 15px;
+    position: absolute;
+    right: 0px;
+    top: 8px;
+}
+.block_semester_progress .footer {
+    text-align: right;
+}
+#page-my-index .block_semester_progress .card-text.content {
+    border-radius: 10px;
+    position: static;
+    height: 100%;
+}
+.block_semester_progress .newlink a {
+    font-size: 12px;
+}
+#page-my-index .block_semester_progress .card-body {
+    position: relative;
+    border-radius: 12px;
+    /* height: 100%; */
+/*    background-color: #fff !important;*/
+}
+#page-my-index .block_semester_progress .card-body li.post {
+    background-color:transparent;
+    border: 1px solid #d1ecf7;
+}
+#page-my-index .block_semester_progress .card-body .fa.fa-book{
+    color: #25a7da;
+}
+
+
+
+#page-my-index .block_semester_progress .card-body .details a{
+   color: #25a7da;
+}
+#page-my-index .block_semester_progress .footer,
+#page-my-index .block_semester_progress .footer a{
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+
+
+.block.card {
+    box-shadow: 0px 0px 3px #ccc;
+    border: none;
+    background-color: #fff!important;
+    
+}
+/*#page-my-index .block_semester_progress .card-body{
+    height: 211px;
+    background-color: #fff;!important;
+}*/
+
+#page-my-index .block_semester_progress .progress {
+  width: 50px;
+  height: 50px;
+  background: none;
+  position: relative;
+}
+
+
+
+#page-my-index .block_semester_progress .progress::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+#page-my-index .block_semester_progress .progress>span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+
+
+#page-my-index .block_semester_progress .progress .progress-left {
+  left: 0;
+}
+
+
+
+#page-my-index .block_semester_progress .progress .progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 5px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+}
+
+
+
+#page-my-index .block_semester_progress .progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+
+
+#page-my-index .block_semester_progress .progress .progress-right {
+  right: 0;
+}
+
+
+
+#page-my-index .block_semester_progress .progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+}
+
+
+
+#page-my-index .block_semester_progress .progress .progress-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+#page-my-index .block_semester_progress .rounded-lg {
+  border-radius: 1rem;
+}
+
+
+
+#page-my-index .block_semester_progress .text-gray {
+  color: #aaa;
+}
+
+
+
+#page-my-index .block_semester_progress div.h4 {
+  line-height: 1rem;
+}
+
+
+
+#page-my-index .fa-chevron-circle-right:before {
+    content: "";
+    background: #d9c0d700;
+    position: relative;
+    top: 5px;
+    font-size: 40px;
+}
+
+
+
+/* #page-my-index .block_semester_progress ul.unlist{
+    max-height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+} */
+
+.block_semester_progress  .card-body .book_icon{
+    background: linear-gradient(to bottom, #669adc 0%, #7e6899 100%);
+    padding: 7px 12px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page-my-index .block_semester_progress .card-body .book_icon{
+    background: #fff;
+}
+
+/* #page-my-index .block_semester_progress{
+    height: 98%;
+} */
+
+.view-more {
+ float: right;
+}
+
+.sem-enddate {
+  margin-left: 2%;
+}
+/*#page-my-index .sems-date{
+    margin-left: 58%;
+    margin-top: -5%;
+}*/
+
+/* #page-blocks-student_todays_timetable-studenttime_table  #id_cancel {
+	margin-top: 35px;
+} */
+
+/*sem progress block new css*/
+.block_semester_progress .sems-date.block_header{
+    padding: 10px 13px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top: -3rem;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+/* .block.block_semester_progress .card-body .card-title{
+    border-left: 0;
+    padding-left: 18px;
+    font-size:13px !important;
+} */
+.block_semester_progress .sems-date label{
+    margin-bottom:0;
+}
+.block_semester_progress .card-body li.post{
+    border:none !important;
+    /* padding: 0 13px; */
+}
+.block_semester_progress .card-body .d-block .date{
+    padding: 3px 10px;
+    background-color: #d5e4f9;
+    margin: 10px;
+    color:#000;
+}
+.block_semester_progress .card-body .info{
+    display: flex !important;
+}
+.block_semester_progress .card-body .info a{
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+    color: #0048d3;
+    padding:0;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+.block_semester_progress .card-body .info span{
+    font-size: 10px;
+}
+.block_semester_progress .card-body li:nth-child(even){
+    background-color:#f2f3f6 !important;
+    border-radius: 0;
+}
+.block_semester_progress .card-text {
+    padding:0 !important;
+    border-radius: 5px !important; 
+}
+.block_semester_progress #semblockcontent {
+    background: #fff;
+    box-shadow: 0 0 4px 1px #ddd;
+    padding: 0px;
+    border-radius: 4px;
+}
+.block_semester_progress .post .progress{
+    margin:0;
+}
+.block_semester_progress{
+    padding: 12px;
+}
+.block_semester_progress .post .current_semicon i{
+    color: #fa7c53;
+    border-radius: 4px;
+    border: 1px solid #fa7c53;
+    padding: 5px 6px;
+}
+#page-my-index #page-wrapper #topofscroll {
+    background: #f0f3fb;
+}
+.block_semester_progress #viewmore a{
+    margin-right: 13px;
+}
+.block_semester_progress #viewmore{
+    float: none;
+    text-align: right;
+    margin-top: 0;
+
+}
+.block_semester_progress .post .progress::after{
+    border-color:#b6adb9 !important;
+}
+.block_semester_progress{
+    padding:0;
+}
+
+/*hema added new css*/
+.block_semester_progress .topics_coursedata,
+.block_semester_progress .topics_course {   
+    padding: 6px 10px;
+    line-height: 30px;
+    border-left: 1px solid #808080;
+}
+/*.block_semester_progress .course_container:nth-child(2) .topics_coursedata{
+   border-left: 1px solid grey;
+}*/
+.block_semester_progress .course_container:nth-child(3) .topics_coursedata{
+   border-left: 1px solid grey;
+}
+.block_semester_progress .course_container:nth-child(4) .topics_coursedata{
+   border-left: 1px solid grey;
+}
+.block_semester_progress .course_container:nth-child(5) .topics_coursedata{
+   border-left: 1px solid grey;
+}
+.block_semester_progress .course_container .count{
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    padding-right:6px;
+}
+.block_semester_progress .course_container .text_content{
+    color:#000;
+    font-size:12px;
+    font-weight:400;
+}
+/*.block_semester_progress .course_contentcontainer .topics_content:before{
+    content: "";
+    position: absolute;
+    top: 12px;
+    margin-right: 22px;
+    border-left: 1px solid #ff5e33;
+    display: inline-flex;
+    bottom: 10px;
+}*/
+
+/*mobile view*/
+@media (max-width:1023px){
+    .block_semester_progress .topics_coursedata,
+    .block_semester_progress .topics_course{
+       margin: 10px 0;
+       padding-left: 10px;
+       line-height:normal;
+    }
+     .block_semester_progress .card-body .info a{
+        font-size: 11px;
+     }
+    .block.block_semester_progress .card-body .card-title{
+        padding:0;
+     }
+    .block_semester_progress .sems-date.block_header{
+        margin-top: 1rem;
+     }
+     .block_semester_progress .course_contentcontainer .topics_content:before{
+        top: 18px;
+        bottom: 18px;
+    }
+    .block_semester_progress .semester_course .col-md-3{
+        flex: 1 0 100%;
+        max-width: 100%;
+        padding: 0 15px !important;
+    }
+    .block_semester_progress .semester_course .col-md-3 .progress_content{
+        justify-content: flex-start !important;
+    }
+    .block_semester_progress .course_container:nth-child(3), 
+    .block_semester_progress .course_container:nth-child(2), 
+    .block_semester_progress .course_container:nth-child(4){
+        flex:1;
+        margin-bottom: 1rem;
+    }
+    .block_semester_progress .course_container,
+    .block_semester_progress .course_contentcontainer{
+        padding-left: 15px !important;
+    }
+    
+}
+@media (max-width:767px){
+    
+    .block_semester_progress .course_contentcontainer .topics_content:before{
+       top: 16px;
+       bottom: 21px;
+    }
+    .block_semester_progress .progress .progress-value {
+        left: 10px;
+   }
+   .block_semester_progress .progress_content{
+      justify-content: start !important;
+      padding-left:1rem !important;
+   }
+   .block.block_semester_progress .card-body .card-title{
+     padding-left:30px !important;
+     display:block !important;
+   }
+   .block_semester_progress .sems-date.block_header{
+        margin-top: 1rem;
+   }
+}
+@media(min-width:470px) and (max-width:767px){
+    #page-my-index .block_semester_progress .sem-com .course_info{
+        display: flex;
+        justify-content: space-between;
+    }
+    #page-my-index .block_semester_progress .sem-com .course_info label{
+        margin-right: 0;
+    }
+}
+#page-my-index .block_semester_progress .progress .progress-value .h6{
+    font-size: 11px;
+}
+#page-my-index .block_semester_progress .attendancepercentage {
+    fill: #000;
+    font-family: sans-serif;
+    font-size: .5em;
+    text-anchor: middle;
+    font-weight: 600;
+}
+#page-my-index .block_semester_progress .stud_statistics_cards {
+    background-color: transparent;
+    color: #fff;
+    border-radius: 0.7rem;
+}
+#page-my-index .block_semester_progress svg.circular-chart-charter.red {
+    margin-top: -1rem;
+}
+#page-my-index .block_semester_progress .hide {
+    visibility: hidden;
+}
+#page-my-index .block_semester_progress .un-hide {
+    visibility: unset;
+}
+/*#page-my-index .block_semester_progress .sem-com {
+    height: 5em;
+}*/
+/*#page-my-index .block_semester_progress .course_container {
+    margin-right: -2rem;
+}*/
+#page-my-index .block_semester_progress .cm_lb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+#page-my-index .semester_course .course_contentcontainer {
+  border-left:1px solid #ff5e33;
+    
+}
+
+.block_semester_progress .card-body .nav-pills li:nth-child(even){
+    background-color: transparent !important;
+}
+#page-my-index .course_contentcontainer.course_inprogress .topics_content,
+#page-my-index .course_contentcontainer.course_completed .topics_content {
+   padding:6px 10px;
+   line-height: 30px;
+}
+#page-my-index .course_contentcontainer .topics_content > .d-flex  {
+   justify-content: space-evenly !important;
+}
+/*#page-my-index #semblockcontent .semester_course .course_contentcontainer {
+  border-left:none;
+    
+}*/
+.block_open_courses .semester_course .course_contentcontainer .progress{
+    width: 45px;
+    height:45px;
+    margin:0;
+}
+.block_open_courses .semester_course .course_contentcontainer .progress-value .h6{
+    font-size: 10px;
+}
+.block_open_courses .semester_course  .course_container .topics_coursedata{
+    padding: 6px 10px;
+    line-height: 30px;
+    justify-content: center;
+
+}
+.block_open_courses .semester_course  .course_container{
+    padding: 0;
+}
+.block_open_courses #manage_courses .topic_header,
+.block_open_courses #manage_courses .test_header{
+    text-align: right !important;
+}

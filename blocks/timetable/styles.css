@@ -1,0 +1,349 @@
+.block_timetable .events {
+    list-style: none;
+}
+
+.block_timetable .timetable-event {
+    font-weight: 600;
+}
+
+.block_timetable .calendar_event_site {
+    background-color: #f4fdf2;
+    border-left: 5px solid #9cff83;
+}
+
+.block_timetable .calendar_event_site,
+.block_timetable .calendar_event_site a {
+    color: #265619;
+}
+
+.block_timetable .calendar_event_category {
+    background-color: #f5eff5;
+    border-left: 5px solid #e0cbe0;
+}
+
+.block_timetable .calendar_event_category .timetable-event,
+.block_timetable .calendar_event_category a {
+    color: #4e254e;
+}
+
+.block_timetable .calendar_event_course .timetable-event,
+.block_timetable .calendar_event_course a {
+    color: #381400;
+}
+
+.block_timetable .calendar_event_course {
+    background-color: #ecf5ff;
+    border-left: 5px solid #25a7da;
+    color: #25a7da;
+}
+
+.block_timetable .calendar_event_user .timetable-event,
+.block_timetable .calendar_event_user a {
+    color: #3e576f;
+}
+
+.block_timetable .calendar_event_group {
+    background-color: #f2eee3;
+    border-left: 5px solid #fee7ae;
+    color: #684b05;
+}
+
+.block_timetable .calendar_event_group .timetable-event,
+.block_timetable .calendar_event_group a {
+    color: #684b05;
+}
+
+.block_timetable .calendar_event_user {
+    background-color: #f3f4f6;
+    border-left: 5px solid #ced4da;
+}
+
+.block_timetable .calendar_event_other {
+    background-color: #ced4da;
+    border-left: 5px solid #6c6c6c;
+}
+
+.block_timetable .content {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.block_timetable .timetable {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+.block_timetable .events {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.block_timetable .events .coursename {
+    text-transform: uppercase;
+    letter-spacing: .51px;
+    font-weight: 600;
+    font-size: small;
+}
+
+.block_timetable .event-item {
+    margin: 5px 0 10px 0;
+    padding: 6px 8px 6px 12px;
+    position: relative;
+    box-shadow: 2px 2px 2px #ccc;
+}
+
+/*.block_timetable .event,
+.block_timetable .meta {
+    display: flex;
+    width: 100%;
+}*/
+
+.block_timetable hr {
+    margin: 5px 0;
+}
+
+.block_timetable .footer {
+    clear: both;
+    margin-top: 6px;
+    padding: 6px 0;
+    border-top: 1px solid #efefef;
+}
+
+.block_timetable .timetable.horizontal .events.calendarwrapper {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.block_timetable .timetable.horizontal .events .event-item {
+    display: inline-block;
+    text-decoration: none;
+    width: 200px;
+    min-height: 150px;
+    word-break: normal;
+    white-space: normal;
+    margin: 5px 5px 10px 0;
+}
+
+.block_timetable .events .item.past {
+    opacity: 0.4;
+    transition: opacity .2s;
+}
+
+.block_timetable .events .item.past:hover {
+    opacity: 1;
+}
+
+.block_timetable .timetable_calendar {
+    margin-top: 1rem;
+}
+
+.block_timetable .timetable_day {
+    float: left;
+    width: calc(100% / 7);
+    text-align: center;
+    background: #f2f2f2;
+    color: #000;
+    border: 1px solid #f2f2f2;
+}
+
+.block_timetable .timetable_day a {
+    color: #25a7da;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.block_timetable .timetable_day:hover,
+.block_timetable .timetable_day.now,
+.block_timetable .timetable_day.active {
+    border: 1px solid #000;
+}
+
+.block_timetable .timetable_day:hover a,
+.block_timetable .timetable_day.active {
+    background: #25a7da;
+    color: #fff;
+}
+
+.block_timetable .timetable_day.inactive a {
+    color: #25a7da;
+    padding: 5px;
+}
+
+.block_timetable .timetable_day.inactive.active a,
+.block_timetable .timetable_day.active a {
+    color: #fff;
+}
+
+.block_timetable .timetable_day a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+/*css by kiran*/
+
+#page-blocks-timetable-view  #region-main {
+    overflow-x: inherit;
+}
+#page-blocks-timetable-view .block_timetable .timetable_calendar{
+    border-top: 2px solid lightgrey;
+    height: 64px;
+    border-bottom: 2px solid lightgrey;
+}
+#page-blocks-timetable-view .block_timetable .timetable_day.inactive a {
+    color: grey;
+    padding: 15.7px;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+#page-blocks-timetable-view .block_timetable .timetable_day.inactive.active a, 
+#page-blocks-timetable-view .block_timetable .timetable_day.active a {
+    color: #fff;
+    padding: 15.7px;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 600;
+    background-color: #204c92;
+}
+#page-blocks-timetable-view .block_timetable .timetable_day a {
+    color: grey;
+    padding: 5px;
+    padding: 15.7px;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+#page-blocks-timetable-view .block_timetable .timetable_day {
+    background: #f5f5f5;
+}
+#page-blocks-timetable-view .block_timetable .calendar_event_user {
+    background-color: #f3f4f6;
+    border-left: 5px solid #204c92;
+}
+#page-blocks-timetable-view .block_timetable .calendar_event_user.past {
+    border-left: 5px solid #ced4da;
+}
+#page-blocks-timetable-view  .block_timetable .timetable_day:hover a, 
+#page-blocks-timetable-view  .block_timetable .timetable_day.active {
+    background: #25a7da;
+    color: #fff!important;
+}
+#page-blocks-timetable-view .block_timetable .events .coursename {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 16px;
+    width: 100%;
+    border-bottom: 2px solid lightgrey;
+    display: block;
+    padding: 8px 0px;
+    margin-bottom: 10px;
+}
+#page-blocks-timetable-view .calendar_event_user .calendarwrapper .icon.fa-user{
+    color: #2c6cbf;
+}
+#page-blocks-timetable-view .calendar_event_user .day_time{
+    color: #2c6cbf;
+    font-size: 12px;
+    font-weight: 400;
+}
+#page-blocks-timetable-view .block_timetable .calendar_event_user .timetable-event, 
+#page-blocks-timetable-view .block_timetable .calendar_event_user a{
+    color: #000;
+    font-weight: 500;
+}
+#page-blocks-timetable-view .block_timetable .calendar_event_user .day_time a{
+    font-weight: 400;
+    font-size: 12px;
+}
+#page-blocks-timetable-view .block_timetable .calendar_event_user .calendarwrapper,
+#page-blocks-timetable-view .block_timetable .calendar_event_site .calendarwrapper{
+    width: 100%;
+}
+#page-blocks-timetable-view .block_timetable .event-item {
+    padding: 6px 8px 10px 12px;
+}
+#page-blocks-timetable-view .block_timetable .fullcalendar {
+    background-color: #25a7da;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px!important;
+}
+
+/*Timetable css*/
+#page-blocks-timetable-view .block_timetable .content{
+    margin-top:0 !important;
+}
+#page-blocks-timetable-view .block_timetable .calendarwrapper .content .icon{
+    color: #545454;
+}
+#page-blocks-timetable-view .block_timetable .event-item{
+    border-left: 0 !important;
+    background-color: #f2f5ff;
+    opacity: 1;
+    margin-right: 1rem;
+    box-shadow: 1px 3px 4px #eaeaea;
+}
+#page-blocks-timetable-view .block_timetable .events .coursename{
+    font-size: 18px;
+    color: #4174d8;
+    border-bottom: 2px solid #d1d2d6;
+    width: 75%;
+    font-weight: 600;
+}
+#page-blocks-timetable-view .block_timetable .calendar_event_user .day_time a,
+#page-blocks-timetable-view .block_timetable .calendar_event_user .timetable-event,
+#page-blocks-timetable-view .block_timetable .calendar_event_site .timetable-event,
+#page-blocks-timetable-view .block_timetable .calendar_event_site .day_time a {
+    font-size: 13px;
+    color: #545454;
+    font-weight: 400;
+}
+#page-blocks-timetable-view .calendar_event_user .day_time,
+#page-blocks-timetable-view .calendar_event_site .day_time
+{
+    font-size: 13px;
+    color:#4d7fe1;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+#page-blocks-timetable-view .block_timetable .footer{
+    display: flex;
+    justify-content: end;
+    padding-top: 1rem;
+    border-top: none;
+}
+#page-blocks-timetable-view .block_timetable .footer a{
+    background-color: #0048d3;
+    padding: 6px 14px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+#page-blocks-timetable-view .block_timetable .footer a .icon{
+    margin-right: 0;
+}
+#page-blocks-timetable-view .calendar_event_user .calendarwrapper .fa-user:before{
+    content: "";
+}
+#page-blocks-timetable-view .calendar_event_user .calendarwrapper .fa-user
+{
+    background-image: url('[[pix:theme_bloom|attendancegray]]');
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width:20px;
+    height:20px;
+}

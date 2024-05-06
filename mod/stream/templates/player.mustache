@@ -1,0 +1,86 @@
+<div class="col-lg-8 col-md-7 view_left_wrapper">
+    <div class='w-100'>
+        <video id='my_video_1' class='w-100 video-js vjs-default-skin vjs-big-play-centered' controls preload='auto'
+          data-setup='{"playbackRates": [0.5, 1, 1.5, 2]}' width="800" height="450">
+        </video>
+    </div>
+    <div class="w-100 course_detail_container d-flex justify-content-between align-items-center flex-row flex-wrap'">
+        <div class="overall_users mt-10">
+        <div class='mytooltip'>
+                <div class='mytooltiptext'><span class='rating_tooltip' data-itemid={{itemid}} data-ratearea='stream'></span>
+                </div>
+            </div>
+       {{#usercanrate}}
+            <div class="radiostars mt-10">
+                <div id='userradiostars' data-stars={{ratings}} data-userid={{userid}} data-itemid={{itemid}}>
+                </div>
+            </div>
+        {{/usercanrate}}
+        {{^usercanrate}}
+            <div class="radiostars mt-10">
+                <div id='userradiostars' data-stars={{displayrating}} data-userid={{userid}} data-itemid={{itemid}}>
+                </div>
+            </div>
+        <span class='rating_star'>{{displayrating}}</span>
+        <span class='rated_users'>(<font class='totalcount_$itemid'>{{avgratingscount}}</font> users)</span>
+        {{/usercanrate}}
+        </div>
+        <div class="like_unlike {{class}}">
+            <div id='contents_{{itemid}}' style='float: left; clear:both;font-size:16px;'>
+                <span class='likes like_unlikes pull-left pr-3{{# likestatus}} active {{/ likestatus}}{{^ likestatus}} inactive {{/ likestatus}}'>
+                    <div id='label_like_{{itemid}}' class='pull-left pr-2 mt-1 likes_icon'>
+                        <span class='thubmbsup' title="{{#str}}like, stream{{/str}}" 
+                          onclick="(function(e){ require('mod_stream/ratings').updatevalues({ likestatus: 1 , componentid: '{{itemid}}'}) })(event)"));>
+                          <i class='fa fa-thumbs-up'> </i>
+                        </span>
+                    </div>
+                    <span class="pull-left likes_count count_likearea_{{itemid}}">{{likecount}}</span>
+                </span>
+                <span class="dislikes like_unlikes pull-left {{# dislikestatus}} active {{/ dislikestatus}}{{^ dislikestatus}} inactive {{/ dislikestatus}}">
+                    <div id="label_unlike_{{itemid}}" class="pull-left pr-2 mt-1 dislikes_icon">
+                        <div class="thubmbsdown" src="http://localhost/estream/mod/stream/pix/unlikeN.png" title="{{#str}}dislike, stream{{/str}}" style="cursor: pointer;" onclick="(function(e){ require('mod_stream/ratings').updatevalues({ likestatus: 2 , componentid: '{{itemid}}'}) })(event)">
+                            <i class="fa fa-thumbs-down"> </i>
+                        </div>
+                    </div>
+                    <span class="pull-left dislike_count count_unlikearea_{{itemid}}">{{unlikecount}}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="heatcontainer" ></div>
+
+<pre id="csv" style="display:none">Day, Hour, Value
+M, 00:00,52
+M, 01:00,52
+M, 02:00,52
+M, 03:00,52
+M, 04:00,52
+M, 05:00,52
+M, 06:00,52
+M, 07:00,52
+M, 08:00,52
+M, 09:00,52
+M, 10:00,52
+M, 11:00,52
+M, 12:00,52
+M, 13:00,52
+M, 14:00,52
+M, 15:00,52
+M, 16:00,52
+M, 17:00,52
+M, 18:00,52
+M, 19:00,52
+M, 20:00,52
+M, 21:00,52
+M, 22:00,52
+M, 23:00,52
+M, 24:00,52
+
+</pre>
+{{#js}}
+    $(window).bind('beforeunload', function(){
+        return 'Are you want to reload, Data will not be saved';
+    });
+{{/js}}

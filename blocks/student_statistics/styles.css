@@ -1,0 +1,155 @@
+.stud_statistics_cards {
+    background-color: #25a7da;
+    color: #fff;
+    border-radius: 0.7rem;
+    height: 15rem;
+}
+.stud_borders {
+    border: 0.1rem solid #ffc6c1;
+    border-radius: 0.7rem;
+}
+.circular-chart-chart .red1 .circle {
+    stroke: red;
+}
+.circle {
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+}
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+}
+@keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+  }
+}
+.circular-chart-chart {
+    display: block;
+    margin: 1rem auto;
+    max-width: 10rem;
+    max-height: 10rem;
+}
+.circular-chart-charter .red .circle {
+    stroke: red;
+}
+.progprogress {
+    width: 5rem;
+    justify-content: space-around;
+    margin: 0.2rem auto;
+}
+.programprogresspercent {
+    fill: #fff;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+}
+.attendanceprogre {
+    width: 9rem;
+    justify-content: space-around;
+    margin: 0.5rem auto;
+}
+
+/*student statistics block css*/
+.block_student_statistics .stud_statistics_cards{
+    background-color: #fafbfe;
+    color: #000;
+    border: 1px solid #ddd;
+    height: 100%;
+    box-shadow: 0 5px 6px #ddd;
+}
+.block_student_statistics .stud_statistics_cards .card_header{
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+#page-my-index #page-wrapper #topofscroll {
+    background: #f7fbff;
+}
+.block_student_statistics .stud_statistics_cards .std_name{
+    border-bottom: 1px solid #e7edfc;
+}
+.block_student_statistics .stud_statistics_cards .std_name .h6,
+.block_student_statistics .stud_statistics_cards .std_email .h6,
+.block_student_statistics .stud_statistics_cards .pg_name .h6,
+.block_student_statistics .stud_statistics_cards .batch_name .h6{
+    font-size: 13px;
+}
+.block_student_statistics .stud_statistics_cards .card_body .stud_borders{
+    border:1px solid #e8e9ec;
+    border-radius: 5px;
+}
+.block_student_statistics .stud_statistics_cards .card_body .count{
+    font-size: 20px;
+}
+.block_student_statistics .stud_statistics_cards .card_body .details{
+    font-size: 12px;
+    margin-top: 10px;
+}
+.block_student_statistics .stud_statistics_cards .card_body .complete_icon,
+.block_student_statistics .stud_statistics_cards .card_body .enroll_icon{
+    margin-top: -1rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d7e2fb;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.block_student_statistics .stud_statistics_cards .enroll_icon .enicon,
+.block_student_statistics .stud_statistics_cards .block_icon{
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-size: cover;
+}
+.block_student_statistics .stud_statistics_cards .enroll_icon .enicon{
+    background-image: url('[[pix:block_student_statistics|enrolled]]');  
+}
+.block_student_statistics .stud_statistics_cards .left_container{
+    flex:0 0 49%;
+}
+.block_student_statistics .stud_statistics_cards .block_icon{
+    background-image: url('[[pix:block_student_statistics|completed]]');
+}
+.block_student_statistics .stud_statistics_cards .card_body .right_container{
+    border:1px solid #e8e9ec;
+    border-radius: 5px;
+    flex:0 0 49%;
+}
+.block_student_statistics .stud_statistics_cards  .right_container .progprogress{
+    margin: 1rem auto;
+    width: 7rem;
+}
+.block_student_statistics .stud_statistics_cards  .circle-bg{
+    stroke: #d6e3fa;
+}
+.block_student_statistics .stud_statistics_cards .programprogresspercent,
+.block_student_statistics .stud_statistics_cards .attendanceprogre .attendancepercentage
+{
+    fill: #000;
+    font-weight: 600;
+    font-size: 10px;
+}
+.block_student_statistics .stud_statistics_cards .attendanceprogre{
+    margin:1rem auto;
+    width: 7rem;
+}
+.block_student_statistics .stud_statistics_cards .semname{
+    font-size: 15px;
+    font-weight: 700;
+}
+.block_student_statistics .left_container .stud_borders{
+    background-color: #f0f3fb;
+    border-color: #f0f3fb;
+}
+.block_student_statistics .left_container .stud_borders .count{
+    font-size: 20px;
+}
